@@ -19,7 +19,7 @@ jobs:
         run: npm install
 
       - name: Run token-transformer
-        run: npx token-transformer tokens/figma-output/ tokens/figma-output/theme-transformed.json --resolveReferences false
+        run: npx token-transformer tokens/figma-output/ tokens/theme-transformed.json --resolveReferences false
 
       - name: Run style-dictionary
         run: npx style-dictionary build --config sd.config.cjs
