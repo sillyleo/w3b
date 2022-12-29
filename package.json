@@ -1,0 +1,13 @@
+{
+  "name": "@backlight-dev/sulky-security-0ia5z.blank-lc8n27le",
+  "version": "0.0.0",
+  "description": "",
+  "license": "MIT",
+  "type": "module",
+  "homepage": "{{ homepage }}",
+  "scripts": {
+    "serve": "npx backlight@latest serve xRXzm1XdJMvuvB1JFVqF --open"
+  },
+  "devDependencies": {},
+  "dependencies": {}
+}
