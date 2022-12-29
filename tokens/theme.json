@@ -1,7 +1,8 @@
 {
   "colors": {
     "text": {
-      "default": "#687076"
+      "default": "#687076",
+      "warning": "#ad5700"
     },
     "tomato": {
       "light": {
