@@ -4,6 +4,10 @@
       "default": {
         "value": "{colors.slate.light.11}",
         "type": "color"
+      },
+      "warning": {
+        "value": "{colors.amber.light.11}",
+        "type": "color"
       }
     },
     "tomato": {
