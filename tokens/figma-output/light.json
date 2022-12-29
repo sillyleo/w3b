@@ -1,0 +1,10 @@
+{
+  "colors": {
+    "text": {
+      "default": {
+        "value": "{colors.slate.light.11}",
+        "type": "color"
+      }
+    }
+  }
+}
