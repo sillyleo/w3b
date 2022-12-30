@@ -9,5 +9,14 @@
     "serve": "npx backlight@latest serve xRXzm1XdJMvuvB1JFVqF --open"
   },
   "devDependencies": {},
-  "dependencies": {}
+  "dependencies": {
+    "@radix-ui/react-switch": "^1.0.1",
+    "@mdx-js/react": "^1.6.22",
+    "@radix-ui/colors": "latest",
+    "@radix-ui/react-avatar": "latest",
+    "@radix-ui/react-icons": "latest",
+    "classnames": "latest",
+    "react": "latest",
+    "react-dom": "latest"
+  }
 }
