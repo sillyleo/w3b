@@ -2,7 +2,7 @@ import React from 'react';
 import * as Avatar from '@radix-ui/react-avatar';
 import './styles.css';
 
-const AvatarDemo = () => (
+export const AvatarDemo = () => (
   <Avatar.Root className="AvatarRoot">
     <Avatar.Image
       className="AvatarImage"
@@ -14,5 +14,3 @@ const AvatarDemo = () => (
     </Avatar.Fallback>
   </Avatar.Root>
 );
-
-export default AvatarDemo;
