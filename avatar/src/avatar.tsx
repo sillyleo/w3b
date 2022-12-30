@@ -1,8 +1,12 @@
-import React from 'react';
+import React, { FC } from 'react';
 import * as Avatar from '@radix-ui/react-avatar';
 import './styles.css';
 
-export const AvatarDemo = () => (
+export interface Props {
+  initial?: string;
+}
+
+export const AvatarDemo: FC<Props> = (props) => (
   <Avatar.Root className="AvatarRoot">
     <Avatar.Image
       className="AvatarImage"
@@ -10,7 +14,7 @@ export const AvatarDemo = () => (
       alt="Colm Tuite"
     />
     <Avatar.Fallback className="AvatarFallback" delayMs={600}>
-      CT
+      {props.initial ? props.initial : 'CT'}
     </Avatar.Fallback>
   </Avatar.Root>
 );
