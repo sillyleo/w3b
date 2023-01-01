@@ -15,7 +15,8 @@
     []
    ],
    "switch",
-   "button"
+   "button",
+   "listbox"
   ]
  },
  "dependencies": {
