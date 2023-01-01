@@ -17,6 +17,7 @@
     "@radix-ui/react-icons": "latest",
     "classnames": "latest",
     "react": "latest",
-    "react-dom": "latest"
+    "react-dom": "latest",
+    "@radix-ui/react-select": "latest"
   }
 }
