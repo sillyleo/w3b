@@ -5,13 +5,18 @@
     "allowNonTsExtensions": true,
     "experimentalDecorators": true,
     "jsx": "react",
+    "esm": true,
     "reactNamespace": "React",
     "module": "ESNext",
     "moduleResolution": "Node",
     "sourceMap": true,
     "paths": {
-      "~/*": ["*"],
-      "@divriots/starter-sass/*": ["*"]
+      "~/*": [
+        "*"
+      ],
+      "@divriots/starter-sass/*": [
+        "*"
+      ]
     }
   }
 }

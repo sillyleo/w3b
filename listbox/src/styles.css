@@ -5,6 +5,7 @@
 /* reset */
 button {
   all: unset;
+  font-family: sans-serif;
 }
 
 .SelectTrigger {
