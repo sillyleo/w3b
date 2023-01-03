@@ -20,6 +20,7 @@ So far the [tailwind example](https://studio.backlight.dev/edit/bfzeo1pWt4DALHCD
 - best folder structure?
 - documentation for dockit
 - doc template?
-- fast development without publish package (link?)
+- fast development without publish package (cli link?)
 - how to setup folder structure
 - my story display as string
+- no styling when used as packages
