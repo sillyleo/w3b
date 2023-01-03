@@ -16,7 +16,10 @@
    ],
    "switch",
    "button",
-   "listbox"
+   "listbox",
+   "questions",
+   "questions",
+   "slider"
   ]
  },
  "dependencies": {

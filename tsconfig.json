@@ -5,7 +5,6 @@
     "allowNonTsExtensions": true,
     "experimentalDecorators": true,
     "jsx": "react",
-    "esm": true,
     "reactNamespace": "React",
     "module": "ESNext",
     "moduleResolution": "Node",
