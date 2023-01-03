@@ -13,6 +13,9 @@ const SliderDemo = () => (
       step={1}
       aria-label="Volume"
     >
+      <h1 className="text-orange-500 text-5xl font-bold underline">
+        Hello, Next.js!
+      </h1>
       <Slider.Track className="SliderTrack">
         <Slider.Range className="SliderRange" />
       </Slider.Track>
