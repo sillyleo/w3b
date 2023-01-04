@@ -19,7 +19,9 @@
    "listbox",
    "questions",
    "questions",
-   "slider"
+   "slider",
+   "demo",
+   "Issues"
   ]
  },
  "dependencies": {
