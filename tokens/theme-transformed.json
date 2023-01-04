@@ -2,6 +2,10 @@
   "colors": {
     "text": {
       "default": {
+        "value": "{colors.slate.light.12}",
+        "type": "color"
+      },
+      "lighter": {
         "value": "{colors.slate.light.11}",
         "type": "color"
       },
