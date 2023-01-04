@@ -1,9 +1,7 @@
+import React from 'react';
 import { AvatarDemo } from '../avatar/src';
-//not working
-// import { AvatarDemo } from '~/avatar/';
 
-export function story1() {
-  return AvatarDemo;
-}
+// doesn't work
+// export const story2 = () => <AvatarDemo />;
 
-export const story2 = () => 'Story 2';
+export const story3 = () => 'Story 2';
