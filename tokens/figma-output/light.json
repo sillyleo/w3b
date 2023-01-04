@@ -4,6 +4,10 @@
       "default": {
         "value": "{colors.slate.light.11}",
         "type": "color"
+      },
+      "warning": {
+        "value": "{colors.amber.dark.10}",
+        "type": "color"
       }
     }
   }
