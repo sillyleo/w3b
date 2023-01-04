@@ -1,7 +1,6 @@
 lockfileVersion: 5.4
 
 specifiers:
-  '@mdx-js/react': ^1.6.22
   '@radix-ui/colors': latest
   '@radix-ui/react-select': latest
   '@radix-ui/react-slider': ^1.1.0
@@ -10,7 +9,6 @@ specifiers:
   react-dom: latest
 
 dependencies:
-  '@mdx-js/react': 1.6.22_react@18.2.0
   '@radix-ui/colors': 0.1.8
   '@radix-ui/react-select': 1.1.2_biqbaboplfbrettd7655fr4n2y
   '@radix-ui/react-slider': 1.1.0_biqbaboplfbrettd7655fr4n2y
@@ -25,14 +23,6 @@ packages:
     engines: {node: '>=6.9.0'}
     dependencies:
       regenerator-runtime: 0.13.11
-    dev: false
-
-  /@mdx-js/react/1.6.22_react@18.2.0:
-    resolution: {integrity: sha512-TDoPum4SHdfPiGSAaRBw7ECyI8VaHpK8GJugbJIJuqyh6kzw9ZLJZW3HGL3NNrJGxcAixUvqROm+YuQOo5eXtg==}
-    peerDependencies:
-      react: ^16.13.1 || ^17.0.0
-    dependencies:
-      react: 18.2.0
     dev: false
 
   /@radix-ui/colors/0.1.8:
