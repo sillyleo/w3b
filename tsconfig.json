@@ -10,8 +10,12 @@
     "moduleResolution": "Node",
     "sourceMap": true,
     "paths": {
-      "~/*": ["*"],
-      "@divriots/starter-sass/*": ["*"]
+      "~/*": [
+        "*"
+      ],
+      "@divriots/starter-sass/*": [
+        "*"
+      ]
     }
   }
 }

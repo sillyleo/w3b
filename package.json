@@ -1,6 +1,6 @@
 {
-  "name": "@backlight-dev/sulky-security-0ia5z.blank-lc8n27le",
-  "version": "0.0.0",
+  "name": "@backlight-dev/w3b",
+  "version": "0.0.12",
   "description": "",
   "license": "MIT",
   "type": "module",
@@ -9,5 +9,16 @@
     "serve": "npx backlight@latest serve xRXzm1XdJMvuvB1JFVqF --open"
   },
   "devDependencies": {},
-  "dependencies": {}
+  "dependencies": {
+    "@radix-ui/react-switch": "^1.0.1",
+    "@radix-ui/react-slider": "latest",
+    "@mdx-js/react": "^1.6.22",
+    "@radix-ui/colors": "latest",
+    "@radix-ui/react-avatar": "latest",
+    "@radix-ui/react-icons": "latest",
+    "classnames": "latest",
+    "react": "latest",
+    "react-dom": "latest",
+    "@radix-ui/react-select": "latest"
+  }
 }
