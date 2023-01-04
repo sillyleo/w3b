@@ -2,7 +2,7 @@
   "colors": {
     "text": {
       "default": {
-        "value": "{colors.slate.light.11}",
+        "value": "{colors.slate.light.12}",
         "type": "color"
       },
       "warning": {
