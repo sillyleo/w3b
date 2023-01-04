@@ -5,7 +5,11 @@
         "value": "{colors.slate.light.12}",
         "type": "color"
       },
-      "lighter": {
+      "link": {
+        "value": "{colors.blue.light.11}",
+        "type": "color"
+      },
+      "light": {
         "value": "{colors.slate.light.11}",
         "type": "color"
       },
