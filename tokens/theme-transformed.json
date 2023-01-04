@@ -6,7 +6,11 @@
         "type": "color"
       },
       "warning": {
-        "value": "{colors.amber.light.11}",
+        "value": "{colors.amber.light.10}",
+        "type": "color"
+      },
+      "error": {
+        "value": "{colors.tomato.light.10}",
         "type": "color"
       }
     },
@@ -3230,7 +3234,7 @@
     }
   },
   "fontSizes": {
-    "page-title-1": {
+    "page-title": {
       "value": 72,
       "type": "fontSizes"
     },
@@ -3273,7 +3277,7 @@
         "fontFamily": "{fontFamilies.heading}",
         "fontWeight": "{fontWeights.bold}",
         "lineHeight": "{lineHeights.heading}",
-        "fontSize": "{fontSizes.page-title-1}",
+        "fontSize": "{fontSizes.page-title}",
         "letterSpacing": "{letterSpacing.decreased}"
       },
       "type": "typography",
