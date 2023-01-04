@@ -2,6 +2,7 @@
   "colors": {
     "text": {
       "default": "#11181c",
+      "lighter": "#687076",
       "warning": "#ffa01c",
       "error": "#db4324"
     },

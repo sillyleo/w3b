@@ -5,6 +5,10 @@
         "value": "{colors.slate.light.12}",
         "type": "color"
       },
+      "lighter": {
+        "value": "{colors.slate.light.11}",
+        "type": "color"
+      },
       "warning": {
         "value": "{colors.amber.light.10}",
         "type": "color"
