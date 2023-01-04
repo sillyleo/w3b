@@ -9,6 +9,10 @@
         "value": "{colors.blue.light.11}",
         "type": "color"
       },
+      "link-hover": {
+        "value": "{colors.blue.light.10}",
+        "type": "color"
+      },
       "light": {
         "value": "{colors.slate.light.11}",
         "type": "color"
