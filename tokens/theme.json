@@ -3,6 +3,7 @@
     "text": {
       "default": "#11181c",
       "link": "#006adc",
+      "link-hover": "#0081f1",
       "light": "#687076",
       "warning": "#ffa01c",
       "error": "#db4324"
