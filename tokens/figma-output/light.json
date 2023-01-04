@@ -6,7 +6,7 @@
         "type": "color"
       },
       "warning": {
-        "value": "{colors.amber.dark.10}",
+        "value": "{colors.amber.light.10}",
         "type": "color"
       }
     }
