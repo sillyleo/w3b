@@ -2,7 +2,8 @@
   "colors": {
     "text": {
       "default": "#687076",
-      "warning": "#ad5700"
+      "warning": "#ffa01c",
+      "error": "#db4324"
     },
     "tomato": {
       "light": {
@@ -928,7 +929,7 @@
   },
   "letterSpacing": {
     "default": 0,
-    "increased": "150%",
+    "increased": "2%",
     "decreased": "-2%"
   },
   "fontWeights": {
@@ -936,78 +937,77 @@
     "bold": "Bold"
   },
   "fontSizes": {
-    "page-title-1": 15,
-    "page-title-2": 15,
-    "h1": 15,
-    "h2": 15,
-    "h3": 15,
-    "h4": 15,
-    "h5": 15,
-    "h6": 15,
+    "page-title": 72,
+    "title1": 48,
+    "title2": 36,
+    "title3": 24,
+    "subtitle1": 18,
+    "subtitle2": 15,
     "body": 15,
-    "sm": 15,
-    "xs": 15
+    "sm": 12,
+    "xs": 10
   },
   "typography": {
+    "page-title": {
+      "fontFamily": "Sk-Modernist",
+      "fontWeight": "Bold",
+      "lineHeight": "110%",
+      "fontSize": 72,
+      "letterSpacing": "-2%"
+    },
     "title1": {
       "fontFamily": "Sk-Modernist",
       "fontWeight": "Bold",
       "lineHeight": "110%",
-      "fontSize": 15,
+      "fontSize": 48,
       "letterSpacing": "-2%"
     },
     "title2": {
       "fontFamily": "Sk-Modernist",
       "fontWeight": "Bold",
       "lineHeight": "110%",
-      "fontSize": 15,
+      "fontSize": 36,
       "letterSpacing": "-2%"
     },
-    "h1": {
+    "title3": {
+      "fontFamily": "Sk-Modernist",
+      "fontWeight": "Bold",
+      "lineHeight": "110%",
+      "fontSize": 24,
+      "letterSpacing": "-2%"
+    },
+    "subtitle1": {
+      "fontFamily": "Sk-Modernist",
+      "fontWeight": "Bold",
+      "lineHeight": "110%",
+      "fontSize": 18,
+      "letterSpacing": "-2%"
+    },
+    "subtitle2": {
       "fontFamily": "Sk-Modernist",
       "fontWeight": "Bold",
       "lineHeight": "110%",
       "fontSize": 15,
       "letterSpacing": "-2%"
     },
-    "h2": {
-      "fontFamily": "Sk-Modernist",
+    "overline": {
+      "fontFamily": "Inter",
       "fontWeight": "Bold",
       "lineHeight": "110%",
-      "fontSize": 15,
-      "letterSpacing": "-2%"
-    },
-    "h3": {
-      "fontFamily": "Sk-Modernist",
-      "fontWeight": "Bold",
-      "lineHeight": "110%",
-      "fontSize": 15,
-      "letterSpacing": "-2%"
-    },
-    "h4": {
-      "fontFamily": "Sk-Modernist",
-      "fontWeight": "Bold",
-      "lineHeight": "110%",
-      "fontSize": 15,
-      "letterSpacing": "-2%"
-    },
-    "h5": {
-      "fontFamily": "Sk-Modernist",
-      "fontWeight": "Bold",
-      "lineHeight": "110%",
-      "fontSize": 15,
-      "letterSpacing": "-2%"
-    },
-    "h6": {
-      "fontFamily": "Sk-Modernist",
-      "fontWeight": "Bold",
-      "lineHeight": "110%",
-      "fontSize": 15,
-      "letterSpacing": "-2%"
+      "fontSize": 10,
+      "letterSpacing": "2%",
+      "textCase": "uppercase"
     },
     "body": {
-      "fontFamily": "Inter",
+      "fontFamily": "Sk-Modernist",
       "fontWeight": "Regular",
+      "lineHeight": "140%",
+      "fontSize": 15,
+      "letterSpacing": 0
+    },
+    "body-bold": {
+      "fontFamily": "Sk-Modernist",
+      "fontWeight": "Bold",
       "lineHeight": "140%",
       "fontSize": 15,
       "letterSpacing": 0
@@ -1016,14 +1016,14 @@
       "fontFamily": "Inter",
       "fontWeight": "Regular",
       "lineHeight": "140%",
-      "fontSize": 15,
+      "fontSize": 12,
       "letterSpacing": 0
     },
     "caption": {
       "fontFamily": "Inter",
       "fontWeight": "Regular",
       "lineHeight": "140%",
-      "fontSize": 15,
+      "fontSize": 12,
       "letterSpacing": 0
     }
   },

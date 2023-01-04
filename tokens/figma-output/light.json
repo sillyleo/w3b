@@ -6,7 +6,11 @@
         "type": "color"
       },
       "warning": {
-        "value": "{colors.amber.light.11}",
+        "value": "{colors.amber.light.10}",
+        "type": "color"
+      },
+      "error": {
+        "value": "{colors.tomato.light.10}",
         "type": "color"
       }
     }
