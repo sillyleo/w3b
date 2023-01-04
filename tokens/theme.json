@@ -2,7 +2,8 @@
   "colors": {
     "text": {
       "default": "#11181c",
-      "lighter": "#687076",
+      "link": "#006adc",
+      "light": "#687076",
       "warning": "#ffa01c",
       "error": "#db4324"
     },
