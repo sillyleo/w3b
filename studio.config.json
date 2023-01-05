@@ -21,7 +21,9 @@
    "questions",
    "slider",
    "demo",
-   "Issues"
+   "Issues",
+   "button",
+   "ewd"
   ]
  },
  "dependencies": {
