@@ -21,7 +21,10 @@
    "questions",
    "slider",
    "demo",
-   "Issues"
+   "Issues",
+   "button",
+   "ewd",
+   "switch"
   ]
  },
  "dependencies": {
