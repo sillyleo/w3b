@@ -23,7 +23,8 @@
    "demo",
    "Issues",
    "button",
-   "ewd"
+   "ewd",
+   "switch"
   ]
  },
  "dependencies": {

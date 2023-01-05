@@ -17,6 +17,7 @@
     "react-dom": "latest",
     "@mdx-js/react": "latest",
     "@radix-ui/react-select": "latest",
-    "@stitches/react": "latest"
+    "@stitches/react": "latest",
+    "@radix-ui/react-switch": "latest"
   }
 }
