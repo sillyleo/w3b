@@ -8,7 +8,12 @@
   "scripts": {
     "serve": "npx backlight@latest serve xRXzm1XdJMvuvB1JFVqF --open"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "@divriots/dockit-react": "latest",
+    "@mdx-js/react": "latest",
+    "@types/react": "latest",
+    "@tailwindcss/typography": "latest"
+  },
   "dependencies": {
     "@radix-ui/react-slider": "^1.1.0",
     "@radix-ui/colors": "latest",
