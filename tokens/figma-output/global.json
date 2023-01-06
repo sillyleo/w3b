@@ -352,41 +352,45 @@
     }
   },
   "fontWeights": {
-    "regular": {
-      "value": "Regular",
+    "normal": {
+      "value": "400",
+      "type": "fontWeights"
+    },
+    "medium": {
+      "value": "500",
       "type": "fontWeights"
     },
     "bold": {
-      "value": "Bold",
+      "value": "700",
+      "type": "fontWeights"
+    },
+    "extrabold": {
+      "value": "800",
       "type": "fontWeights"
     }
   },
   "fontSizes": {
-    "page-title": {
+    "4xl": {
       "value": "72",
       "type": "fontSizes"
     },
-    "title1": {
+    "3xl": {
       "value": "48",
       "type": "fontSizes"
     },
-    "title2": {
+    "2xl": {
       "value": "36",
       "type": "fontSizes"
     },
-    "title3": {
+    "xl": {
       "value": "24",
       "type": "fontSizes"
     },
-    "subtitle1": {
+    "lg": {
       "value": "18",
       "type": "fontSizes"
     },
-    "subtitle2": {
-      "value": "15",
-      "type": "fontSizes"
-    },
-    "body": {
+    "base": {
       "value": "15",
       "type": "fontSizes"
     },
@@ -3263,7 +3267,7 @@
         "fontFamily": "{fontFamilies.heading}",
         "fontWeight": "{fontWeights.bold}",
         "lineHeight": "{lineHeights.heading}",
-        "fontSize": "{fontSizes.page-title}",
+        "fontSize": "{fontSizes.4xl}",
         "letterSpacing": "{letterSpacing.decreased}"
       },
       "type": "typography",
@@ -3274,7 +3278,7 @@
         "fontFamily": "{fontFamilies.heading}",
         "fontWeight": "{fontWeights.bold}",
         "lineHeight": "{lineHeights.heading}",
-        "fontSize": "{fontSizes.title1}",
+        "fontSize": "{fontSizes.3xl}",
         "letterSpacing": "{letterSpacing.decreased}"
       },
       "type": "typography"
@@ -3284,7 +3288,7 @@
         "fontFamily": "{fontFamilies.heading}",
         "fontWeight": "{fontWeights.bold}",
         "lineHeight": "{lineHeights.heading}",
-        "fontSize": "{fontSizes.title2}",
+        "fontSize": "{fontSizes.2xl}",
         "letterSpacing": "{letterSpacing.decreased}"
       },
       "type": "typography"
@@ -3294,7 +3298,7 @@
         "fontFamily": "{fontFamilies.heading}",
         "fontWeight": "{fontWeights.bold}",
         "lineHeight": "{lineHeights.heading}",
-        "fontSize": "{fontSizes.title3}",
+        "fontSize": "{fontSizes.xl}",
         "letterSpacing": "{letterSpacing.decreased}"
       },
       "type": "typography"
@@ -3304,7 +3308,7 @@
         "fontFamily": "{fontFamilies.heading}",
         "fontWeight": "{fontWeights.bold}",
         "lineHeight": "{lineHeights.heading}",
-        "fontSize": "{fontSizes.subtitle1}",
+        "fontSize": "{fontSizes.lg}",
         "letterSpacing": "{letterSpacing.decreased}"
       },
       "type": "typography"
@@ -3333,9 +3337,9 @@
     "body": {
       "value": {
         "fontFamily": "{fontFamilies.heading}",
-        "fontWeight": "{fontWeights.regular}",
+        "fontWeight": "{fontWeights.normal}",
         "lineHeight": "{lineHeights.body}",
-        "fontSize": "{fontSizes.body}",
+        "fontSize": "{fontSizes.base}",
         "letterSpacing": "{letterSpacing.default}"
       },
       "type": "typography"
@@ -3345,7 +3349,7 @@
         "fontFamily": "{fontFamilies.heading}",
         "fontWeight": "{fontWeights.bold}",
         "lineHeight": "{lineHeights.body}",
-        "fontSize": "{fontSizes.body}",
+        "fontSize": "{fontSizes.base}",
         "letterSpacing": "{letterSpacing.default}"
       },
       "type": "typography"
@@ -3353,7 +3357,7 @@
     "label": {
       "value": {
         "fontFamily": "{fontFamilies.body}",
-        "fontWeight": "{fontWeights.regular}",
+        "fontWeight": "{fontWeights.normal}",
         "lineHeight": "{lineHeights.body}",
         "fontSize": "{fontSizes.sm}",
         "letterSpacing": "{letterSpacing.default}"
@@ -3363,7 +3367,7 @@
     "caption": {
       "value": {
         "fontFamily": "{fontFamilies.body}",
-        "fontWeight": "{fontWeights.regular}",
+        "fontWeight": "{fontWeights.normal}",
         "lineHeight": "{lineHeights.body}",
         "fontSize": "{fontSizes.sm}",
         "letterSpacing": "{letterSpacing.default}"
