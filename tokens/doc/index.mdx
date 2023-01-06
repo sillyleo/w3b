@@ -11,13 +11,9 @@ Tokens are basic values synced from Figma. They are used to compose meaningful t
 
 For example, we don't define a color token like `color.primary: "#333"`, we first define a generic color token `gray.500: #333`, and then use it to compose `color.primary: "gray.500"`.
 
-## Line Height
+## Font Size
 
-<TailwindShowcases
-  theme={theme}
-  showcaseKey="lineHeight"
-  componentProps={{ useLongText: true }}
-/>
+<TailwindShowcases theme={theme} showcaseKey="fontSize" />
 
 ## Font Family
 
@@ -27,9 +23,13 @@ For example, we don't define a color token like `color.primary: "#333"`, we firs
 
 <TailwindShowcases theme={theme} showcaseKey="fontWeight" />
 
-## Font Size
+## Line Height
 
-<TailwindShowcases theme={theme} showcaseKey="fontSize" />
+<TailwindShowcases
+  theme={theme}
+  showcaseKey="lineHeight"
+  componentProps={{ useLongText: true }}
+/>
 
 ## Letter Spacing
 

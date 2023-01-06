@@ -1,4 +1,23 @@
 import figmaTokens from '~/tokens/theme.json';
+// 1. import fontSized from theme.json
+// 2. map to tailwind fontSize
+// 3. export fontSize
+
+const fontSize = Object.keys(figmaTokens.fontSizes).reduce((acc, key) => {
+  const value = figmaTokens.fontSizes[key];
+  const [size, lineHeight] = value.split('/');
+  return {
+    ...acc,
+    [key]: [size, { lineHeight }],
+  };
+}, {});
+
+console.log(fontSize);
+
+// const fontSize = Object.keys(figmaTokens.fontSizes).reduce((acc, key) => {
+//   acc[key] = `${figmaTokens.fontSizes[key]}px`;
+//   return acc;
+// }, {});
 
 export const theme = {
   fontFamily: {
@@ -41,16 +60,6 @@ export const theme = {
   lineHeight: {
     heading: '110%',
     body: '140%',
-  },
-  fontSize: {
-    xs: '0.75rem',
-    sm: ['0.875rem', { lineHeight: '1.25rem' }],
-    base: ['1rem', { lineHeight: '1.5rem' }],
-    lg: ['1.125rem', { lineHeight: '1.75rem' }],
-    xl: ['1.25rem', { lineHeight: '1.75rem' }],
-    '2xl': ['1.5rem', { lineHeight: '2rem' }],
-    '3xl': ['1.875rem', { lineHeight: '2.25rem' }],
-    '4xl': ['2.25rem', { lineHeight: '2.5rem' }],
   },
   extend: {},
 };
