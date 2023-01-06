@@ -14,6 +14,7 @@ export const DefaultLayout = (props) => (
         />
       }
       {...props}
+      articleClassName="prose"
     />
   </MDXProvider>
 );

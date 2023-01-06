@@ -1,8 +1,12 @@
+import figmaTokens from '~/tokens/theme.json';
+
+console.log();
+
 export const theme = {
   fontFamily: {
-    heading: ['Sk-Modernist', 'sans-serif'],
+    heading: [figmaTokens.fontFamilies['heading'], 'sans-serif'],
     body: [
-      'Inter',
+      figmaTokens.fontFamilies['body'],
       'ui-sans-serif',
       'system-ui',
       '-apple-system',
@@ -29,6 +33,16 @@ export const theme = {
       '"Courier New"',
       'monospace',
     ],
+  },
+  fontWeight: {
+    normal: '400',
+    medium: '500',
+    bold: '700',
+    extrabold: '800',
+  },
+  lineHeight: {
+    heading: '110%',
+    body: '140%',
   },
   extend: {},
 };

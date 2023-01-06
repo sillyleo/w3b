@@ -5,7 +5,19 @@ import { TailwindShowcases } from '@divriots/dockit-react/tailwind-showcases';
 import { DefaultLayout } from '~/mdx-layout';
 export default DefaultLayout;
 
-# Typography
+# Tokens
+
+Tokens are basic values synced from Figma. They are used to compose meaningful tokens.
+
+For example, we don't define a color token like `color.primary: "#333"`, we first define a generic color token `gray.500: #333`, and then use it to compose `color.primary: "gray.500"`.
+
+## Line Height
+
+<TailwindShowcases
+  theme={theme}
+  showcaseKey="lineHeight"
+  componentProps={{ useLongText: true }}
+/>
 
 ## Font Family
 
@@ -22,11 +34,3 @@ export default DefaultLayout;
 ## Letter Spacing
 
 <TailwindShowcases theme={theme} showcaseKey="letterSpacing" />
-
-## Line Height
-
-<TailwindShowcases
-  theme={theme}
-  showcaseKey="lineHeight"
-  componentProps={{ useLongText: true }}
-/>
