@@ -3318,7 +3318,7 @@
         "fontFamily": "{fontFamilies.heading}",
         "fontWeight": "{fontWeights.bold}",
         "lineHeight": "{lineHeights.heading}",
-        "fontSize": "{fontSizes.subtitle2}",
+        "fontSize": "{fontSizes.base}",
         "letterSpacing": "{letterSpacing.decreased}"
       },
       "type": "typography"
@@ -3336,7 +3336,7 @@
     },
     "body": {
       "value": {
-        "fontFamily": "{fontFamilies.heading}",
+        "fontFamily": "{fontFamilies.body}",
         "fontWeight": "{fontWeights.normal}",
         "lineHeight": "{lineHeights.body}",
         "fontSize": "{fontSizes.base}",
@@ -3346,7 +3346,7 @@
     },
     "body-bold": {
       "value": {
-        "fontFamily": "{fontFamilies.heading}",
+        "fontFamily": "{fontFamilies.body}",
         "fontWeight": "{fontWeights.bold}",
         "lineHeight": "{lineHeights.body}",
         "fontSize": "{fontSizes.base}",
