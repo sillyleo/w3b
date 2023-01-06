@@ -4,12 +4,8 @@ import figmaTokens from '~/tokens/theme.json';
 // 3. export fontSize
 
 const fontSize = Object.keys(figmaTokens.fontSizes).reduce((acc, key) => {
-  const value = figmaTokens.fontSizes[key];
-  const [size, lineHeight] = value.split('/');
-  return {
-    ...acc,
-    [key]: [size, { lineHeight }],
-  };
+  acc[key] = `${figmaTokens.fontSizes[key]}px`;
+  return acc;
 }, {});
 
 console.log(fontSize);
