@@ -12,7 +12,8 @@
     "@divriots/dockit-react": "latest",
     "@mdx-js/react": "latest",
     "@types/react": "latest",
-    "@tailwindcss/typography": "latest"
+    "@tailwindcss/typography": "latest",
+    "tw-colors": "latest"
   },
   "dependencies": {
     "@radix-ui/react-slider": "^1.1.0",

@@ -1,27 +1,24 @@
 import figmaTokens from '~/tokens/theme.json';
 
-// 1. import fontSizes from theme.json
-// 2. map to tailwind fontSize object
+// 1. import fontSized from theme.json
+// 2. map to tailwind fontSize
 // 3. export fontSize
 
-export const fontSize = Object.keys(figmaTokens.fontSizes).reduce(
-  (acc, key) => ({
-    ...acc,
-    [key]: [`${figmaTokens.fontSizes[key]}px`, { lineHeight: '1' }],
-  }),
-  {}
-);
+const fontSize = Object.keys(figmaTokens.fontSizes).reduce((acc, key) => {
+  acc[key] = `${figmaTokens.fontSizes[key]}px`;
+  return acc;
+}, {});
 
 // 1. import colors from theme.json
 // 2. map to tailwind color object
 
-export const colors = Object.keys(figmaTokens.colors).reduce(
-  (acc, key) => ({
-    ...acc,
-    [key]: figmaTokens.colors[key],
-  }),
-  {}
-);
+// export const colors = Object.keys(figmaTokens.colors).reduce(
+//   (acc, key) => ({
+//     ...acc,
+//     [key]: figmaTokens.colors[key],
+//   }),
+//   {}
+// );
 
 export const theme = {
   fontFamily: {
@@ -65,9 +62,7 @@ export const theme = {
     heading: '110%',
     body: '140%',
   },
-  fontSize: fontSize,
-  color: colors,
-  extend: {},
+  // colors: figmaTokens.colors,
 };
 
 // all options here: https://github.com/tailwindlabs/tailwindcss/blob/master/stubs/defaultConfig.stub.js
