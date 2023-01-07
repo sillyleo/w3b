@@ -1,36 +1,30 @@
 {
- "packages": {
-  "dir": "",
-  "menu": [
-   [
-    "TOKENS",
-    []
-   ],
-   [
-    "COMPONENTS",
-    []
-   ],
-   [
-    "INFRASTRUCTURE",
-    []
-   ],
-   "switch",
-   "button",
-   "listbox",
-   "questions",
-   "questions",
-   "slider",
-   "demo",
-   "Issues",
-   "button",
-   "ewd",
-   "switch"
-  ]
- },
- "dependencies": {
-  "autoInstall": false
- },
- "doc": {
-  "markdownEngine": "mdjs"
- }
+  "packages": {
+    "dir": "",
+    "menu": [
+      [
+        "Tokens",
+        [
+          "tokens",
+          "theme"
+        ]
+      ],
+      [
+        "Components",
+        []
+      ],
+      [
+        "Doc Infrastructure",
+        [
+          "mdx-layout"
+        ]
+      ]
+    ]
+  },
+  "dependencies": {
+    "autoInstall": true
+  },
+  "doc": {
+    "markdownEngine": "mdjs"
+  }
 }

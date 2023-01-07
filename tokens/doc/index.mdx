@@ -1,0 +1,36 @@
+import { Button } from '~/button';
+import { mdx } from '@mdx-js/react';
+import { theme } from '~/theme';
+import { TailwindShowcases } from '@divriots/dockit-react/tailwind-showcases';
+import { DefaultLayout } from '~/mdx-layout';
+export default DefaultLayout;
+
+<TailwindShowcases theme={theme} showcaseKey="textColor" />
+
+## Font Size
+
+<TailwindShowcases theme={theme} showcaseKey="fontSize" /># Tokens
+
+Tokens are basic values synced from Figma. They are used to compose meaningful tokens.
+
+For example, we don't define a color token like `color.primary: "#333"`, we first define a generic color token `gray.500: #333`, and then use it to compose `color.primary: "gray.500"`.
+
+## Font Family
+
+<TailwindShowcases theme={theme} showcaseKey="fontFamily" />
+
+## Font Weight
+
+<TailwindShowcases theme={theme} showcaseKey="fontWeight" />
+
+## Line Height
+
+<TailwindShowcases
+  theme={theme}
+  showcaseKey="lineHeight"
+  componentProps={{ useLongText: true }}
+/>
+
+## Letter Spacing
+
+<TailwindShowcases theme={theme} showcaseKey="letterSpacing" />
