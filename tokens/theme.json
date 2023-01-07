@@ -447,63 +447,63 @@
     "extrabold": 800
   },
   "fontSizes": {
-    "4xl": 72,
-    "3xl": 48,
-    "2xl": 36,
-    "xl": 24,
-    "lg": 18,
-    "base": 15,
-    "sm": 12,
-    "xs": 10
+    "4xl": "72px",
+    "3xl": "48px",
+    "2xl": "36px",
+    "xl": "24px",
+    "lg": "18px",
+    "base": "15px",
+    "sm": "12px",
+    "xs": "10px"
   },
   "typography": {
     "page-title": {
       "fontFamily": "Sk-Modernist",
       "fontWeight": 700,
       "lineHeight": "110%",
-      "fontSize": 72,
+      "fontSize": "72px",
       "letterSpacing": "-2%"
     },
     "title1": {
       "fontFamily": "Sk-Modernist",
       "fontWeight": 700,
       "lineHeight": "110%",
-      "fontSize": 48,
+      "fontSize": "48px",
       "letterSpacing": "-2%"
     },
     "title2": {
       "fontFamily": "Sk-Modernist",
       "fontWeight": 700,
       "lineHeight": "110%",
-      "fontSize": 36,
+      "fontSize": "36px",
       "letterSpacing": "-2%"
     },
     "title3": {
       "fontFamily": "Sk-Modernist",
       "fontWeight": 700,
       "lineHeight": "110%",
-      "fontSize": 24,
+      "fontSize": "24px",
       "letterSpacing": "-2%"
     },
     "subtitle1": {
       "fontFamily": "Sk-Modernist",
       "fontWeight": 700,
       "lineHeight": "110%",
-      "fontSize": 18,
+      "fontSize": "18px",
       "letterSpacing": "-2%"
     },
     "subtitle2": {
       "fontFamily": "Sk-Modernist",
       "fontWeight": 700,
       "lineHeight": "110%",
-      "fontSize": 15,
+      "fontSize": "15px",
       "letterSpacing": "-2%"
     },
     "overline": {
       "fontFamily": "Inter",
       "fontWeight": 700,
       "lineHeight": "110%",
-      "fontSize": 10,
+      "fontSize": "10px",
       "letterSpacing": "2%",
       "textCase": "uppercase"
     },
@@ -511,28 +511,28 @@
       "fontFamily": "Inter",
       "fontWeight": 400,
       "lineHeight": "140%",
-      "fontSize": 15,
+      "fontSize": "15px",
       "letterSpacing": 0
     },
     "body-bold": {
       "fontFamily": "Inter",
       "fontWeight": 700,
       "lineHeight": "140%",
-      "fontSize": 15,
+      "fontSize": "15px",
       "letterSpacing": 0
     },
     "label": {
       "fontFamily": "Inter",
       "fontWeight": 400,
       "lineHeight": "140%",
-      "fontSize": 12,
+      "fontSize": "12px",
       "letterSpacing": 0
     },
     "caption": {
       "fontFamily": "Inter",
       "fontWeight": 400,
       "lineHeight": "140%",
-      "fontSize": 12,
+      "fontSize": "12px",
       "letterSpacing": 0
     }
   },

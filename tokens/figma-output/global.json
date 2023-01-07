@@ -171,35 +171,35 @@
   },
   "fontSizes": {
     "4xl": {
-      "value": "72",
+      "value": "72px",
       "type": "fontSizes"
     },
     "3xl": {
-      "value": "48",
+      "value": "48px",
       "type": "fontSizes"
     },
     "2xl": {
-      "value": "36",
+      "value": "36px",
       "type": "fontSizes"
     },
     "xl": {
-      "value": "24",
+      "value": "24px",
       "type": "fontSizes"
     },
     "lg": {
-      "value": "18",
+      "value": "18px",
       "type": "fontSizes"
     },
     "base": {
-      "value": "15",
+      "value": "15px",
       "type": "fontSizes"
     },
     "sm": {
-      "value": "12",
+      "value": "12px",
       "type": "fontSizes"
     },
     "xs": {
-      "value": "10",
+      "value": "10px",
       "type": "fontSizes"
     }
   },
