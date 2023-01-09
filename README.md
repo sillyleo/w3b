@@ -37,4 +37,9 @@ Edit `src/Button/demos/demo1.tsx` or other demo files, the demos will inflect yo
 
 `npm run build-lib` Build the library for publishing.
 
+# Deploy docs
+
+- Link the repo on Vercel for continuous intergration
+- In build command, override with `vite build-doc` instead.
+
 # Publishing
