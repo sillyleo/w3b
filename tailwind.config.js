@@ -1,22 +1,16 @@
-import { theme } from '~/theme';
+import { theme, lightColors, darkColors } from '~/theme';
 import typography from '@tailwindcss/typography';
-import { createThemes } from 'tw-colors';
 import figmaTokens from '~/tokens/theme.json';
-
+import themeSwapper from 'tailwindcss-theme-swapper';
 const config = {
-  theme: {
-    colors: figmaTokens.colors,
-    ...theme,
-  },
+  theme,
   plugins: [
     typography,
-    createThemes({
-      light: {
-        primary: 'green',
-      },
-      dark: {
-        primary: 'red',
-      },
+    themeSwapper({
+      themes: [
+        { name: 'base', selectors: [':root'], theme: lightColors },
+        { name: 'dark', selectors: ['dark'], theme: darkColors },
+      ],
     }),
   ],
 };

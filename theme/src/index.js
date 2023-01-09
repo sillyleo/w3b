@@ -1,24 +1,16 @@
 import figmaTokens from '~/tokens/theme.json';
 
-// 1. import fontSized from theme.json
-// 2. map to tailwind fontSize
-// 3. export fontSize
-
 const fontSize = Object.keys(figmaTokens.fontSizes).reduce((acc, key) => {
   acc[key] = `${figmaTokens.fontSizes[key]}px`;
   return acc;
 }, {});
 
-// 1. import colors from theme.json
-// 2. map to tailwind color object
-
-// export const colors = Object.keys(figmaTokens.colors).reduce(
-//   (acc, key) => ({
-//     ...acc,
-//     [key]: figmaTokens.colors[key],
-//   }),
-//   {}
-// );
+export const lightColors = {
+  colors: figmaTokens.light,
+};
+export const darkColors = {
+  colors: figmaTokens.light,
+};
 
 export const theme = {
   fontFamily: {
@@ -52,17 +44,7 @@ export const theme = {
       'monospace',
     ],
   },
-  fontWeight: {
-    normal: '400',
-    medium: '500',
-    bold: '700',
-    extrabold: '800',
-  },
-  lineHeight: {
-    heading: '110%',
-    body: '140%',
-  },
-  // colors: figmaTokens.colors,
+  colors: figmaTokens.colors,
 };
 
 // all options here: https://github.com/tailwindlabs/tailwindcss/blob/master/stubs/defaultConfig.stub.js
