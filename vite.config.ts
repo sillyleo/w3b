@@ -10,7 +10,7 @@ export default defineConfig({
     // use vite library mode to build the package
     // https://vitejs.dev/guide/build.html#library-mode
     lib: {
-      entry: resolve(__dirname, "src/App.tsx"),
+      entry: resolve(__dirname, "src/index.ts"),
       name: "W3B",
       // the proper extensions will be added
       fileName: "w3b",

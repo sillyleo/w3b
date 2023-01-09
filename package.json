@@ -14,11 +14,22 @@
   "files": [
     "dist"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sillyleo/w3b.git"
+  },
+  "author": "Leo Lin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sillyleo/w3b/issues"
+  },
+  "homepage": "https://github.com/sillyleo/w3b#readme",
   "scripts": {
     "dev": "SHOW_ALL_COMPONENT_DEMOS=true vite serve docs",
     "build-docs": "rimraf docs/dist && vite build docs",
     "ssr-docs": "rimraf docs/dist && vite-pages ssr docs",
-    "build-lib": "vite build"
+    "build-lib": "vite build",
+    "ship": "pnpm run build-lib && pnpm version patch && pnpm publish --access public"
   },
   "dependencies": {
     "react": "^18.2.0",
