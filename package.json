@@ -1,29 +1,22 @@
 {
-  "name": "@backlight-dev/w3b",
-  "version": "0.0.15",
-  "description": "",
-  "license": "MIT",
+  "name": "w3b",
+  "private": true,
+  "version": "0.0.0",
   "type": "module",
-  "homepage": "{{ homepage }}",
   "scripts": {
-    "serve": "npx backlight@latest serve xRXzm1XdJMvuvB1JFVqF --open"
-  },
-  "devDependencies": {
-    "@divriots/dockit-react": "latest",
-    "@mdx-js/react": "latest",
-    "@types/react": "latest",
-    "@tailwindcss/typography": "latest",
-    "tw-colors": "latest"
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
   },
   "dependencies": {
-    "@radix-ui/react-slider": "^1.1.0",
-    "@radix-ui/colors": "latest",
-    "classnames": "latest",
-    "react": "latest",
-    "react-dom": "latest",
-    "@mdx-js/react": "latest",
-    "@radix-ui/react-select": "latest",
-    "@stitches/react": "latest",
-    "@radix-ui/react-switch": "latest"
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.26",
+    "@types/react-dom": "^18.0.9",
+    "@vitejs/plugin-react": "^3.0.0",
+    "typescript": "^4.9.3",
+    "vite": "^4.0.0"
   }
 }
