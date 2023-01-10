@@ -45,4 +45,4 @@ Edit `src/Button/demos/demo1.tsx` or other demo files, the demos will inflect yo
 
 # Publishing
 
-n/a
+- `pnpm run ship`
