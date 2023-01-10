@@ -15,7 +15,6 @@ export default defineConfig({
       name: "@sayaww/w3b",
       // the proper extensions will be added
       fileName: "w3b",
-      formats: ["es", "cjs", "umd"],
     },
     rollupOptions: {
       // make sure to externalize deps that shouldn't be bundled
