@@ -3,11 +3,11 @@
  * @description Card demo2 description
  */
 
-import React from 'react'
-import { Card } from 'my-lib'
+import React from "react";
+import { Card } from "w3b";
 
 const Demo2 = () => {
-  return <Card>demo2</Card>
-}
+  return <Card>demo2</Card>;
+};
 
-export default Demo2
+export default Demo2;
