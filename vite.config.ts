@@ -12,9 +12,10 @@ export default defineConfig({
     // https://vitejs.dev/guide/build.html#library-mode
     lib: {
       entry: resolve(__dirname, "src/index.ts"),
-      name: "W3B",
+      name: "@sayaww/w3b",
       // the proper extensions will be added
       fileName: "w3b",
+      formats: ["es", "cjs", "umd"],
     },
     rollupOptions: {
       // make sure to externalize deps that shouldn't be bundled
