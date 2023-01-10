@@ -5,7 +5,6 @@ import { resolve } from "path";
 import { defineConfig } from "vite";
 import typescript from "@rollup/plugin-typescript";
 import { vanillaExtractPlugin } from "@vanilla-extract/vite-plugin";
-
 export default defineConfig({
   build: {
     // use vite library mode to build the package

@@ -11,6 +11,7 @@
   "type": "module",
   "main": "./dist/w3b.umd.cjs",
   "module": "./dist/w3b.js",
+  "types": "./dist/index.d.ts",
   "exports": {
     ".": {
       "import": "./dist/w3b.js",
@@ -51,6 +52,7 @@
     "typescript": "^4.9.3",
     "vite": "^4.0.1",
     "vite-pages-theme-doc": "^4.0.0",
+    "vite-plugin-dts": "^1.7.1",
     "vite-plugin-react-pages": "^4.0.0"
   }
 }
