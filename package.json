@@ -11,7 +11,7 @@
   "type": "module",
   "main": "./dist/w3b.umd.cjs",
   "module": "./dist/w3b.js",
-  "types": "./dist/index.d.ts",
+  "types": "./dist/dist/types/index.d.ts",
   "exports": {
     ".": {
       "import": "./dist/w3b.js",
