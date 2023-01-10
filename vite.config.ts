@@ -32,7 +32,7 @@ export default defineConfig({
   },
   plugins: [
     vanillaExtractPlugin(), // basic vanilla-extract setup
-    cssInjectedByJsPlugin(), // inject css so lib can be import simplely
+    cssInjectedByJsPlugin({ topExecutionPriority: true }), // inject css so lib can be import easily. However this caused SSR flash issues.
 
     typescript({
       declaration: true,
