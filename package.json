@@ -1,7 +1,7 @@
 {
   "name": "@sayaww/w3b",
   "private": false,
-  "version": "0.0.10",
+  "version": "0.0.11",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/sillyleo/w3b.git"
