@@ -4,6 +4,7 @@
 import { resolve } from "path";
 import { defineConfig } from "vite";
 import typescript from "@rollup/plugin-typescript";
+import { vanillaExtractPlugin } from "@vanilla-extract/vite-plugin";
 
 export default defineConfig({
   build: {
@@ -11,7 +12,7 @@ export default defineConfig({
     // https://vitejs.dev/guide/build.html#library-mode
     lib: {
       entry: resolve(__dirname, "src/index.ts"),
-      name: "W3B",
+      name: "@sayaww/w3b",
       // the proper extensions will be added
       fileName: "w3b",
     },
@@ -29,6 +30,7 @@ export default defineConfig({
     },
   },
   plugins: [
+    vanillaExtractPlugin(),
     // use @rollup/plugin-typescript to generate .d.ts files
     // https://github.com/rollup/plugins/tree/master/packages/typescript#noforceemit
     typescript({
