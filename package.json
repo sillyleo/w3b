@@ -2,18 +2,6 @@
   "name": "@sayaww/w3b",
   "private": false,
   "version": "0.0.10",
-  "type": "module",
-  "main": "./dist/w3b.umd.cjs",
-  "module": "./dist/w3b.js",
-  "exports": {
-    ".": {
-      "import": "./dist/w3b.js",
-      "require": "./dist/w3b.umd.cjs"
-    }
-  },
-  "files": [
-    "dist"
-  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/sillyleo/w3b.git"
@@ -29,7 +17,7 @@
     "build-docs": "rimraf docs/dist && vite build docs",
     "ssr-docs": "rimraf docs/dist && vite-pages ssr docs",
     "build-lib": "vite build",
-    "ship": "pnpm run build-lib && pnpm version patch && pnpm publish --access public"
+    "ship": "vite build && pnpm version patch && pnpm publish --access public"
   },
   "dependencies": {
     "@vanilla-extract/css": "^1.9.2",
