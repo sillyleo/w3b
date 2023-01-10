@@ -4,11 +4,11 @@
  * @order 2
  */
 
-import React from 'react'
-import { Button } from 'my-lib'
+import React from "react";
+import { Button } from "w3b";
 
 const Demo2 = () => {
-  return <Button>demo2</Button>
-}
+  return <Button>demo2</Button>;
+};
 
-export default Demo2
+export default Demo2;

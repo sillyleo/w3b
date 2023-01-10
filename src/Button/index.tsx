@@ -1,5 +1,5 @@
-import React from 'react'
-import s from './style.module.css'
+import React from "react";
+import { container } from "../Button/styles.css";
 
 interface Props
   extends React.DetailedHTMLProps<
@@ -7,13 +7,8 @@ interface Props
     HTMLButtonElement
   > {}
 
-const Button = ({ className, ...props }: Props) => {
-  return (
-    <button
-      {...props}
-      className={[s.button, className].filter(Boolean).join(' ')}
-    />
-  )
-}
+const Button = (props: Props) => {
+  return <button className={container} {...props} />;
+};
 
-export default Button
+export default Button;
