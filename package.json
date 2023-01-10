@@ -10,7 +10,7 @@
   "license": "ISC",
   "type": "module",
   "main": "./dist/w3b.umd.cjs",
-  "module": "./dist/w3b.mjs",
+  "module": "./dist/w3b.js",
   "exports": {
     ".": {
       "import": "./dist/w3b.js",
