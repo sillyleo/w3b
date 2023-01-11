@@ -46,3 +46,19 @@ Edit `src/Button/demos/demo1.tsx` or other demo files, the demos will inflect yo
 # Publishing
 
 - `pnpm run ship`
+
+# Usage
+
+`pnpm install @sayaww/w3b`
+
+In React:
+
+```jsx
+import { Button, Card } from "@sayaww/w3b@0.0.25";
+```
+
+In Framer or Next.js 13 with `urlImport`:
+
+```jsx
+import { Button, Card } from "https://esm.sh/@sayaww/w3b@0.0.25";
+```

@@ -1,13 +1,26 @@
 {
   "name": "@sayaww/w3b",
   "private": false,
-  "version": "0.0.13",
+  "version": "0.0.26",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/sillyleo/w3b.git"
   },
   "author": "Leo Lin",
   "license": "ISC",
+  "type": "module",
+  "main": "./dist/w3b.umd.cjs",
+  "module": "./dist/w3b.js",
+  "types": "./dist/dist/types/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/w3b.js",
+      "require": "./dist/w3b.umd.cjs"
+    }
+  },
+  "files": [
+    "dist"
+  ],
   "bugs": {
     "url": "https://github.com/sillyleo/w3b/issues"
   },
@@ -26,6 +39,7 @@
     "react-router-dom": "^6.5.0"
   },
   "devDependencies": {
+    "vite-plugin-css-injected-by-js": "^2.3.1",
     "@mdx-js/react": "^2.2.1",
     "@rollup/plugin-typescript": "^10.0.1",
     "@types/node": "^18.11.16",
@@ -38,6 +52,7 @@
     "typescript": "^4.9.3",
     "vite": "^4.0.1",
     "vite-pages-theme-doc": "^4.0.0",
+    "vite-plugin-dts": "^1.7.1",
     "vite-plugin-react-pages": "^4.0.0"
   }
 }

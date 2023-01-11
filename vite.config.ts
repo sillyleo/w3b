@@ -5,6 +5,7 @@ import { resolve } from "path";
 import { defineConfig } from "vite";
 import typescript from "@rollup/plugin-typescript";
 import { vanillaExtractPlugin } from "@vanilla-extract/vite-plugin";
+import cssInjectedByJsPlugin from "vite-plugin-css-injected-by-js";
 
 export default defineConfig({
   build: {
@@ -30,9 +31,9 @@ export default defineConfig({
     },
   },
   plugins: [
-    vanillaExtractPlugin(),
-    // use @rollup/plugin-typescript to generate .d.ts files
-    // https://github.com/rollup/plugins/tree/master/packages/typescript#noforceemit
+    vanillaExtractPlugin(), // basic vanilla-extract setup
+    cssInjectedByJsPlugin({ topExecutionPriority: true }), // inject css so lib can be import easily. However this caused SSR flash issues.
+
     typescript({
       declaration: true,
       emitDeclarationOnly: true,
@@ -40,5 +41,7 @@ export default defineConfig({
       declarationDir: resolve(__dirname, "dist/types"),
       rootDir: resolve(__dirname, "src"),
     }),
+    // use @rollup/plugin-typescript to generate .d.ts files
+    // https://github.com/rollup/plugins/tree/master/packages/typescript#noforceemit
   ],
 });
