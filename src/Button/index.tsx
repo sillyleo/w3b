@@ -1,5 +1,10 @@
 import React from "react";
-import s from "./style.module.css";
+import { style } from "@vanilla-extract/css";
+// import { vars, lightThemeClass } from "../../src/styles/theme.css";
+
+export const container = style({
+  padding: 10,
+});
 
 interface Props
   extends React.DetailedHTMLProps<
@@ -7,13 +12,8 @@ interface Props
     HTMLButtonElement
   > {}
 
-const Button = ({ className, ...props }: Props) => {
-  return (
-    <button
-      {...props}
-      className={[s.button, className].filter(Boolean).join(" ")}
-    />
-  );
+const Button = (props: Props) => {
+  return <button className={container} {...props} />;
 };
 
 export default Button;
