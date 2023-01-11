@@ -1,10 +1,6 @@
-import React from "react";
-import { style } from "@vanilla-extract/css";
-// import { vars, lightThemeClass } from "../../src/styles/theme.css";
-
-export const container = style({
-  padding: 10,
-});
+import React from 'react';
+import { buttonStyle } from './style.css';
+import { lightThemeClass, darkThemeClass, vars } from '../styles/theme.css';
 
 interface Props
   extends React.DetailedHTMLProps<
@@ -13,7 +9,11 @@ interface Props
   > {}
 
 const Button = (props: Props) => {
-  return <button className={container} {...props} />;
+  return (
+    <div className={lightThemeClass}>
+      <button className={buttonStyle} {...props} />
+    </div>
+  );
 };
 
 export default Button;
