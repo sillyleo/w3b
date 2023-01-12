@@ -1441,7 +1441,7 @@
   },
   "borderWidth": {
     "0": {
-      "value": 0,
+      "value": "0px",
       "type": "borderWidth"
     },
     "2": {
