@@ -1495,7 +1495,7 @@
       "type": "opacity"
     },
     "60": {
-      "value": 0.6,
+      "value": "60%",
       "type": "opacity"
     },
     "70": {
@@ -1541,7 +1541,7 @@
   },
   "letterSpacing": {
     "default": {
-      "value": 0,
+      "value": "0%",
       "type": "letterSpacing"
     },
     "increased": {

@@ -420,7 +420,7 @@
     "30": 0.3,
     "40": 0.4,
     "50": 0.5,
-    "60": 0.6,
+    "60": "60%",
     "70": 0.7,
     "75": 0.75,
     "80": 0.8,
@@ -436,7 +436,7 @@
     "body": "140%"
   },
   "letterSpacing": {
-    "default": 0,
+    "default": "0%",
     "increased": "2%",
     "decreased": "-2%"
   },
@@ -512,28 +512,28 @@
       "fontWeight": 400,
       "lineHeight": "140%",
       "fontSize": "15px",
-      "letterSpacing": 0
+      "letterSpacing": "0%"
     },
     "body-bold": {
       "fontFamily": "Inter",
       "fontWeight": 700,
       "lineHeight": "140%",
       "fontSize": "15px",
-      "letterSpacing": 0
+      "letterSpacing": "0%"
     },
     "label": {
       "fontFamily": "Inter",
       "fontWeight": 400,
       "lineHeight": "140%",
       "fontSize": "12px",
-      "letterSpacing": 0
+      "letterSpacing": "0%"
     },
     "caption": {
       "fontFamily": "Inter",
       "fontWeight": 400,
       "lineHeight": "140%",
       "fontSize": "12px",
-      "letterSpacing": 0
+      "letterSpacing": "0%"
     }
   },
   "paragraphSpacing": {
