@@ -61,59 +61,59 @@
   },
   "opacity": {
     "0": {
-      "value": "0",
+      "value": "0%",
       "type": "opacity"
     },
     "5": {
-      "value": "0.05",
+      "value": "50%",
       "type": "opacity"
     },
     "10": {
-      "value": "0.1",
+      "value": "10%",
       "type": "opacity"
     },
     "20": {
-      "value": "0.2",
+      "value": "20%",
       "type": "opacity"
     },
     "25": {
-      "value": "0.25",
+      "value": "25%",
       "type": "opacity"
     },
     "30": {
-      "value": "0.3",
+      "value": "30%",
       "type": "opacity"
     },
     "40": {
-      "value": "0.4",
+      "value": "40%",
       "type": "opacity"
     },
     "50": {
-      "value": "0.5",
+      "value": "50%",
       "type": "opacity"
     },
     "60": {
-      "value": "60%",
+      "value": "60",
       "type": "opacity"
     },
     "70": {
-      "value": "0.7",
+      "value": "70%",
       "type": "opacity"
     },
     "75": {
-      "value": "0.75",
+      "value": "75%",
       "type": "opacity"
     },
     "80": {
-      "value": "0.8",
+      "value": "80%",
       "type": "opacity"
     },
     "95": {
-      "value": "0.95",
+      "value": "95%",
       "type": "opacity"
     },
     "100": {
-      "value": "1",
+      "value": "100%",
       "type": "opacity"
     }
   },
