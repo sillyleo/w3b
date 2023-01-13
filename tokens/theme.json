@@ -1,19 +1,5 @@
 {
   "colors": {
-    "sementic": {
-      "accent": "#0091ff",
-      "accentSecondary": "#0081f1",
-      "accentTertiary": "#96c7f2",
-      "background": "#fbfcfd",
-      "backgroundSecondary": "#f8f9fa",
-      "backgroundTertiary": "#f1f3f5",
-      "foreground": "#fff",
-      "foregroundSecondary": "rgba(#fff, 0.85)",
-      "foregroundTertiary": "rgba(#fff, 0.65)",
-      "text": "#11181c",
-      "textSecondary": "#687076",
-      "textTertiary": "#889096"
-    },
     "tomato": {
       "1": "#fffcfc",
       "2": "#fff8f7",
