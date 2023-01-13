@@ -1,4 +1,5 @@
 import React from "react";
+import { lightTheme } from "../../src/styles/theme.css";
 import { buttonStyle } from "./style.css";
 
 interface Props
@@ -8,7 +9,11 @@ interface Props
   > {}
 
 const Button = (props: Props) => {
-  return <button className={buttonStyle} {...props} />;
+  return (
+    <div className={lightTheme}>
+      <button className={buttonStyle} {...props} />
+    </div>
+  );
 };
 
 export default Button;

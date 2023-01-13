@@ -9,6 +9,7 @@
       "w3b": ["./src"]
     },
     "esModuleInterop": true,
-    "resolveJsonModule": true
+    "resolveJsonModule": true,
+    "strict": true
   }
 }
