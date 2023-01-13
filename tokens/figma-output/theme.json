@@ -2,15 +2,15 @@
   "colors": {
     "sementic": {
       "accent": {
-        "value": "{colors.grass.9}",
+        "value": "{colors.blue.9}",
         "type": "color"
       },
       "accentSecondary": {
-        "value": "{colors.grass.10}",
+        "value": "{colors.blue.10}",
         "type": "color"
       },
       "accentTertiary": {
-        "value": "{colors.grass.7}",
+        "value": "{colors.blue.7}",
         "type": "color"
       },
       "background": {
