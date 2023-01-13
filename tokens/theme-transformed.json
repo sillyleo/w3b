@@ -1,5 +1,55 @@
 {
   "colors": {
+    "sementic": {
+      "accent": {
+        "value": "{colors.grass.9}",
+        "type": "color"
+      },
+      "accentSecondary": {
+        "value": "{colors.grass.10}",
+        "type": "color"
+      },
+      "accentTertiary": {
+        "value": "{colors.grass.7}",
+        "type": "color"
+      },
+      "background": {
+        "value": "{colors.slate.1}",
+        "type": "color"
+      },
+      "backgroundSecondary": {
+        "value": "{colors.slate.2}",
+        "type": "color"
+      },
+      "backgroundTertiary": {
+        "value": "{colors.slate.3}",
+        "type": "color"
+      },
+      "foreground": {
+        "value": "{base.white}",
+        "type": "color"
+      },
+      "foregroundSecondary": {
+        "value": "rgba({base.white}, 0.85)",
+        "type": "color"
+      },
+      "foregroundTertiary": {
+        "value": "rgba({base.white}, 0.65)",
+        "type": "color"
+      },
+      "text": {
+        "value": "{colors.slate.12}",
+        "type": "color"
+      },
+      "textSecondary": {
+        "value": "{colors.slate.11}",
+        "type": "color"
+      },
+      "textTertiary": {
+        "value": "{colors.slate.9}",
+        "type": "color"
+      }
+    },
     "tomato": {
       "1": {
         "value": "#fffcfc",
@@ -4828,6 +4878,16 @@
         "type": "innerShadow"
       },
       "type": "boxShadow"
+    }
+  },
+  "base": {
+    "white": {
+      "value": "#fff",
+      "type": "color"
+    },
+    "black": {
+      "value": "#000",
+      "type": "color"
     }
   },
   "tokenSetOrder": {
