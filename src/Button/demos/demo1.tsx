@@ -8,7 +8,7 @@ import React from "react";
 import { Button } from "w3b";
 
 const Demo1 = () => {
-  return <Button>demo1</Button>;
+  return <Button variant={{ color: "tomato" }}>demo1</Button>;
 };
 
 export default Demo1;

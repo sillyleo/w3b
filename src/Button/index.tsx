@@ -1,17 +1,19 @@
 import React from "react";
-import { lightTheme } from "../../src/styles/theme.css";
-import { buttonStyle } from "./style.css";
+import { colors, lightTheme } from "../../src/styles/colors.css";
+import { buttonStyle, ButtonVariants } from "./style.css";
 
-interface Props
-  extends React.DetailedHTMLProps<
-    React.ButtonHTMLAttributes<HTMLButtonElement>,
-    HTMLButtonElement
-  > {}
+type ButtonProps = {
+  onClick: () => void;
+  children: React.ReactNode;
+  variant?: ButtonVariants;
+};
 
-const Button = (props: Props) => {
+const Button: React.FC<ButtonProps> = ({ children, variant, ...props }) => {
   return (
     <div className={lightTheme}>
-      <button className={buttonStyle} {...props} />
+      <button className={buttonStyle(variant)} {...props}>
+        {children}
+      </button>
     </div>
   );
 };

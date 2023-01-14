@@ -4,47 +4,35 @@ import {
   createThemeContract,
   createTheme,
   createGlobalTheme,
+  createVar,
+  style,
 } from "@vanilla-extract/css";
 import figmaTokens from "../../tokens/theme.json";
-
-// TODO: properties that aren't working
-// fontWeights: figmaTokens.fontWeights,
-// paragraphSpacing;
-
-// TODO: typography should be sprinkles
-// boxShadow;
-
-const root = createGlobalTheme(":root", {
-  radii: figmaTokens.borderRadius,
-  borderWidth: figmaTokens.borderWidth,
-  opacity: figmaTokens.opacity,
-  fontFamilies: figmaTokens.fontFamilies,
-  lineHeights: figmaTokens.lineHeights,
-  letterSpacings: figmaTokens.letterSpacing,
-  fontSizes: figmaTokens.fontSizes,
-  spacing: figmaTokens.spacing,
-});
 
 const defaultColors = flattenKeys(figmaTokens.colors);
 const lightColors = flattenKeys(figmaTokens.light);
 const darkColors = flattenKeys(figmaTokens.dark);
+const baseColors = flattenKeys(figmaTokens.base);
 
-// type colors so I can access theme with syntax like "obj.keys"
-// e.g. { colors: { red: { 1: "#fff" } } } => colors.red.1
-
-const colors = createThemeContract({
+const theme = createThemeContract({
   ...defaultColors,
+  ...baseColors,
 });
 
-export const lightTheme = createTheme(colors, {
+export const lightTheme = createTheme(theme, {
   ...lightColors,
+  ...baseColors,
 });
 
-export const darkTheme = createTheme(colors, {
+export const darkTheme = createTheme(theme, {
   ...darkColors,
+  ...baseColors,
 });
 
-export const vars = { ...root, colors };
+export const colors = {
+  // ...root,
+  ...theme,
+};
 
 // a function that takes an object and flattens its keys into a string with custom seperator
 // e.g. { colors: { red: { 1: "#fff" } } } => "colors-red-1"

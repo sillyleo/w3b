@@ -33,6 +33,7 @@
     "ship": "vite build && pnpm version patch && pnpm publish --access public"
   },
   "dependencies": {
+    "@stitches/react": "^1.2.8",
     "@vanilla-extract/css": "^1.9.2",
     "lodash": "^4.17.21",
     "react": "^18.2.0",
