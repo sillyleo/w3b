@@ -1,38 +1,56 @@
-import { styled } from '@macaron-css/react'
-import { colors } from '../theme';
+import { styled } from "@macaron-css/react";
+import { theme } from "../theme";
+import figmaTokens from "../../tokens/theme.json";
 
-const Button = styled('button', {
+// use figmaTokens.colors to generate an array of objects
+// eg. figmaTokens.colors.blue => { blue: { color: theme.colors.blue[6] } }
 
+// colorVariants is a keyof theme.colors
+
+interface ColorVariants {
+  [key: string]: {
+    backgroundColor: string;
+  };
+}
+
+export const colorVariants: ColorVariants = Object.keys(theme.colors).reduce(
+  (acc, color) => {
+    return {
+      ...acc,
+      [color]: {
+        backgroundColor: theme.colors[color][6],
+      },
+    };
+  },
+  {}
+);
+
+console.log(colorVariants);
+
+const Button = styled("button", {
   base: {
-    backgroundColor: colors.orange["9"],
-    borderRadius: '9999px',
-    fontSize: '13px',
-    padding: '10px 15px',
-    ':hover': {
-      backgroundColor: 'lightgray',
+    // backgroundColor: theme.colors.amber[10],
+    borderRadius: theme.radii["xl"],
+    opacity: theme.opacity[100],
+    fontSize: theme.fontSize["4xl"],
+    letterSpacing: theme.letterSpacing.tight,
+    lineHeight: theme.lineHeight.heading,
+    padding: theme.spacing[8],
+    ":hover": {
+      backgroundColor: "lightgray",
     },
   },
   variants: {
-    color: {
-      violet: {
-        // backgroundColor: colors.tomato["6"],
-        color: 'white',
-        ':hover': {
-          backgroundColor: 'blue',
-        },
-      },
-      gray: {
-        // backgroundColor: colors.colors.slate["6"],
-        ':hover': {
-          backgroundColor: 'lightgray',
-        },
+    color: colorVariants,
+    colorScheme: {
+      red: {
+        color: "red",
       },
     },
   },
   defaultVariants: {
-    color: 'violet',
+    color: "grass",
   },
-
 });
 
 export default Button;

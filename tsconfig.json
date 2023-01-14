@@ -6,7 +6,8 @@
     "moduleResolution": "Node",
     "lib": ["ES2015"],
     "paths": {
-      "w3b": ["./src"]
+      "w3b": ["./src"],
+      "tokens": ["./src/tokens"]
     },
     "esModuleInterop": true,
     "resolveJsonModule": true,
