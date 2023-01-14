@@ -1,5 +1,5 @@
 import { createStitches } from "@stitches/react";
-import figmaTokens from "./tokens/theme.json";
+import figmaTokens from "../tokens/theme.json";
 
 // a function that takes an object and flattens its keys into a string with custom seperator
 // e.g. { colors: { red: { 1: "#fff" } } } => "colors-red-1"

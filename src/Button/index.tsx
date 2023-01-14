@@ -1,21 +1,38 @@
-import React from "react";
-import { colors, darkTheme, lightTheme } from "../../src/styles/colors.css";
-import { buttonStyle, ButtonVariants } from "./style.css";
+import { styled } from '@macaron-css/react'
+import { colorTheme } from '../theme';
 
-type ButtonProps = {
-  onClick?: () => void;
-  children: React.ReactNode;
-  variant?: ButtonVariants;
-};
+const Button = styled('button', {
 
-const Button: React.FC<ButtonProps> = ({ children, variant, ...props }) => {
-  return (
-    <div className={lightTheme}>
-      <button className={buttonStyle(variant)} {...props}>
-        {children}
-      </button>
-    </div>
-  );
-};
+  base: {
+    backgroundColor: colorTheme.color.brand,
+    borderRadius: '9999px',
+    fontSize: '13px',
+    padding: '10px 15px',
+    ':hover': {
+      backgroundColor: 'lightgray',
+    },
+  },
+  variants: {
+    color: {
+      violet: {
+        backgroundColor: 'blueviolet',
+        color: 'white',
+        ':hover': {
+          backgroundColor: 'darkviolet',
+        },
+      },
+      gray: {
+        backgroundColor: colorTheme.color.tomato['1'],
+        ':hover': {
+          backgroundColor: 'lightgray',
+        },
+      },
+    },
+  },
+  defaultVariants: {
+    color: 'gray',
+  },
+
+});
 
 export default Button;

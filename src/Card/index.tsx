@@ -1,4 +1,4 @@
-import { styled } from "../../stitches.config";
+import { styled } from "../stitches.config";
 
 const Card = styled("div", {
   $$custom: "$colors$accent9",
@@ -8,10 +8,5 @@ const Card = styled("div", {
   fontSize: "13px",
   padding: "10px 15px",
 });
-// const Card = ({ className, ...props }: Props) => {
-//   return (
-//     <div {...props} className={[s.card, className].filter(Boolean).join(" ")} />
-//   );
-// };
 
 export default Card;
