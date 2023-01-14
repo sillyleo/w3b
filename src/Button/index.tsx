@@ -1,9 +1,9 @@
 import React from "react";
-import { colors, lightTheme } from "../../src/styles/colors.css";
+import { colors, darkTheme, lightTheme } from "../../src/styles/colors.css";
 import { buttonStyle, ButtonVariants } from "./style.css";
 
 type ButtonProps = {
-  onClick: () => void;
+  onClick?: () => void;
   children: React.ReactNode;
   variant?: ButtonVariants;
 };

@@ -11,11 +11,11 @@ export const buttonStyle = recipe({
     color: {
       tomato: sprinkles({
         background: "tomato9",
-        color: "white",
+        color: "tomato12",
       }),
       grass: sprinkles({
         background: "grass9",
-        color: "white",
+        color: "grass12",
       }),
     },
   },
