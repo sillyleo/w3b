@@ -4,10 +4,15 @@
  */
 
 import React from "react";
+import { darkTheme } from "../../../stitches.config";
 import { Card } from "w3b";
 
 const Demo1 = () => {
-  return <Card>demo1</Card>;
+  return (
+    <div>
+      <Card>demo1</Card>
+    </div>
+  );
 };
 
 export default Demo1;
