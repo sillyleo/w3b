@@ -36,19 +36,6 @@ export const {
     colors: {
       ...baseColors,
       ...lightColors,
-
-      accent1: "$blue1",
-      accent2: "$blue2",
-      accent3: "$blue3",
-      accent4: "$blue4",
-      accent5: "$blue5",
-      accent6: "$blue6",
-      accent7: "$blue7",
-      accent8: "$blue8",
-      accent9: "$blue9",
-      accent10: "$blue10",
-      accent11: "$blue11",
-      accent12: "$blue12",
     },
     space: {
       1: "5px",
@@ -128,3 +115,46 @@ export const darkTheme = createTheme({
 export const globalStyles = globalCss({
   "*": { margin: 0, boxSizing: "border-box" },
 });
+
+const allColors = Object.keys(figmaTokens.colors);
+
+// take allColors and generate an array of objects and stringify it
+// eg. allColors.blue => { blue: { background: "$blue6" } }
+
+export const colorVariantsData = allColors.reduce((acc: any, color: any) => {
+  acc[color] = { background: `$${color}6` };
+  return acc;
+}, {});
+
+export const colorVariants = JSON.stringify(colorVariantsData);
+
+export const colorVariantsStatic = {
+  tomato: { background: "$tomato6" },
+  red: { background: "$red6" },
+  crimson: { background: "$crimson6" },
+  pink: { background: "$pink6" },
+  plum: { background: "$plum6" },
+  purple: { background: "$purple6" },
+  violet: { background: "$violet6" },
+  indigo: { background: "$indigo6" },
+  blue: { background: "$blue6" },
+  cyan: { background: "$cyan6" },
+  teal: { background: "$teal6" },
+  green: { background: "$green6" },
+  grass: { background: "$grass6" },
+  brown: { background: "$brown6" },
+  orange: { background: "$orange6" },
+  sky: { background: "$sky6" },
+  mint: { background: "$mint6" },
+  lime: { background: "$lime6" },
+  yellow: { background: "$yellow6" },
+  amber: { background: "$amber6" },
+  gold: { background: "$gold6" },
+  bronze: { background: "$bronze6" },
+  gray: { background: "$gray6" },
+  mauve: { background: "$mauve6" },
+  slate: { background: "$slate6" },
+  sage: { background: "$sage6" },
+  olive: { background: "$olive6" },
+  sand: { background: "$sand6" },
+};

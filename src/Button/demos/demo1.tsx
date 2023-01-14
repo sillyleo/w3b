@@ -9,7 +9,7 @@ import { Button } from "w3b";
 const Demo1 = () => {
   return (
     <div>
-      <Button color="slate">Click me!</Button>
+      <Button color="amber">Click me!</Button>
     </div>
   );
 };

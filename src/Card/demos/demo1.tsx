@@ -9,7 +9,7 @@ import { Card } from "w3b";
 const Demo1 = () => {
   return (
     <div>
-      <Card>demo1</Card>
+      <Card color="purple">card demo</Card>
     </div>
   );
 };
