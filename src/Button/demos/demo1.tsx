@@ -4,13 +4,13 @@
  */
 
 import React from "react";
-import { darkTheme } from "../../stitches.config";
 import { Button } from "w3b";
+import { darkTheme, lightTheme } from '../../theme';
 
 const Demo1 = () => {
   return (
-    <div>
-      <Button color="gray">Click me!</Button>
+    <div className={darkTheme}>
+      <Button >Click me!</Button>
     </div>
   );
 };

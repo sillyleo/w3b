@@ -1,10 +1,10 @@
 import { styled } from '@macaron-css/react'
-import { colorTheme } from '../theme';
+import { colors } from '../theme';
 
 const Button = styled('button', {
 
   base: {
-    backgroundColor: colorTheme.color.brand,
+    backgroundColor: colors.orange["9"],
     borderRadius: '9999px',
     fontSize: '13px',
     padding: '10px 15px',
@@ -15,14 +15,14 @@ const Button = styled('button', {
   variants: {
     color: {
       violet: {
-        backgroundColor: 'blueviolet',
+        // backgroundColor: colors.tomato["6"],
         color: 'white',
         ':hover': {
-          backgroundColor: 'darkviolet',
+          backgroundColor: 'blue',
         },
       },
       gray: {
-        backgroundColor: colorTheme.color.tomato['1'],
+        // backgroundColor: colors.colors.slate["6"],
         ':hover': {
           backgroundColor: 'lightgray',
         },
@@ -30,7 +30,7 @@ const Button = styled('button', {
     },
   },
   defaultVariants: {
-    color: 'gray',
+    color: 'violet',
   },
 
 });
