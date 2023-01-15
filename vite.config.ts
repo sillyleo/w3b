@@ -4,7 +4,7 @@
 import { resolve } from "path";
 import { defineConfig } from "vite";
 import typescript from "@rollup/plugin-typescript";
-import { macaronVitePlugin } from '@macaron-css/vite';
+import { macaronVitePlugin } from "@macaron-css/vite";
 
 // import cssInjectedByJsPlugin from "vite-plugin-css-injected-by-js";
 
@@ -43,6 +43,8 @@ export default defineConfig({
       noForceEmit: true,
       declarationDir: resolve(__dirname, "dist/types"),
       rootDir: resolve(__dirname, "src"),
+      strictNullChecks: true,
+      strict: true,
     }),
     // use @rollup/plugin-typescript to generate .d.ts files
     // https://github.com/rollup/plugins/tree/master/packages/typescript#noforceemit

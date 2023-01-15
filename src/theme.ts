@@ -1,14 +1,19 @@
-import { createGlobalTheme, createTheme } from "@macaron-css/core";
+import {
+  createGlobalTheme,
+  createGlobalThemeContract,
+  createTheme,
+  createThemeContract,
+} from "@macaron-css/core";
 import figmaTokens from "./theme.json";
 import { macaron$ } from "@macaron-css/core";
 
 // turn figmaTokens.colors into an array of objects
 
-const defaultColors = flattenKeys(figmaTokens.colors);
+const defaultColors = macaron$(() => flattenKeys(figmaTokens.colors));
 const lightColors = flattenKeys(figmaTokens.light);
 const darkColors = flattenKeys(figmaTokens.dark);
 const baseColors = flattenKeys(figmaTokens.base);
-
+// console.log(defaultColors);
 const commonTokens = {
   radii: figmaTokens.borderRadius,
   borderWidth: figmaTokens.borderWidth,
@@ -33,22 +38,6 @@ const commonTokens = {
   // ...figmaTokens.typography,
   // ...figmaTokens.boxShadow,
 };
-
-export const theme = createGlobalTheme(":root", {
-  colors: {
-    ...figmaTokens.colors,
-    // ...figmaTokens.base,
-  },
-  ...commonTokens,
-});
-
-export const darkTheme = createTheme(theme, {
-  colors: {
-    ...figmaTokens.dark,
-    // ...figmaTokens.base,
-  },
-  ...commonTokens,
-});
 
 // a function that takes an object and flattens its keys into a string with custom seperator
 // e.g. { colors: { red: { 1: "#fff" } } } => "colors-red-1"
@@ -78,3 +67,24 @@ function convertNestedObject(obj: any) {
   });
   return newObj;
 }
+
+const root = createGlobalTheme(":root", {
+  ...commonTokens,
+});
+
+const colors = createThemeContract({
+  ...baseColors,
+  ...defaultColors,
+});
+
+export const lightTheme = createTheme(colors, {
+  ...baseColors,
+  ...lightColors,
+});
+
+export const darkTheme = createTheme(colors, {
+  ...baseColors,
+  ...darkColors,
+});
+
+export const theme = { colors, ...root };
