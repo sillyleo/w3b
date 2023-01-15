@@ -1,5 +1,5 @@
 /**
- * @title Card Demo1 Title
+ * @title Macaron Card Demo1 Title
  * @description Card demo1 description
  */
 
@@ -9,7 +9,10 @@ import { Button } from "w3b";
 const Demo1 = () => {
   return (
     <div>
-      <Button color="amber">Click me!</Button>
+      <Button color="orange">Macaron</Button>
+      <Button color="sky">Macaron</Button>
+      <Button color="yellow">Macaron</Button>
+      <Button>Click me!</Button>
     </div>
   );
 };

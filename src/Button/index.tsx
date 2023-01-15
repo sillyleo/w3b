@@ -1,35 +1,24 @@
 import { styled } from "@macaron-css/react";
 import { theme } from "../theme";
 import figmaTokens from "../../tokens/theme.json";
+import { createVar, fallbackVar, macaron$, style } from "@macaron-css/core";
 
-// use figmaTokens.colors to generate an array of objects
-// eg. figmaTokens.colors.blue => { blue: { color: theme.colors.blue[6] } }
+// convert colorsArray into an object
+// eg. { "red", "pink"} => red: { "backgroundColor": "red" }
 
-// colorVariants is a keyof theme.colors
-
-interface ColorVariants {
-  [key: string]: {
-    backgroundColor: string;
+const colorVariants = Object.keys(theme.colors).reduce((acc, color) => {
+  const value = theme.colors[color][6];
+  acc[color] = {
+    backgroundColor: value,
   };
-}
 
-export const colorVariants: ColorVariants = Object.keys(theme.colors).reduce(
-  (acc, color) => {
-    return {
-      ...acc,
-      [color]: {
-        backgroundColor: theme.colors[color][6],
-      },
-    };
-  },
-  {}
-);
+  return acc;
+}, {});
 
 console.log(colorVariants);
 
 const Button = styled("button", {
   base: {
-    // backgroundColor: theme.colors.amber[10],
     borderRadius: theme.radii["xl"],
     opacity: theme.opacity[100],
     fontSize: theme.fontSize["4xl"],
@@ -41,15 +30,12 @@ const Button = styled("button", {
     },
   },
   variants: {
-    color: colorVariants,
-    colorScheme: {
-      red: {
-        color: "red",
-      },
+    color: {
+      ...colorVariants,
     },
   },
   defaultVariants: {
-    color: "grass",
+    color: "sky",
   },
 });
 

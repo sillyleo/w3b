@@ -1,5 +1,8 @@
 import { createGlobalTheme, createTheme } from "@macaron-css/core";
 import figmaTokens from "../tokens/theme.json";
+import { macaron$ } from "@macaron-css/core";
+
+// turn figmaTokens.colors into an array of objects
 
 const defaultColors = flattenKeys(figmaTokens.colors);
 const lightColors = flattenKeys(figmaTokens.light);
@@ -13,6 +16,12 @@ const commonTokens = {
   fontFamiliy: figmaTokens.fontFamilies,
   fontSize: figmaTokens.fontSizes,
   lineHeight: figmaTokens.lineHeights,
+  fontWeight: {
+    bold: "bold",
+    medium: "semibold",
+    regular: "regular",
+  },
+
   letterSpacing: {
     tight: "-0.05em",
   },
@@ -27,8 +36,8 @@ const commonTokens = {
 
 export const theme = createGlobalTheme(":root", {
   colors: {
-    ...figmaTokens.light,
-    ...figmaTokens.base,
+    ...figmaTokens.colors,
+    // ...figmaTokens.base,
   },
   ...commonTokens,
 });
@@ -36,7 +45,7 @@ export const theme = createGlobalTheme(":root", {
 export const darkTheme = createTheme(theme, {
   colors: {
     ...figmaTokens.dark,
-    ...figmaTokens.base,
+    // ...figmaTokens.base,
   },
   ...commonTokens,
 });
