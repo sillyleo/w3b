@@ -14,8 +14,6 @@ const colorVariants = colorsArray.reduce((acc, color) => {
   return acc;
 }, {});
 
-console.log(colorVariants);
-
 // Method 2
 
 // const COLOR_PATTERN = "$––color––";
