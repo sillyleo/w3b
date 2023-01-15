@@ -1,14 +1,20 @@
 /**
- * @title Button Demo1 Title
- * @description Button demo1 description
- * @order 1
+ * @title Macaron Card Demo1 Title
+ * @description Card demo1 description
  */
 
 import React from "react";
 import { Button } from "w3b";
 
 const Demo1 = () => {
-  return <Button>demo1</Button>;
+  return (
+    <div>
+      <Button color="bronze">Macaron</Button>
+      <Button color="sky">Macaron</Button>
+      <Button color="sage">Macaron</Button>
+      <Button>Click me!</Button>
+    </div>
+  );
 };
 
 export default Demo1;

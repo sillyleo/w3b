@@ -7,7 +7,12 @@ import React from "react";
 import { Card } from "w3b";
 
 const Demo1 = () => {
-  return <Card>demo1</Card>;
+  return (
+    <div>
+      <Card>stitches card demo</Card>
+      <Card tone="gold">stitches card demo</Card>
+    </div>
+  );
 };
 
 export default Demo1;

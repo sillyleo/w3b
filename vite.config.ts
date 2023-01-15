@@ -4,8 +4,9 @@
 import { resolve } from "path";
 import { defineConfig } from "vite";
 import typescript from "@rollup/plugin-typescript";
-import { vanillaExtractPlugin } from "@vanilla-extract/vite-plugin";
-import cssInjectedByJsPlugin from "vite-plugin-css-injected-by-js";
+import { macaronVitePlugin } from '@macaron-css/vite';
+
+// import cssInjectedByJsPlugin from "vite-plugin-css-injected-by-js";
 
 export default defineConfig({
   build: {
@@ -31,8 +32,10 @@ export default defineConfig({
     },
   },
   plugins: [
-    vanillaExtractPlugin(), // basic vanilla-extract setup
-    cssInjectedByJsPlugin({ topExecutionPriority: true }), // inject css so lib can be import easily. However this caused SSR flash issues.
+    macaronVitePlugin(), // basic vanilla-extract setup
+
+    // If getEnabled, the CSS will be injected
+    // cssInjectedByJsPlugin({ topExecutionPriority: true }), // inject css so lib can be import easily. However this caused SSR flash issues.
 
     typescript({
       declaration: true,
