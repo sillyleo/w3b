@@ -1,4 +1,4 @@
-import figmaTokens from "../../tokens/theme.json";
+import figmaTokens from "../theme.json";
 import { styled, theme } from "../stitches.config";
 import type * as Stitches from "@stitches/react";
 

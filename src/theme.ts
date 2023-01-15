@@ -1,5 +1,5 @@
 import { createGlobalTheme, createTheme } from "@macaron-css/core";
-import figmaTokens from "../tokens/theme.json";
+import figmaTokens from "./theme.json";
 import { macaron$ } from "@macaron-css/core";
 
 // turn figmaTokens.colors into an array of objects

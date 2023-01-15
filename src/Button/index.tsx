@@ -1,7 +1,5 @@
 import { styled } from "@macaron-css/react";
 import { theme } from "../theme";
-import figmaTokens from "../../tokens/theme.json";
-import { createVar, fallbackVar, macaron$, style } from "@macaron-css/core";
 
 // convert colorsArray into an object
 // eg. { "red", "pink"} => red: { "backgroundColor": "red" }
