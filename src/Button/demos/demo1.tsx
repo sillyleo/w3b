@@ -11,7 +11,7 @@ const Demo1 = () => {
     <div>
       <Button color="orange">Macaron</Button>
       <Button color="sky">Macaron</Button>
-      <Button color="yellow">Macaron</Button>
+      <Button color="sage">Macaron</Button>
       <Button>Click me!</Button>
     </div>
   );
