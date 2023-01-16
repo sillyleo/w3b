@@ -433,7 +433,8 @@
   },
   "lineHeights": {
     "heading": "110%",
-    "body": "140%"
+    "body": "140%",
+    "single": "100%"
   },
   "letterSpacing": {
     "default": "0%",
