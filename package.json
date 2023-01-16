@@ -18,7 +18,7 @@
       "require": "./dist/w3b.umd.cjs"
     }
   },
-  "./style.css": {
+  "./dist/style.css": {
     "import": "./dist/style.css"
   },
   "files": [
