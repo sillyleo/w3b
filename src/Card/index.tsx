@@ -50,9 +50,13 @@ const MotionDiv = motion("div");
 
 const Card = styled(MotionDiv, {
   borderRadius: "9999px",
-  color: "$white",
-  fontSize: "13px",
-  padding: "10px 15px",
+  color: "$black",
+  fontSize: "15px",
+  padding: "$space$8",
+  opacity: "$opacity$100",
+  fontFamily: "$heading",
+  fontWeight: "$extrabold",
+  lineHeight: "$heading",
   variants: {
     tone: {
       // all color keys from theme.colors

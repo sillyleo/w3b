@@ -46,19 +46,28 @@ export const {
       3: "15px",
     },
     fonts: {
-      untitled: "Untitled Sans, apple-system, sans-serif",
-      mono: "Söhne Mono, menlo, monospace",
+      ...figmaTokens.fontFamilies,
     },
-    fontWeights: {},
-    lineHeights: {},
+    fontWeights: {
+      ...figmaTokens.fontWeights,
+    },
+    lineHeights: {
+      ...figmaTokens.lineHeights,
+    },
     letterSpacings: {},
     sizes: {},
-    borderWidths: {},
+    borderWidths: {
+      ...figmaTokens.borderWidth,
+    },
     borderStyles: {},
     radii: {},
     shadows: {},
     zIndices: {},
     transitions: {},
+    // custom keys
+    opacity: {
+      ...figmaTokens.opacity,
+    },
   },
 
   media: {
