@@ -17,7 +17,7 @@
       "import": "./dist/w3b.js",
       "require": "./dist/w3b.umd.cjs"
     },
-    "./style": {
+    "./style.css": {
       "import": "./dist/style.css",
       "require": "./dist/style.css"
     }
