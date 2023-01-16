@@ -8,8 +8,9 @@ const Button = styled("button", {
   base: {
     borderRadius: theme.radii["xl"],
     opacity: theme.opacity[100],
+    fontWeight: theme.fontWeight.extrabold,
     fontSize: theme.fontSize["4xl"],
-    letterSpacing: theme.letterSpacing.tight,
+    letterSpacing: theme.letterSpacing.increased,
     lineHeight: theme.lineHeight.heading,
     padding: theme.spacing[8],
     ":hover": {
@@ -55,6 +56,4 @@ const Button = styled("button", {
   },
 });
 
-const MotionButton = motion(Button);
-
-export { Button, MotionButton };
+export { Button };

@@ -16,20 +16,12 @@ const commonTokens = {
   fontFamiliy: figmaTokens.fontFamilies,
   fontSize: figmaTokens.fontSizes,
   lineHeight: figmaTokens.lineHeights,
-  fontWeight: {
-    bold: "bold",
-    medium: "semibold",
-    regular: "regular",
-  },
-
-  letterSpacing: {
-    tight: "-0.05em",
-  },
+  fontWeight: figmaTokens.fontWeights,
+  letterSpacing: "-1px",
   paragraphSpacing: flattenKeys(figmaTokens.paragraphSpacing),
   spacing: figmaTokens.spacing,
   screens: figmaTokens.screens,
   // unsupported tokens
-  // ...figmaTokens.fontWeights,
   // ...figmaTokens.typography,
   // ...figmaTokens.boxShadow,
 };

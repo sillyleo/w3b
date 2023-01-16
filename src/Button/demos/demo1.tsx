@@ -5,17 +5,20 @@
 
 import { motion } from "framer-motion";
 import React from "react";
-import { Button, MotionButton } from "w3b";
+import { Button } from "w3b";
 
 const Demo1 = () => {
   return (
     <div>
-      <MotionButton color="blue" animate={{ scale: 1.4 }}>
-        oiasjd
-      </MotionButton>
       <Button
         // animate={{ scale: [1, 1.5, 1], transition: { repeat: Infinity } }}
-        color="crimson"
+        color="red"
+      >
+        Macaron
+      </Button>
+      <Button
+        animate={{ scale: [1, 1.5, 1], transition: { repeat: Infinity } }}
+        color="red"
       >
         Macaron
       </Button>
