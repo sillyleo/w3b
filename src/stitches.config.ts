@@ -41,9 +41,7 @@ export const {
       ...figmaTokens.spacing,
     },
     fontSizes: {
-      1: "12px",
-      2: "13px",
-      3: "15px",
+      ...figmaTokens.fontSizes,
     },
     fonts: {
       ...figmaTokens.fontFamilies,
@@ -54,7 +52,9 @@ export const {
     lineHeights: {
       ...figmaTokens.lineHeights,
     },
-    letterSpacings: {},
+    letterSpacings: {
+      ...figmaTokens.letterSpacing,
+    },
     sizes: {},
     borderWidths: {
       ...figmaTokens.borderWidth,
@@ -68,10 +68,17 @@ export const {
     opacity: {
       ...figmaTokens.opacity,
     },
+    paragraphSpacing: {
+      ...figmaTokens.paragraphSpacing,
+    },
   },
 
   media: {
-    bp1: "(min-width: 480px)",
+    sm: "(min-width: 640px)",
+    md: "(min-width: 768px)",
+    lg: "(min-width: 1024px)",
+    xl: "(min-width: 1280px)",
+    "2xl": "(min-width: 1536px)",
   },
   utils: {
     // Abbreviated margin properties
