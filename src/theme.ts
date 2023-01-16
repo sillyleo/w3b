@@ -34,6 +34,7 @@ const commonTokens = {
   // ...figmaTokens.boxShadow,
 };
 
+// this will generate a css file!?
 export const theme = createGlobalTheme(":root", {
   colors: {
     ...figmaTokens.colors,
