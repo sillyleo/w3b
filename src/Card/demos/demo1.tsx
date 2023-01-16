@@ -9,7 +9,9 @@ import { Card } from "w3b";
 const Demo1 = () => {
   return (
     <div>
-      <Card>stitches card demo</Card>
+      <Card animate={{ scale: [1, 1.5, 1], transition: { repeat: Infinity } }}>
+        stitches card demo
+      </Card>
       <Card tone="gold">stitches card demo</Card>
     </div>
   );

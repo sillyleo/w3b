@@ -1,10 +1,12 @@
 import { styled } from "@macaron-css/react";
 import { theme } from "../theme";
-
+import { motion } from "framer-motion";
 // convert colorsArray into an object
 // eg. { "red", "pink"} => red: { "backgroundColor": "red" }
 
-const Button = styled("button", {
+const MotionButton = motion("button");
+
+const Button = styled(MotionButton, {
   base: {
     borderRadius: theme.radii["xl"],
     opacity: theme.opacity[100],

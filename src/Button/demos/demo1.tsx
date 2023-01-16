@@ -9,7 +9,12 @@ import { Button } from "w3b";
 const Demo1 = () => {
   return (
     <div>
-      <Button color="bronze">Macaron</Button>
+      <Button
+        animate={{ scale: [1, 1.5, 1], transition: { repeat: Infinity } }}
+        color="bronze"
+      >
+        Macaron
+      </Button>
       <Button color="sky">Macaron</Button>
       <Button color="sage">Macaron</Button>
       <Button>Click me!</Button>
