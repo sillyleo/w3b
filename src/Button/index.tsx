@@ -4,9 +4,7 @@ import { motion } from "framer-motion";
 // convert colorsArray into an object
 // eg. { "red", "pink"} => red: { "backgroundColor": "red" }
 
-const MotionButton = motion("button");
-
-const Button = styled(MotionButton, {
+const Button = styled("button", {
   base: {
     borderRadius: theme.radii["xl"],
     opacity: theme.opacity[100],
@@ -57,4 +55,6 @@ const Button = styled(MotionButton, {
   },
 });
 
-export default Button;
+const MotionButton = motion(Button);
+
+export { Button, MotionButton };
