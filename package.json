@@ -16,10 +16,11 @@
     ".": {
       "import": "./dist/w3b.js",
       "require": "./dist/w3b.umd.cjs"
+    },
+    "./style": {
+      "import": "./dist/style.css",
+      "require": "./dist/style.css"
     }
-  },
-  "./dist/style.css": {
-    "import": "./dist/style.css"
   },
   "files": [
     "dist"
