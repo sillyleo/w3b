@@ -2,7 +2,7 @@ import { defineConfig } from "vite";
 import * as path from "path";
 import react from "@vitejs/plugin-react";
 import pages, { DefaultPageStrategy } from "vite-plugin-react-pages";
-import { macaronVitePlugin } from '@macaron-css/vite';
+import { macaronVitePlugin } from "@macaron-css/vite";
 
 export default defineConfig({
   plugins: [
@@ -69,7 +69,7 @@ export default defineConfig({
   ],
   resolve: {
     alias: {
-      w3b: path.join(__dirname, "../src"),
+      nomimono: path.join(__dirname, "../src"),
     },
   },
 });

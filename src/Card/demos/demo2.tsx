@@ -4,7 +4,7 @@
  */
 
 import React from "react";
-import { Card } from "w3b";
+import { Card } from "nomimono";
 
 const Demo2 = () => {
   return <Card>demo2</Card>;

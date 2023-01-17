@@ -1,21 +1,21 @@
 {
-  "name": "@sayaww/w3b",
+  "name": "@sayaww/nomimono",
   "private": false,
   "version": "0.0.41",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sillyleo/w3b.git"
+    "url": "git+https://github.com/sillyleo/nomimono.git"
   },
   "author": "Leo Lin",
   "license": "ISC",
   "type": "module",
-  "main": "./dist/w3b.umd.cjs",
-  "module": "./dist/w3b.js",
+  "main": "./dist/nomimono.umd.cjs",
+  "module": "./dist/nomimono.js",
   "types": "./dist/dist/types/index.d.ts",
   "exports": {
     ".": {
-      "import": "./dist/w3b.js",
-      "require": "./dist/w3b.umd.cjs"
+      "import": "./dist/nomimono.js",
+      "require": "./dist/nomimono.umd.cjs"
     },
     "./style.css": {
       "import": "./dist/style.css",
@@ -26,9 +26,9 @@
     "dist"
   ],
   "bugs": {
-    "url": "https://github.com/sillyleo/w3b/issues"
+    "url": "https://github.com/sillyleo/nomimono/issues"
   },
-  "homepage": "https://github.com/sillyleo/w3b#readme",
+  "homepage": "https://github.com/sillyleo/nomimono#readme",
   "scripts": {
     "dev": "SHOW_ALL_COMPONENT_DEMOS=true vite serve docs",
     "build-docs": "rimraf docs/dist && vite build docs",

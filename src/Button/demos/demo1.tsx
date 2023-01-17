@@ -5,7 +5,7 @@
 
 import { motion } from "framer-motion";
 import React from "react";
-import { Button } from "w3b";
+import { Button } from "nomimono";
 
 const Demo1 = () => {
   return (
