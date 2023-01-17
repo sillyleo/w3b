@@ -51,6 +51,8 @@ Edit `src/Button/demos/demo1.tsx` or other demo files, the demos will inflect yo
 
 `pnpm install @sayaww/w3b`
 
+`import "@sayaww/w3b/style.css"`
+
 In React:
 
 ```jsx
