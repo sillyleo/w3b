@@ -10,7 +10,7 @@
       "tokens": ["./src/tokens"]
     },
     "esModuleInterop": true,
-    "resolveJsonModule": true,
-    "strict": true
+    "resolveJsonModule": true
+    // "strict": true
   }
 }

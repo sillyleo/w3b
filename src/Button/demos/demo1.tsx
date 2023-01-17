@@ -5,7 +5,7 @@
 
 import { motion } from "framer-motion";
 import React from "react";
-import { Button } from "nomimono";
+import { Button } from "..";
 
 const Demo1 = () => {
   return (
@@ -17,7 +17,7 @@ const Demo1 = () => {
         Macaron
       </Button>
       <Button
-        animate={{ scale: [1, 1.5, 1], transition: { repeat: Infinity } }}
+        // animate={{ scale: [1, 1.5, 1], transition: { repeat: Infinity } }}
         color="red"
       >
         Macaron

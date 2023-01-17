@@ -4,7 +4,7 @@
  */
 
 import React from "react";
-import { Card } from "w3b";
+import Card from "..";
 
 const Demo1 = () => {
   return (

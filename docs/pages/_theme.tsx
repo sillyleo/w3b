@@ -4,7 +4,9 @@ import { createTheme, defaultSideNavs } from "vite-pages-theme-doc";
 import Component404 from "./404";
 
 export default createTheme({
-  logo: <div style={{ fontSize: "20px", fontFamily: "sans-serif" }}>w3b</div>,
+  logo: (
+    <div style={{ fontSize: "20px", fontFamily: "sans-serif" }}>nonimono</div>
+  ),
   topNavs: [
     {
       label: "Docs",

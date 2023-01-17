@@ -67,9 +67,10 @@ export default defineConfig({
       }),
     }),
   ],
-  resolve: {
-    alias: {
-      nomimono: path.join(__dirname, "../src"),
-    },
-  },
+  // resolve: {
+  //   alias: {
+  //     w3b: path.join(__dirname, "../../"),
+  //     nonimono: path.join(__dirname, "../../"),
+  //   },
+  // },
 });
