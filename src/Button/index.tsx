@@ -8,7 +8,7 @@ import React from "react";
 
 const MotionButton = motion("button");
 
-const BaseButton = styled(MotionButton, {
+const BaseButton = styled("button", {
   base: {
     backgroundColor: theme.colors.accent[8],
     fontWeight: theme.fontWeight.bold,
@@ -87,11 +87,7 @@ interface ToneProps {
 // extend Button props with ToneProps
 export type ButtonProps = ToneProps & React.ComponentProps<typeof BaseButton>;
 
-const Button = ({
-  tone = "accent",
-  intent = "primary",
-  ...props
-}: ButtonProps) => {
+const Button = (props: ButtonProps) => {
   function setClassName(variant: string, tone: string) {
     switch (variant) {
       case "primary":
@@ -107,7 +103,9 @@ const Button = ({
     }
   }
 
-  return <BaseButton className={setClassName(intent, tone)} {...props} />;
+  return (
+    <BaseButton className={setClassName(props.intent, props.tone)} {...props} />
+  );
 };
 
 export { Button };
