@@ -1,21 +1,16 @@
 {
   "compilerOptions": {
-    "target": "ESNext",
-    "allowJs": true,
-    "allowNonTsExtensions": true,
-    "experimentalDecorators": true,
+    "target": "ES2019",
+    "baseUrl": ".",
     "jsx": "react",
-    "reactNamespace": "React",
-    "module": "ESNext",
     "moduleResolution": "Node",
-    "sourceMap": true,
+    "lib": ["ES2015"],
     "paths": {
-      "~/*": [
-        "*"
-      ],
-      "@divriots/starter-sass/*": [
-        "*"
-      ]
-    }
+      "nomimono": ["./src"],
+      "tokens": ["./src/tokens"]
+    },
+    "esModuleInterop": true,
+    "resolveJsonModule": true
+    // "strict": true
   }
 }
