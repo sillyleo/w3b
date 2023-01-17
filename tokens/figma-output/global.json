@@ -135,6 +135,10 @@
     "body": {
       "value": "140%",
       "type": "lineHeights"
+    },
+    "single": {
+      "value": "100%",
+      "type": "lineHeights"
     }
   },
   "letterSpacing": {
@@ -319,23 +323,23 @@
   },
   "paragraphSpacing": {
     "xs": {
-      "value": "4",
+      "value": "{spacing.1}",
       "type": "paragraphSpacing"
     },
     "sm": {
-      "value": "8",
+      "value": "{spacing.2}",
       "type": "paragraphSpacing"
     },
     "md": {
-      "value": "16",
+      "value": "{spacing.4}",
       "type": "paragraphSpacing"
     },
     "lg": {
-      "value": "24",
+      "value": "{spacing.6}",
       "type": "paragraphSpacing"
     },
     "xl": {
-      "value": "32",
+      "value": "{spacing.8}",
       "type": "paragraphSpacing"
     }
   },

@@ -38,33 +38,47 @@ export const {
       ...lightColors,
     },
     space: {
-      1: "5px",
-      2: "10px",
-      3: "15px",
+      ...figmaTokens.spacing,
     },
     fontSizes: {
-      1: "12px",
-      2: "13px",
-      3: "15px",
+      ...figmaTokens.fontSizes,
     },
     fonts: {
-      untitled: "Untitled Sans, apple-system, sans-serif",
-      mono: "Söhne Mono, menlo, monospace",
+      ...figmaTokens.fontFamilies,
     },
-    fontWeights: {},
-    lineHeights: {},
-    letterSpacings: {},
+    fontWeights: {
+      ...figmaTokens.fontWeights,
+    },
+    lineHeights: {
+      ...figmaTokens.lineHeights,
+    },
+    letterSpacings: {
+      ...figmaTokens.letterSpacing,
+    },
     sizes: {},
-    borderWidths: {},
+    borderWidths: {
+      ...figmaTokens.borderWidth,
+    },
     borderStyles: {},
     radii: {},
     shadows: {},
     zIndices: {},
     transitions: {},
+    // custom keys
+    opacity: {
+      ...figmaTokens.opacity,
+    },
+    paragraphSpacing: {
+      ...figmaTokens.paragraphSpacing,
+    },
   },
 
   media: {
-    bp1: "(min-width: 480px)",
+    sm: "(min-width: 640px)",
+    md: "(min-width: 768px)",
+    lg: "(min-width: 1024px)",
+    xl: "(min-width: 1280px)",
+    "2xl": "(min-width: 1536px)",
   },
   utils: {
     // Abbreviated margin properties

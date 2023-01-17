@@ -1,4 +1,4 @@
-# w3b — a simple component library
+# nomimono — a simple component library
 
 - Bootstrapped with [`vite-plugin-react-pages`](https://github.com/vitejs/vite-plugin-react-pages)'s library starter
 
@@ -49,16 +49,18 @@ Edit `src/Button/demos/demo1.tsx` or other demo files, the demos will inflect yo
 
 # Usage
 
-`pnpm install @sayaww/w3b`
+`pnpm install @sayaww/nomimono`
+
+`import "@sayaww/nomimono/style.css"`
 
 In React:
 
 ```jsx
-import { Button, Card } from "@sayaww/w3b@0.0.25";
+import { Button, Card } from "@sayaww/nomimono@0.0.25";
 ```
 
 In Framer or Next.js 13 with `urlImport`:
 
 ```jsx
-import { Button, Card } from "https://esm.sh/@sayaww/w3b@0.0.25";
+import { Button, Card } from "https://esm.sh/@sayaww/nomimono@0.0.25";
 ```

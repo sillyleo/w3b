@@ -1,7 +1,7 @@
 import figmaTokens from "../theme.json";
 import { styled, theme } from "../stitches.config";
 import type * as Stitches from "@stitches/react";
-
+import { motion } from "framer-motion";
 // Method 1
 const colorsArray = Object.keys(figmaTokens.colors);
 
@@ -46,11 +46,17 @@ const colorVariants = colorsArray.reduce((acc, color) => {
 
 // console.log(colorVariants);
 
-const Card = styled("div", {
+const MotionDiv = motion("div");
+
+const Card = styled(MotionDiv, {
   borderRadius: "9999px",
-  color: "$white",
-  fontSize: "13px",
-  padding: "10px 15px",
+  color: "$black",
+  fontSize: "15px",
+  padding: "$space$8",
+  opacity: "$opacity$100",
+  fontFamily: "$heading",
+  fontWeight: "$extrabold",
+  lineHeight: "$heading",
   variants: {
     tone: {
       // all color keys from theme.colors

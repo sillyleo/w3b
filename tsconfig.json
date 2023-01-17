@@ -6,12 +6,11 @@
     "moduleResolution": "Node",
     "lib": ["ES2015"],
     "paths": {
-      "w3b": ["./src"],
+      "nomimono": ["./src"],
       "tokens": ["./src/tokens"]
     },
     "esModuleInterop": true,
-    "resolveJsonModule": true,
-    "strict": true,
-    "strictNullChecks": true
+    "resolveJsonModule": true
+    // "strict": true
   }
 }

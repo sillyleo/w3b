@@ -1,90 +1,66 @@
-import {
-  createGlobalTheme,
-  createGlobalThemeContract,
-  createTheme,
-  createThemeContract,
-} from "@macaron-css/core";
+import { createGlobalTheme, macaron$ } from "@macaron-css/core";
 import figmaTokens from "./theme.json";
-import { macaron$ } from "@macaron-css/core";
 
 // turn figmaTokens.colors into an array of objects
 
-const defaultColors = macaron$(() => flattenKeys(figmaTokens.colors));
-const lightColors = flattenKeys(figmaTokens.light);
-const darkColors = flattenKeys(figmaTokens.dark);
-const baseColors = flattenKeys(figmaTokens.base);
-// console.log(defaultColors);
-const commonTokens = {
+// Setting up accent
+// Change `figmaTokens.colors.blue` into other shades
+const accent = Object.keys(figmaTokens.colors.blue).reduce((acc, key) => {
+  acc[key] = figmaTokens.colors.blue[key];
+  return acc;
+}, {});
+
+const fontWeights: {
+  // temporarily supress error
+  [key: string]: string;
+} = Object.keys(figmaTokens.fontWeights).reduce((acc, key) => {
+  acc[key] = figmaTokens.fontWeights[key].toString();
+  return acc;
+}, {});
+
+// Unused. Use spacing instead
+const paragraphSpacing: {
+  // temporarily supress error
+  [key: string]: string;
+} = Object.keys(figmaTokens.paragraphSpacing).reduce((acc, key) => {
+  acc[key] = `${figmaTokens.paragraphSpacing[key]}px`;
+  return acc;
+}, {});
+
+// convert % in letterSpacing into px
+// eg -2% => -0.2rem
+const letterSpacing: {
+  // temporarily supress error
+  [key: string]: string;
+} = Object.keys(figmaTokens.letterSpacing).reduce((acc, key) => {
+  const value = figmaTokens.letterSpacing[key];
+  if (typeof value === "string" && value.endsWith("%")) {
+    const percent = parseFloat(value.slice(0, -1));
+    acc[key] = `${percent / 100}rem`;
+  } else {
+    acc[key] = value;
+  }
+  return acc;
+}, {});
+
+// console.log(letterSpacing);
+
+export const theme = createGlobalTheme(":root", {
+  colors: { ...figmaTokens.colors, ...figmaTokens.base, accent: accent },
   radii: figmaTokens.borderRadius,
   borderWidth: figmaTokens.borderWidth,
   opacity: figmaTokens.opacity,
   fontFamiliy: figmaTokens.fontFamilies,
   fontSize: figmaTokens.fontSizes,
   lineHeight: figmaTokens.lineHeights,
-  fontWeight: {
-    bold: "bold",
-    medium: "semibold",
-    regular: "regular",
-  },
-
-  letterSpacing: {
-    tight: "-0.05em",
-  },
-  paragraphSpacing: flattenKeys(figmaTokens.paragraphSpacing),
+  fontWeight: fontWeights,
+  paragraphSpacing: figmaTokens.paragraphSpacing,
+  letterSpacing: letterSpacing,
   spacing: figmaTokens.spacing,
   screens: figmaTokens.screens,
-  // unsupported tokens
-  // ...figmaTokens.fontWeights,
-  // ...figmaTokens.typography,
-  // ...figmaTokens.boxShadow,
-};
-
-// a function that takes an object and flattens its keys into a string with custom seperator
-// e.g. { colors: { red: { 1: "#fff" } } } => "colors-red-1"
-function flattenKeys(obj: any, sep = "", parentKey = "") {
-  return Object.keys(obj).reduce((acc, key) => {
-    const value = obj[key];
-    const newKey = parentKey ? parentKey + sep + key : key;
-    if (typeof value === "object") {
-      Object.assign(acc, flattenKeys(value, sep, newKey));
-    } else {
-      acc[newKey] = value;
-    }
-    return acc;
-  }, {});
-}
-
-// convert nested object so I can access theme with syntax like "obj.keys"
-// e.g. { colors: { red: { 1: "#fff" } } } => colors.red.1
-function convertNestedObject(obj: any) {
-  const newObj = {};
-  Object.keys(obj).forEach((key) => {
-    if (typeof obj[key] === "object") {
-      newObj[key] = convertNestedObject(obj[key]);
-    } else {
-      newObj[key] = obj[key];
-    }
-  });
-  return newObj;
-}
-
-const root = createGlobalTheme(":root", {
-  ...commonTokens,
 });
 
-const colors = createThemeContract({
-  ...baseColors,
-  ...defaultColors,
-});
-
-export const lightTheme = createTheme(colors, {
-  ...baseColors,
-  ...lightColors,
-});
-
-export const darkTheme = createTheme(colors, {
-  ...baseColors,
-  ...darkColors,
-});
-
-export const theme = { colors, ...root };
+// export const darkTheme = createTheme(theme, {
+//   // color: lightColors,
+//   // ...commonTokens
+// });

@@ -3,21 +3,11 @@ import * as path from "path";
 import react from "@vitejs/plugin-react";
 import pages, { DefaultPageStrategy } from "vite-plugin-react-pages";
 import { macaronVitePlugin } from "@macaron-css/vite";
-import typescript from "@rollup/plugin-typescript";
-import { resolve } from "path";
 
 export default defineConfig({
   plugins: [
     macaronVitePlugin(),
-    typescript({
-      declaration: true,
-      emitDeclarationOnly: true,
-      noForceEmit: true,
-      declarationDir: resolve(__dirname, "dist/types"),
-      rootDir: resolve(__dirname, "src"),
-      strictNullChecks: true,
-      strict: true,
-    }),
+
     react(),
     pages({
       pagesDir: path.join(__dirname, "pages"),
@@ -77,9 +67,10 @@ export default defineConfig({
       }),
     }),
   ],
-  resolve: {
-    alias: {
-      w3b: path.join(__dirname, "../src"),
-    },
-  },
+  // resolve: {
+  //   alias: {
+  //     w3b: path.join(__dirname, "../../"),
+  //     nonimono: path.join(__dirname, "../../"),
+  //   },
+  // },
 });
