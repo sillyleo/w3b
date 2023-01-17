@@ -2,7 +2,7 @@ import { styled } from "@macaron-css/react";
 import { theme } from "../theme";
 import { motion } from "framer-motion";
 
-console.log(theme.letterSpacing.default);
+console.log(theme.paragraphSpacing.lg);
 const Button = styled("button", {
   base: {
     backgroundColor: theme.colors.accent[8],
