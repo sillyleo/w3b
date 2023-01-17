@@ -37,6 +37,12 @@ export const theme = createGlobalTheme(":root", {
   fontFamiliy: figmaTokens.fontFamilies,
   fontSize: figmaTokens.fontSizes,
   lineHeight: figmaTokens.lineHeights,
+  fontWeight: {
+    normal: 400,
+    medium: 500,
+    bold: 700,
+    extrabold: 800,
+  },
   // fontWeight: figmaTokens.fontWeights,
   letterSpacing: "-1px",
   // paragraphSpacing: flattenKeys(figmaTokens.paragraphSpacing),
