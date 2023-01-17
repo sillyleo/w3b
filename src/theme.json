@@ -1488,7 +1488,10 @@
   },
   "base": {
     "white": "#fff",
-    "black": "#000"
+    "black": "#000",
+    "text": "#11181c",
+    "textSecondary": "#687076",
+    "textTertiary": "#7e868c"
   },
   "tokenSetOrder": {
     "0": "global",
