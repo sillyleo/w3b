@@ -1,9 +1,14 @@
 import { styled } from "@macaron-css/react";
-import { theme } from "../theme";
-import { motion } from "framer-motion";
 
-console.log(theme.paragraphSpacing.lg);
-const Button = styled("button", {
+import { styleVariants } from "@macaron-css/core";
+
+import { allTones, ButtonIntent, ColorKeys, theme } from "../theme";
+import { motion } from "framer-motion";
+import React from "react";
+
+const MotionButton = motion("button");
+
+const BaseButton = styled(MotionButton, {
   base: {
     backgroundColor: theme.colors.accent[8],
     fontWeight: theme.fontWeight.bold,
@@ -19,43 +24,90 @@ const Button = styled("button", {
       backgroundColor: "lightgray",
     },
   },
-  // variants: {
-  //   color: {
-  //     // all color keys from theme.colors
-  //     tomato: { backgroundColor: theme.colors.tomato[6] },
-  //     red: { backgroundColor: theme.colors.red[6] },
-  //     crimson: { backgroundColor: theme.colors.crimson[6] },
-  //     pink: { backgroundColor: theme.colors.pink[6] },
-  //     plum: { backgroundColor: theme.colors.plum[6] },
-  //     purple: { backgroundColor: theme.colors.purple[6] },
-  //     violet: { backgroundColor: theme.colors.violet[6] },
-  //     indigo: { backgroundColor: theme.colors.indigo[6] },
-  //     blue: { backgroundColor: theme.colors.blue[6] },
-  //     cyan: { backgroundColor: theme.colors.cyan[6] },
-  //     teal: { backgroundColor: theme.colors.teal[6] },
-  //     green: { backgroundColor: theme.colors.green[6] },
-  //     grass: { backgroundColor: theme.colors.grass[6] },
-  //     brown: { backgroundColor: theme.colors.brown[6] },
-  //     orange: { backgroundColor: theme.colors.orange[6] },
-  //     sky: { backgroundColor: theme.colors.sky[6] },
-  //     mint: { backgroundColor: theme.colors.mint[6] },
-  //     lime: { backgroundColor: theme.colors.lime[6] },
-  //     yellow: { backgroundColor: theme.colors.yellow[6] },
-  //     amber: { backgroundColor: theme.colors.amber[6] },
-  //     gold: { backgroundColor: theme.colors.gold[6] },
-  //     bronze: { backgroundColor: theme.colors.bronze[6] },
-  //     gray: { backgroundColor: theme.colors.gray[6] },
-  //     mauve: { backgroundColor: theme.colors.mauve[6] },
-  //     slate: { backgroundColor: theme.colors.slate[6] },
-  //     sage: { backgroundColor: theme.colors.sage[6] },
-  //     olive: { backgroundColor: theme.colors.olive[6] },
-  //     sand: { backgroundColor: theme.colors.sand[6] },
-  //   },
-  // },
+  variants: {
+    size: {
+      sm: {
+        padding: theme.spacing[2],
+      },
+      md: {
+        padding: theme.spacing[3],
+      },
+      lg: {
+        padding: theme.spacing[5],
+      },
+    },
+  },
 
-  // defaultVariants: {
-  //   color: "red",
-  // },
+  defaultVariants: {
+    size: "md",
+  },
 });
+
+// Different coloe pallete depending on ButtonVariant
+
+const primaryClass = styleVariants(allTones, (tone) => ({
+  backgroundColor: theme.colors[tone][9],
+  ":hover": {
+    backgroundColor: theme.colors[tone][10],
+  },
+  color: theme.colors.white,
+}));
+
+const secondaryClass = styleVariants(allTones, (tone) => ({
+  backgroundColor: theme.colors[tone][8],
+  ":hover": {
+    backgroundColor: theme.colors[tone][9],
+  },
+  color: theme.colors.white,
+}));
+
+const tertiaryClass = styleVariants(allTones, (tone) => ({
+  backgroundColor: theme.colors[tone][3],
+  ":hover": {
+    backgroundColor: theme.colors[tone][4],
+  },
+  color: theme.colors.black,
+}));
+
+const transparentClass = styleVariants(allTones, (tone) => ({
+  background: "transparent",
+  ":hover": {
+    backgroundColor: theme.colors[tone][2],
+  },
+  // border: "none",
+  color: theme.colors[tone][10],
+}));
+
+interface ToneProps {
+  tone?: ColorKeys;
+  intent?: ButtonIntent;
+  className?: string;
+}
+
+// extend Button props with ToneProps
+type ButtonProps = ToneProps & React.ComponentProps<typeof BaseButton>;
+
+const Button = ({
+  tone = "accent",
+  intent = "primary",
+  ...props
+}: ButtonProps) => {
+  function setClassName(variant: string, tone: string) {
+    switch (variant) {
+      case "primary":
+        return primaryClass[tone];
+      case "secondary":
+        return secondaryClass[tone];
+      case "tertiary":
+        return tertiaryClass[tone];
+      case "transparent":
+        return transparentClass[tone];
+      default:
+        return primaryClass[tone];
+    }
+  }
+
+  return <BaseButton className={setClassName(intent, tone)} {...props} />;
+};
 
 export { Button };
