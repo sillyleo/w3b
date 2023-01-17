@@ -3440,6 +3440,18 @@
     "black": {
       "value": "#000",
       "type": "color"
+    },
+    "text": {
+      "value": "{colors.slate.12}",
+      "type": "color"
+    },
+    "textSecondary": {
+      "value": "{colors.slate.11}",
+      "type": "color"
+    },
+    "textTertiary": {
+      "value": "{colors.slate.10}",
+      "type": "color"
     }
   }
 }
