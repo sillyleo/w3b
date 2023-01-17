@@ -85,7 +85,7 @@ interface ToneProps {
 }
 
 // extend Button props with ToneProps
-type ButtonProps = ToneProps & React.ComponentProps<typeof BaseButton>;
+export type ButtonProps = ToneProps & React.ComponentProps<typeof BaseButton>;
 
 const Button = ({
   tone = "accent",
