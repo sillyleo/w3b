@@ -6,7 +6,7 @@ import { allTones, ButtonIntent, ColorKeys, theme } from "../theme";
 import { motion } from "framer-motion";
 import React from "react";
 
-const MotionButton = motion("button");
+// const Button2 = motion("button");
 
 const BaseButton = styled("button", {
   base: {
@@ -43,6 +43,8 @@ const BaseButton = styled("button", {
   },
 });
 
+// const Button2 = () => <button>button2</button>;
+
 // Different coloe pallete depending on ButtonVariant
 
 export const primaryClass = styleVariants(allTones, (tone) => ({
@@ -78,16 +80,15 @@ export const transparentClass = styleVariants(allTones, (tone) => ({
   color: theme.colors[tone][10],
 }));
 
+export type Button2 = React.ComponentProps<typeof Button2>;
+
 export interface ToneProps {
   tone?: ColorKeys;
   intent?: ButtonIntent;
   className?: string;
 }
 
-// extend Button props with ToneProps
-export type ButtonProps = ToneProps & React.ComponentProps<typeof BaseButton>;
-
-const Button2 = (props: ButtonProps) => {
+const Button2 = (props) => {
   function setClassName(variant: string, tone: string) {
     switch (variant) {
       case "primary":
@@ -108,4 +109,8 @@ const Button2 = (props: ButtonProps) => {
   );
 };
 
-export { Button2 };
+// const Button2 = (props) => {
+//   return <BaseButton {...props} />;
+// };
+
+export default Button2;

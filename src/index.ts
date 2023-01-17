@@ -1,3 +1,3 @@
 export { default as Card } from "./Card";
-export { Button } from "./Button";
-export { Button2 } from "./Button2";
+export { default as Button } from "./Button";
+export { default as Button2 } from "./Button2";

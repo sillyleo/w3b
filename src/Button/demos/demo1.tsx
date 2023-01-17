@@ -5,7 +5,7 @@
 
 import { motion } from "framer-motion";
 import React from "react";
-import { Button } from "..";
+import Button from "..";
 
 const Demo1 = () => {
   return (
@@ -13,7 +13,7 @@ const Demo1 = () => {
       <Button
         size="lg"
         intent="primary"
-        animate={{ scale: [1, 1.5, 1], transition: { repeat: Infinity } }}
+        // animate={{ scale: [1, 1.5, 1], transition: { repeat: Infinity } }}
         tone="accent"
       >
         Macaron22

@@ -10,8 +10,11 @@ specifiers:
   '@types/node': ^18.11.18
   '@types/react': ^18.0.26
   '@types/react-dom': ^18.0.10
+  '@vanilla-extract/css': ^1.9.2
+  '@vanilla-extract/recipes': ^0.3.0
+  '@vanilla-extract/sprinkles': ^1.5.1
   '@vitejs/plugin-react': ^3.0.1
-  framer-motion: ^8.4.3
+  framer-motion: ^8.4.5
   lodash: ^4.17.21
   react: ^18.2.0
   react-dom: ^18.2.0
@@ -27,9 +30,9 @@ specifiers:
 
 dependencies:
   '@macaron-css/core': 1.0.0
-  '@macaron-css/react': 1.0.1_biqbaboplfbrettd7655fr4n2y
+  '@macaron-css/react': 1.0.1_d3wrxpqd3u2ndlc5viw4a7inii
   '@stitches/react': 1.2.8_react@18.2.0
-  framer-motion: 8.4.3_biqbaboplfbrettd7655fr4n2y
+  framer-motion: 8.4.5_biqbaboplfbrettd7655fr4n2y
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
   react-router-dom: 6.6.2_biqbaboplfbrettd7655fr4n2y
@@ -41,6 +44,9 @@ devDependencies:
   '@types/node': 18.11.18
   '@types/react': 18.0.26
   '@types/react-dom': 18.0.10
+  '@vanilla-extract/css': 1.9.2
+  '@vanilla-extract/recipes': 0.3.0_@vanilla-extract+css@1.9.2
+  '@vanilla-extract/sprinkles': 1.5.1_@vanilla-extract+css@1.9.2
   '@vitejs/plugin-react': 3.0.1_vite@4.0.4
   lodash: 4.17.21
   rimraf: 3.0.2
@@ -700,13 +706,14 @@ packages:
       - supports-color
     dev: true
 
-  /@macaron-css/react/1.0.1_biqbaboplfbrettd7655fr4n2y:
+  /@macaron-css/react/1.0.1_d3wrxpqd3u2ndlc5viw4a7inii:
     resolution: {integrity: sha512-Iai/lkQlH6l13/CY/oQO8RrR6nGK8Lv0YReqGNiyEGB5I2GAUoSSjoJDu2iR9RymvhOgZZqaRln4SanSO76MXA==}
     peerDependencies:
       '@vanilla-extract/recipes': ^0.2.5
       react: '>=17'
       react-dom: '>=17'
     dependencies:
+      '@vanilla-extract/recipes': 0.3.0_@vanilla-extract+css@1.9.2
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
     dev: false
@@ -732,7 +739,7 @@ packages:
       estree-util-is-identifier-name: 2.0.1
       estree-util-to-js: 1.1.0
       estree-walker: 3.0.2
-      hast-util-to-estree: 2.2.0
+      hast-util-to-estree: 2.2.1
       markdown-extensions: 1.1.1
       periscopic: 3.0.4
       remark-mdx: 2.2.1
@@ -955,7 +962,7 @@ packages:
     resolution: {integrity: sha512-RMSSvSfs9kb0VzkvQ2NWobwnj7TxCA9vI/IjR9bDHqgAyVbu2T0DN4wiKVqomyDWqO7dPr/tErSfq7urQ1Q37g==}
     dependencies:
       fast-glob: 3.2.12
-      minimatch: 5.1.4
+      minimatch: 5.1.5
       mkdirp: 1.0.4
       path-browserify: 1.0.1
     dev: true
@@ -1119,6 +1126,21 @@ packages:
     dependencies:
       '@vanilla-extract/css': 1.9.2
     dev: false
+
+  /@vanilla-extract/recipes/0.3.0_@vanilla-extract+css@1.9.2:
+    resolution: {integrity: sha512-7wXrgfq1oldKdBfCKen4XmSlDmQR+4o0CQ3WnnLfhQaEtI65xJ774yyQF6dD2CC+hHdW2LFKVXgH5NZRbMQ8Sg==}
+    peerDependencies:
+      '@vanilla-extract/css': ^1.0.0
+    dependencies:
+      '@vanilla-extract/css': 1.9.2
+
+  /@vanilla-extract/sprinkles/1.5.1_@vanilla-extract+css@1.9.2:
+    resolution: {integrity: sha512-xPYpeEZEC1mhiPqWCBPGdIHkpFaaQIbaAfG9W2JyIW0byqTP7CoaxdYNMPjhZuoV5lkTI14SJg8Bt+fZqmV5yQ==}
+    peerDependencies:
+      '@vanilla-extract/css': ^1.0.0
+    dependencies:
+      '@vanilla-extract/css': 1.9.2
+    dev: true
 
   /@vanilla-extract/vite-plugin/3.7.0_vite@4.0.4:
     resolution: {integrity: sha512-Sq54d1f+Bww09e9Q5acFsNKjlSYMQ4GewJthdb3CVwUeGVzV10rJBChw6zufs7ndmJVCzQ4I2IcNMy2OiAlkmA==}
@@ -2019,8 +2041,8 @@ packages:
     engines: {node: '>=0.4.x'}
     dev: true
 
-  /framer-motion/8.4.3_biqbaboplfbrettd7655fr4n2y:
-    resolution: {integrity: sha512-UMfJ8hEOlIObdJgI+U/VgaSSKY+W9/E0YtnFHPDsIE9rNPglaFZ+oycB0gj8ERuRBInGaIgNCFsil8iaJHZFgA==}
+  /framer-motion/8.4.5_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-308CJfCcDZcDxddqpA/kvG3NiD9lCLnST/ILKQ7s+8ecZTXaB0P+JphhyujZBuZ6ucJumz8GCqzvWvkpd/PMDQ==}
     peerDependencies:
       react: ^18.0.0
       react-dom: ^18.0.0
@@ -2154,8 +2176,8 @@ packages:
       '@types/hast': 2.3.4
     dev: true
 
-  /hast-util-to-estree/2.2.0:
-    resolution: {integrity: sha512-QFMTJsd3+lr0TKiObJ6PWwpWqFjD+T28dVSazcPAslHjHGMXxs5xFvjLbUf6e6O3/dfHb9iourepMlSh5x7lIA==}
+  /hast-util-to-estree/2.2.1:
+    resolution: {integrity: sha512-kiGD9WIW3gRKK8Gao3n1f+ahUeTMeJUJILnIT2QNrPigDNdH7rJxzhEbh81UajGeAdAHFecT1a+fLVOCTq9B4Q==}
     dependencies:
       '@types/estree': 1.0.0
       '@types/estree-jsx': 1.0.0
@@ -3114,8 +3136,8 @@ packages:
       brace-expansion: 1.1.11
     dev: true
 
-  /minimatch/5.1.4:
-    resolution: {integrity: sha512-U0iNYXt9wALljzfnGkhFSy5sAC6/SCR3JrHrlsdJz4kF8MvhTRQNiC59iUi1iqsitV7abrNAJWElVL9pdnoUgw==}
+  /minimatch/5.1.5:
+    resolution: {integrity: sha512-CI8wwdrll4ehjPAqs8TL8lBPyNnpZlQI02Wn8C1weNz/QbUbjh3OMxgMKSnvqfKFdLlks3EzHB9tO0BqGc3phQ==}
     engines: {node: '>=10'}
     dependencies:
       brace-expansion: 2.0.1
