@@ -45,7 +45,7 @@ const BaseButton = styled("button", {
 
 // Different coloe pallete depending on ButtonVariant
 
-const primaryClass = styleVariants(allTones, (tone) => ({
+export const primaryClass = styleVariants(allTones, (tone) => ({
   backgroundColor: theme.colors[tone][9],
   ":hover": {
     backgroundColor: theme.colors[tone][10],
@@ -53,7 +53,7 @@ const primaryClass = styleVariants(allTones, (tone) => ({
   color: theme.colors.white,
 }));
 
-const secondaryClass = styleVariants(allTones, (tone) => ({
+export const secondaryClass = styleVariants(allTones, (tone) => ({
   backgroundColor: theme.colors[tone][8],
   ":hover": {
     backgroundColor: theme.colors[tone][9],
@@ -61,7 +61,7 @@ const secondaryClass = styleVariants(allTones, (tone) => ({
   color: theme.colors.white,
 }));
 
-const tertiaryClass = styleVariants(allTones, (tone) => ({
+export const tertiaryClass = styleVariants(allTones, (tone) => ({
   backgroundColor: theme.colors[tone][3],
   ":hover": {
     backgroundColor: theme.colors[tone][4],
@@ -69,7 +69,7 @@ const tertiaryClass = styleVariants(allTones, (tone) => ({
   color: theme.colors.black,
 }));
 
-const transparentClass = styleVariants(allTones, (tone) => ({
+export const transparentClass = styleVariants(allTones, (tone) => ({
   background: "transparent",
   ":hover": {
     backgroundColor: theme.colors[tone][2],
