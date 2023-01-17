@@ -78,7 +78,7 @@ const transparentClass = styleVariants(allTones, (tone) => ({
   color: theme.colors[tone][10],
 }));
 
-interface ToneProps {
+export interface ToneProps {
   tone?: ColorKeys;
   intent?: ButtonIntent;
   className?: string;

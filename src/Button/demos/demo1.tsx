@@ -42,7 +42,9 @@ const Demo1 = () => {
       <Button tone="lime" size="md">
         oisjdfoijsaoidj
       </Button>
-      <Button size="lg">oisjdfoijsaoidj</Button>
+      <Button tone="tomato" size="lg">
+        oisjdfoijsaoidj
+      </Button>
       <Button>oisjdfoijsaoidj</Button>
       <Button>oisjdfoijsaoidj</Button>
       <Button intent="primary">tertiary</Button>
