@@ -1,18 +1,16 @@
 import { styled } from "@macaron-css/react";
 import { theme } from "../theme";
 import { motion } from "framer-motion";
-// convert colorsArray into an object
-// eg. { "red", "pink"} => red: { "backgroundColor": "red" }
 
-console.log(theme.colors.tomato[1]);
-
+console.log(theme.letterSpacing.default);
 const Button = styled("button", {
   base: {
     backgroundColor: theme.colors.accent[8],
-
+    fontWeight: theme.fontWeight.bold,
+    letterSpacing: theme.letterSpacing.decreased,
     // borderRadius: theme.radii["xl"],
     // opacity: theme.opacity[100],
-    // fontWeight: theme.fontWeight.extrabold,
+    // fontWeight: theme.fontWeight,
     // fontSize: theme.fontSize["4xl"],
     // letterSpacing: theme.letterSpacing.increased,
     // lineHeight: theme.lineHeight.heading,
