@@ -10,14 +10,7 @@ import Button from "..";
 const Demo1 = () => {
   return (
     <div>
-      <Button
-        size="lg"
-        intent="primary"
-        // animate={{ scale: [1, 1.5, 1], transition: { repeat: Infinity } }}
-        tone="accent"
-      >
-        Macaron22
-      </Button>
+      <Button size="lg">Macaron22</Button>
       <Button
         size="md"
         intent="secondary"
