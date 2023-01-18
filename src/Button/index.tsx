@@ -8,7 +8,7 @@ import React from "react";
 
 const MotionButton = motion("button");
 
-const BaseButton = styled("button", {
+const BaseButton = styled(MotionButton, {
   base: {
     backgroundColor: theme.colors.accent[8],
     fontWeight: theme.fontWeight.bold,
@@ -86,6 +86,8 @@ export interface ToneProps {
 
 // extend Button props with ToneProps
 export type ButtonProps = ToneProps & React.ComponentProps<typeof BaseButton>;
+
+// TODO: This will have type definition for local repo, but not for the published package
 
 const Button = (props: ButtonProps) => {
   function setClassName(variant: string, tone: string) {

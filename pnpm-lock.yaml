@@ -14,7 +14,7 @@ specifiers:
   '@vanilla-extract/recipes': ^0.3.0
   '@vanilla-extract/sprinkles': ^1.5.1
   '@vitejs/plugin-react': ^3.0.1
-  framer-motion: ^8.4.5
+  framer-motion: ^8.4.6
   lodash: ^4.17.21
   react: ^18.2.0
   react-dom: ^18.2.0
@@ -32,7 +32,7 @@ dependencies:
   '@macaron-css/core': 1.0.0
   '@macaron-css/react': 1.0.1_d3wrxpqd3u2ndlc5viw4a7inii
   '@stitches/react': 1.2.8_react@18.2.0
-  framer-motion: 8.4.5_biqbaboplfbrettd7655fr4n2y
+  framer-motion: 8.4.6_biqbaboplfbrettd7655fr4n2y
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
   react-router-dom: 6.6.2_biqbaboplfbrettd7655fr4n2y
@@ -2041,8 +2041,8 @@ packages:
     engines: {node: '>=0.4.x'}
     dev: true
 
-  /framer-motion/8.4.5_biqbaboplfbrettd7655fr4n2y:
-    resolution: {integrity: sha512-308CJfCcDZcDxddqpA/kvG3NiD9lCLnST/ILKQ7s+8ecZTXaB0P+JphhyujZBuZ6ucJumz8GCqzvWvkpd/PMDQ==}
+  /framer-motion/8.4.6_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-0GkpTQnhDysG5SiD2VbANtAs8yCXVQLasynVABDTZYI+Qcx1krWg+rfyveM8W78q7AX+8RTsiMz/LJ7YIRZvFw==}
     peerDependencies:
       react: ^18.0.0
       react-dom: ^18.0.0
