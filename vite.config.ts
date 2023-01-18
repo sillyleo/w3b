@@ -5,7 +5,7 @@ import { resolve } from "path";
 import { defineConfig } from "vite";
 import typescript from "@rollup/plugin-typescript";
 import { macaronVitePlugin } from "@macaron-css/vite";
-import dts from "vite-plugin-dts";
+// import dts from "vite-plugin-dts";
 // import dts from "vite-dts";
 
 // import cssInjectedByJsPlugin from "vite-plugin-css-injected-by-js";
@@ -16,9 +16,10 @@ export default defineConfig({
     // https://vitejs.dev/guide/build.html#library-mode
     lib: {
       entry: resolve(__dirname, "src/index.ts"),
-      name: "@sayaww/nomimono",
+      name: "nomimono",
       // the proper extensions will be added
       fileName: "nomimono",
+      // formats: ["es", "cjs", "umd", "iife"],
     },
     rollupOptions: {
       // make sure to externalize deps that shouldn't be bundled

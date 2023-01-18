@@ -104,7 +104,13 @@ export const transparentClass = styleVariants(allTones, (tone) => ({
 //   intent?: ButtonIntent;
 // }
 
-const Button = (props) => {
+interface ButtonProps extends React.ComponentProps<typeof BaseButton> {
+  tone?: ColorKeys;
+  intent?: ButtonIntent;
+  props: any;
+}
+
+const Button = (props: ButtonProps) => {
   function getVariant(variant: string, tone: string) {
     switch (variant) {
       case "primary":
