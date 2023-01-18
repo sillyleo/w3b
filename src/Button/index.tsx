@@ -98,13 +98,13 @@ export const transparentClass = styleVariants(allTones, (tone) => ({
 
 // // TODO: This will have type definition for local repo, but not for the published package
 
-// export interface ButtonProps extends React.ComponentProps<typeof BaseButton> {
+// export interface ButtonProps {
 //   className?: any;
 //   tone?: ColorKeys;
 //   intent?: ButtonIntent;
 // }
 
-const Button = ({ intent = "primary", tone = "accent", ...props }) => {
+const Button = (props) => {
   function getVariant(variant: string, tone: string) {
     switch (variant) {
       case "primary":
@@ -120,7 +120,12 @@ const Button = ({ intent = "primary", tone = "accent", ...props }) => {
     }
   }
 
-  return <BaseButton className={clsx(getVariant(intent, tone))} {...props} />;
+  return (
+    <BaseButton
+      className={clsx(getVariant(props.intent, props.tone))}
+      {...props}
+    />
+  );
 };
 
 export default Button;
