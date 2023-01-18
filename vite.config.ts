@@ -32,7 +32,7 @@ export default defineConfig({
     },
   },
   plugins: [
-    macaronVitePlugin(), // basic vanilla-extract setup
+    macaronVitePlugin(), // basic setup
 
     // If getEnabled, the CSS will be injected
     // cssInjectedByJsPlugin({ topExecutionPriority: true }), // inject css so lib can be import easily. However this caused SSR flash issues.
