@@ -3,7 +3,7 @@
 
 import { resolve } from "path";
 import { defineConfig } from "vite";
-import typescript from "@rollup/plugin-typescript";
+import typescript from "rollup-plugin-typescript2";
 import { macaronVitePlugin } from "@macaron-css/vite";
 
 // import cssInjectedByJsPlugin from "vite-plugin-css-injected-by-js";
