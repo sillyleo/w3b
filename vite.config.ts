@@ -3,9 +3,10 @@
 
 import { resolve } from "path";
 import { defineConfig } from "vite";
-import typescript from "rollup-plugin-typescript2";
+import typescript from "@rollup/plugin-typescript";
 import { macaronVitePlugin } from "@macaron-css/vite";
 import dts from "vite-plugin-dts";
+// import dts from "vite-dts";
 
 // import cssInjectedByJsPlugin from "vite-plugin-css-injected-by-js";
 
@@ -29,22 +30,25 @@ export default defineConfig({
         globals: {
           react: "React",
         },
+        // entryFileNames: `nomimono.[hash].mjs`,
+        // chunkFileNames: `nomimono.[hash].mjs`,
       },
     },
   },
   plugins: [
     macaronVitePlugin(), // basic setup
-    dts(),
+    // dts(),
+    // dts(),
     // If getEnabled, the CSS will be injected
     // cssInjectedByJsPlugin({ topExecutionPriority: true }), // inject css so lib can be import easily. However this caused SSR flash issues.
 
-    // typescript({
-    //   declaration: true,
-    //   emitDeclarationOnly: true,
-    //   noForceEmit: true,
-    //   declarationDir: resolve(__dirname, "dist/types"),
-    //   rootDir: resolve(__dirname, "src"),
-    // }),
+    typescript({
+      declaration: true,
+      emitDeclarationOnly: true,
+      noForceEmit: true,
+      declarationDir: resolve(__dirname, "dist/types"),
+      rootDir: resolve(__dirname, "src"),
+    }),
     // use @rollup/plugin-typescript to generate .d.ts files
     // https://github.com/rollup/plugins/tree/master/packages/typescript#noforceemit
   ],

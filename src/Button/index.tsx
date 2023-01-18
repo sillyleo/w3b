@@ -1,14 +1,23 @@
 import { styled } from "@macaron-css/react";
 
 import { styleVariants } from "@macaron-css/core";
-
+import clsx from "clsx";
 import { allTones, ButtonIntent, ColorKeys, theme } from "../theme";
 import { motion } from "framer-motion";
 import React from "react";
 
-const MotionButton = motion("button");
+// export interface ButtonProps {
+//   size?: string;
+//   children: React.ReactNode;
+// }
 
-const BaseButton = styled(MotionButton, {
+// const Button = ({ children, size = "medium", ...props }: ButtonProps) => {
+//   return <button {...props}>{children}</button>;
+// };
+
+// const MotionButton = motion("button");
+
+const BaseButton = styled("button", {
   base: {
     backgroundColor: theme.colors.accent[8],
     fontWeight: theme.fontWeight.bold,
@@ -43,7 +52,7 @@ const BaseButton = styled(MotionButton, {
   },
 });
 
-// Different coloe pallete depending on ButtonVariant
+// // Different coloe pallete depending on ButtonVariant
 
 export const primaryClass = styleVariants(allTones, (tone) => ({
   backgroundColor: theme.colors[tone][9],
@@ -78,19 +87,25 @@ export const transparentClass = styleVariants(allTones, (tone) => ({
   color: theme.colors[tone][10],
 }));
 
-export interface ToneProps {
-  tone?: ColorKeys;
-  intent?: ButtonIntent;
-  className?: string;
-}
+// export interface ToneProps {
+//   tone?: ColorKeys;
+//   intent?: ButtonIntent;
+//   className?: string;
+// }
 
-// extend Button props with ToneProps
-export type ButtonProps = ToneProps & React.ComponentProps<typeof BaseButton>;
+// // extend Button props with ToneProps
+// export type ButtonProps = ToneProps & React.ComponentProps<typeof BaseButton>;
 
-// TODO: This will have type definition for local repo, but not for the published package
+// // TODO: This will have type definition for local repo, but not for the published package
 
-const Button = (props: ButtonProps) => {
-  function setClassName(variant: string, tone: string) {
+// export interface ButtonProps extends React.ComponentProps<typeof BaseButton> {
+//   className?: any;
+//   tone?: ColorKeys;
+//   intent?: ButtonIntent;
+// }
+
+const Button = ({ intent = "primary", tone = "accent", ...props }) => {
+  function getVariant(variant: string, tone: string) {
     switch (variant) {
       case "primary":
         return primaryClass[tone];
@@ -105,9 +120,7 @@ const Button = (props: ButtonProps) => {
     }
   }
 
-  return (
-    <BaseButton className={setClassName(props.intent, props.tone)} {...props} />
-  );
+  return <BaseButton className={clsx(getVariant(intent, tone))} {...props} />;
 };
 
 export default Button;
