@@ -10,7 +10,9 @@ import Button from "..";
 const Demo1 = () => {
   return (
     <div>
-      <Button size="lg">Macaron22</Button>
+      <Button tone="blue" size="lg" intent="primary">
+        tone="blue" size="md" intent="primary"
+      </Button>
       <Button
         size="md"
         intent="secondary"
@@ -23,24 +25,30 @@ const Demo1 = () => {
       <Button intent="tertiary" size="sm" tone="accent">
         Macaron
       </Button>
-      <Button intent="transparent" tone="accent">
+      <Button intent="transparent" tone="accent" size={undefined}>
         Macaron
       </Button>
-      <Button tone={"blue"} intent={"transparent"}>
+      <Button tone={"blue"} intent={"transparent"} size={undefined}>
         Click me!
       </Button>
-      <Button tone="bronze" size="sm">
+      <Button tone="bronze" size="sm" intent={undefined}>
         oisjdfoijsaoidj
       </Button>
-      <Button tone="lime" size="md">
+      <Button tone="lime" size="md" intent={undefined}>
         oisjdfoijsaoidj
       </Button>
-      <Button tone="tomato" size="lg">
+      <Button tone="tomato" size="lg" intent={undefined}>
         oisjdfoijsaoidj
       </Button>
-      <Button>oisjdfoijsaoidj</Button>
-      <Button>oisjdfoijsaoidj</Button>
-      <Button intent="primary">tertiary</Button>
+      <Button tone={undefined} intent={undefined} size={undefined}>
+        oisjdfoijsaoidj
+      </Button>
+      <Button tone={undefined} intent={undefined} size={undefined}>
+        oisjdfoijsaoidj
+      </Button>
+      <Button intent="primary" tone={undefined} size={undefined}>
+        tertiary
+      </Button>
     </div>
   );
 };
