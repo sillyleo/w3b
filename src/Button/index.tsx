@@ -17,7 +17,7 @@ import React from "react";
 
 // const MotionButton = motion("button");
 
-const BaseButton = styled("button", {
+const Button = styled("button", {
   base: {
     backgroundColor: theme.colors.accent[8],
     fontWeight: theme.fontWeight.bold,
@@ -104,28 +104,28 @@ export const transparentClass = styleVariants(allTones, (tone) => ({
 //   intent?: ButtonIntent;
 // }
 
-interface ButtonProps extends React.ComponentProps<typeof BaseButton> {
-  tone?: ColorKeys;
-  intent?: ButtonIntent;
-}
+// interface ButtonProps extends React.ComponentProps<typeof BaseButton> {
+//   tone?: ColorKeys;
+//   intent?: ButtonIntent;
+// }
 
-const Button = ({ tone, intent, ...props }: ButtonProps) => {
-  function getVariant(variant: ButtonIntent, tone: ColorKeys) {
-    switch (variant) {
-      case "primary":
-        return primaryClass[tone];
-      case "secondary":
-        return secondaryClass[tone];
-      case "tertiary":
-        return tertiaryClass[tone];
-      case "transparent":
-        return transparentClass[tone];
-      default:
-        return primaryClass[tone];
-    }
-  }
+// const Button = ({ tone, intent, ...props }: ButtonProps) => {
+//   function getVariant(variant: ButtonIntent, tone: ColorKeys) {
+//     switch (variant) {
+//       case "primary":
+//         return primaryClass[tone];
+//       case "secondary":
+//         return secondaryClass[tone];
+//       case "tertiary":
+//         return tertiaryClass[tone];
+//       case "transparent":
+//         return transparentClass[tone];
+//       default:
+//         return primaryClass[tone];
+//     }
+//   }
 
-  return <BaseButton className={clsx(getVariant(intent, tone))} {...props} />;
-};
+//   return <BaseButton className={clsx(getVariant(intent, tone))} {...props} />;
+// };
 
 export default Button;
