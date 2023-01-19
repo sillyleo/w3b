@@ -31,7 +31,7 @@
   "homepage": "https://github.com/sillyleo/nomimono#readme",
   "scripts": {
     "token-type": "json-to-ts-cli src/theme.json > src/tokenType.d.ts",
-    "dev": "SHOW_ALL_COMPONENT_DEMOS=true vite serve docs",
+    "dev": "json-to-ts-cli src/theme.json > src/tokenType.d.ts && SHOW_ALL_COMPONENT_DEMOS=true vite serve docs",
     "build-docs": "rimraf docs/dist && vite build docs",
     "ssr-docs": "rimraf docs/dist && vite-pages ssr docs",
     "build-lib": "vite build",
