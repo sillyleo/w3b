@@ -1,7 +1,8 @@
 import { style, styleVariants } from "@macaron-css/core";
 import { cva, VariantProps } from "class-variance-authority";
 import React from "react";
-import { allTones, ColorTones, theme } from "../theme";
+import { allTones, Tone } from "src/constants";
+import { theme } from "../theme";
 
 // Base style
 
@@ -105,7 +106,7 @@ const buttonStyle = cva(baseClass, {
 export interface ButtonProp extends VariantProps<typeof buttonStyle> {
   children?: React.ReactNode;
   intent?: "primary" | "secondary" | "tertiary" | "transparent";
-  tone?: ColorTones;
+  tone?: Tone;
 }
 
 const Button = ({ size, intent, tone, ...props }: ButtonProp) => {

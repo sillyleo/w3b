@@ -1,17 +1,6 @@
 import { createGlobalTheme, macaron$ } from "@macaron-css/core";
 import figmaTokens from "./theme.json";
 
-// export keys of colors as string
-// eg. "blue" | "red" | "green"
-export type ColorTones = keyof typeof figmaTokens.colors;
-
-// export all colors as allTones from figmaTokens.colors
-// eg. {blue: "blue", red: "red", green: "green"}
-export const allTones = Object.keys(figmaTokens.colors).reduce((acc, key) => {
-  acc[key] = key;
-  return acc;
-}, {} as { [key: string]: string });
-
 // turn figmaTokens.colors into an array of objects
 
 const fontWeights: {
