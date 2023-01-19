@@ -1,15 +1,11 @@
-import { styled } from "@macaron-css/react";
-
 import { style, styleVariants } from "@macaron-css/core";
-import clsx from "clsx";
-import { allTones, ButtonIntent, ColorKeys, theme } from "../theme";
-import { motion } from "framer-motion";
+import { cva, VariantProps } from "class-variance-authority";
 import React from "react";
-import { cva } from "class-variance-authority";
+import { allTones, ColorTones, theme } from "../theme";
 
 // Base style
 
-const buttonStyle = style({
+const baseClass = style({
   backgroundColor: theme.colors.accent[8],
   fontWeight: theme.fontWeight.bold,
   letterSpacing: theme.letterSpacing.decreased,
@@ -25,7 +21,21 @@ const buttonStyle = style({
   },
 });
 
-//  Tones and intents
+// Sizes
+
+const sizeClass = styleVariants({
+  sm: {
+    padding: theme.spacing[2],
+  },
+  md: {
+    padding: theme.spacing[3],
+  },
+  lg: {
+    padding: theme.spacing[5],
+  },
+});
+
+//  Dynamic tones and intents
 
 const primaryClass = styleVariants(allTones, (tone) => ({
   backgroundColor: theme.colors[tone][9],
@@ -60,39 +70,54 @@ const transparentClass = styleVariants(allTones, (tone) => ({
   color: theme.colors[tone][10],
 }));
 
-// Sizes
+// Compose variants with class names
 
-const sizeVariants = styleVariants({
-  sm: {
-    padding: theme.spacing[2],
+function getVariant(intent, tone) {
+  switch (intent) {
+    case "primary":
+      return primaryClass[tone];
+    case "secondary":
+      return secondaryClass[tone];
+    case "tertiary":
+      return tertiaryClass[tone];
+    case "transparent":
+      return transparentClass[tone];
+    default:
+      return primaryClass[tone];
+  }
+}
+
+const buttonStyle = cva(baseClass, {
+  variants: {
+    size: {
+      sm: sizeClass.sm,
+      md: sizeClass.md,
+      lg: sizeClass.lg,
+    },
   },
-  md: {
-    padding: theme.spacing[3],
-  },
-  lg: {
-    padding: theme.spacing[5],
+  defaultVariants: {
+    size: "lg",
   },
 });
 
 // Button component
 
-const Button = (props) => {
-  function getVariant(variant, tone) {
-    switch (variant) {
-      case "primary":
-        return primaryClass[tone];
-      case "secondary":
-        return secondaryClass[tone];
-      case "tertiary":
-        return tertiaryClass[tone];
-      case "transparent":
-        return transparentClass[tone];
-      default:
-        return primaryClass[tone];
-    }
-  }
+export interface ButtonProp extends VariantProps<typeof buttonStyle> {
+  children?: React.ReactNode;
+  intent?: "primary" | "secondary" | "tertiary" | "transparent";
+  tone?: ColorTones;
+}
 
-  return <button {...props} />;
+const Button = ({ size, intent, tone, ...props }: ButtonProp) => {
+  return (
+    <button
+      className={buttonStyle({
+        size,
+        className: getVariant(intent, tone), // for dynamic variants that's not composed with variants API
+      })}
+      {...props}
+    />
+  );
 };
 
 export default Button;

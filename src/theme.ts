@@ -3,7 +3,7 @@ import figmaTokens from "./theme.json";
 
 // export keys of colors as string
 // eg. "blue" | "red" | "green"
-export type ColorKeys = keyof typeof figmaTokens.colors;
+export type ColorTones = keyof typeof figmaTokens.colors;
 
 // export all colors as allTones from figmaTokens.colors
 // eg. {blue: "blue", red: "red", green: "green"}
@@ -12,16 +12,7 @@ export const allTones = Object.keys(figmaTokens.colors).reduce((acc, key) => {
   return acc;
 }, {} as { [key: string]: string });
 
-export type ButtonIntent = "primary" | "secondary" | "tertiary" | "transparent";
-
 // turn figmaTokens.colors into an array of objects
-
-// Setting up accent
-// Change `figmaTokens.colors.blue` into other shades
-const accent = Object.keys(figmaTokens.colors.blue).reduce((acc, key) => {
-  acc[key] = figmaTokens.colors.blue[key];
-  return acc;
-}, {});
 
 const fontWeights: {
   // temporarily supress error
@@ -59,7 +50,7 @@ const letterSpacing: {
 // console.log(letterSpacing);
 
 export const theme = createGlobalTheme(":root", {
-  colors: { ...figmaTokens.colors, ...figmaTokens.base, accent: accent },
+  colors: { ...figmaTokens.colors, ...figmaTokens.base },
   radii: figmaTokens.borderRadius,
   borderWidth: figmaTokens.borderWidth,
   opacity: figmaTokens.opacity,

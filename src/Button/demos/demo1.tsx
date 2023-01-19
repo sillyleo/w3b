@@ -10,10 +10,10 @@ import Button from "..";
 const Demo1 = () => {
   return (
     <div>
-      <Button size="lg" tone="orange">
+      <Button size="lg" tone="orange" intent="tertiary">
         Hello
       </Button>
-      <Button tone="tomato" intent="secondary">
+      <Button size="md" tone="tomato" intent="primary">
         XXXXXtone="blue" size="md" intent="primary"
       </Button>
       <Button
