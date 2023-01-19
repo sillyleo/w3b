@@ -14,6 +14,7 @@ specifiers:
   '@vanilla-extract/recipes': ^0.3.0
   '@vanilla-extract/sprinkles': ^1.5.1
   '@vitejs/plugin-react': ^3.0.1
+  class-variance-authority: ^0.4.0
   clsx: ^1.2.1
   framer-motion: ^8.4.6
   lodash: ^4.17.21
@@ -37,6 +38,7 @@ dependencies:
   '@macaron-css/react': 1.0.1_d3wrxpqd3u2ndlc5viw4a7inii
   '@stitches/react': 1.2.8_react@18.2.0
   '@vanilla-extract/recipes': 0.3.0_@vanilla-extract+css@1.9.2
+  class-variance-authority: 0.4.0_typescript@4.9.4
   clsx: 1.2.1
   framer-motion: 8.4.6_biqbaboplfbrettd7655fr4n2y
   react: 18.2.0
@@ -1457,6 +1459,17 @@ packages:
     optionalDependencies:
       fsevents: 2.3.2
     dev: true
+
+  /class-variance-authority/0.4.0_typescript@4.9.4:
+    resolution: {integrity: sha512-74enNN8O9ZNieycac/y8FxqgyzZhZbxmCitAtAeUrLPlxjSd5zA7LfpprmxEcOmQBnaGs5hYhiSGnJ0mqrtBLQ==}
+    peerDependencies:
+      typescript: '>= 4.5.5 < 5'
+    peerDependenciesMeta:
+      typescript:
+        optional: true
+    dependencies:
+      typescript: 4.9.4
+    dev: false
 
   /clean-css/5.2.0:
     resolution: {integrity: sha512-2639sWGa43EMmG7fn8mdVuBSs6HuWaSor+ZPoFWzenBc6oN+td8YhTfghWXZ25G1NiiSvz8bOFBS7PdSbTiqEA==}
@@ -4414,7 +4427,6 @@ packages:
     resolution: {integrity: sha512-Uz+dTXYzxXXbsFpM86Wh3dKCxrQqUcVMxwU54orwlJjOpO3ao8L7j5lH+dWfTwgCwIuM9GQ2kvVotzYJMXTBZg==}
     engines: {node: '>=4.2.0'}
     hasBin: true
-    dev: true
 
   /unified/10.1.2:
     resolution: {integrity: sha512-pUSWAi/RAnVy1Pif2kAoeWNBa3JVrx0MId2LASj8G+7AiHWoKZNTomq6LG326T68U7/e263X6fTdcXIy7XnF7Q==}

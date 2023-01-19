@@ -41,6 +41,7 @@
     "@macaron-css/react": "^1.0.1",
     "@stitches/react": "^1.2.8",
     "@vanilla-extract/recipes": "^0.3.0",
+    "class-variance-authority": "^0.4.0",
     "clsx": "^1.2.1",
     "framer-motion": "^8.4.6",
     "react": "^18.2.0",
