@@ -11,7 +11,6 @@ const fontWeights: {
   return acc;
 }, {});
 
-// convert % in letterSpacing into px
 // eg -2% => -0.2rem
 const letterSpacing: {
   // temporarily supress error
