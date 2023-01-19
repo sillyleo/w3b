@@ -11,15 +11,6 @@ const fontWeights: {
   return acc;
 }, {});
 
-// Unused. Use spacing instead
-const paragraphSpacing: {
-  // temporarily supress error
-  [key: string]: string;
-} = Object.keys(figmaTokens.paragraphSpacing).reduce((acc, key) => {
-  acc[key] = `${figmaTokens.paragraphSpacing[key]}px`;
-  return acc;
-}, {});
-
 // convert % in letterSpacing into px
 // eg -2% => -0.2rem
 const letterSpacing: {
