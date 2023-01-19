@@ -1,8 +1,15 @@
 import { style, styleVariants } from "@macaron-css/core";
 import { cva, VariantProps } from "class-variance-authority";
 import React from "react";
-import { allTones, Tone } from "src/constants";
 import { theme } from "../theme";
+import figmaTokens from "../theme.json";
+
+//  all colors as allTones from figmaTokens.colors
+// eg. {blue: "blue", red: "red", green: "green"}
+const allTones = Object.keys(figmaTokens.colors).reduce((acc, key) => {
+  acc[key] = key;
+  return acc;
+}, {});
 
 // Base style
 
@@ -106,7 +113,8 @@ const buttonStyle = cva(baseClass, {
 export interface ButtonProp extends VariantProps<typeof buttonStyle> {
   children?: React.ReactNode;
   intent?: "primary" | "secondary" | "tertiary" | "transparent";
-  tone?: Tone;
+  // TODO: doesn't work...
+  tone?: keyof typeof allTones;
 }
 
 const Button = ({ size, intent, tone, ...props }: ButtonProp) => {
