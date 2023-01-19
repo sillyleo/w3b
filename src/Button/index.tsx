@@ -5,17 +5,9 @@ import clsx from "clsx";
 import { allTones, ButtonIntent, ColorKeys, theme } from "../theme";
 import { motion } from "framer-motion";
 import React from "react";
+import { cva } from "class-variance-authority";
 
-// export interface ButtonProps {
-//   size?: string;
-//   children: React.ReactNode;
-// }
-
-// const Button = ({ children, size = "medium", ...props }: ButtonProps) => {
-//   return <button {...props}>{children}</button>;
-// };
-
-// const MotionButton = motion("button");
+// Base style
 
 const buttonStyle = style({
   backgroundColor: theme.colors.accent[8],
@@ -33,7 +25,7 @@ const buttonStyle = style({
   },
 });
 
-// // Different coloe pallete depending on ButtonVariant
+//  Tones and intents
 
 const primaryClass = styleVariants(allTones, (tone) => ({
   backgroundColor: theme.colors[tone][9],
@@ -68,6 +60,8 @@ const transparentClass = styleVariants(allTones, (tone) => ({
   color: theme.colors[tone][10],
 }));
 
+// Sizes
+
 const sizeVariants = styleVariants({
   sm: {
     padding: theme.spacing[2],
@@ -80,38 +74,9 @@ const sizeVariants = styleVariants({
   },
 });
 
-// export interface ToneProps {
-//   tone?: ColorKeys;
-//   intent?: ButtonIntent;
-//   className?: string;
-// }
+// Button component
 
-// // extend Button props with ToneProps
-// export type ButtonProps = ToneProps & React.ComponentProps<typeof BaseButton>;
-
-// // TODO: This will have type definition for local repo, but not for the published package
-
-type sizeType = typeof sizeVariants;
-interface ButtonProps {
-  className?: any;
-  tone?: ColorKeys;
-  intent?: ButtonIntent;
-  size?: keyof sizeType;
-  children?: React.ReactNode;
-}
-
-// console.log(sizeVariants);
-// interface ButtonProps extends React.ComponentProps<typeof BaseButton> {
-//   tone?: ColorKeys;
-//   intent?: ButtonIntent;
-// }
-
-const Button = ({
-  tone = "sage",
-  intent = "primary",
-  size = "md",
-  ...props
-}: ButtonProps) => {
+const Button = (props) => {
   function getVariant(variant, tone) {
     switch (variant) {
       case "primary":
@@ -127,16 +92,7 @@ const Button = ({
     }
   }
 
-  return (
-    <button
-      className={clsx(
-        buttonStyle,
-        getVariant(intent, tone),
-        sizeVariants[size]
-      )}
-      {...props}
-    />
-  );
+  return <button {...props} />;
 };
 
 export default Button;
