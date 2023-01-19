@@ -92,10 +92,9 @@ const sizeVariants = styleVariants({
 // // TODO: This will have type definition for local repo, but not for the published package
 
 type sizeType = typeof sizeVariants;
-console.log(ColorKeys);
 interface ButtonProps {
   className?: any;
-  tone?: keyof typeof ColorKeys;
+  tone?: ColorKeys;
   intent?: ButtonIntent;
   size?: keyof sizeType;
   children?: React.ReactNode;
@@ -107,7 +106,12 @@ interface ButtonProps {
 //   intent?: ButtonIntent;
 // }
 
-const Button = ({ tone, intent, size, ...props }: ButtonProps) => {
+const Button = ({
+  tone = "sage",
+  intent = "primary",
+  size = "md",
+  ...props
+}: ButtonProps) => {
   function getVariant(variant, tone) {
     switch (variant) {
       case "primary":

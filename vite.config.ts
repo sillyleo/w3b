@@ -37,7 +37,8 @@ export default defineConfig({
     },
   },
   plugins: [
-    macaronVitePlugin(), // basic setup
+    macaronVitePlugin(),
+    // basic setup
     // dts(),
     // dts(),
     // If getEnabled, the CSS will be injected

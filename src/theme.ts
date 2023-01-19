@@ -3,12 +3,7 @@ import figmaTokens from "./theme.json";
 
 // export keys of colors as string
 // eg. "blue" | "red" | "green"
-export const ColorKeys = macaron$(() =>
-  Object.keys(figmaTokens.colors).reduce((acc, key) => {
-    acc[key] = key;
-    return acc;
-  }, {} as { [key: string]: string })
-);
+export type ColorKeys = keyof typeof figmaTokens.colors;
 
 // export all colors as allTones from figmaTokens.colors
 // eg. {blue: "blue", red: "red", green: "green"}
