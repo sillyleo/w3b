@@ -10,8 +10,8 @@ interface RootObject {
   fontSizes: FontSizes;
   typography: Typography;
   paragraphSpacing: ParagraphSpacing;
-  light: Light;
-  dark: Light;
+  light: Colors;
+  dark: Colors;
   spacing: Spacing;
   screens: Screens;
   boxShadow: BoxShadow;
@@ -95,36 +95,6 @@ interface Spacing {
   '80': string;
   '96': string;
   px: string;
-}
-interface Light {
-  tomato: Tomato;
-  red: Tomato;
-  crimson: Tomato;
-  pink: Tomato;
-  plum: Tomato;
-  purple: Tomato;
-  violet: Tomato;
-  indigo: Tomato;
-  blue: Tomato;
-  cyan: Tomato;
-  teal: Tomato;
-  green: Tomato;
-  grass: Tomato;
-  brown: Tomato;
-  orange: Tomato;
-  sky: Tomato;
-  mint: Tomato;
-  lime: Tomato;
-  yellow: Tomato;
-  amber: Tomato;
-  gold: Tomato;
-  bronze: Tomato;
-  gray: Tomato;
-  mauve: Tomato;
-  slate: Tomato;
-  sage: Tomato;
-  olive: Tomato;
-  sand: Tomato;
 }
 interface ParagraphSpacing {
   xs: string;

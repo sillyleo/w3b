@@ -1,21 +1,23 @@
 import React from "react";
 import { createTheme, defaultSideNavs } from "vite-pages-theme-doc";
 import Component404 from "./404";
+import "@fontsource/inter-tight";
 
 const TopBarExtra = () => <p>TopBarExtra</p>;
 
-const fontFamily = "Sk-Modernist, sans-serif";
+const Sk = "Sk-Modernist, sans-serif";
+const Inter = '"Inter Tight", sans-serif';
 
 export default createTheme({
   logo: (
     <div
       style={{
         fontSize: "20px",
-        fontFamily: fontFamily,
+        fontFamily: Sk,
         fontWeight: "bold",
       }}
     >
-      🥤Nomimono
+      🥤 Nomimono
     </div>
   ),
   // topNavs: [

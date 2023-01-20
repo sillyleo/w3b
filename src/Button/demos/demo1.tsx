@@ -10,7 +10,7 @@ const Demo1 = () => {
   return (
     <div>
       <Button size="lg" tone="cyan">
-        Hello
+        Demos
       </Button>
       <Button size="md" tone={"tomato"} intent="primary">
         XXXXXtone="blue" size="md" intent="primary"

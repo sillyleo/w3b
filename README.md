@@ -55,6 +55,12 @@ Edit `src/Button/demos/demo1.tsx` or other demo files, the demos will inflect yo
 
 Fonts not specific but prioritize [Sk-Modernist](https://seankanedesign.gumroad.com/l/sk-modernist) for heading and Inter for body.
 
+`pnpm install @fontsource/inter-tight`
+
+and
+
+`import "@fontsource/inter-tight"`
+
 In React:
 
 ```jsx
