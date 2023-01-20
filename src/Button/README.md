@@ -1,6 +1,6 @@
 ---
 title: Button title
-subGroup: data-display
+subGroup: Components
 ---
 
 # Button

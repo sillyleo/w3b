@@ -1,6 +1,6 @@
 ---
 title: Card title
-subGroup: data-display
+subGroup: Components
 ---
 
 # Card
