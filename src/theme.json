@@ -468,8 +468,8 @@
     "xl": "24px",
     "lg": "18px",
     "base": "15px",
-    "sm": "12px",
-    "xs": "10px"
+    "sm": "13px",
+    "xs": "11px"
   },
   "typography": {
     "page-title": {
@@ -518,7 +518,7 @@
       "fontFamily": "Inter",
       "fontWeight": 700,
       "lineHeight": "110%",
-      "fontSize": "10px",
+      "fontSize": "11px",
       "letterSpacing": "2%",
       "textCase": "uppercase"
     },
@@ -540,14 +540,14 @@
       "fontFamily": "Inter",
       "fontWeight": 400,
       "lineHeight": "140%",
-      "fontSize": "12px",
+      "fontSize": "13px",
       "letterSpacing": "0%"
     },
     "caption": {
       "fontFamily": "Inter",
       "fontWeight": 400,
       "lineHeight": "140%",
-      "fontSize": "12px",
+      "fontSize": "13px",
       "letterSpacing": "0%"
     }
   },

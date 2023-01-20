@@ -1651,11 +1651,11 @@
       "type": "fontSizes"
     },
     "sm": {
-      "value": "12px",
+      "value": "13px",
       "type": "fontSizes"
     },
     "xs": {
-      "value": "10px",
+      "value": "11px",
       "type": "fontSizes"
     }
   },
