@@ -14,39 +14,49 @@ const allTones = Object.keys(figmaTokens.light).reduce((acc, key) => {
 // Base style
 
 const baseClass = style({
+  cursor: "pointer",
+  boxSizing: "border-box",
+  // backgroundColor: theme.colors.slate[9],
   fontFamily: theme.fontFamily.heading,
-  backgroundColor: theme.colors.blue[9],
   fontWeight: theme.fontWeight.bold,
   letterSpacing: theme.letterSpacing.default,
-  color: theme.colors.white,
+  // color: theme.colors.white,
   borderRadius: theme.radii["xl"],
-  // opacity: theme.opacity[30],
-  fontSize: theme.fontSize["sm"],
-  // letterSpacing: theme.letterSpacing.increased,
-  // lineHeight: theme.lineHeight.heading,
-  padding: theme.spacing[8],
-  ":hover": {
-    backgroundColor: "lightgray",
-  },
+  fontSize: theme.fontSize["base"],
+  lineHeight: 1,
+  border: "none",
 });
 
 // Sizes
 
 const sizeClass = styleVariants({
   sm: {
-    padding: theme.spacing[2],
+    fontSize: theme.fontSize["xs"],
+    lineHeight: "2.777em",
+    paddingLeft: theme.spacing[3],
+    paddingRight: theme.spacing[3],
   },
   md: {
-    padding: theme.spacing[3],
+    fontSize: theme.fontSize["sm"],
+
+    lineHeight: "2.4615em",
+    paddingLeft: theme.spacing[4],
+    paddingRight: theme.spacing[4],
   },
   lg: {
-    padding: theme.spacing[5],
+    fontSize: theme.fontSize["base"],
+
+    lineHeight: "2.5333em",
+
+    paddingLeft: theme.spacing[5],
+    paddingRight: theme.spacing[5],
   },
 });
 
 //  Dynamic tones and intents
 
 const primaryClass = styleVariants(allTones, (tone) => {
+  // color bg + black text
   if (
     tone === "sky" ||
     tone === "mint" ||
@@ -61,7 +71,25 @@ const primaryClass = styleVariants(allTones, (tone) => {
       },
       color: theme.colors[tone][12],
     };
+  } else if (
+    tone === "gray" ||
+    tone === "mauve" ||
+    tone === "slate" ||
+    tone === "sage" ||
+    tone === "olive" ||
+    tone === "sand"
+  ) {
+    // grayscale series
+    return {
+      backgroundColor: theme.colors[tone][12],
+      ":hover": {
+        backgroundColor: theme.colors[tone][12],
+      },
+      color: theme.colors[tone][2],
+    };
   } else {
+    // color bg + white text
+
     return {
       backgroundColor: theme.colors[tone][9],
       ":hover": {
@@ -72,29 +100,57 @@ const primaryClass = styleVariants(allTones, (tone) => {
   }
 });
 
-const secondaryClass = styleVariants(allTones, (tone) => ({
-  backgroundColor: theme.colors[tone][8],
-  ":hover": {
-    backgroundColor: theme.colors[tone][9],
-  },
-  color: theme.colors.white,
-}));
+const secondaryClass = styleVariants(allTones, (tone) => {
+  // color bg + black text
+  if (
+    tone === "sky" ||
+    tone === "mint" ||
+    tone === "lime" ||
+    tone === "yellow" ||
+    tone === "amber"
+  ) {
+    return {
+      backgroundColor: theme.colors[tone][4],
+      ":hover": {
+        backgroundColor: theme.colors[tone][5],
+      },
+      color: theme.colors[tone][11],
+    };
+  } else if (
+    tone === "gray" ||
+    tone === "mauve" ||
+    tone === "slate" ||
+    tone === "sage" ||
+    tone === "olive" ||
+    tone === "sand"
+  ) {
+    // grayscale series
+    return {
+      backgroundColor: theme.colors[tone][4],
+      ":hover": {
+        backgroundColor: theme.colors[tone][5],
+      },
+      color: theme.colors[tone][12],
+    };
+  } else {
+    // color bg
+
+    return {
+      backgroundColor: theme.colors[tone][4],
+      ":hover": {
+        backgroundColor: theme.colors[tone][5],
+      },
+      color: theme.colors[tone][11],
+    };
+  }
+});
 
 const tertiaryClass = styleVariants(allTones, (tone) => ({
-  backgroundColor: theme.colors[tone][3],
+  backgroundColor: "transparent",
   ":hover": {
-    backgroundColor: theme.colors[tone][4],
+    color: theme.colors[tone][12],
   },
-  color: theme.colors.black,
-}));
-
-const transparentClass = styleVariants(allTones, (tone) => ({
-  background: "transparent",
-  ":hover": {
-    backgroundColor: theme.colors[tone][2],
-  },
-  // border: "none",
-  color: theme.colors[tone][10],
+  color: theme.colors[tone][11],
 }));
 
 // Compose variants with class names
@@ -107,8 +163,6 @@ function getVariant(intent, tone) {
       return secondaryClass[tone];
     case "tertiary":
       return tertiaryClass[tone];
-    case "transparent":
-      return transparentClass[tone];
     default:
       return primaryClass[tone];
   }
@@ -132,16 +186,18 @@ type ToneType = keyof Colors;
 // Button component
 export interface ButtonProp extends VariantProps<typeof buttonStyle> {
   children?: React.ReactNode;
-  /**
-   * the intent of button
-   * @defaultValue 'primary'
-   */
-  intent?: "primary" | "secondary" | "tertiary" | "transparent";
+
+  intent?: "primary" | "secondary" | "tertiary";
 
   tone?: ToneType;
 }
 
-const Button = ({ size, intent, tone, ...props }: ButtonProp) => {
+const Button = ({
+  size = "md",
+  intent = "primary",
+  tone = "slate",
+  ...props
+}: ButtonProp) => {
   return (
     <button
       className={buttonStyle({

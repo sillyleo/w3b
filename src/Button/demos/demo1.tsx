@@ -9,47 +9,63 @@ import Button from "..";
 const Demo1 = () => {
   return (
     <div>
-      <Button size="lg" tone="cyan">
-        Demos
+      <Button intent="primary">primary</Button>
+      <Button intent="secondary">secondary</Button>
+      <Button intent="tertiary">tertiary</Button>
+      <Button intent="primary" tone="blue">
+        primary blue
       </Button>
-      <Button size="md" tone={"tomato"} intent="primary">
-        XXXXXtone="blue" size="md" intent="primary"
+      <Button intent="secondary" tone="blue">
+        secondary blue
       </Button>
-      <Button
-        size="md"
-        intent="secondary"
-        tone="accent"
-
-        // animate={{ scale: [1, 1.5, 1], transition: { repeat: Infinity } }}
-      >
-        Macaron
+      <Button intent="tertiary" tone="blue">
+        tertiary blue
+      </Button>{" "}
+      <Button intent="primary" tone="sky">
+        primary sky
       </Button>
-      <Button intent="tertiary" size="sm" tone="accent">
-        Macaron
+      <Button intent="secondary" tone="sky">
+        secondary sky
       </Button>
-      <Button intent="transparent" tone="accent" size={undefined}>
-        Macaron
+      <Button intent="tertiary" tone="sky">
+        tertiary sky
       </Button>
-      <Button tone={"blue"} intent={"transparent"} size={undefined}>
-        Click me!
+      <Button>Default Button</Button>
+      <Button tone="slate" size="lg">
+        Button
       </Button>
-      <Button tone="bronze" size="sm" intent={undefined}>
-        oisjdfoijsaoidj
+      <Button tone="slate" size="md">
+        Button
       </Button>
-      <Button tone="lime" size="md" intent={undefined}>
-        oisjdfoijsaoidj
+      <Button tone="slate" size="sm">
+        Button
       </Button>
-      <Button tone="tomato" size="lg" intent={undefined}>
-        oisjdfoijsaoidj
+      <Button tone="blue" size="lg">
+        Button
       </Button>
-      <Button tone={undefined} intent={undefined} size={undefined}>
-        oisjdfoijsaoidj
+      <Button tone="blue" size="md">
+        Button
       </Button>
-      <Button tone={undefined} intent={undefined} size={undefined}>
-        oisjdfoijsaoidj
+      <Button tone="blue" size="sm">
+        Button
       </Button>
-      <Button intent="primary" tone={undefined} size={undefined}>
-        tertiary
+      <Button tone="red" size="lg">
+        Button
+      </Button>
+      <Button tone="red" size="md">
+        Button
+      </Button>
+      <Button tone="red" size="sm">
+        Button
+      </Button>
+      <Button tone="yellow" size="lg">
+        Button
+      </Button>
+      <Button tone="yellow" size="md">
+        Button
+      </Button>
+      <Button tone="yellow" size="sm">
+        Button
       </Button>
     </div>
   );
