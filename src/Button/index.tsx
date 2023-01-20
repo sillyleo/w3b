@@ -109,7 +109,6 @@ const buttonStyle = cva(baseClass, {
 });
 
 type ToneType = keyof Colors;
-
 // Button component
 export interface ButtonProp extends VariantProps<typeof buttonStyle> {
   children?: React.ReactNode;

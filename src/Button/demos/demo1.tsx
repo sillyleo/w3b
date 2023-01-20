@@ -12,7 +12,7 @@ const Demo1 = () => {
       <Button size="lg" tone="mint" intent="tertiary">
         Hello
       </Button>
-      <Button size="md" tone="tomato" intent="primary">
+      <Button size="md" tone={"tomato"} intent="primary">
         XXXXXtone="blue" size="md" intent="primary"
       </Button>
       <Button
