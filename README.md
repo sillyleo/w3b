@@ -49,9 +49,11 @@ Edit `src/Button/demos/demo1.tsx` or other demo files, the demos will inflect yo
 
 # Usage
 
-`pnpm install @sayaww/nomimono`
+`pnpm install @sayaww/nomimono @fontsource/inter-tight`
 
 `import "@sayaww/nomimono/style.css"`
+
+Fonts not specific but prioritize [Sk-Modernist](https://seankanedesign.gumroad.com/l/sk-modernist) for heading and Inter for body.
 
 In React:
 
