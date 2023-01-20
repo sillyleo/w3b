@@ -1,6 +1,6 @@
 ---
 title: Card title
-subGroup: data-display
+subGroup: Components
 ---
 
 # Card
@@ -14,5 +14,3 @@ You can put this page in a subGroup of the side menu using `staticData.subGroup`
 You can import demos like this:
 
 <Demo src="./demos/demo1.tsx" />
-
-<Demo src="./demos/demo2.tsx" />

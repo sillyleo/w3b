@@ -1,61 +1,157 @@
-import { styled } from "@macaron-css/react";
+import { globalFontFace, style, styleVariants } from "@macaron-css/core";
+import { cva, VariantProps } from "class-variance-authority";
+import React from "react";
 import { theme } from "../theme";
-import { motion } from "framer-motion";
+import figmaTokens from "../theme.json";
 
-console.log(theme.paragraphSpacing.lg);
-const Button = styled("button", {
-  base: {
-    backgroundColor: theme.colors.accent[8],
-    fontWeight: theme.fontWeight.bold,
-    letterSpacing: theme.letterSpacing.decreased,
-    // borderRadius: theme.radii["xl"],
-    // opacity: theme.opacity[100],
-    // fontWeight: theme.fontWeight,
-    // fontSize: theme.fontSize["4xl"],
-    // letterSpacing: theme.letterSpacing.increased,
-    // lineHeight: theme.lineHeight.heading,
-    padding: theme.spacing[8],
-    ":hover": {
-      backgroundColor: "lightgray",
-    },
+//  all colors as allTones from figmaTokens.colors
+// eg. {blue: "blue", red: "red", green: "green"}
+const allTones = Object.keys(figmaTokens.light).reduce((acc, key) => {
+  acc[key] = key;
+  return acc;
+}, {});
+
+// Base style
+
+const baseClass = style({
+  fontFamily: theme.fontFamily.heading,
+  backgroundColor: theme.colors.blue[9],
+  fontWeight: theme.fontWeight.bold,
+  letterSpacing: theme.letterSpacing.decreased,
+  color: theme.colors.white,
+  // borderRadius: theme.radii["xl"],
+  // opacity: theme.opacity[100],
+  // fontWeight: theme.fontWeight,
+  // fontSize: theme.fontSize["4xl"],
+  // letterSpacing: theme.letterSpacing.increased,
+  // lineHeight: theme.lineHeight.heading,
+  padding: theme.spacing[8],
+  ":hover": {
+    backgroundColor: "lightgray",
   },
-  // variants: {
-  //   color: {
-  //     // all color keys from theme.colors
-  //     tomato: { backgroundColor: theme.colors.tomato[6] },
-  //     red: { backgroundColor: theme.colors.red[6] },
-  //     crimson: { backgroundColor: theme.colors.crimson[6] },
-  //     pink: { backgroundColor: theme.colors.pink[6] },
-  //     plum: { backgroundColor: theme.colors.plum[6] },
-  //     purple: { backgroundColor: theme.colors.purple[6] },
-  //     violet: { backgroundColor: theme.colors.violet[6] },
-  //     indigo: { backgroundColor: theme.colors.indigo[6] },
-  //     blue: { backgroundColor: theme.colors.blue[6] },
-  //     cyan: { backgroundColor: theme.colors.cyan[6] },
-  //     teal: { backgroundColor: theme.colors.teal[6] },
-  //     green: { backgroundColor: theme.colors.green[6] },
-  //     grass: { backgroundColor: theme.colors.grass[6] },
-  //     brown: { backgroundColor: theme.colors.brown[6] },
-  //     orange: { backgroundColor: theme.colors.orange[6] },
-  //     sky: { backgroundColor: theme.colors.sky[6] },
-  //     mint: { backgroundColor: theme.colors.mint[6] },
-  //     lime: { backgroundColor: theme.colors.lime[6] },
-  //     yellow: { backgroundColor: theme.colors.yellow[6] },
-  //     amber: { backgroundColor: theme.colors.amber[6] },
-  //     gold: { backgroundColor: theme.colors.gold[6] },
-  //     bronze: { backgroundColor: theme.colors.bronze[6] },
-  //     gray: { backgroundColor: theme.colors.gray[6] },
-  //     mauve: { backgroundColor: theme.colors.mauve[6] },
-  //     slate: { backgroundColor: theme.colors.slate[6] },
-  //     sage: { backgroundColor: theme.colors.sage[6] },
-  //     olive: { backgroundColor: theme.colors.olive[6] },
-  //     sand: { backgroundColor: theme.colors.sand[6] },
-  //   },
-  // },
-
-  // defaultVariants: {
-  //   color: "red",
-  // },
 });
 
-export { Button };
+// Sizes
+
+const sizeClass = styleVariants({
+  sm: {
+    padding: theme.spacing[2],
+  },
+  md: {
+    padding: theme.spacing[3],
+  },
+  lg: {
+    padding: theme.spacing[5],
+  },
+});
+
+//  Dynamic tones and intents
+
+const primaryClass = styleVariants(allTones, (tone) => {
+  if (
+    tone === "sky" ||
+    tone === "mint" ||
+    tone === "lime" ||
+    tone === "yellow" ||
+    tone === "amber"
+  ) {
+    return {
+      backgroundColor: theme.colors[tone][9],
+      ":hover": {
+        backgroundColor: theme.colors[tone][10],
+      },
+      color: theme.colors[tone][12],
+    };
+  } else {
+    return {
+      backgroundColor: theme.colors[tone][9],
+      ":hover": {
+        backgroundColor: theme.colors[tone][10],
+      },
+      color: theme.colors.white,
+    };
+  }
+});
+
+const secondaryClass = styleVariants(allTones, (tone) => ({
+  backgroundColor: theme.colors[tone][8],
+  ":hover": {
+    backgroundColor: theme.colors[tone][9],
+  },
+  color: theme.colors.white,
+}));
+
+const tertiaryClass = styleVariants(allTones, (tone) => ({
+  backgroundColor: theme.colors[tone][3],
+  ":hover": {
+    backgroundColor: theme.colors[tone][4],
+  },
+  color: theme.colors.black,
+}));
+
+const transparentClass = styleVariants(allTones, (tone) => ({
+  background: "transparent",
+  ":hover": {
+    backgroundColor: theme.colors[tone][2],
+  },
+  // border: "none",
+  color: theme.colors[tone][10],
+}));
+
+// Compose variants with class names
+
+function getVariant(intent, tone) {
+  switch (intent) {
+    case "primary":
+      return primaryClass[tone];
+    case "secondary":
+      return secondaryClass[tone];
+    case "tertiary":
+      return tertiaryClass[tone];
+    case "transparent":
+      return transparentClass[tone];
+    default:
+      return primaryClass[tone];
+  }
+}
+
+const buttonStyle = cva(baseClass, {
+  variants: {
+    size: {
+      sm: sizeClass.sm,
+      md: sizeClass.md,
+      lg: sizeClass.lg,
+    },
+  },
+  defaultVariants: {
+    size: "lg",
+  },
+});
+
+type ToneType = keyof Colors;
+
+// Button component
+export interface ButtonProp extends VariantProps<typeof buttonStyle> {
+  children?: React.ReactNode;
+  /**
+   * the intent of button
+   * @defaultValue 'primary'
+   */
+  intent?: "primary" | "secondary" | "tertiary" | "transparent";
+
+  tone?: ToneType;
+}
+
+const Button = ({ size, intent, tone, ...props }: ButtonProp) => {
+  return (
+    <button
+      className={buttonStyle({
+        size,
+        className: getVariant(intent, tone), // for dynamic variants that's not composed with variants API
+      })}
+      {...props}
+    />
+  );
+};
+
+export default Button;

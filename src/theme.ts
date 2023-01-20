@@ -1,14 +1,8 @@
-import { createGlobalTheme, macaron$ } from "@macaron-css/core";
+import { createGlobalTheme, createTheme } from "@macaron-css/core";
 import figmaTokens from "./theme.json";
+// import "@fontsource/inter-tight";
 
 // turn figmaTokens.colors into an array of objects
-
-// Setting up accent
-// Change `figmaTokens.colors.blue` into other shades
-const accent = Object.keys(figmaTokens.colors.blue).reduce((acc, key) => {
-  acc[key] = figmaTokens.colors.blue[key];
-  return acc;
-}, {});
 
 const fontWeights: {
   // temporarily supress error
@@ -18,16 +12,6 @@ const fontWeights: {
   return acc;
 }, {});
 
-// Unused. Use spacing instead
-const paragraphSpacing: {
-  // temporarily supress error
-  [key: string]: string;
-} = Object.keys(figmaTokens.paragraphSpacing).reduce((acc, key) => {
-  acc[key] = `${figmaTokens.paragraphSpacing[key]}px`;
-  return acc;
-}, {});
-
-// convert % in letterSpacing into px
 // eg -2% => -0.2rem
 const letterSpacing: {
   // temporarily supress error
@@ -44,13 +28,14 @@ const letterSpacing: {
 }, {});
 
 // console.log(letterSpacing);
-
-export const theme = createGlobalTheme(":root", {
-  colors: { ...figmaTokens.colors, ...figmaTokens.base, accent: accent },
+const commonTokens = {
   radii: figmaTokens.borderRadius,
   borderWidth: figmaTokens.borderWidth,
   opacity: figmaTokens.opacity,
-  fontFamiliy: figmaTokens.fontFamilies,
+  fontFamily: {
+    heading: `${figmaTokens.fontFamilies.heading}, sans-serif`,
+    body: `'Inter Tight',${figmaTokens.fontFamilies.body},, sans-serif`,
+  },
   fontSize: figmaTokens.fontSizes,
   lineHeight: figmaTokens.lineHeights,
   fontWeight: fontWeights,
@@ -58,9 +43,14 @@ export const theme = createGlobalTheme(":root", {
   letterSpacing: letterSpacing,
   spacing: figmaTokens.spacing,
   screens: figmaTokens.screens,
+};
+
+export const theme = createGlobalTheme(":root", {
+  colors: { ...figmaTokens.light, ...figmaTokens.base },
+  ...commonTokens,
 });
 
-// export const darkTheme = createTheme(theme, {
-//   // color: lightColors,
-//   // ...commonTokens
-// });
+export const darkTheme = createTheme(theme, {
+  colors: { ...figmaTokens.dark, ...figmaTokens.base },
+  ...commonTokens,
+});

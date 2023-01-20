@@ -27,7 +27,7 @@ export default defineConfig({
                 );
                 if (!match) throw new Error("unexpected file: " + absolute);
                 const [_, componentName, demoName] = match;
-                const pageId = `/components/demos/${componentName}`;
+                const pageId = `/demos/${componentName}`;
                 // register page data
                 api.addPageData({
                   pageId,
@@ -52,7 +52,8 @@ export default defineConfig({
               const match = relative.match(/(.*)\/README\.mdx?$/);
               if (!match) throw new Error("unexpected file: " + absolute);
               const [_, componentName] = match;
-              const pageId = `/components/${componentName}`;
+//              const pageId = `/components/${componentName}`;
+              const pageId = `/${componentName}`; // this adds component to the main doc page
               // register page data
               api.addPageData({
                 pageId,
