@@ -1,4 +1,4 @@
-import { style, styleVariants } from "@macaron-css/core";
+import { globalFontFace, style, styleVariants } from "@macaron-css/core";
 import { cva, VariantProps } from "class-variance-authority";
 import React from "react";
 import { theme } from "../theme";
@@ -6,7 +6,7 @@ import figmaTokens from "../theme.json";
 
 //  all colors as allTones from figmaTokens.colors
 // eg. {blue: "blue", red: "red", green: "green"}
-const allTones = Object.keys(figmaTokens.colors).reduce((acc, key) => {
+const allTones = Object.keys(figmaTokens.light).reduce((acc, key) => {
   acc[key] = key;
   return acc;
 }, {});
@@ -14,9 +14,11 @@ const allTones = Object.keys(figmaTokens.colors).reduce((acc, key) => {
 // Base style
 
 const baseClass = style({
-  backgroundColor: theme.colors.accent[8],
+  fontFamily: theme.fontFamily.heading,
+  backgroundColor: theme.colors.blue[9],
   fontWeight: theme.fontWeight.bold,
   letterSpacing: theme.letterSpacing.decreased,
+  color: theme.colors.white,
   // borderRadius: theme.radii["xl"],
   // opacity: theme.opacity[100],
   // fontWeight: theme.fontWeight,
@@ -45,13 +47,31 @@ const sizeClass = styleVariants({
 
 //  Dynamic tones and intents
 
-const primaryClass = styleVariants(allTones, (tone) => ({
-  backgroundColor: theme.colors[tone][9],
-  ":hover": {
-    backgroundColor: theme.colors[tone][10],
-  },
-  color: theme.colors.white,
-}));
+const primaryClass = styleVariants(allTones, (tone) => {
+  if (
+    tone === "sky" ||
+    tone === "mint" ||
+    tone === "lime" ||
+    tone === "yellow" ||
+    tone === "amber"
+  ) {
+    return {
+      backgroundColor: theme.colors[tone][9],
+      ":hover": {
+        backgroundColor: theme.colors[tone][10],
+      },
+      color: theme.colors[tone][12],
+    };
+  } else {
+    return {
+      backgroundColor: theme.colors[tone][9],
+      ":hover": {
+        backgroundColor: theme.colors[tone][10],
+      },
+      color: theme.colors.white,
+    };
+  }
+});
 
 const secondaryClass = styleVariants(allTones, (tone) => ({
   backgroundColor: theme.colors[tone][8],
@@ -109,6 +129,7 @@ const buttonStyle = cva(baseClass, {
 });
 
 type ToneType = keyof Colors;
+
 // Button component
 export interface ButtonProp extends VariantProps<typeof buttonStyle> {
   children?: React.ReactNode;
@@ -118,7 +139,6 @@ export interface ButtonProp extends VariantProps<typeof buttonStyle> {
    */
   intent?: "primary" | "secondary" | "tertiary" | "transparent";
 
-  // TODO: doesn't work...
   tone?: ToneType;
 }
 

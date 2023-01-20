@@ -1,21 +1,21 @@
-import React from 'react';
-import { createTheme, defaultSideNavs } from 'vite-pages-theme-doc';
-import Component404 from './404';
+import React from "react";
+import { createTheme, defaultSideNavs } from "vite-pages-theme-doc";
+import Component404 from "./404";
 
 const TopBarExtra = () => <p>TopBarExtra</p>;
 
-const fontFamily = 'Sk-Modernist, sans-serif';
+const fontFamily = "Sk-Modernist, sans-serif";
 
 export default createTheme({
   logo: (
     <div
       style={{
-        fontSize: '20px',
+        fontSize: "20px",
         fontFamily: fontFamily,
-        fontWeight: 'bold'
+        fontWeight: "bold",
       }}
     >
-      🥤 Nomi Mono
+      🥤Nomimono
     </div>
   ),
   // topNavs: [
@@ -43,20 +43,20 @@ export default createTheme({
       groupConfig: {
         components: {
           demos: {
-            label: 'Work In Progress',
-            order: -1
+            label: "Work In Progress",
+            order: -1,
           },
           general: {
-            label: 'General',
-            order: 1
+            label: "General",
+            order: 1,
           },
-          'data-display': {
-            label: 'Data Display',
-            order: 2
-          }
-        }
-      }
+          "data-display": {
+            label: "Data Display",
+            order: 2,
+          },
+        },
+      },
     });
   },
-  Component404
+  Component404,
 });

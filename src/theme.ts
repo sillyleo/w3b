@@ -1,5 +1,6 @@
-import { createGlobalTheme, macaron$ } from "@macaron-css/core";
+import { createGlobalTheme, createTheme } from "@macaron-css/core";
 import figmaTokens from "./theme.json";
+// import "@fontsource/inter-tight";
 
 // turn figmaTokens.colors into an array of objects
 
@@ -27,13 +28,14 @@ const letterSpacing: {
 }, {});
 
 // console.log(letterSpacing);
-
-export const theme = createGlobalTheme(":root", {
-  colors: { ...figmaTokens.colors, ...figmaTokens.base },
+const commonTokens = {
   radii: figmaTokens.borderRadius,
   borderWidth: figmaTokens.borderWidth,
   opacity: figmaTokens.opacity,
-  fontFamiliy: figmaTokens.fontFamilies,
+  fontFamily: {
+    heading: `${figmaTokens.fontFamilies.heading}, sans-serif`,
+    body: `'Inter V',${figmaTokens.fontFamilies.body},, sans-serif`,
+  },
   fontSize: figmaTokens.fontSizes,
   lineHeight: figmaTokens.lineHeights,
   fontWeight: fontWeights,
@@ -41,9 +43,18 @@ export const theme = createGlobalTheme(":root", {
   letterSpacing: letterSpacing,
   spacing: figmaTokens.spacing,
   screens: figmaTokens.screens,
+};
+export const theme = createGlobalTheme(":root", {
+  colors: { ...figmaTokens.light, ...figmaTokens.base },
+  ...commonTokens,
 });
 
-// export const darkTheme = createTheme(theme, {
-//   // color: lightColors,
-//   // ...commonTokens
+// export const [lightTheme, theme] = createTheme({
+//   colors: { ...figmaTokens.colors, ...figmaTokens.base },
+//   ...commonTokens
 // });
+
+export const darkTheme = createTheme(theme, {
+  colors: { ...figmaTokens.dark, ...figmaTokens.base },
+  ...commonTokens,
+});
