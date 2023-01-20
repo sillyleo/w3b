@@ -44,15 +44,11 @@ const commonTokens = {
   spacing: figmaTokens.spacing,
   screens: figmaTokens.screens,
 };
+
 export const theme = createGlobalTheme(":root", {
   colors: { ...figmaTokens.light, ...figmaTokens.base },
   ...commonTokens,
 });
-
-// export const [lightTheme, theme] = createTheme({
-//   colors: { ...figmaTokens.colors, ...figmaTokens.base },
-//   ...commonTokens
-// });
 
 export const darkTheme = createTheme(theme, {
   colors: { ...figmaTokens.dark, ...figmaTokens.base },
