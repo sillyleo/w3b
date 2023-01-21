@@ -1,4 +1,9 @@
-import { createGlobalTheme, createTheme, fontFace } from "@macaron-css/core";
+import {
+  createGlobalTheme,
+  createTheme,
+  fontFace,
+  globalStyle,
+} from "@macaron-css/core";
 import figmaTokens from "./theme.json";
 
 export const SkModernistBold = fontFace({
@@ -61,4 +66,14 @@ export const theme = createGlobalTheme(":root", {
 export const darkTheme = createTheme(theme, {
   colors: { ...figmaTokens.dark, ...figmaTokens.base },
   ...commonTokens,
+});
+
+globalStyle(":root", {
+  WebkitTapHighlightColor: "rgba(0, 0, 0, 0)",
+  WebkitFontSmoothing: "antialiased",
+  boxSizing: "border-box",
+  margin: 0,
+  padding: 0,
+  fontSize: "100%",
+  lineHeight: 1,
 });
