@@ -3,23 +3,8 @@ import { createTheme, defaultSideNavs } from "vite-pages-theme-doc";
 import Component404 from "./404";
 import "@fontsource/inter-tight";
 
-const TopBarExtra = () => <p>TopBarExtra</p>;
-
-const Sk = "Sk-Modernist, sans-serif";
-const Inter = '"Inter Tight", sans-serif';
-
 export default createTheme({
-  logo: (
-    <div
-      style={{
-        fontSize: "20px",
-        fontFamily: Sk,
-        fontWeight: "bold",
-      }}
-    >
-      🥤 Nomimono
-    </div>
-  ),
+  logo: <div className="logo-block">🥤 Nomimono</div>,
   // topNavs: [
   //   {
   //     label: 'Docs',

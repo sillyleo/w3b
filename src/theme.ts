@@ -34,7 +34,7 @@ const commonTokens = {
   opacity: figmaTokens.opacity,
   fontFamily: {
     heading: `${figmaTokens.fontFamilies.heading}, sans-serif`,
-    body: `'Inter Tight',${figmaTokens.fontFamilies.body},, sans-serif`,
+    body: `'Inter Tight',${figmaTokens.fontFamilies.body}, sans-serif`,
   },
   fontSize: figmaTokens.fontSizes,
   lineHeight: figmaTokens.lineHeights,
