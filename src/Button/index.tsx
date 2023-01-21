@@ -1,7 +1,7 @@
 import { style, styleVariants } from "@macaron-css/core";
 import { cva, VariantProps } from "class-variance-authority";
 import React from "react";
-import { theme } from "../theme";
+import { SkModernistBold, SkModernistRegular, theme } from "../theme";
 import figmaTokens from "../theme.json";
 
 //  all colors as allTones from figmaTokens.colors
@@ -14,11 +14,10 @@ const allTones = Object.keys(figmaTokens.light).reduce((acc, key) => {
 // Base style
 
 const baseClass = style({
+  // font conbimation for skmondenist bold
+  fontFamily: SkModernistBold + ",sans-serif",
+  fontWeight: 500, // magic number for safari font rendering
   cursor: "pointer",
-  boxSizing: "border-box",
-  fontFamily: theme.fontFamily.heading,
-  fontWeight: theme.fontWeight.bold,
-  letterSpacing: theme.letterSpacing.default,
   display: "inline-flex",
   gap: theme.spacing[2],
   padding: 0,

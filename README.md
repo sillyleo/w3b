@@ -61,14 +61,6 @@ and
 
 `import "@fontsource/inter-tight"`
 
-In React:
+# Fonts
 
-```jsx
-import { Button, Card } from "@sayaww/nomimono@0.0.25";
-```
-
-In Framer or Next.js 13 with `urlImport`:
-
-```jsx
-import { Button, Card } from "https://esm.sh/@sayaww/nomimono@0.0.25";
-```
+Install fonts on your deployment server.

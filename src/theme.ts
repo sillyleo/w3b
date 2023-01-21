@@ -1,5 +1,14 @@
-import { createGlobalTheme, createTheme } from "@macaron-css/core";
+import { createGlobalTheme, createTheme, fontFace } from "@macaron-css/core";
 import figmaTokens from "./theme.json";
+
+export const SkModernistBold = fontFace({
+  src: 'url("/fonts/sk-modernist-bold-webfont.woff2") format("woff2"), url("/fonts/sk-modernist-bold-webfont.woff") format("woff"),url("/fonts/sk-modernist-bold-webfont.ttf") format("truetype")',
+});
+
+export const SkModernistRegular = fontFace({
+  src: 'url("/fonts/sk-modernist-regular-webfont.woff2") format("woff2"), url("/fonts/sk-modernist-regular-webfont.woff") format("woff"),url("/fonts/sk-modernist-regular-webfont.ttf") format("truetype")',
+});
+
 // import "@fontsource/inter-tight";
 
 // turn figmaTokens.colors into an array of objects
@@ -12,7 +21,6 @@ const fontWeights: {
   return acc;
 }, {});
 
-// eg -2% => -0.2rem
 const letterSpacing: {
   // temporarily supress error
   [key: string]: string;
@@ -20,7 +28,7 @@ const letterSpacing: {
   const value = figmaTokens.letterSpacing[key];
   if (typeof value === "string" && value.endsWith("%")) {
     const percent = parseFloat(value.slice(0, -1));
-    acc[key] = `${percent / 100}rem`;
+    acc[key] = `${(percent / 100) * 0.01}rem`;
   } else {
     acc[key] = value;
   }

@@ -1,10 +1,20 @@
 import React from "react";
+import { SkModernistBold, SkModernistRegular } from "../../src/theme";
 import { createTheme, defaultSideNavs } from "vite-pages-theme-doc";
 import Component404 from "./404";
-import "@fontsource/inter-tight";
 
 export default createTheme({
-  logo: <div className="logo-block">🥤 Nomimono</div>,
+  logo: (
+    <div
+      style={{
+        fontFamily: SkModernistBold + ",sans-serif",
+        fontSize: "1.25rem",
+        fontWeight: "bold",
+      }}
+    >
+      🥤 Nomimono
+    </div>
+  ),
   // topNavs: [
   //   {
   //     label: 'Docs',
