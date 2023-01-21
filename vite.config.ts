@@ -5,10 +5,6 @@ import { resolve } from "path";
 import { defineConfig } from "vite";
 import typescript from "@rollup/plugin-typescript";
 import { macaronVitePlugin } from "@macaron-css/vite";
-
-// import dts from "vite-plugin-dts";
-// import dts from "vite-dts";
-
 // import cssInjectedByJsPlugin from "vite-plugin-css-injected-by-js";
 
 export default defineConfig({
