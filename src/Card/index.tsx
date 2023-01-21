@@ -95,6 +95,6 @@ const Card = styled(MotionDiv, {
   },
 });
 
-type Card = Stitches.VariantProps<typeof Card>;
+export type Card = Stitches.VariantProps<typeof Card>;
 
 export default Card;

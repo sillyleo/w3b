@@ -5,10 +5,12 @@
 
 import React from 'react';
 import Button from '..';
+import { darkTheme } from '../../theme';
 
 const Demo1 = () => {
   return (
     <div>
+      <Button tone={'amber'} align='left' style={{ width: '150px' }}>eaofj</Button>
       <Button
         align={'center'}
         style={{ width: '300px' }}
@@ -16,19 +18,22 @@ const Demo1 = () => {
         onClick={() => {
           console.log('he');
         }}
-
         intent='primary'
-        iconRight={<div style={{ width: '100%', height: '100%', background: 'red' }} />
+        iconRight={
+          <div style={{ width: '100%', height: '100%', background: 'red' }} />
         }
-        iconLeft={<div style={{ width: 20, height: 20, background: 'green' }} />
+        iconLeft={
+          <div style={{ width: 20, height: 20, background: 'green' }} />
         }
       >
         primary1!
       </Button>
-      <Button align={'center'}
-              style={{ width: '300px' }} intent='secondary'>secondary</Button>
-      <Button align={'left'}
-              style={{ width: '300px' }} intent='tertiary'>tertiary</Button>
+      <Button align={'center'} style={{ width: '300px' }} intent='secondary'>
+        secondary
+      </Button>
+      <Button align={'left'} style={{ width: '300px' }} intent='tertiary'>
+        tertiary
+      </Button>
       <Button intent='primary' tone='blue'>
         primary blue
       </Button>
