@@ -24,3 +24,5 @@ TODO: use this to extract props later
 ```jsx
 <TsInfo src="./index.tsx" name="ButtonProps" />
 ```
+
+<TsInfo src="./index.tsx" name="ButtonProps" />

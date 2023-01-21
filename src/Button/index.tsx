@@ -200,7 +200,7 @@ const buttonStyle = variants({
 export type BasicButtonProps = JSX.IntrinsicElements['button'] &
   VariantPropsOf<typeof buttonStyle>;
 
-interface ButtonProps extends BasicButtonProps {
+export interface ButtonProps extends BasicButtonProps {
   tone?: keyof Colors;
   intent?: 'primary' | 'secondary' | 'ghost';
 }
