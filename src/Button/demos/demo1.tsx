@@ -9,7 +9,16 @@ import Button from "..";
 const Demo1 = () => {
   return (
     <div>
-      <Button intent="primary">primary</Button>
+      <Button
+        disabled
+        size="lg"
+        onClick={() => {
+          console.log("he");
+        }}
+        intent="primary"
+      >
+        primary
+      </Button>
       <Button intent="secondary">secondary</Button>
       <Button intent="tertiary">tertiary</Button>
       <Button intent="primary" tone="blue">

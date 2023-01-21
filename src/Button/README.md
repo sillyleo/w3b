@@ -35,4 +35,4 @@ You can extract API from Typescript interface and render it into page.
 
 will result in:
 
-<TsInfo src="./index.tsx" name="ButtonProp" />
+<TsInfo src="./index.tsx" name="ButtonProps" />
