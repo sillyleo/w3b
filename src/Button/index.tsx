@@ -16,18 +16,20 @@ const allTones = Object.keys(figmaTokens.light).reduce((acc, key) => {
 const baseClass = style({
   cursor: 'pointer',
   boxSizing: 'border-box',
-  // backgroundColor: theme.colors.slate[9],
   fontFamily: theme.fontFamily.heading,
   fontWeight: theme.fontWeight.bold,
   letterSpacing: theme.letterSpacing.default,
-  // color: theme.colors.white,
+  display: 'inline-flex',
+  gap: theme.spacing[2],
+  padding: 0,
+  alignItems: 'center',
   borderRadius: theme.radii['xl'],
   fontSize: theme.fontSize['base'],
   lineHeight: 1,
   border: 'none',
   ':disabled': {
     cursor: 'not-allowed',
-    opacity: 0.5
+    opacity: 0.75
   }
 });
 
@@ -35,27 +37,53 @@ const baseClass = style({
 
 const sizeClass = styleVariants({
   sm: {
+    borderRadius: theme.radii['lg'],
     fontSize: theme.fontSize['xs'],
-    lineHeight: '2.777em',
+    height: theme.spacing[7],
     paddingLeft: theme.spacing[3],
     paddingRight: theme.spacing[3]
   },
   md: {
     fontSize: theme.fontSize['sm'],
 
-    lineHeight: '2.4615em',
+    height: theme.spacing[8],
     paddingLeft: theme.spacing[4],
     paddingRight: theme.spacing[4]
   },
   lg: {
     fontSize: theme.fontSize['base'],
 
-    lineHeight: '2.5333em',
+    height: theme.spacing[11],
 
     paddingLeft: theme.spacing[5],
     paddingRight: theme.spacing[5]
   }
 });
+
+// Alignments
+
+const alignmentClass = styleVariants({
+  left: {
+    justifyContent: 'flex-start'
+  },
+  center: {
+    justifyContent: 'center'
+  },
+  right: {
+    justifyContent: 'flex-end'
+  },
+  between: {
+    justifyContent: 'space-between'
+  }
+});
+
+
+// Icon position
+
+const iconSpacingClass = style({
+  justifyContent: 'space-between'
+});
+
 
 //  Dynamic tones and intents
 
@@ -178,10 +206,21 @@ const buttonStyle = cva(baseClass, {
       sm: sizeClass.sm,
       md: sizeClass.md,
       lg: sizeClass.lg
+    },
+    align: {
+      left: alignmentClass.left,
+      center: alignmentClass.center,
+      right: alignmentClass.right,
+      between: alignmentClass.between
+    },
+    iconSpacing: {
+      true: iconSpacingClass
     }
   },
   defaultVariants: {
-    size: 'lg'
+    size: 'lg',
+    align: 'center',
+    iconSpacing: false
   }
 });
 
@@ -197,22 +236,32 @@ export interface ButtonProps
 
   tone?: ToneType;
   size?: 'sm' | 'md' | 'lg';
+  align?: 'left' | 'center' | 'right' | 'between';
+  iconLeft?: React.ReactNode;
+  iconRight?: React.ReactNode;
+  iconSpacing?: boolean;
 }
 
 const Button = ({
                   intent = 'primary',
                   tone = 'slate',
                   size = 'md',
+                  align = 'center',
+                  iconLeft,
+                  iconRight,
+                  iconSpacing = false,
+                  children,
                   ...props
                 }: ButtonProps) => {
   return (
     <button
       className={buttonStyle({
-        size,
+        size, align, iconSpacing,
         className: getVariant(intent, tone) // for dynamic variants that's not composed with variants API
       })}
+
       {...props}
-    />
+    >{iconLeft}<span>{children}</span>{iconRight}</button>
   );
 };
 

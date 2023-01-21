@@ -3,77 +3,85 @@
  * @description Card demo1 description
  */
 
-import React from "react";
-import Button from "..";
+import React from 'react';
+import Button from '..';
 
 const Demo1 = () => {
   return (
     <div>
       <Button
-        disabled
-        size="lg"
+        align={'center'}
+        style={{ width: '300px' }}
+        size='lg'
         onClick={() => {
-          console.log("he");
+          console.log('he');
         }}
-        intent="primary"
+
+        intent='primary'
+        iconRight={<div style={{ width: '100%', height: '100%', background: 'red' }} />
+        }
+        iconLeft={<div style={{ width: 20, height: 20, background: 'green' }} />
+        }
       >
-        primary
+        primary1!
       </Button>
-      <Button intent="secondary">secondary</Button>
-      <Button intent="tertiary">tertiary</Button>
-      <Button intent="primary" tone="blue">
+      <Button align={'center'}
+              style={{ width: '300px' }} intent='secondary'>secondary</Button>
+      <Button align={'left'}
+              style={{ width: '300px' }} intent='tertiary'>tertiary</Button>
+      <Button intent='primary' tone='blue'>
         primary blue
       </Button>
-      <Button intent="secondary" tone="blue">
+      <Button intent='secondary' tone='blue'>
         secondary blue
       </Button>
-      <Button intent="tertiary" tone="blue">
+      <Button intent='tertiary' tone='blue'>
         tertiary blue
-      </Button>{" "}
-      <Button intent="primary" tone="sky">
+      </Button>{' '}
+      <Button intent='primary' tone='sky'>
         primary sky
       </Button>
-      <Button intent="secondary" tone="sky">
+      <Button intent='secondary' tone='sky'>
         secondary sky
       </Button>
-      <Button intent="tertiary" tone="sky">
+      <Button intent='tertiary' tone='sky'>
         tertiary sky
       </Button>
       <Button>Default Button</Button>
-      <Button tone="slate" size="lg">
+      <Button tone='slate' size='lg'>
         Button
       </Button>
-      <Button tone="slate" size="md">
+      <Button tone='slate' size='md'>
         Button
       </Button>
-      <Button tone="slate" size="sm">
+      <Button tone='slate' size='sm'>
         Button
       </Button>
-      <Button tone="blue" size="lg">
+      <Button tone='blue' size='lg'>
         Button
       </Button>
-      <Button tone="blue" size="md">
+      <Button tone='blue' size='md'>
         Button
       </Button>
-      <Button tone="blue" size="sm">
+      <Button tone='blue' size='sm'>
         Button
       </Button>
-      <Button tone="red" size="lg">
+      <Button tone='red' size='lg'>
         Button
       </Button>
-      <Button tone="red" size="md">
+      <Button tone='red' size='md'>
         Button
       </Button>
-      <Button tone="red" size="sm">
+      <Button tone='red' size='sm'>
         Button
       </Button>
-      <Button tone="yellow" size="lg">
+      <Button tone='yellow' size='lg'>
         Button
       </Button>
-      <Button tone="yellow" size="md">
+      <Button tone='yellow' size='md'>
         Button
       </Button>
-      <Button tone="yellow" size="sm">
+      <Button tone='yellow' size='sm'>
         Button
       </Button>
     </div>
