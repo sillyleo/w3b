@@ -1,7 +1,15 @@
 import React from "react";
-import { SkModernistBold, SkModernistRegular } from "../../src/theme";
 import { createTheme, defaultSideNavs } from "vite-pages-theme-doc";
 import Component404 from "./404";
+import { fontFace } from "@macaron-css/core";
+
+export const SkModernistBold = fontFace({
+  src: 'url("/fonts/sk-modernist-bold-webfont.woff2") format("woff2"), url("/fonts/sk-modernist-bold-webfont.woff") format("woff"),url("/fonts/sk-modernist-bold-webfont.ttf") format("truetype")',
+});
+
+export const SkModernistRegular = fontFace({
+  src: 'url("/fonts/sk-modernist-regular-webfont.woff2") format("woff2"), url("/fonts/sk-modernist-regular-webfont.woff") format("woff"),url("/fonts/sk-modernist-regular-webfont.ttf") format("truetype")',
+});
 
 export default createTheme({
   logo: (
