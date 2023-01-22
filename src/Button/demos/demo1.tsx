@@ -5,12 +5,26 @@
 
 import React from 'react';
 import Button from '..';
-import { darkTheme } from '../../theme';
+// import { darkTheme } from "../../theme";
 
 const Demo1 = () => {
   return (
     <div>
-      <Button tone={'amber'} align='left' style={{ width: '150px' }}>eaofj</Button>
+      <Button size='lg' intent='secondary' tone='tomato'>
+        Heelo
+      </Button>
+      <Button
+        size='lg'
+        intent='primary'
+        tone='e'
+        align='left'
+        style={{ width: '300px' }}
+      >
+        Hello
+      </Button>
+      <Button tone={'amber'} align='left' style={{ width: '150px' }}>
+        eaofj
+      </Button>
       <Button
         align={'center'}
         style={{ width: '300px' }}
@@ -31,7 +45,7 @@ const Demo1 = () => {
       <Button align={'center'} style={{ width: '300px' }} intent='secondary'>
         secondary
       </Button>
-      <Button align={'left'} style={{ width: '300px' }} intent='tertiary'>
+      <Button align={'left'} style={{ width: '300px' }} intent='ghost'>
         tertiary
       </Button>
       <Button intent='primary' tone='blue'>
