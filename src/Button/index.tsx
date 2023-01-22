@@ -11,7 +11,7 @@ import { intentVariants, toneVariants } from "../constants";
 const base = style({
   // font conbimation for skmondenist bold
   fontFamily: theme.fontFamily.heading,
-  fontWeight: 500, // magic number for safari font rendering
+  fontWeight: "bold",
   cursor: "pointer",
   display: "inline-flex",
   gap: theme.spacing[2],
