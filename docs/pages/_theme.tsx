@@ -1,21 +1,27 @@
 import React from "react";
 import { createTheme, defaultSideNavs } from "vite-pages-theme-doc";
 import Component404 from "./404";
-import { fontFace } from "@macaron-css/core";
 
-export const SkModernistBold = fontFace({
+import { globalFontFace } from "@macaron-css/core";
+const skModernistBold = "SkModernistBold";
+
+globalFontFace(skModernistBold, {
   src: 'url("/fonts/sk-modernist-bold-webfont.woff2") format("woff2"), url("/fonts/sk-modernist-bold-webfont.woff") format("woff"),url("/fonts/sk-modernist-bold-webfont.ttf") format("truetype")',
+  fontWeight: 500,
 });
 
-export const SkModernistRegular = fontFace({
+const skModernistRegular = "SkModernistRegular";
+
+globalFontFace(skModernistRegular, {
   src: 'url("/fonts/sk-modernist-regular-webfont.woff2") format("woff2"), url("/fonts/sk-modernist-regular-webfont.woff") format("woff"),url("/fonts/sk-modernist-regular-webfont.ttf") format("truetype")',
+  fontWeight: 400,
 });
 
 export default createTheme({
   logo: (
     <div
       style={{
-        fontFamily: SkModernistBold + ",sans-serif",
+        fontFamily: skModernistBold + ",sans-serif",
         fontSize: "1.25rem",
         fontWeight: "bold",
       }}

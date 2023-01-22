@@ -1,7 +1,7 @@
 import React from "react";
 import { style, styleVariants } from "@macaron-css/core";
 import { cva, VariantProps } from "class-variance-authority";
-import { SkModernistBold, theme } from "../theme";
+import { theme } from "../theme";
 import { intentVariants, toneVariants } from "../constants";
 
 // Compose classnames with macaron
@@ -10,7 +10,7 @@ import { intentVariants, toneVariants } from "../constants";
 
 const base = style({
   // font conbimation for skmondenist bold
-  fontFamily: SkModernistBold + ",sans-serif",
+  fontFamily: theme.fontFamily.heading,
   fontWeight: 500, // magic number for safari font rendering
   cursor: "pointer",
   display: "inline-flex",

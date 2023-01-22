@@ -5,18 +5,8 @@ import {
   globalStyle,
 } from "@macaron-css/core";
 import figmaTokens from "./theme.json";
-
-export const SkModernistBold = fontFace({
-  src: 'url("/fonts/sk-modernist-bold-webfont.woff2") format("woff2"), url("/fonts/sk-modernist-bold-webfont.woff") format("woff"),url("/fonts/sk-modernist-bold-webfont.ttf") format("truetype")',
-});
-
-export const SkModernistRegular = fontFace({
-  src: 'url("/fonts/sk-modernist-regular-webfont.woff2") format("woff2"), url("/fonts/sk-modernist-regular-webfont.woff") format("woff"),url("/fonts/sk-modernist-regular-webfont.ttf") format("truetype")',
-});
-
-// import "@fontsource/inter-tight";
-
-// turn figmaTokens.colors into an array of objects
+// SkModernistBold
+// SkModernistRegular
 
 const fontWeights: {
   // temporarily supress error
@@ -46,7 +36,7 @@ const commonTokens = {
   borderWidth: figmaTokens.borderWidth,
   opacity: figmaTokens.opacity,
   fontFamily: {
-    heading: `${figmaTokens.fontFamilies.heading}, sans-serif`,
+    heading: `${figmaTokens.fontFamilies.heading},'SkModernistBold','Sk-Modernist-Bold',sans-serif`,
     body: `'Inter Tight',${figmaTokens.fontFamilies.body}, sans-serif`,
   },
   fontSize: figmaTokens.fontSizes,
@@ -70,7 +60,7 @@ export const darkTheme = createTheme(theme, {
 
 globalStyle(":root", {
   WebkitTapHighlightColor: "rgba(0, 0, 0, 0)",
-  WebkitFontSmoothing: "antialiased",
+  // WebkitFontSmoothing: "antialiased",
   boxSizing: "border-box",
   margin: 0,
   padding: 0,

@@ -53,7 +53,38 @@ Edit `src/Button/demos/demo1.tsx` or other demo files, the demos will inflect yo
 
 `import "@sayaww/nomimono/style.css"`
 
-Fonts not specific but prioritize [Sk-Modernist](https://seankanedesign.gumroad.com/l/sk-modernist) for heading and Inter for body.
+# Fonts
+
+Fonts are not specific but prioritize [Sk-Modernist](https://seankanedesign.gumroad.com/l/sk-modernist) for heading and Inter for body.
+
+## Sk-Modernist
+
+Buy [here](https://seankanedesign.gumroad.com/l/sk-modernist)
+
+and add to `/fonts` or any place where css can access. (Relative to your public URL, not to local files.)
+
+Create font classnames:
+
+```jsx
+import { globalFontFace } from "@macaron-css/core";
+const skModernistBold = "SkModernistBold";
+
+globalFontFace(skModernistBold, {
+  src: 'url("/fonts/sk-modernist-bold-webfont.woff2") format("woff2"), url("/fonts/sk-modernist-bold-webfont.woff") format("woff"),url("/fonts/sk-modernist-bold-webfont.ttf") format("truetype")',
+  fontWeight: 500,
+});
+
+const skModernistRegular = "SkModernistRegular";
+
+globalFontFace(skModernistRegular, {
+  src: 'url("/fonts/sk-modernist-regular-webfont.woff2") format("woff2"), url("/fonts/sk-modernist-regular-webfont.woff") format("woff"),url("/fonts/sk-modernist-regular-webfont.ttf") format("truetype")',
+  fontWeight: 400,
+});
+```
+
+Access with `SkModernistBold` or `SkModernistRegular`.
+
+## Inter
 
 `pnpm install @fontsource/inter-tight`
 
@@ -61,6 +92,4 @@ and
 
 `import "@fontsource/inter-tight"`
 
-# Fonts
-
-Install fonts on your deployment server.
+Access with `Inter Tight`.
