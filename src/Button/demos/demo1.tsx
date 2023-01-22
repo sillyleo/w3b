@@ -40,7 +40,7 @@ const Demo1 = () => {
       <Button intent='secondary' tone='blue'>
         secondary blue
       </Button>
-      <Button intent='tertiary' tone='blue'>
+      <Button intent='ghost' tone='blue'>
         tertiary blue
       </Button>{' '}
       <Button intent='primary' tone='sky'>
@@ -49,7 +49,7 @@ const Demo1 = () => {
       <Button intent='secondary' tone='sky'>
         secondary sky
       </Button>
-      <Button intent='tertiary' tone='sky'>
+      <Button intent='ghost' tone='sky'>
         tertiary sky
       </Button>
       <Button>Default Button</Button>
