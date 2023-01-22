@@ -33,12 +33,12 @@ const Demo1 = () => {
           console.log('he');
         }}
         intent='primary'
-        iconRight={
-          <div style={{ width: '100%', height: '100%', background: 'red' }} />
-        }
-        iconLeft={
-          <div style={{ width: 20, height: 20, background: 'green' }} />
-        }
+        // iconRight={
+        //   <div style={{ width: '100%', height: '100%', background: 'red' }} />
+        // }
+        // iconLeft={
+        //   <div style={{ width: 20, height: 20, background: 'green' }} />
+        // }
       >
         primary1!
       </Button>
@@ -60,6 +60,7 @@ const Demo1 = () => {
       <Button intent='primary' tone='sky'>
         primary sky
       </Button>
+      <Button>euhfi</Button>
       <Button intent='secondary' tone='sky'>
         secondary sky
       </Button>
