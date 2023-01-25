@@ -194,11 +194,11 @@ const ghostClass = styleVariants(allTones, (tone: keyof Colors) => {
 
       backgroundColor: "transparent",
       ":hover": {
-        backgroundColor: theme.colors[tone][2],
+        backgroundColor: theme.colors[tone][3],
         color: theme.colors[tone][12],
       },
       ":active": {
-        backgroundColor: theme.colors[tone][3],
+        backgroundColor: theme.colors[tone][4],
       },
 
       color: theme.colors[tone][11],
@@ -208,10 +208,10 @@ const ghostClass = styleVariants(allTones, (tone: keyof Colors) => {
       backgroundColor: "transparent",
       ":hover": {
         color: theme.colors[tone][12],
-        backgroundColor: theme.colors[tone][2],
+        backgroundColor: theme.colors[tone][3],
       },
       ":active": {
-        backgroundColor: theme.colors[tone][3],
+        backgroundColor: theme.colors[tone][4],
       },
       color: theme.colors[tone][11],
     };
