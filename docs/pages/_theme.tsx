@@ -1,8 +1,8 @@
+import { globalFontFace } from "@macaron-css/core";
 import React from "react";
 import { createTheme, defaultSideNavs } from "vite-pages-theme-doc";
 import Component404 from "./404";
 
-import { globalFontFace } from "@macaron-css/core";
 const skModernistBold = "SkModernistBold";
 
 globalFontFace(skModernistBold, {

@@ -54,6 +54,7 @@
     "@types/node": "^18.11.18",
     "@types/react": "^18.0.27",
     "@types/react-dom": "^18.0.10",
+    "@vanilla-extract/css": "^1.9.3",
     "@vitejs/plugin-react": "^3.0.1",
     "json-to-ts-cli": "^1.0.2",
     "lodash": "^4.17.21",
