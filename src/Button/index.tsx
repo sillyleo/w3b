@@ -27,7 +27,8 @@ const base = style({
     opacity: 0.75,
   },
   ":active": {
-    transform: "translateY(1px) scale(0.95)",
+    // @ts-ignore
+    transform: "translateY(1px) scale(0.98)",
   },
 });
 
