@@ -9,7 +9,8 @@ import Icon from "..";
 const Demo1 = () => {
   return (
     <div>
-      <Icon name="air-vent" />
+      <Icon size={24} name="air-vent" />
+      <Icon name="camera" />
     </div>
   );
 };
