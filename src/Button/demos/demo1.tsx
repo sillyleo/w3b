@@ -4,19 +4,40 @@
  */
 
 import React from "react";
+import Icon from "../../Icon";
 import Button from "..";
 // import { darkTheme } from "../../theme";
 
 const Demo1 = () => {
   return (
     <div>
-      <Button style={{ width: "200px" }}>Heelo</Button>{" "}
+      <Button
+        size="lg"
+        leftIcon={<Icon name="camera" />}
+        style={{ width: "200px" }}
+      >
+        Heelo
+      </Button>{" "}
+      <Button
+        size="md"
+        leftIcon={<Icon name="camera" />}
+        style={{ width: "200px" }}
+      >
+        Heelo
+      </Button>{" "}
+      <Button
+        size="sm"
+        leftIcon={<Icon name="camera" />}
+        style={{ width: "200px" }}
+      >
+        Heelo
+      </Button>{" "}
       <Button style={{ width: "200px" }}>Heelo</Button>{" "}
       <Button style={{ width: "200px" }}>Heelo</Button>{" "}
       <Button style={{ width: "200px" }}>Heelo</Button>{" "}
       <Button style={{ width: "200px" }}>Heelo</Button>
       <Button
-        size="lg"
+        size="sm"
         intent="primary"
         tone="tomato"
         align="left"

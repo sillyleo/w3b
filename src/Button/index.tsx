@@ -3,14 +3,15 @@ import { style, styleVariants } from "@macaron-css/core";
 import { cva, VariantProps } from "class-variance-authority";
 import { theme } from "../theme";
 import { intentVariants, toneVariants } from "../constants";
+import { styled } from "@macaron-css/react";
 
 // Compose classnames with macaron
 
 // Base style
 
-const base = style({
-  // font conbimation for skmondenist bold
+export const base = style({
   fontFamily: theme.fontFamily.heading,
+  overflow: "hidden",
   fontWeight: "bold",
   cursor: "pointer",
   display: "inline-flex",
@@ -34,20 +35,20 @@ const base = style({
 
 // Size style
 
-const sizeSm = style({
+export const sizeSm = style({
   borderRadius: theme.radii["lg"],
   fontSize: theme.fontSize["xs"],
   height: theme.spacing[7],
   paddingLeft: theme.spacing[3],
   paddingRight: theme.spacing[3],
 });
-const sizeMd = style({
+export const sizeMd = style({
   fontSize: theme.fontSize["sm"],
   height: theme.spacing[8],
   paddingLeft: theme.spacing[4],
   paddingRight: theme.spacing[4],
 });
-const sizeLg = style({
+export const sizeLg = style({
   fontSize: theme.fontSize["base"],
   height: theme.spacing[11],
   paddingLeft: theme.spacing[5],
@@ -275,7 +276,7 @@ export interface ButtonProps
   rightIcon?: React.ReactNode;
 }
 
-const Button = ({
+export const Button = ({
   // list all available props here and default values
   size = "md",
   align,
