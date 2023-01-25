@@ -1,8 +1,6 @@
-// import { styled } from "@macaron-css/react";
 import _ from "lodash";
 import * as icons from "lucide-react";
 import React from "react";
-// import { sizeLg, sizeMd, sizeSm } from "src/Button";
 
 export interface IconProps {
   name: string;
@@ -13,32 +11,18 @@ export interface IconProps {
 }
 
 /**
- * See icons here: https://lucide.dev and paste in the name of the icon you want to use like "air-vent"
  *
- * @param {IconProps} { name, color, size, strokeWidth, ...props }
+ *
+ * @param {IconProps} {
+ *   name,
+ *   color,
+ *   size,
+ *   fill = "none",
+ *   strokeWidth,
+ *   ...props
+ * }
  * @returns
  */
-
-// Sizing depending on parent button variant class names
-// const IconSizer = styled("div", {
-//   base: {
-//     selectors: {
-//       [`${sizeSm} > &`]: {
-//         width: "15px",
-//         height: "15px",
-//       },
-//       [`${sizeMd} > &`]: {
-//         width: "18px",
-//         height: "18px",
-//       },
-//       [`${sizeLg} > &`]: {
-//         width: "22px",
-//         height: "22px",
-//       },
-//     },
-//   },
-// });
-
 const Icon = ({
   name,
   color,
@@ -59,6 +43,7 @@ const Icon = ({
       size={size ? size : "1.4em"}
       strokeWidth={strokeWidth}
       fill={fill}
+      style={{ flexShrink: 0 }}
       {...props}
     />
   );

@@ -1,9 +1,9 @@
-import React from "react";
 import { style, styleVariants } from "@macaron-css/core";
 import { cva, VariantProps } from "class-variance-authority";
-import { theme } from "../theme";
+import React from "react";
+import Icon from "../Icon";
 import { intentVariants, toneVariants } from "../constants";
-import { styled } from "@macaron-css/react";
+import { theme } from "../theme";
 
 // Compose classnames with macaron
 
@@ -14,10 +14,12 @@ export const base = style({
   overflow: "hidden",
   fontWeight: "bold",
   cursor: "pointer",
+  justifyContent: "center",
   display: "inline-flex",
-  gap: theme.spacing[2],
-  padding: 0,
+  // gap: theme.spacing[1],
+
   alignItems: "center",
+  borderRadius: theme.radii["lg"],
   fontSize: theme.fontSize["base"],
   lineHeight: 1,
   border: "none",
@@ -38,42 +40,27 @@ export const sizeSm = style({
   borderRadius: theme.radii["lg"],
   fontSize: theme.fontSize["xs"],
   height: theme.spacing[7],
-  paddingLeft: theme.spacing[3],
-  paddingRight: theme.spacing[3],
+  minWidth: theme.spacing[7],
+  paddingLeft: theme.spacing[1],
+  paddingRight: theme.spacing[1],
 });
 export const sizeMd = style({
   borderRadius: theme.radii["lg"],
 
   fontSize: theme.fontSize["sm"],
   height: theme.spacing[8],
-  paddingLeft: theme.spacing[4],
-  paddingRight: theme.spacing[4],
+  minWidth: theme.spacing[8],
+  paddingLeft: theme.spacing[1],
+  paddingRight: theme.spacing[1],
 });
 export const sizeLg = style({
   borderRadius: theme.radii["xl"],
 
   fontSize: theme.fontSize["base"],
   height: theme.spacing[11],
-  paddingLeft: theme.spacing[5],
-  paddingRight: theme.spacing[5],
-});
-
-// Alignment style
-
-const alignLeft = style({
-  justifyContent: "flex-start",
-});
-const alignCenter = style({
-  justifyContent: "center",
-});
-const alignRight = style({
-  justifyContent: "flex-end",
-});
-const alignBetween = style({
-  justifyContent: "space-between",
-});
-const alignAround = style({
-  justifyContent: "space-around",
+  minWidth: theme.spacing[11],
+  paddingLeft: theme.spacing[2],
+  paddingRight: theme.spacing[2],
 });
 
 //  Dynamic tones and intents
@@ -238,20 +225,13 @@ const buttonStyle = cva(base, {
       md: sizeMd,
       lg: sizeLg,
     },
-    align: {
-      left: alignLeft,
-      center: alignCenter,
-      right: alignRight,
-      between: alignBetween,
-      around: alignAround,
-    },
+
     // tone and intents are only here for type management, real styles are set by custom function `getVariant`
     tone: toneVariants,
     intent: intentVariants,
   },
   defaultVariants: {
     size: "md",
-    align: "center",
   },
 });
 
@@ -272,30 +252,31 @@ function getVariant(intent: string, tone: string) {
 export interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement>,
     VariantProps<typeof buttonStyle> {
+  name: string;
   size?: "sm" | "md" | "lg";
-  align?: "left" | "center" | "right" | "between" | "around";
   tone?: keyof Colors;
   intent?: "primary" | "secondary" | "ghost";
   leftIcon?: React.ReactNode;
   rightIcon?: React.ReactNode;
 }
 
-export const Button = ({
+export const IconButton = ({
   // list all available props here and default values
+  name,
   size = "md",
-  align,
   tone = "sand",
   intent = "secondary",
-  children,
   leftIcon,
   rightIcon,
   ...props
 }: ButtonProps) => {
+  // switch icon size
+  const iconSize = size === "sm" ? 18 : size === "md" ? 22 : 26;
+
   return (
     <button
       className={buttonStyle({
         size: size,
-        align: align,
         tone: tone,
         intent: intent,
         className: getVariant(intent, tone),
@@ -303,10 +284,10 @@ export const Button = ({
       {...props}
     >
       {leftIcon}
-      {children}
+      <Icon size={iconSize} name={"camera"} />
       {rightIcon}
     </button>
   );
 };
 
-export default Button;
+export default IconButton;
