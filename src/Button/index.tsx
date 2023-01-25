@@ -298,7 +298,7 @@ export const Button = ({
         align: align,
         tone: tone,
         intent: intent,
-        className: getVariant(intent, tone),
+        className: [getVariant(intent, tone), "normal-button"],
       })}
       {...props}
     >

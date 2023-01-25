@@ -279,7 +279,7 @@ export const IconButton = ({
         size: size,
         tone: tone,
         intent: intent,
-        className: getVariant(intent, tone),
+        className: [getVariant(intent, tone), "icon-button"],
       })}
       {...props}
     >
