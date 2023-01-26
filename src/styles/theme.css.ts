@@ -1,12 +1,32 @@
 import {
   createGlobalTheme,
-  createTheme,
-  fontFace,
+  createGlobalThemeContract,
   globalStyle,
-} from "@macaron-css/core";
-import figmaTokens from "./theme.json";
+} from "@vanilla-extract/css";
+import figmaTokens from "../theme.json";
 // SkModernistBold
 // SkModernistRegular
+
+// a function that takes an object and flattens its keys into a string with custom seperator
+// e.g. { colors: { red: { 1: "#fff" } } } => "colors-red-1"
+function flattenKeys(obj: any, sep = "", parentKey = "") {
+  return Object.keys(obj).reduce((acc, key) => {
+    const value = obj[key];
+    const newKey = parentKey ? parentKey + sep + key : key;
+    if (typeof value === "object") {
+      Object.assign(acc, flattenKeys(value, sep, newKey));
+    } else {
+      acc[newKey] = value;
+    }
+    return acc;
+  }, {});
+}
+
+// process colors from tomato: {1: color} to tomato1: color
+
+const lightColors = flattenKeys(figmaTokens.light);
+const baseColors = flattenKeys(figmaTokens.base);
+const darkColors = flattenKeys(figmaTokens.dark);
 
 const fontWeights: {
   // temporarily supress error
@@ -47,16 +67,33 @@ const commonTokens = {
   spacing: figmaTokens.spacing,
   screens: figmaTokens.screens,
 };
+console.log(baseColors);
 
-export const theme = createGlobalTheme(":root", {
-  colors: { ...figmaTokens.light, ...figmaTokens.base },
-  ...commonTokens,
+export const theme = createGlobalThemeContract({
+  colors: {
+    white: "#fff",
+    black: "#000",
+    text: "#11181c",
+    textSecondary: "#687076",
+    textTertiary: "#7e868c",
+  },
+  // colors: { ...figmaTokens.colors.tomato },
+  // ...commonTokens,
 });
 
-export const darkTheme = createTheme(theme, {
-  colors: { ...figmaTokens.dark, ...figmaTokens.base },
-  ...commonTokens,
+createGlobalTheme(":root", theme, {
+  colors: {
+    white: "#fff",
+    black: "#000",
+    text: "#11181c",
+    textSecondary: "#687076",
+    textTertiary: "#7e868c",
+  },
 });
+
+// createGlobalTheme("dark", theme, {
+//   colors: baseColors,
+// });
 
 globalStyle(":root", {
   WebkitTapHighlightColor: "rgba(0, 0, 0, 0)",

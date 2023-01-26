@@ -10,7 +10,7 @@ const Demo1 = () => {
   return (
     <div>
       <Box />
-      <Box backgroundColor="blue" />
+      <Box />
       <Box />
       <Box />
     </div>

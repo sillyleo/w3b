@@ -1,27 +1,26 @@
-import { globalFontFace } from "@macaron-css/core";
 import React from "react";
 import { createTheme, defaultSideNavs } from "vite-pages-theme-doc";
 import Component404 from "./404";
 
-const skModernistBold = "SkModernistBold";
+// const skModernistBold = "SkModernistBold";
 
-globalFontFace(skModernistBold, {
-  src: 'url("/fonts/sk-modernist-bold-webfont.woff2") format("woff2"), url("/fonts/sk-modernist-bold-webfont.woff") format("woff"),url("/fonts/sk-modernist-bold-webfont.ttf") format("truetype")',
-  fontWeight: "bold",
-});
+// globalFontFace(skModernistBold, {
+//   src: 'url("/fonts/sk-modernist-bold-webfont.woff2") format("woff2"), url("/fonts/sk-modernist-bold-webfont.woff") format("woff"),url("/fonts/sk-modernist-bold-webfont.ttf") format("truetype")',
+//   fontWeight: "bold",
+// });
 
-const skModernistRegular = "SkModernistRegular";
+// const skModernistRegular = "SkModernistRegular";
 
-globalFontFace(skModernistRegular, {
-  src: 'url("/fonts/sk-modernist-regular-webfont.woff2") format("woff2"), url("/fonts/sk-modernist-regular-webfont.woff") format("woff"),url("/fonts/sk-modernist-regular-webfont.ttf") format("truetype")',
-  fontWeight: 400,
-});
+// globalFontFace(skModernistRegular, {
+//   src: 'url("/fonts/sk-modernist-regular-webfont.woff2") format("woff2"), url("/fonts/sk-modernist-regular-webfont.woff") format("woff"),url("/fonts/sk-modernist-regular-webfont.ttf") format("truetype")',
+//   fontWeight: 400,
+// });
 
 export default createTheme({
   logo: (
     <div
       style={{
-        fontFamily: skModernistBold + ",sans-serif",
+        // fontFamily: skModernistBold + ",sans-serif",
         fontSize: "1.25rem",
         fontWeight: "bold",
       }}
