@@ -12,7 +12,7 @@ const Demo1 = () => {
     <div>
       <IconButton size="sm" name="camera" />
       <IconButton size="md" name="camera" />
-      <IconButton size="lg" name="camera" />{" "}
+      <IconButton size="lg" name="camera" />
       <IconButton
         size="sm"
         name="camera"
