@@ -4,15 +4,14 @@
  */
 
 import React from "react";
-import Box from "..";
+import Icon from "..";
 
 const Demo1 = () => {
   return (
     <div>
-      <Box />
-      <Box />
-      <Box />
-      <Box />
+        <Icon size={24} name="air-vent" />
+        <Icon  name="air-vent" />
+        <Icon name="camera" />
     </div>
   );
 };

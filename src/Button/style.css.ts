@@ -1,5 +1,5 @@
 import { styleVariants } from "@vanilla-extract/css";
-import { recipe } from "@vanilla-extract/recipes";
+import { recipe, RecipeVariants } from "@vanilla-extract/recipes";
 import { theme } from "../../src/styles/theme.css";
 import { allTones } from "./../constants";
 
@@ -24,6 +24,7 @@ export const buttonStyle = recipe({
     ":active": {
       transform: "translateY(1px) scale(0.98)",
     },
+
   },
   variants: {
     size: {
@@ -72,6 +73,11 @@ export const buttonStyle = recipe({
     align: "center",
   },
 });
+
+// Export type
+export type ButtonVariants = RecipeVariants<typeof buttonStyle>;
+
+// Genertate tone and intent variants with code, using style variants
 
 // primaryClass[tone]
 export const primaryClass = styleVariants(allTones, (tone) => {
