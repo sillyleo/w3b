@@ -4,15 +4,15 @@
  */
 
 import React from "react";
-import Box from "..";
+import Button from "..";
 
 const Demo1 = () => {
   return (
     <div>
-      <Box />
-      <Box />
-      <Box />
-      <Box />
+      <Button />
+      <Button />
+      <Button />
+      <Button />
     </div>
   );
 };

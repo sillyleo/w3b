@@ -20,7 +20,7 @@ export default createTheme({
   logo: (
     <div
       style={{
-        // fontFamily: skModernistBold + ",sans-serif",
+        // fontFamily: comicSans + ",sans-serif",
         fontSize: "1.25rem",
         fontWeight: "bold",
       }}

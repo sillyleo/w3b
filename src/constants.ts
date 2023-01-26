@@ -1,4 +1,4 @@
-import figmaTokens from './theme.json';
+import figmaTokens from "./theme.json";
 
 //  all colors as allTones from figmaTokens.colors
 // eg. {blue: "blue", red: "red", green: "green"}
@@ -9,9 +9,10 @@ export const allTones = Object.keys(figmaTokens.colors).reduce((acc, key) => {
 
 // Dummy class name
 
-const dummy = 'dummy';
+const dummy = {};
 export const toneVariants = {
-  accent: dummy, amber: dummy,
+  accent: dummy,
+  amber: dummy,
   blue: dummy,
   bronze: dummy,
   brown: dummy,
@@ -39,14 +40,13 @@ export const toneVariants = {
 
   tomato: dummy,
   violet: dummy,
-  yellow: dummy
+  yellow: dummy,
 };
-
 
 // Compose buttonStyle with cva
 
 export const intentVariants = {
   primary: dummy,
   secondary: dummy,
-  ghost: dummy
+  ghost: dummy,
 };

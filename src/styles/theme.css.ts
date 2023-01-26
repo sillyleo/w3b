@@ -1,15 +1,39 @@
 import {
   createGlobalTheme,
   createGlobalThemeContract,
+  createTheme,
   globalStyle,
+  globalFontFace,
+  style,
 } from "@vanilla-extract/css";
 import figmaTokens from "../theme.json";
-// SkModernistBold
-// SkModernistRegular
 
+// Font setup
+// Usage:
+// fontFamily: SkModernistBold
+// fontFamily: SkModernistRegular
+// These paths are relative to the deployment folder (/docs in this case. Put those in your own public folder.)
+
+const skModernistBold = "SkModernistBold";
+globalFontFace(skModernistBold, {
+  src: 'url("/fonts/sk-modernist-bold-webfont.woff2") format("woff2"), url("/fonts/sk-modernist-bold-webfont.woff") format("woff"),url("/fonts/sk-modernist-bold-webfont.ttf") format("truetype")',
+  fontWeight: "bold",
+});
+
+const skModernistRegular = "SkModernistRegular";
+globalFontFace(skModernistRegular, {
+  src: 'url("/fonts/sk-modernist-regular-webfont.woff2") format("woff2"), url("/fonts/sk-modernist-regular-webfont.woff") format("woff"),url("/fonts/sk-modernist-regular-webfont.ttf") format("truetype")',
+  fontWeight: 400,
+});
+
+// Process colors from tomato: {1: color} to tomato1: color
 // a function that takes an object and flattens its keys into a string with custom seperator
 // e.g. { colors: { red: { 1: "#fff" } } } => "colors-red-1"
-function flattenKeys(obj: any, sep = "", parentKey = "") {
+function flattenKeys(
+  obj: any,
+  sep = "",
+  parentKey = ""
+): Record<string, string> {
   return Object.keys(obj).reduce((acc, key) => {
     const value = obj[key];
     const newKey = parentKey ? parentKey + sep + key : key;
@@ -22,14 +46,11 @@ function flattenKeys(obj: any, sep = "", parentKey = "") {
   }, {});
 }
 
-// process colors from tomato: {1: color} to tomato1: color
-
 const lightColors = flattenKeys(figmaTokens.light);
 const baseColors = flattenKeys(figmaTokens.base);
 const darkColors = flattenKeys(figmaTokens.dark);
 
 const fontWeights: {
-  // temporarily supress error
   [key: string]: string;
 } = Object.keys(figmaTokens.fontWeights).reduce((acc, key) => {
   acc[key] = figmaTokens.fontWeights[key].toString();
@@ -37,7 +58,6 @@ const fontWeights: {
 }, {});
 
 const letterSpacing: {
-  // temporarily supress error
   [key: string]: string;
 } = Object.keys(figmaTokens.letterSpacing).reduce((acc, key) => {
   const value = figmaTokens.letterSpacing[key];
@@ -50,7 +70,6 @@ const letterSpacing: {
   return acc;
 }, {});
 
-// console.log(letterSpacing);
 const commonTokens = {
   radii: figmaTokens.borderRadius,
   borderWidth: figmaTokens.borderWidth,
@@ -67,33 +86,22 @@ const commonTokens = {
   spacing: figmaTokens.spacing,
   screens: figmaTokens.screens,
 };
-console.log(baseColors);
 
-export const theme = createGlobalThemeContract({
+export const theme = createGlobalTheme(":root", {
   colors: {
-    white: "#fff",
-    black: "#000",
-    text: "#11181c",
-    textSecondary: "#687076",
-    textTertiary: "#7e868c",
+    ...baseColors,
+    ...lightColors,
   },
-  // colors: { ...figmaTokens.colors.tomato },
-  // ...commonTokens,
+  ...commonTokens,
 });
 
-createGlobalTheme(":root", theme, {
+export const darkTheme = createTheme(theme, {
   colors: {
-    white: "#fff",
-    black: "#000",
-    text: "#11181c",
-    textSecondary: "#687076",
-    textTertiary: "#7e868c",
+    ...baseColors,
+    ...darkColors,
   },
+  ...commonTokens,
 });
-
-// createGlobalTheme("dark", theme, {
-//   colors: baseColors,
-// });
 
 globalStyle(":root", {
   WebkitTapHighlightColor: "rgba(0, 0, 0, 0)",
