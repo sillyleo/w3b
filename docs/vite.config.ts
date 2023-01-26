@@ -2,8 +2,6 @@ import { defineConfig } from "vite";
 import * as path from "path";
 import react from "@vitejs/plugin-react";
 import pages, { DefaultPageStrategy } from "vite-plugin-react-pages";
-// import { macaronVitePlugin } from "@macaron-css/vite";
-// @ts-ignore
 import { vanillaExtractPlugin } from "@vanilla-extract/vite-plugin";
 export default defineConfig({
   plugins: [
