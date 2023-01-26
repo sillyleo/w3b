@@ -1,32 +1,19 @@
 import React from "react";
 import { createTheme, defaultSideNavs } from "vite-pages-theme-doc";
 import Component404 from "./404";
+import '../../src/styles/theme.css'
 
-// const skModernistBold = "SkModernistBold";
-
-// globalFontFace(skModernistBold, {
-//   src: 'url("/fonts/sk-modernist-bold-webfont.woff2") format("woff2"), url("/fonts/sk-modernist-bold-webfont.woff") format("woff"),url("/fonts/sk-modernist-bold-webfont.ttf") format("truetype")',
-//   fontWeight: "bold",
-// });
-
-// const skModernistRegular = "SkModernistRegular";
-
-// globalFontFace(skModernistRegular, {
-//   src: 'url("/fonts/sk-modernist-regular-webfont.woff2") format("woff2"), url("/fonts/sk-modernist-regular-webfont.woff") format("woff"),url("/fonts/sk-modernist-regular-webfont.ttf") format("truetype")',
-//   fontWeight: 400,
-// });
 
 export default createTheme({
   logo: (
-    <div
+    <h1
       style={{
-        // fontFamily: comicSans + ",sans-serif",
         fontSize: "1.25rem",
         fontWeight: "bold",
       }}
     >
       🥤 Nomimono
-    </div>
+    </h1>
   ),
   // topNavs: [
   //   {
