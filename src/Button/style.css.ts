@@ -6,7 +6,6 @@ import { allTones } from "./../constants";
 export const buttonStyle = recipe({
   base: {
     fontFamily: theme.fontFamily.heading,
-    overflow: "hidden",
     fontWeight: "bold",
     cursor: "pointer",
     display: "inline-flex",
@@ -16,7 +15,20 @@ export const buttonStyle = recipe({
     fontSize: theme.fontSize["base"],
     lineHeight: 1,
     border: "none",
+    position: "relative",
     transition: "all 0.2s",
+    // ":before": {
+    //   filter:
+    //     "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='b' x='0' y='0'%3E%3CfeFlood x='4' y='4' height='2' width='2'/%3E%3CfeComposite width='10' height='10'/%3E%3CfeTile result='a'/%3E%3CfeComposite in='SourceGraphic' in2='a' operator='in'/%3E%3CfeMorphology operator='dilate' radius='5'/%3E%3C/filter%3E%3C/svg%3E#b\")",
+    //   background: "red",
+    //   position: "absolute",
+    //   content: "''",
+    //   top: 0,
+    //   left: -2,
+    //   right: -2,
+    //   bottom: -3,
+    //   zIndex: 1,
+    // },
     ":disabled": {
       cursor: "not-allowed",
       opacity: 0.75,
@@ -24,7 +36,6 @@ export const buttonStyle = recipe({
     ":active": {
       transform: "translateY(1px) scale(0.98)",
     },
-
   },
   variants: {
     size: {
@@ -50,6 +61,31 @@ export const buttonStyle = recipe({
         paddingRight: theme.spacing[5],
       },
     },
+
+    gradient: {
+      true: {
+        ":before": {
+          position: "absolute",
+          overflow: "hidden",
+          content: "''",
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          backgroundImage:
+            "linear-gradient(0deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.6) 100%)",
+          backdropFilter: "saturate(120%)",
+          // backgroundSize: "200% auto",
+          mixBlendMode: "overlay",
+        },
+        selectors: {
+          "&:hover:before": {
+            backgroundImage:
+              "linear-gradient(360deg, rgba(255,255,255,0.4) 0%, rgba(255,255,255,0.4) 35%, rgba(255,255,255,1) 100%)",
+          },
+        },
+      },
+    },
     align: {
       left: {
         justifyContent: "flex-start",
@@ -68,6 +104,41 @@ export const buttonStyle = recipe({
       },
     },
   },
+  compoundVariants: [
+    {
+      variants: {
+        size: "sm",
+        gradient: true,
+      },
+      style: {
+        ":before": {
+          borderRadius: theme.radii["lg"],
+        },
+      },
+    },
+    {
+      variants: {
+        size: "md",
+        gradient: true,
+      },
+      style: {
+        ":before": {
+          borderRadius: theme.radii["lg"],
+        },
+      },
+    },
+    {
+      variants: {
+        size: "lg",
+        gradient: true,
+      },
+      style: {
+        ":before": {
+          borderRadius: theme.radii["xl"],
+        },
+      },
+    },
+  ],
   defaultVariants: {
     size: "md",
     align: "center",
@@ -227,4 +298,30 @@ export const ghostClass = styleVariants(allTones, (tone: keyof Colors) => {
   }
 });
 
-// Get class name from intent and tone
+// primaryClass[tone]
+export const primaryShadowClass = styleVariants(allTones, (tone) => {
+  // color bg + black text
+  return {
+    boxShadow: `0 5px 12px ${theme.colors[tone + "7"]}, 0 1px 6px ${
+      theme.colors[tone + "5"]
+    }`,
+  };
+});
+
+// primaryClass[tone]
+export const secondaryShadowClass = styleVariants(allTones, (tone) => {
+  // color bg + black text
+  return {
+    boxShadow: `0 5px 12px ${theme.colors[tone + "6"]}, 0 1px 6px ${
+      theme.colors[tone + "5"]
+    }`,
+  };
+});
+
+// tertiaryClass[tone]
+export const ghostShadowClass = styleVariants(allTones, (tone) => {
+  // color bg + black text
+  return {
+    boxShadow: "none",
+  };
+});

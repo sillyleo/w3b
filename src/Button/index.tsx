@@ -5,6 +5,9 @@ import {
   primaryClass,
   secondaryClass,
   ButtonVariants,
+  ghostShadowClass,
+  primaryShadowClass,
+  secondaryShadowClass,
 } from "./style.css";
 import { clsx } from "clsx";
 
@@ -21,6 +24,25 @@ export function getVariant(intent: string, tone: keyof Colors) {
   }
 }
 
+// set variant class names
+export function getShadowVariant(
+  shadow: boolean,
+  intent: string,
+  tone: keyof Colors
+) {
+  if (shadow) {
+    if (intent === "primary") {
+      return primaryShadowClass[tone];
+    } else if (intent === "secondary") {
+      return secondaryShadowClass[tone];
+    } else if (intent === "ghost") {
+      return ghostShadowClass[tone];
+    } else {
+      return primaryShadowClass[tone];
+    }
+  }
+}
+
 export interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement>,
     ButtonVariants {
@@ -30,6 +52,8 @@ export interface ButtonProps
   intent?: "primary" | "secondary" | "ghost";
   leftIcon?: React.ReactNode;
   rightIcon?: React.ReactNode;
+  gradient?: boolean;
+  shadow?: boolean;
 }
 
 export const Button = ({
@@ -41,6 +65,8 @@ export const Button = ({
   children,
   leftIcon,
   rightIcon,
+  gradient = false,
+  shadow = false,
   ...props
 }: ButtonProps) => {
   return (
@@ -50,8 +76,10 @@ export const Button = ({
         buttonStyle({
           size: size,
           align: align,
+          gradient: gradient,
         }),
-        getVariant(intent, tone)
+        getVariant(intent, tone),
+        getShadowVariant(shadow, intent, tone)
       )}
       {...props}
     >
