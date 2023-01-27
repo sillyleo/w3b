@@ -316,10 +316,10 @@ export const mdPrimaryShadowClass = styleVariants(allTones, (tone) => {
   // color bg + black text
   return {
     boxShadow: `
-      0px 0.2px 0.2px ${theme.colors[tone + "5"]},
-      0px 0.8px 0.9px -0.8px ${theme.colors[tone + "5"]},
-      -0.1px 2px 2.3px -1.7px ${theme.colors[tone + "5"]},
-      -0.1px 4.8px 5.4px -2.5px ${theme.colors[tone + "5"]}
+      0px 0.2px 0.2px ${theme.colors[tone + "7"]},
+      0px 0.8px 0.9px -0.8px ${theme.colors[tone + "7"]},
+      -0.1px 2px 2.3px -1.7px ${theme.colors[tone + "7"]},
+      -0.1px 4.8px 5.4px -2.5px ${theme.colors[tone + "7"]}
     `,
   };
 });
