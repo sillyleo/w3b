@@ -4,39 +4,42 @@
  */
 
 import React from "react";
-import Icon from "../../Icon";
 import Button from "..";
+import { darkTheme } from "../../styles/theme.css";
 
+{
+  /* <div> */
+}
 const Demo1 = () => {
   return (
-    <div>
-      <Button shadow size="sm" tone="tomato" intent="primary">
+    <div style={{ background: "black" }} className={darkTheme}>
+      <Button shadow size="sm" tone="mauve" intent="primary">
         Button
       </Button>
-      <Button shadow size="md" tone="tomato" intent="primary">
+      <Button shadow size="md" tone="mauve" intent="primary">
         Button
       </Button>
-      <Button shadow size="lg" tone="tomato" intent="primary">
-        Button
-      </Button>
-
-      <Button shadow size="sm" tone="tomato" intent="secondary">
-        Button
-      </Button>
-      <Button shadow size="md" tone="tomato" intent="secondary">
-        Button
-      </Button>
-      <Button shadow size="lg" tone="tomato" intent="secondary">
+      <Button shadow size="lg" tone="mauve" intent="primary">
         Button
       </Button>
 
-      <Button shadow size="sm" tone="tomato" intent="ghost">
+      <Button shadow size="sm" tone="mauve" intent="secondary">
         Button
       </Button>
-      <Button shadow size="md" tone="tomato" intent="ghost">
+      <Button shadow size="md" tone="mauve" intent="secondary">
         Button
       </Button>
-      <Button shadow size="lg" tone="tomato" intent="ghost">
+      <Button shadow size="lg" tone="mauve" intent="secondary">
+        Button
+      </Button>
+
+      <Button shadow size="sm" tone="mauve" intent="ghost">
+        Button
+      </Button>
+      <Button shadow size="md" tone="mauve" intent="ghost">
+        Button
+      </Button>
+      <Button shadow size="lg" tone="mauve" intent="ghost">
         Button
       </Button>
     </div>

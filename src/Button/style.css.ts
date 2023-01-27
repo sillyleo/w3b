@@ -168,7 +168,7 @@ export const primaryClass = styleVariants(allTones, (tone) => {
       ":active": {
         backgroundColor: theme.colors[tone + "11"],
       },
-      color: theme.colors[tone + "12"],
+      color: theme.colors.black,
     };
   } else if (
     tone === "gray" ||
@@ -343,6 +343,7 @@ export const smSecondaryShadowClass = styleVariants(allTones, (tone) => {
   // color bg + black text
   return {
     boxShadow: `
+      0px 1px 4px ${theme.colors[tone + "6"]},
       0px 0.2px 0.2px ${theme.colors[tone + "5"]},
       0px 0.8px 0.9px -0.8px ${theme.colors[tone + "5"]},
       -0.1px 2px 2.3px -1.7px ${theme.colors[tone + "5"]},
@@ -355,6 +356,7 @@ export const mdSecondaryShadowClass = styleVariants(allTones, (tone) => {
   // color bg + black text
   return {
     boxShadow: `
+      0px 1px 4px ${theme.colors[tone + "7"]},
       0px 0.2px 0.2px ${theme.colors[tone + "4"]},
       0px 0.8px 0.9px -0.8px ${theme.colors[tone + "4"]},
       -0.1px 2px 2.3px -1.7px ${theme.colors[tone + "4"]},
@@ -366,6 +368,7 @@ export const mdSecondaryShadowClass = styleVariants(allTones, (tone) => {
 export const lgSecondaryShadowClass = styleVariants(allTones, (tone) => {
   return {
     boxShadow: `
+          0px 1px 4px ${theme.colors[tone + "7"]},
     0px 0.1px 0.1px ${theme.colors[tone + "3"]},
     0px 0.7px 0.8px -0.4px ${theme.colors[tone + "3"]},
     -0.1px 1.3px 1.5px -0.7px ${theme.colors[tone + "3"]},
@@ -382,6 +385,8 @@ export const smGhostShadowClass = styleVariants(allTones, (tone) => {
   // color bg + black text
   return {
     boxShadow: `
+          0px 1px 4px ${theme.colors[tone + "5"]},
+
       0px 0.2px 0.2px ${theme.colors[tone + "4"]},
       0px 0.8px 0.9px -0.8px ${theme.colors[tone + "4"]},
       -0.1px 2px 2.3px -1.7px ${theme.colors[tone + "4"]},
@@ -394,6 +399,8 @@ export const mdGhostShadowClass = styleVariants(allTones, (tone) => {
   // color bg + black text
   return {
     boxShadow: `
+          0px 1px 4px ${theme.colors[tone + "6"]},
+
       0px 0.2px 0.2px ${theme.colors[tone + "4"]},
       0px 0.8px 0.9px -0.8px ${theme.colors[tone + "4"]},
       -0.1px 2px 2.3px -1.7px ${theme.colors[tone + "4"]},
@@ -405,6 +412,8 @@ export const mdGhostShadowClass = styleVariants(allTones, (tone) => {
 export const lgGhostShadowClass = styleVariants(allTones, (tone) => {
   return {
     boxShadow: `
+          0px 1px 4px ${theme.colors[tone + "6"]},
+
     0px 0.1px 0.1px ${theme.colors[tone + "4"]},
     0px 0.7px 0.8px -0.4px ${theme.colors[tone + "4"]},
     -0.1px 1.3px 1.5px -0.7px ${theme.colors[tone + "4"]},

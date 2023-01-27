@@ -41,6 +41,7 @@ export function getShadowVariant(
     if (size === "sm") {
       return smPrimaryShadowClass[tone];
     } else if (size === "md") {
+      // console.log(mdPrimaryShadowClass[tone]);
       return mdPrimaryShadowClass[tone];
     } else {
       return lgPrimaryShadowClass[tone];

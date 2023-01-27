@@ -45,6 +45,7 @@
     "@vanilla-extract/vite-plugin": "^3.7.1",
     "class-variance-authority": "^0.4.0",
     "clsx": "^1.2.1",
+    "colord": "^2.9.3",
     "framer-motion": "^8.5.2",
     "lucide-react": "^0.105.0",
     "react": "^18.2.0",
