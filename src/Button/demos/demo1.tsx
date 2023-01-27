@@ -12,34 +12,34 @@ import { darkTheme } from "../../styles/theme.css";
 }
 const Demo1 = () => {
   return (
-    <div style={{ background: "black" }} className={darkTheme}>
-      <Button shadow size="sm" tone="mauve" intent="primary">
+    <div>
+      <Button shadow size="sm" tone="mint" intent="primary">
         Button
       </Button>
-      <Button shadow size="md" tone="mauve" intent="primary">
+      <Button shadow size="md" tone="mint" intent="primary">
         Button
       </Button>
-      <Button shadow size="lg" tone="mauve" intent="primary">
-        Button
-      </Button>
-
-      <Button shadow size="sm" tone="mauve" intent="secondary">
-        Button
-      </Button>
-      <Button shadow size="md" tone="mauve" intent="secondary">
-        Button
-      </Button>
-      <Button shadow size="lg" tone="mauve" intent="secondary">
+      <Button shadow size="lg" tone="mint" intent="primary">
         Button
       </Button>
 
-      <Button shadow size="sm" tone="mauve" intent="ghost">
+      <Button shadow size="sm" tone="mint" intent="secondary">
         Button
       </Button>
-      <Button shadow size="md" tone="mauve" intent="ghost">
+      <Button shadow size="md" tone="mint" intent="secondary">
         Button
       </Button>
-      <Button shadow size="lg" tone="mauve" intent="ghost">
+      <Button shadow size="lg" tone="mint" intent="secondary">
+        Button
+      </Button>
+
+      <Button shadow size="sm" tone="mint" intent="ghost">
+        Button
+      </Button>
+      <Button shadow size="md" tone="mint" intent="ghost">
+        Button
+      </Button>
+      <Button shadow size="lg" tone="mint" intent="ghost">
         Button
       </Button>
     </div>

@@ -1,21 +1,20 @@
 import React from "react";
+import { buttonStyle, ButtonVariants } from "./style.css";
+import { clsx } from "clsx";
 import {
-  buttonStyle,
-  ghostClass,
   primaryClass,
   secondaryClass,
-  ButtonVariants,
+  ghostClass,
+  smPrimaryShadowClass,
   mdPrimaryShadowClass,
   lgPrimaryShadowClass,
-  smPrimaryShadowClass,
-  lgGhostShadowClass,
-  lgSecondaryShadowClass,
-  mdGhostShadowClass,
-  mdSecondaryShadowClass,
-  smGhostShadowClass,
   smSecondaryShadowClass,
-} from "./style.css";
-import { clsx } from "clsx";
+  mdSecondaryShadowClass,
+  lgSecondaryShadowClass,
+  smGhostShadowClass,
+  mdGhostShadowClass,
+  lgGhostShadowClass,
+} from "../styles/theme.css";
 
 // set variant class names
 export function getVariant(intent: string, tone: keyof Colors) {
