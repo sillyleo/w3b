@@ -3552,6 +3552,18 @@
     "textTertiary": {
       "value": "{colors.slate.10}",
       "type": "color"
+    },
+    "background": {
+      "value": "{colors.slate.1}",
+      "type": "color"
+    },
+    "backgroundSecondary": {
+      "value": "{colors.slate.2}",
+      "type": "color"
+    },
+    "backgroundTertiary": {
+      "value": "{colors.slate.3}",
+      "type": "color"
     }
   }
 }
