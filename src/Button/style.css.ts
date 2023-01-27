@@ -298,30 +298,121 @@ export const ghostClass = styleVariants(allTones, (tone: keyof Colors) => {
   }
 });
 
-// primaryClass[tone]
-export const primaryShadowClass = styleVariants(allTones, (tone) => {
+// Ref: https://www.joshwcomeau.com/shadow-palette/
+
+export const smPrimaryShadowClass = styleVariants(allTones, (tone) => {
   // color bg + black text
   return {
-    boxShadow: `0 5px 12px ${theme.colors[tone + "7"]}, 0 1px 6px ${
-      theme.colors[tone + "5"]
-    }`,
+    boxShadow: `
+      0px 0.2px 0.2px ${theme.colors[tone + "7"]},
+      0px 0.8px 0.9px -0.8px ${theme.colors[tone + "7"]},
+      -0.1px 2px 2.3px -1.7px ${theme.colors[tone + "7"]},
+      -0.1px 4.8px 5.4px -2.5px ${theme.colors[tone + "7"]}
+    `,
   };
 });
 
-// primaryClass[tone]
-export const secondaryShadowClass = styleVariants(allTones, (tone) => {
+export const mdPrimaryShadowClass = styleVariants(allTones, (tone) => {
   // color bg + black text
   return {
-    boxShadow: `0 5px 12px ${theme.colors[tone + "6"]}, 0 1px 6px ${
-      theme.colors[tone + "5"]
-    }`,
+    boxShadow: `
+      0px 0.2px 0.2px ${theme.colors[tone + "5"]},
+      0px 0.8px 0.9px -0.8px ${theme.colors[tone + "5"]},
+      -0.1px 2px 2.3px -1.7px ${theme.colors[tone + "5"]},
+      -0.1px 4.8px 5.4px -2.5px ${theme.colors[tone + "5"]}
+    `,
   };
 });
 
-// tertiaryClass[tone]
-export const ghostShadowClass = styleVariants(allTones, (tone) => {
+export const lgPrimaryShadowClass = styleVariants(allTones, (tone) => {
+  return {
+    boxShadow: `
+    0px 0.1px 0.1px ${theme.colors[tone + "5"]},
+    0px 0.7px 0.8px -0.4px ${theme.colors[tone + "5"]},
+    -0.1px 1.3px 1.5px -0.7px ${theme.colors[tone + "5"]},
+    -0.1px 2.2px 2.5px -1.1px ${theme.colors[tone + "5"]},
+    -0.2px 3.4px 3.8px -1.4px ${theme.colors[tone + "5"]},
+    -0.3px 5.4px 6.1px -1.8px ${theme.colors[tone + "5"]},
+    -0.4px 8.2px 9.2px -2.1px ${theme.colors[tone + "5"]},
+    -0.6px 12.1px 13.6px -2.5px ${theme.colors[tone + "5"]};
+      `,
+  };
+});
+
+export const smSecondaryShadowClass = styleVariants(allTones, (tone) => {
   // color bg + black text
   return {
-    boxShadow: "none",
+    boxShadow: `
+      0px 0.2px 0.2px ${theme.colors[tone + "5"]},
+      0px 0.8px 0.9px -0.8px ${theme.colors[tone + "5"]},
+      -0.1px 2px 2.3px -1.7px ${theme.colors[tone + "5"]},
+      -0.1px 4.8px 5.4px -2.5px ${theme.colors[tone + "5"]}
+    `,
+  };
+});
+
+export const mdSecondaryShadowClass = styleVariants(allTones, (tone) => {
+  // color bg + black text
+  return {
+    boxShadow: `
+      0px 0.2px 0.2px ${theme.colors[tone + "4"]},
+      0px 0.8px 0.9px -0.8px ${theme.colors[tone + "4"]},
+      -0.1px 2px 2.3px -1.7px ${theme.colors[tone + "4"]},
+      -0.1px 4.8px 5.4px -2.5px ${theme.colors[tone + "4"]}
+    `,
+  };
+});
+
+export const lgSecondaryShadowClass = styleVariants(allTones, (tone) => {
+  return {
+    boxShadow: `
+    0px 0.1px 0.1px ${theme.colors[tone + "3"]},
+    0px 0.7px 0.8px -0.4px ${theme.colors[tone + "3"]},
+    -0.1px 1.3px 1.5px -0.7px ${theme.colors[tone + "3"]},
+    -0.1px 2.2px 2.5px -1.1px ${theme.colors[tone + "3"]},
+    -0.2px 3.4px 3.8px -1.4px ${theme.colors[tone + "3"]},
+    -0.3px 5.4px 6.1px -1.8px ${theme.colors[tone + "3"]},
+    -0.4px 8.2px 9.2px -2.1px ${theme.colors[tone + "3"]},
+    -0.6px 12.1px 13.6px -2.5px ${theme.colors[tone + "3"]}
+      `,
+  };
+});
+
+export const smGhostShadowClass = styleVariants(allTones, (tone) => {
+  // color bg + black text
+  return {
+    boxShadow: `
+      0px 0.2px 0.2px ${theme.colors[tone + "4"]},
+      0px 0.8px 0.9px -0.8px ${theme.colors[tone + "4"]},
+      -0.1px 2px 2.3px -1.7px ${theme.colors[tone + "4"]},
+      -0.1px 4.8px 5.4px -2.5px ${theme.colors[tone + "4"]}
+    `,
+  };
+});
+
+export const mdGhostShadowClass = styleVariants(allTones, (tone) => {
+  // color bg + black text
+  return {
+    boxShadow: `
+      0px 0.2px 0.2px ${theme.colors[tone + "4"]},
+      0px 0.8px 0.9px -0.8px ${theme.colors[tone + "4"]},
+      -0.1px 2px 2.3px -1.7px ${theme.colors[tone + "4"]},
+      -0.1px 4.8px 5.4px -2.5px ${theme.colors[tone + "4"]}
+    `,
+  };
+});
+
+export const lgGhostShadowClass = styleVariants(allTones, (tone) => {
+  return {
+    boxShadow: `
+    0px 0.1px 0.1px ${theme.colors[tone + "4"]},
+    0px 0.7px 0.8px -0.4px ${theme.colors[tone + "4"]},
+    -0.1px 1.3px 1.5px -0.7px ${theme.colors[tone + "4"]},
+    -0.1px 2.2px 2.5px -1.1px ${theme.colors[tone + "4"]},
+    -0.2px 3.4px 3.8px -1.4px ${theme.colors[tone + "4"]},
+    -0.3px 5.4px 6.1px -1.8px ${theme.colors[tone + "4"]},
+    -0.4px 8.2px 9.2px -2.1px ${theme.colors[tone + "4"]},
+    -0.6px 12.1px 13.6px -2.5px ${theme.colors[tone + "4"]};
+      `,
   };
 });
