@@ -2,7 +2,7 @@ import _ from "lodash";
 import * as icons from "lucide-react";
 import React from "react";
 
-export interface IconProps {
+export interface TextProps {
   name: string;
   color?: string;
   size?: number;
@@ -13,7 +13,7 @@ export interface IconProps {
 /**
  *
  *
- * @param {IconProps} {
+ * @param {TextProps} {
  *   name,
  *   color,
  *   size,
@@ -23,14 +23,14 @@ export interface IconProps {
  * }
  * @returns
  */
-const Icon = ({
+const Text = ({
   name,
   color,
   size,
   fill = "none",
   strokeWidth,
   ...props
-}: IconProps) => {
+}: TextProps) => {
   const iconNameCamelCase = _.camelCase(name);
   const IconNameUpperCase =
     iconNameCamelCase.charAt(0).toUpperCase() + iconNameCamelCase.slice(1);
@@ -39,9 +39,8 @@ const Icon = ({
   return (
     <LucideIcon
       color={color}
-  size={size ? size : "1.45em"}
-
-        strokeWidth={strokeWidth}
+      size={size ? size : "1.45em"}
+      strokeWidth={strokeWidth}
       fill={fill}
       style={{ flexShrink: 0 }}
       {...props}
@@ -49,4 +48,4 @@ const Icon = ({
   );
 };
 
-export default Icon;
+export default Text;

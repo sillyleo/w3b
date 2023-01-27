@@ -2,11 +2,10 @@ import { defineConfig } from "vite";
 import * as path from "path";
 import react from "@vitejs/plugin-react";
 import pages, { DefaultPageStrategy } from "vite-plugin-react-pages";
-import { macaronVitePlugin } from "@macaron-css/vite";
-
+import { vanillaExtractPlugin } from "@vanilla-extract/vite-plugin";
 export default defineConfig({
   plugins: [
-    macaronVitePlugin(),
+    vanillaExtractPlugin(),
 
     react(),
     pages({
@@ -52,7 +51,7 @@ export default defineConfig({
               const match = relative.match(/(.*)\/README\.mdx?$/);
               if (!match) throw new Error("unexpected file: " + absolute);
               const [_, componentName] = match;
-//              const pageId = `/components/${componentName}`;
+              //              const pageId = `/components/${componentName}`;
               const pageId = `/${componentName}`; // this adds component to the main doc page
               // register page data
               api.addPageData({

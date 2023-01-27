@@ -1,5 +1,5 @@
 ---
-title: Icon title
+title: Icon
 subGroup: Components
 ---
 

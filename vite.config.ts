@@ -4,7 +4,9 @@
 import { resolve } from "path";
 import { defineConfig } from "vite";
 import typescript from "@rollup/plugin-typescript";
-import { macaronVitePlugin } from "@macaron-css/vite";
+// @ts-ignore
+import { vanillaExtractPlugin } from "@vanilla-extract/vite-plugin";
+
 // import cssInjectedByJsPlugin from "vite-plugin-css-injected-by-js";
 
 export default defineConfig({
@@ -34,7 +36,8 @@ export default defineConfig({
     },
   },
   plugins: [
-    macaronVitePlugin(),
+    vanillaExtractPlugin(),
+    // macaronVitePlugin(),
     // basic setup
     // dts(),
     // dts(),
