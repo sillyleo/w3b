@@ -1,13 +1,13 @@
 import React from "react";
 import { createTheme, defaultSideNavs } from "vite-pages-theme-doc";
 import Component404 from "./404";
-import '../../src/styles/theme.css'
-
+import { skModernistBold } from "./style.css";
 
 export default createTheme({
   logo: (
     <h1
       style={{
+        fontFamily: skModernistBold,
         fontSize: "1.25rem",
         fontWeight: "bold",
       }}

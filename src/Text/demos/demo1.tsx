@@ -10,7 +10,7 @@ import Text from "..";
 const Demo1 = () => {
   return (
     <div>
-      <Text as={"a"} href="apple.com">
+      <Text>
         Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptate
         blanditiis dolor ducimus tenetur, eum labore veniam, adipisci odit
         officia explicabo repudiandae. Reprehenderit sint ratione, modi dolore

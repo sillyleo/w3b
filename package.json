@@ -58,6 +58,7 @@
     "@types/react-dom": "^18.0.10",
     "@vanilla-extract/sprinkles": "^1.5.1",
     "@vitejs/plugin-react": "^3.0.1",
+    "csstype": "^3.1.1",
     "json-to-ts-cli": "^1.0.2",
     "lodash": "^4.17.21",
     "react-dom": "^18.2.0",

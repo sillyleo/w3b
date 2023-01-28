@@ -1,13 +1,10 @@
-import { defineProperties, createSprinkles } from "@vanilla-extract/sprinkles";
 import {
   createGlobalTheme,
-  createGlobalThemeContract,
   createTheme,
   globalStyle,
-  globalFontFace,
-  style,
   styleVariants,
 } from "@vanilla-extract/css";
+import { createSprinkles, defineProperties } from "@vanilla-extract/sprinkles";
 import { allTones } from "src/constants";
 import figmaTokens from "../theme.json";
 
@@ -17,17 +14,17 @@ import figmaTokens from "../theme.json";
 // fontFamily: SkModernistRegular
 // These paths are relative to the deployment folder (/docs in this case. Put those in your own public folder.)
 
-const skModernistBold = "SkModernistBold";
-globalFontFace(skModernistBold, {
-  src: 'url("/fonts/sk-modernist-bold-webfont.woff2") format("woff2"), url("/fonts/sk-modernist-bold-webfont.woff") format("woff"),url("/fonts/sk-modernist-bold-webfont.ttf") format("truetype")',
-  fontWeight: "bold",
-});
+// const skModernistBold = "SkModernistBold";
+// globalFontFace(skModernistBold, {
+//   src: 'url("/fonts/sk-modernist-bold-webfont.woff2") format("woff2"), url("/fonts/sk-modernist-bold-webfont.woff") format("woff"),url("/fonts/sk-modernist-bold-webfont.ttf") format("truetype")',
+//   fontWeight: "bold",
+// });
 
-const skModernistRegular = "SkModernistRegular";
-globalFontFace(skModernistRegular, {
-  src: 'url("/fonts/sk-modernist-regular-webfont.woff2") format("woff2"), url("/fonts/sk-modernist-regular-webfont.woff") format("woff"),url("/fonts/sk-modernist-regular-webfont.ttf") format("truetype")',
-  fontWeight: 400,
-});
+// const skModernistRegular = "SkModernistRegular";
+// globalFontFace(skModernistRegular, {
+//   src: 'url("/fonts/sk-modernist-regular-webfont.woff2") format("woff2"), url("/fonts/sk-modernist-regular-webfont.woff") format("woff"),url("/fonts/sk-modernist-regular-webfont.ttf") format("truetype")',
+//   fontWeight: 400,
+// });
 
 // Process colors from tomato: {1: color} to tomato1: color
 // a function that takes an object and flattens its keys into a string with custom seperator
@@ -117,7 +114,7 @@ globalStyle(":root", {
 });
 
 globalStyle("h1,h2,h3,h4,h5,h6", {
-  fontFamily: skModernistBold,
+  fontFamily: `SkModernistBold,'SkModernistBold','Sk-Modernist-Bold',sans-serif`,
 });
 
 // color and shadow variants
