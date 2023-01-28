@@ -1,3 +1,4 @@
+import { defineProperties, createSprinkles } from "@vanilla-extract/sprinkles";
 import {
   createGlobalTheme,
   createGlobalThemeContract,
@@ -425,3 +426,99 @@ export const lgGhostShadowClass = styleVariants(allTones, (tone) => {
     //   `,
   };
 });
+
+// Sprinkles
+
+const colorStyles = defineProperties({
+  properties: {
+    color: theme.colors,
+    background: theme.colors,
+    backgroundColor: theme.colors,
+    borderColor: theme.colors,
+  },
+});
+const layoutStyles = defineProperties({
+  conditions: {
+    xs: {},
+    sm: { "@media": `screen and (min-width: ${figmaTokens.screens.sm})` },
+    md: { "@media": `screen and (min-width: ${figmaTokens.screens.md})` },
+    lg: { "@media": `screen and (min-width: ${figmaTokens.screens.lg})` },
+    xl: { "@media": `screen and (min-width: ${figmaTokens.screens.xl})` },
+    "2xl": {
+      "@media": `screen and (min-width: ${figmaTokens.screens["2xl"]})`,
+    },
+  },
+  defaultCondition: "xs",
+  properties: {
+    textAlign: ["left", "center", "right"],
+    display: ["none", "block", "flex", "inline", "inline-block", "inline-flex"],
+    flexDirection: ["row", "column"],
+    position: ["static", "relative", "absolute", "fixed", "sticky"],
+    justifyContent: [
+      "stretch",
+      "flex-start",
+      "center",
+      "flex-end",
+      "space-around",
+      "space-between",
+    ],
+    alignItems: ["stretch", "flex-start", "center", "flex-end"],
+    gap: theme.spacing,
+    lineHeight: theme.lineHeight,
+    fontFamily: theme.fontFamily,
+    cursor: ["pointer", "default", "text", "not-allowed"],
+    transition: {
+      fast: "all 0.2s ease-in-out",
+      slow: "all 0.4s ease-in-out",
+    },
+    letterSpacing: theme.letterSpacing,
+    paddingTop: theme.spacing,
+    paddingBottom: theme.spacing,
+    paddingLeft: theme.spacing,
+    paddingRight: theme.spacing,
+    marginTop: theme.spacing,
+    marginBottom: theme.spacing,
+    marginLeft: theme.spacing,
+    marginRight: theme.spacing,
+    fontSize: theme.fontSize,
+    fontWeight: theme.fontWeight,
+    borderRadius: theme.radii,
+    overflow: ["hidden", "visible", "scroll", "auto"],
+
+    border: {
+      "0": {
+        borderWidth: theme.borderWidth[0],
+        borderStyle: "none",
+      },
+      "2": {
+        borderWidth: theme.borderWidth[2],
+        borderStyle: "solid",
+      },
+      "4": {
+        borderWidth: theme.borderWidth[4],
+        borderStyle: "solid",
+      },
+      "8": {
+        borderWidth: theme.borderWidth[8],
+        borderStyle: "solid",
+      },
+    },
+    boxShadow: {
+      // this is the generic gray shadow
+      sm: smPrimaryShadowClass["gray"],
+      md: mdPrimaryShadowClass["gray"],
+      lg: lgPrimaryShadowClass["gray"],
+    },
+  },
+  shorthands: {
+    padding: ["paddingTop", "paddingBottom", "paddingLeft", "paddingRight"],
+    paddingX: ["paddingLeft", "paddingRight"],
+    paddingY: ["paddingTop", "paddingBottom"],
+    margin: ["marginTop", "marginBottom", "marginLeft", "marginRight"],
+    marginX: ["marginLeft", "marginRight"],
+    marginY: ["marginTop", "marginBottom"],
+  },
+});
+
+export const sprinkles = createSprinkles(colorStyles, layoutStyles);
+export type Sprinkles = Parameters<typeof sprinkles>[0];

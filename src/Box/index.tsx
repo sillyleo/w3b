@@ -1,28 +1,60 @@
 import { Slot } from "@radix-ui/react-slot";
+import { CSSProperties } from "@vanilla-extract/css";
 import React, { ReactElement } from "react";
+import { sprinkles, Sprinkles } from "../styles/theme.css";
+import type * as CSS from "csstype";
 
 export const DefaultElement = "div";
 
 // rewrite BoxProps as interface
-export interface BoxProps
-  extends React.ComponentPropsWithoutRef<typeof DefaultElement> {
-  // shortcut props
 
-  backgroundColor?: string;
-  border?: string;
-  borderRadius?: string;
-  color?: string;
-  overflow?: string;
-  fontFamily?: string;
-  fontSize?: string;
-  fontWeight?: string;
-  minHeight?: string;
-  margin?: string;
-  padding?: string;
-  width?: string;
-  height?: string;
-  textAlign?: string;
-  // basic styling
+// omit color from BoxProps
+
+export interface BoxProps
+  extends Omit<React.ComponentPropsWithoutRef<typeof DefaultElement>, "color"> {
+  // show all sprinkle properties as props
+  color?: Sprinkles["color"];
+  border?: Sprinkles["border"];
+  borderColor?: Sprinkles["borderColor"];
+  boxShadow?: Sprinkles["boxShadow"];
+  fontFamily?: Sprinkles["fontFamily"];
+  margin?: Sprinkles["margin"];
+  padding?: Sprinkles["padding"];
+  textAlign?: Sprinkles["textAlign"];
+  display?: Sprinkles["display"];
+  flexDirection?: Sprinkles["flexDirection"];
+  position?: Sprinkles["position"];
+  justifyContent?: Sprinkles["justifyContent"];
+  alignItems?: Sprinkles["alignItems"];
+  gap?: Sprinkles["gap"];
+  lineHeight?: Sprinkles["lineHeight"];
+  cursor?: Sprinkles["cursor"];
+  letterSpacing?: Sprinkles["letterSpacing"];
+  paddingTop?: Sprinkles["paddingTop"];
+  paddingBottom?: Sprinkles["paddingBottom"];
+  paddingLeft?: Sprinkles["paddingLeft"];
+  paddingRight?: Sprinkles["paddingRight"];
+  marginTop?: Sprinkles["marginTop"];
+  marginBottom?: Sprinkles["marginBottom"];
+  marginLeft?: Sprinkles["marginLeft"];
+  marginRight?: Sprinkles["marginRight"];
+  fontSize?: Sprinkles["fontSize"];
+  fontWeight?: Sprinkles["fontWeight"];
+  borderRadius?: Sprinkles["borderRadius"];
+  overflow?: Sprinkles["overflow"];
+  // color: Sprinkles["color"];
+  background?: Sprinkles["color"];
+  backgroundColor?: Sprinkles["color"];
+  paddingX?: Sprinkles["paddingX"];
+  paddingY?: Sprinkles["paddingY"];
+  marginX?: Sprinkles["marginX"];
+  marginY?: Sprinkles["marginY"];
+  // sizing
+  width?: CSS.Properties["width"];
+  height?: CSS.Properties["height"];
+  minWidth?: CSS.Properties["minWidth"];
+  minHeight?: CSS.Properties["minHeight"];
+  // override
   style?: React.CSSProperties;
   // as props
 
@@ -34,23 +66,49 @@ export interface BoxProps
 const Box = React.forwardRef<ReactElement, BoxProps>((props, forwardedRef) => {
   // add default value hereπ
   const {
-    asChild,
-    children,
-    backgroundColor,
     border,
-    borderRadius,
-    color,
-    overflow,
+    borderColor,
+    boxShadow,
     fontFamily,
-    fontSize,
-    fontWeight,
-    minHeight,
     margin,
     padding,
+    textAlign,
+    display,
+    flexDirection,
+    position,
+    justifyContent,
+    alignItems,
+    gap,
+    lineHeight,
+    cursor,
+    letterSpacing,
+    paddingTop,
+    paddingBottom,
+    paddingLeft,
+    paddingRight,
+    marginTop,
+    marginBottom,
+    marginLeft,
+    marginRight,
+    fontSize,
+    fontWeight,
+    borderRadius,
+    overflow,
+    color,
+    background,
+    backgroundColor,
+    paddingX,
+    paddingY,
+    marginX,
+    marginY,
     width,
     height,
-    textAlign,
+    minWidth,
+    minHeight,
+
     style,
+    asChild,
+    children,
     ...rest
   } = props;
 
@@ -58,20 +116,49 @@ const Box = React.forwardRef<ReactElement, BoxProps>((props, forwardedRef) => {
 
   return (
     <Component
-      style={{
+      // pass into custom sprinkles
+      className={sprinkles({
         border,
-        backgroundColor,
-        borderRadius,
-        color,
+        borderColor,
+        boxShadow,
         fontFamily,
-        fontSize,
-        fontWeight,
-        overflow,
-        minHeight,
         margin,
         padding,
-        width,
-        height,
+        textAlign,
+        display,
+        flexDirection,
+        position,
+        justifyContent,
+        alignItems,
+        gap,
+        lineHeight,
+        cursor,
+        letterSpacing,
+        paddingTop,
+        paddingBottom,
+        paddingLeft,
+        paddingRight,
+        marginTop,
+        marginBottom,
+        marginLeft,
+        marginRight,
+        fontSize,
+        fontWeight,
+        borderRadius,
+        overflow,
+        color,
+        background,
+        backgroundColor,
+        paddingX,
+        paddingY,
+        marginX,
+        marginY,
+      })}
+      style={{
+        width: width,
+        height: height,
+        minWidth: minWidth,
+        minHeight: minHeight,
         ...style,
       }}
       {...rest}

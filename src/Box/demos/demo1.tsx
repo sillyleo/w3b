@@ -11,11 +11,18 @@ const Demo1 = () => {
   return (
     <div>
       <Box
-        backgroundColor="red"
-        borderRadius="2xl"
+        // backgroundColor="red"
+        // borderRadius="2xl"
         width="100px"
+        color="violet9"
         height="100px"
-      />
+        borderRadius="full"
+        background="tomato9"
+        fontSize="xl"
+        fontWeight="bold"
+      >
+        Hello
+      </Box>
     </div>
   );
 };

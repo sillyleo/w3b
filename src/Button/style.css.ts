@@ -1,42 +1,33 @@
+import { sprinkles } from "./../styles/theme.css";
 import { styleVariants } from "@vanilla-extract/css";
 import { recipe, RecipeVariants } from "@vanilla-extract/recipes";
 import { theme } from "../../src/styles/theme.css";
 import { allTones } from "./../constants";
 
 export const buttonStyle = recipe({
-  base: {
-    fontFamily: theme.fontFamily.heading,
-    fontWeight: "bold",
-    cursor: "pointer",
-    display: "inline-flex",
-    gap: theme.spacing[2],
-    padding: 0,
-    alignItems: "center",
-    fontSize: theme.fontSize["base"],
-    lineHeight: 1,
-    border: "none",
-    position: "relative",
-    transition: "all 0.2s",
-    // ":before": {
-    //   filter:
-    //     "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='b' x='0' y='0'%3E%3CfeFlood x='4' y='4' height='2' width='2'/%3E%3CfeComposite width='10' height='10'/%3E%3CfeTile result='a'/%3E%3CfeComposite in='SourceGraphic' in2='a' operator='in'/%3E%3CfeMorphology operator='dilate' radius='5'/%3E%3C/filter%3E%3C/svg%3E#b\")",
-    //   background: "red",
-    //   position: "absolute",
-    //   content: "''",
-    //   top: 0,
-    //   left: -2,
-    //   right: -2,
-    //   bottom: -3,
-    //   zIndex: 1,
-    // },
-    ":disabled": {
-      cursor: "not-allowed",
-      opacity: 0.75,
+  base: [
+    {
+      fontFamily: theme.fontFamily.heading,
+      fontWeight: "bold",
+      cursor: "pointer",
+      display: "inline-flex",
+      gap: theme.spacing[2],
+      padding: 0,
+      alignItems: "center",
+      fontSize: theme.fontSize["base"],
+      lineHeight: 1,
+      border: "none",
+      position: "relative",
+      transition: "all 0.2s",
+      ":disabled": {
+        cursor: "not-allowed",
+        opacity: 0.75,
+      },
+      ":active": {
+        transform: "translateY(1px) scale(0.98)",
+      },
     },
-    ":active": {
-      transform: "translateY(1px) scale(0.98)",
-    },
-  },
+  ],
   variants: {
     size: {
       sm: {
