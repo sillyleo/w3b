@@ -17,8 +17,31 @@ export interface BoxProps
   borderColor?: Sprinkles["borderColor"];
   boxShadow?: Sprinkles["boxShadow"];
   fontFamily?: Sprinkles["fontFamily"];
+  p?: Sprinkles["p"];
+  m?: Sprinkles["m"];
   margin?: Sprinkles["margin"];
   padding?: Sprinkles["padding"];
+  paddingTop?: Sprinkles["paddingTop"];
+  paddingBottom?: Sprinkles["paddingBottom"];
+  paddingLeft?: Sprinkles["paddingLeft"];
+  paddingRight?: Sprinkles["paddingRight"];
+  marginTop?: Sprinkles["marginTop"];
+  marginBottom?: Sprinkles["marginBottom"];
+  marginLeft?: Sprinkles["marginLeft"];
+  marginRight?: Sprinkles["marginRight"];
+  px?: Sprinkles["px"];
+  py?: Sprinkles["py"];
+  mx?: Sprinkles["mx"];
+  my?: Sprinkles["my"];
+  pl?: Sprinkles["pl"];
+  pr?: Sprinkles["pr"];
+  pt?: Sprinkles["pt"];
+  pb?: Sprinkles["pb"];
+  ml?: Sprinkles["ml"];
+  mr?: Sprinkles["mr"];
+  mt?: Sprinkles["mt"];
+  mb?: Sprinkles["mb"];
+
   textAlign?: Sprinkles["textAlign"];
   display?: Sprinkles["display"];
   flexDirection?: Sprinkles["flexDirection"];
@@ -29,25 +52,13 @@ export interface BoxProps
   lineHeight?: Sprinkles["lineHeight"];
   cursor?: Sprinkles["cursor"];
   letterSpacing?: Sprinkles["letterSpacing"];
-  paddingTop?: Sprinkles["paddingTop"];
-  paddingBottom?: Sprinkles["paddingBottom"];
-  paddingLeft?: Sprinkles["paddingLeft"];
-  paddingRight?: Sprinkles["paddingRight"];
-  marginTop?: Sprinkles["marginTop"];
-  marginBottom?: Sprinkles["marginBottom"];
-  marginLeft?: Sprinkles["marginLeft"];
-  marginRight?: Sprinkles["marginRight"];
   fontSize?: Sprinkles["fontSize"];
   fontWeight?: Sprinkles["fontWeight"];
   borderRadius?: Sprinkles["borderRadius"];
   overflow?: Sprinkles["overflow"];
-  // color: Sprinkles["color"];
   background?: Sprinkles["color"];
   backgroundColor?: Sprinkles["color"];
-  paddingX?: Sprinkles["paddingX"];
-  paddingY?: Sprinkles["paddingY"];
-  marginX?: Sprinkles["marginX"];
-  marginY?: Sprinkles["marginY"];
+
   // sizing
   width?: CSS.Properties["width"];
   height?: CSS.Properties["height"];
@@ -96,10 +107,21 @@ const Box = React.forwardRef<ReactElement, BoxProps>((props, forwardedRef) => {
     color,
     background,
     backgroundColor,
-    paddingX,
-    paddingY,
-    marginX,
-    marginY,
+    px,
+    py,
+    m,
+    p,
+    mx,
+    my,
+    pl,
+    pr,
+    pt,
+    pb,
+    ml,
+    mr,
+    mt,
+    mb,
+
     width,
     height,
     minWidth,
@@ -148,10 +170,20 @@ const Box = React.forwardRef<ReactElement, BoxProps>((props, forwardedRef) => {
         color,
         background,
         backgroundColor,
-        paddingX,
-        paddingY,
-        marginX,
-        marginY,
+        px,
+        py,
+        m,
+        p,
+        mx,
+        my,
+        pl,
+        pr,
+        pt,
+        pb,
+        ml,
+        mr,
+        mt,
+        mb,
       })}
       style={{
         width: width,
