@@ -38,7 +38,6 @@
     "ship": "vite build && pnpm version patch && pnpm publish --access public"
   },
   "dependencies": {
-    "@fontsource/inter-tight": "^4.5.2",
     "@radix-ui/react-slot": "^1.0.1",
     "@vanilla-extract/css": "^1.9.3",
     "@vanilla-extract/recipes": "^0.3.0",
@@ -49,7 +48,6 @@
     "framer-motion": "^8.5.2",
     "lucide-react": "^0.105.0",
     "react": "^18.2.0",
-    "react-polymorphic-types": "^2.0.0",
     "use-sound": "^4.0.1"
   },
   "devDependencies": {
@@ -60,7 +58,6 @@
     "@types/react-dom": "^18.0.10",
     "@vanilla-extract/sprinkles": "^1.5.1",
     "@vitejs/plugin-react": "^3.0.1",
-    "csstype": "^3.1.1",
     "json-to-ts-cli": "^1.0.2",
     "lodash": "^4.17.21",
     "react-dom": "^18.2.0",

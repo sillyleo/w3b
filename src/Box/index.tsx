@@ -1,8 +1,7 @@
 import { Slot } from "@radix-ui/react-slot";
-import { CSSProperties } from "@vanilla-extract/css";
+import type * as CSS from "csstype";
 import React, { ReactElement } from "react";
 import { sprinkles, Sprinkles } from "../styles/theme.css";
-import type * as CSS from "csstype";
 
 export const DefaultElement = "div";
 

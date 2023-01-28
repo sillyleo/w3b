@@ -1,7 +1,6 @@
 lockfileVersion: 5.4
 
 specifiers:
-  '@fontsource/inter-tight': ^4.5.2
   '@mdx-js/react': ^2.2.1
   '@radix-ui/react-slot': ^1.0.1
   '@rollup/plugin-typescript': ^10.0.1
@@ -16,14 +15,12 @@ specifiers:
   class-variance-authority: ^0.4.0
   clsx: ^1.2.1
   colord: ^2.9.3
-  csstype: ^3.1.1
   framer-motion: ^8.5.2
   json-to-ts-cli: ^1.0.2
   lodash: ^4.17.21
   lucide-react: ^0.105.0
   react: ^18.2.0
   react-dom: ^18.2.0
-  react-polymorphic-types: ^2.0.0
   react-router-dom: ^6.7.0
   rimraf: ^3.0.2
   rollup-plugin-typescript2: ^0.34.1
@@ -37,7 +34,6 @@ specifiers:
   vite-plugin-react-pages: ^4.0.2
 
 dependencies:
-  '@fontsource/inter-tight': 4.5.2
   '@radix-ui/react-slot': 1.0.1_react@18.2.0
   '@vanilla-extract/css': 1.9.3
   '@vanilla-extract/recipes': 0.3.0_@vanilla-extract+css@1.9.3
@@ -48,7 +44,6 @@ dependencies:
   framer-motion: 8.5.2_biqbaboplfbrettd7655fr4n2y
   lucide-react: 0.105.0_react@18.2.0
   react: 18.2.0
-  react-polymorphic-types: 2.0.0_@types+react@18.0.27
   use-sound: 4.0.1_react@18.2.0
 
 devDependencies:
@@ -59,7 +54,6 @@ devDependencies:
   '@types/react-dom': 18.0.10
   '@vanilla-extract/sprinkles': 1.5.1_@vanilla-extract+css@1.9.3
   '@vitejs/plugin-react': 3.0.1_vite@4.0.4
-  csstype: 3.1.1
   json-to-ts-cli: 1.0.2
   lodash: 4.17.21
   react-dom: 18.2.0_react@18.2.0
@@ -506,10 +500,6 @@ packages:
     requiresBuild: true
     optional: true
 
-  /@fontsource/inter-tight/4.5.2:
-    resolution: {integrity: sha512-AsPr+i64Rc9ZV0loMliOX3W+fMbOp8qfcDeYde/WLue8BRlOBisnUYpWuBvXeOwVC7A45O94rgoyvfkdclZT0Q==}
-    dev: false
-
   /@jridgewell/gen-mapping/0.1.1:
     resolution: {integrity: sha512-sQXCasFk+U8lWYEe66WxRDOE9PjVz4vSM51fTu3Hw+ClTpUSQb718772vH3pyS5pShp6lvQM7SxgIDXXXmOX7w==}
     engines: {node: '>=6.0.0'}
@@ -775,6 +765,7 @@ packages:
 
   /@types/prop-types/15.7.5:
     resolution: {integrity: sha512-JCB8C6SnDoQf0cNycqd/35A7MjcnK+ZTqE7judS6o7utxUCg6imJg3QK2qzHKszlTjcj2cn+NwMB2i96ubpj7w==}
+    dev: true
 
   /@types/react-dom/18.0.10:
     resolution: {integrity: sha512-E42GW/JA4Qv15wQdqJq8DL4JhNpB3prJgjgapN3qJT9K2zO5IIAQh4VXvCEDupoqAwnz0cY4RlXeC/ajX5SFHg==}
@@ -788,9 +779,11 @@ packages:
       '@types/prop-types': 15.7.5
       '@types/scheduler': 0.16.2
       csstype: 3.1.1
+    dev: true
 
   /@types/scheduler/0.16.2:
     resolution: {integrity: sha512-hppQEBDmlwhFAXKJX2KnWLYu5yMfi91yazPb2l+lbJiwW+wdo1gNeRA+3RgNSO39WYX2euey41KEwnqesU2Jew==}
+    dev: true
 
   /@types/unist/2.0.6:
     resolution: {integrity: sha512-PBjIUxZHOuj0R15/xuwJYjFi+KZdNFrehocChv4g5hu6aFroHue8m0lBP0POdK2nKzbw0cgV1mws8+V/JAcEkQ==}
@@ -3575,14 +3568,6 @@ packages:
       loose-envify: 1.4.0
       react: 18.2.0
       scheduler: 0.23.0
-
-  /react-polymorphic-types/2.0.0_@types+react@18.0.27:
-    resolution: {integrity: sha512-Xfz5qfEzLAvB2ijL9hZfHRa9bsQG6te262KHjnbezZ2XyubnSDzh3TV6OgvBsQsz7FCRHjbDbqA5UTkNEziTlw==}
-    peerDependencies:
-      '@types/react': '>=16.8.6'
-    dependencies:
-      '@types/react': 18.0.27
-    dev: false
 
   /react-refresh/0.14.0:
     resolution: {integrity: sha512-wViHqhAd8OHeLS/IRMJjTSDHF3U9eWi62F/MledQGPdJGDhodXJ9PBLNGr6WWL7qlH12Mt3TyTpbS+hGXMjCzQ==}
