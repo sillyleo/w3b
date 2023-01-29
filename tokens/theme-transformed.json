@@ -5002,7 +5002,7 @@
       "type": "color"
     },
     "textTertiary": {
-      "value": "{colors.slate.10}",
+      "value": "{colors.slate.9}",
       "type": "color"
     },
     "background": {
