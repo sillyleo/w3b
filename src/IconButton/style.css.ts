@@ -1,39 +1,35 @@
 import { recipe, RecipeVariants } from '@vanilla-extract/recipes';
-import { theme, sprinkles } from '../styles/theme.css';
+import { theme } from '../styles/theme.css';
 
-export const buttonStyle = recipe({
-  base: [
-    sprinkles({
-      fontFamily: 'heading',
-      fontWeight: 'bold',
-      cursor: 'pointer',
-      display: 'inline-flex',
-      gap: '2',
-      p: '0',
-      alignItems: 'center',
-      fontSize: 'base',
-      lineHeight: 'single',
-      border: '0',
-      position: 'relative',
-      transition: 'fast'
-    }),
-
-    {
-      ':disabled': {
-        cursor: 'not-allowed',
-        opacity: 0.75
-      },
-      ':active': {
-        transform: 'translateY(1px) scale(0.98)'
-      }
+export const iconButtonStyle = recipe({
+  base: {
+    fontFamily: theme.fontFamily.heading,
+    fontWeight: 'bold',
+    cursor: 'pointer',
+    display: 'inline-flex',
+    gap: theme.spacing[2],
+    padding: 0,
+    alignItems: 'center',
+    fontSize: theme.fontSize['base'],
+    lineHeight: 1,
+    border: 'none',
+    position: 'relative',
+    transition: 'all 0.2s',
+    ':disabled': {
+      cursor: 'not-allowed',
+      opacity: 0.75
+    },
+    ':active': {
+      transform: 'translateY(1px) scale(0.98)'
     }
-  ],
+  },
   variants: {
     size: {
       sm: {
         borderRadius: theme.radii['lg'],
         fontSize: theme.fontSize['xs'],
         height: theme.spacing[7],
+        width: theme.spacing[7],
         paddingLeft: theme.spacing[3],
         paddingRight: theme.spacing[3]
       },
@@ -41,6 +37,7 @@ export const buttonStyle = recipe({
         borderRadius: theme.radii['lg'],
         fontSize: theme.fontSize['sm'],
         height: theme.spacing[8],
+        width: theme.spacing[8],
         paddingLeft: theme.spacing[4],
         paddingRight: theme.spacing[4]
       },
@@ -48,6 +45,7 @@ export const buttonStyle = recipe({
         borderRadius: theme.radii['xl'],
         fontSize: theme.fontSize['base'],
         height: theme.spacing[11],
+        width: theme.spacing[11],
         paddingLeft: theme.spacing[5],
         paddingRight: theme.spacing[5]
       }
@@ -137,6 +135,4 @@ export const buttonStyle = recipe({
 });
 
 // Export type
-export type ButtonVariants = RecipeVariants<typeof buttonStyle>;
-
-// Genertate tone and intent variants with code, using style variants
+export type IconButtonVariants = RecipeVariants<typeof iconButtonStyle>;

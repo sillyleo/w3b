@@ -1,15 +1,20 @@
 import React from "react";
+import { buttonStyle, ButtonVariants } from "./style.css";
+import { clsx } from "clsx";
 import {
-  buttonStyle,
-  ghostClass,
   primaryClass,
   secondaryClass,
-  ButtonVariants,
-  ghostShadowClass,
-  primaryShadowClass,
-  secondaryShadowClass,
-} from "./style.css";
-import { clsx } from "clsx";
+  ghostClass,
+  smPrimaryShadowClass,
+  mdPrimaryShadowClass,
+  lgPrimaryShadowClass,
+  smSecondaryShadowClass,
+  mdSecondaryShadowClass,
+  lgSecondaryShadowClass,
+  smGhostShadowClass,
+  mdGhostShadowClass,
+  lgGhostShadowClass,
+} from "../styles/theme.css";
 
 // set variant class names
 export function getVariant(intent: string, tone: keyof Colors) {
@@ -27,18 +32,37 @@ export function getVariant(intent: string, tone: keyof Colors) {
 // set variant class names
 export function getShadowVariant(
   shadow: boolean,
-  intent: string,
-  tone: keyof Colors
+  size: string,
+  tone: keyof Colors,
+  intent: string
 ) {
-  if (shadow) {
-    if (intent === "primary") {
-      return primaryShadowClass[tone];
-    } else if (intent === "secondary") {
-      return secondaryShadowClass[tone];
-    } else if (intent === "ghost") {
-      return ghostShadowClass[tone];
+  if (shadow && intent === "primary") {
+    if (size === "sm") {
+      return smPrimaryShadowClass[tone];
+    } else if (size === "md") {
+      // console.log(mdPrimaryShadowClass[tone]);
+      return mdPrimaryShadowClass[tone];
     } else {
-      return primaryShadowClass[tone];
+      return lgPrimaryShadowClass[tone];
+    }
+  }
+  if (shadow && intent === "secondary") {
+    if (size === "sm") {
+      return smSecondaryShadowClass[tone];
+    } else if (size === "md") {
+      return mdSecondaryShadowClass[tone];
+    } else {
+      return lgSecondaryShadowClass[tone];
+    }
+  }
+
+  if (shadow && intent === "ghost") {
+    if (size === "sm") {
+      return smGhostShadowClass[tone];
+    } else if (size === "md") {
+      return mdGhostShadowClass[tone];
+    } else {
+      return lgGhostShadowClass[tone];
     }
   }
 }
@@ -79,7 +103,7 @@ export const Button = ({
           gradient: gradient,
         }),
         getVariant(intent, tone),
-        getShadowVariant(shadow, intent, tone)
+        getShadowVariant(shadow, size, tone, intent)
       )}
       {...props}
     >

@@ -1,46 +1,46 @@
 /**
- * @title Button Demo1 Title
- * @description Button demo1 description
+ * @title Button shadow Demo1 Title
+ * @description Button shadow demo1 description
  */
 
 import React from "react";
-import Icon from "../../Icon";
 import Button from "..";
+import { darkTheme } from "../../styles/theme.css";
 
+{
+  /* <div> */
+}
 const Demo1 = () => {
   return (
     <div>
-      <Button
-        shadow
-        gradient
-        intent="secondary"
-        leftIcon={<Icon name="camera" />}
-      >
-        Hello
+      <Button shadow size="sm" tone="gray" intent="primary">
+        Button
       </Button>
-      <Button
-        gradient
-        intent="secondary"
-        leftIcon={<Icon name="camera" />}
-        tone="indigo"
-        size="lg"
-      >
-        Hello
-      </Button>{" "}
-      <Button leftIcon={<Icon name="camera" />} tone="indigo" size="md">
-        Hello
-      </Button>{" "}
-      <Button
-        gradient
-        intent="secondary"
-        leftIcon={<Icon name="camera" />}
-        tone="tomato"
-        size="sm"
-      >
-        Hello
+      <Button shadow size="md" tone="gray" intent="primary">
+        Button
       </Button>
-      <Button intent="secondary" tone="sky">
-        Hello
+      <Button shadow size="lg" tone="gray" intent="primary">
+        Button
+      </Button>
+
+      <Button shadow size="sm" tone="gray" intent="secondary">
+        Button
+      </Button>
+      <Button shadow size="md" tone="gray" intent="secondary">
+        Button
+      </Button>
+      <Button shadow size="lg" tone="gray" intent="secondary">
+        Button
+      </Button>
+
+      <Button shadow size="sm" tone="gray" intent="ghost">
+        Button
+      </Button>
+      <Button shadow size="md" tone="gray" intent="ghost">
+        Button
+      </Button>
+      <Button shadow size="lg" tone="gray" intent="ghost">
+        Button
       </Button>
     </div>
   );

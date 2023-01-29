@@ -547,7 +547,7 @@
       "fontFamily": "Inter",
       "fontWeight": 400,
       "lineHeight": "140%",
-      "fontSize": "13px",
+      "fontSize": "11px",
       "letterSpacing": "0%"
     }
   },
@@ -1519,7 +1519,10 @@
     "black": "#000",
     "text": "#11181c",
     "textSecondary": "#687076",
-    "textTertiary": "#7e868c"
+    "textTertiary": "#889096",
+    "background": "#fbfcfd",
+    "backgroundSecondary": "#f8f9fa",
+    "backgroundTertiary": "#f1f3f5"
   },
   "tokenSetOrder": {
     "0": "global",
