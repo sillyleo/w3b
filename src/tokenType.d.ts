@@ -30,6 +30,9 @@ interface Base {
   text: string;
   textSecondary: string;
   textTertiary: string;
+  background: string;
+  backgroundSecondary: string;
+  backgroundTertiary: string;
 }
 interface BoxShadow {
   sm: Sm;
