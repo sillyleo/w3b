@@ -432,6 +432,10 @@ const colorStyles = defineProperties({
     background: theme.colors,
     backgroundColor: theme.colors,
     borderColor: theme.colors
+  },
+  shorthands: {
+    bg: ['backgroundColor']
+
   }
 });
 const layoutStyles = defineProperties({

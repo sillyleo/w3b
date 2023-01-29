@@ -25,6 +25,7 @@ const Text = React.forwardRef<ReactElement, TextProps>(
 
     const Component = asChild ? Slot : DefaultElement;
 
+
     return (
       <Box
         asChild={asChild}
