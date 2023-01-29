@@ -1767,7 +1767,7 @@
         "fontFamily": "{fontFamilies.body}",
         "fontWeight": "{fontWeights.normal}",
         "lineHeight": "{lineHeights.body}",
-        "fontSize": "{fontSizes.sm}",
+        "fontSize": "{fontSizes.xs}",
         "letterSpacing": "{letterSpacing.default}"
       },
       "type": "typography"
@@ -5002,7 +5002,19 @@
       "type": "color"
     },
     "textTertiary": {
-      "value": "{colors.slate.10}",
+      "value": "{colors.slate.9}",
+      "type": "color"
+    },
+    "background": {
+      "value": "{colors.slate.1}",
+      "type": "color"
+    },
+    "backgroundSecondary": {
+      "value": "{colors.slate.2}",
+      "type": "color"
+    },
+    "backgroundTertiary": {
+      "value": "{colors.slate.3}",
       "type": "color"
     }
   },
