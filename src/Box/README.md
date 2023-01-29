@@ -5,7 +5,7 @@ subGroup: Components
 
 # Box
 
-A generic box element that can use custom sprinkle styles.
+A generic box element that can use custom sprinkle styles. My custom version with `asChild` support.
 
 <Demo src="./demos/demo1.tsx" />
 

@@ -3,10 +3,10 @@
  * @description Box demo1 description
  */
 
-import React from "react";
-import Button from "../../Button";
-import Box from "..";
-import { motion } from "framer-motion";
+import React from 'react';
+import Button from '../../Button';
+import Box from '..';
+import { motion } from 'framer-motion';
 
 const MotionBox = motion(Box);
 
@@ -14,31 +14,34 @@ const Demo1 = () => {
   return (
     <div>
       <MotionBox
+
+        style={{ width: '150px' }}
+
         initial={{
-          opacity: 0,
+          opacity: 0
         }}
         animate={{
-          opacity: [1, 0.5, 1],
+          opacity: [1, 0.5, 1]
         }}
         transition={{
           duration: 1,
-          repeat: Infinity,
+          repeat: Infinity
         }}
         // backgroundColor="red"
         // borderRadius="2xl"
 
-        width="100px"
-        color="violet1"
-        height="100px"
-        borderRadius="lg"
-        fontFamily={"heading"}
-        p="6"
-        display={"flex"}
-        alignItems="center"
-        justifyContent={"center"}
-        background="violet10"
-        fontSize="xl"
-        fontWeight="bold"
+        width='100px'
+        color='violet1'
+        height='100px'
+        borderRadius='lg'
+        fontFamily={'heading'}
+        p='6'
+        display={'flex'}
+        alignItems='center'
+        justifyContent={'center'}
+        background='violet10'
+        fontSize='xl'
+        fontWeight='bold'
       >
         Hello
       </MotionBox>
@@ -46,18 +49,18 @@ const Demo1 = () => {
         // backgroundColor="red"
         // borderRadius="2xl"
 
-        width="100px"
-        color="violet1"
-        height="100px"
-        borderRadius="lg"
-        fontFamily={"heading"}
-        p="6"
-        display={"flex"}
-        alignItems="center"
-        justifyContent={"center"}
-        background="violet10"
-        fontSize="xl"
-        fontWeight="bold"
+        width='200px'
+        color='violet1'
+        height='100px'
+        borderRadius='lg'
+        fontFamily={'heading'}
+        p='6'
+        display={'flex'}
+        alignItems='center'
+        justifyContent={'center'}
+        fontSize='xl'
+        background='grass8'
+        fontWeight='bold'
       >
         Hello
       </Box>

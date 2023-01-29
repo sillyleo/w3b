@@ -79,7 +79,6 @@ export interface BoxProps
 
 
 const Box = React.forwardRef<ReactElement, BoxProps>((props, forwardedRef) => {
-  // add default value hereπ
   const {
     border,
     borderColor,
