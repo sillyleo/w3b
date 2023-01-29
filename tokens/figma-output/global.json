@@ -315,7 +315,7 @@
         "fontFamily": "{fontFamilies.body}",
         "fontWeight": "{fontWeights.normal}",
         "lineHeight": "{lineHeights.body}",
-        "fontSize": "{fontSizes.sm}",
+        "fontSize": "{fontSizes.xs}",
         "letterSpacing": "{letterSpacing.default}"
       },
       "type": "typography"
