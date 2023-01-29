@@ -2,6 +2,7 @@ import { Slot } from "@radix-ui/react-slot";
 import type * as CSS from "csstype";
 import React, { ReactElement } from "react";
 import { sprinkles, Sprinkles } from "../styles/theme.css";
+import { clsx } from 'clsx';
 
 export const DefaultElement = "div";
 
@@ -68,10 +69,13 @@ export interface BoxProps
   style?: React.CSSProperties;
   // as props
 
+  className?: string;
+
   asChild?: boolean;
   // chilren
   children?: React.ReactNode;
 }
+
 
 const Box = React.forwardRef<ReactElement, BoxProps>((props, forwardedRef) => {
   // add default value hereπ
@@ -130,61 +134,68 @@ const Box = React.forwardRef<ReactElement, BoxProps>((props, forwardedRef) => {
     style,
     asChild,
     children,
+    className,
     ...rest
   } = props;
+  const builtInSprinkles = sprinkles({
+    border,
+    borderColor,
+    boxShadow,
+    fontFamily,
+    margin,
+    padding,
+    textAlign,
+    display,
+    flexDirection,
+    position,
+    justifyContent,
+    alignItems,
+    gap,
+    lineHeight,
+    cursor,
+    letterSpacing,
+    paddingTop,
+    paddingBottom,
+    paddingLeft,
+    paddingRight,
+    marginTop,
+    marginBottom,
+    marginLeft,
+    marginRight,
+    fontSize,
+    fontWeight,
+    borderRadius,
+    overflow,
+    color,
+    background,
+    backgroundColor,
+    px,
+    py,
+    m,
+    p,
+    mx,
+    my,
+    pl,
+    pr,
+    pt,
+    pb,
+    ml,
+    mr,
+    mt,
+    mb,
+  })
 
   const Component = asChild ? Slot : DefaultElement;
 
   return (
     <Component
       // pass into custom sprinkles
-      className={sprinkles({
-        border,
-        borderColor,
-        boxShadow,
-        fontFamily,
-        margin,
-        padding,
-        textAlign,
-        display,
-        flexDirection,
-        position,
-        justifyContent,
-        alignItems,
-        gap,
-        lineHeight,
-        cursor,
-        letterSpacing,
-        paddingTop,
-        paddingBottom,
-        paddingLeft,
-        paddingRight,
-        marginTop,
-        marginBottom,
-        marginLeft,
-        marginRight,
-        fontSize,
-        fontWeight,
-        borderRadius,
-        overflow,
-        color,
-        background,
-        backgroundColor,
-        px,
-        py,
-        m,
-        p,
-        mx,
-        my,
-        pl,
-        pr,
-        pt,
-        pb,
-        ml,
-        mr,
-        mt,
-        mb,
-      })}
+      className={
+        clsx(
+          builtInSprinkles,
+          className
+        )
+      }
       style={{
         width: width,
         height: height,

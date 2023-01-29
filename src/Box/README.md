@@ -5,7 +5,7 @@ subGroup: Components
 
 # Box
 
-This is a **markdown** document of the `Box` component.
+A generic box element that can use custom sprinkle styles.
 
 <Demo src="./demos/demo1.tsx" />
 

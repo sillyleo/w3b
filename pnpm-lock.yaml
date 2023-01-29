@@ -22,6 +22,7 @@ specifiers:
   lucide-react: ^0.105.0
   react: ^18.2.0
   react-dom: ^18.2.0
+  react-lorem-ipsum: ^1.4.10
   react-router-dom: ^6.7.0
   rimraf: ^3.0.2
   rollup-plugin-typescript2: ^0.34.1
@@ -59,6 +60,7 @@ devDependencies:
   json-to-ts-cli: 1.0.2
   lodash: 4.17.21
   react-dom: 18.2.0_react@18.2.0
+  react-lorem-ipsum: 1.4.10
   react-router-dom: 6.7.0_biqbaboplfbrettd7655fr4n2y
   rimraf: 3.0.2
   rollup-plugin-typescript2: 0.34.1_typescript@4.9.4
@@ -3570,6 +3572,10 @@ packages:
       loose-envify: 1.4.0
       react: 18.2.0
       scheduler: 0.23.0
+
+  /react-lorem-ipsum/1.4.10:
+    resolution: {integrity: sha512-PCEuauLZTGJkm++oxJeUycEgQOBg3qmmD7pn5sUyq9e0OvvNbW32RKQsSgalAYGUIbS91UkDgxvt6iHVAsqYJw==}
+    dev: true
 
   /react-refresh/0.14.0:
     resolution: {integrity: sha512-wViHqhAd8OHeLS/IRMJjTSDHF3U9eWi62F/MledQGPdJGDhodXJ9PBLNGr6WWL7qlH12Mt3TyTpbS+hGXMjCzQ==}

@@ -1,13 +1,15 @@
-import { Slot } from "@radix-ui/react-slot";
-import React, { ReactElement } from "react";
+import { Slot } from '@radix-ui/react-slot';
+import React, { ReactElement } from 'react';
+import Box, { BoxProps } from '../Box';
+import { textStyle, TextStyleVariants } from './style.css';
 
-export const DefaultElement = "p";
+export const DefaultElement = 'p';
 
 // rewrite TextProps as interface
 export interface TextProps
-  extends React.ComponentPropsWithoutRef<typeof DefaultElement> {
-  // add custom props here
-  // blah: string;
+  extends BoxProps, TextStyleVariants {
+
+  children?: React.ReactNode;
   asChild?: boolean;
 }
 
@@ -16,19 +18,24 @@ const Text = React.forwardRef<ReactElement, TextProps>(
     // add default value here
     const {
       asChild,
-      // blah = "yo",
+      children,
+      size,
       ...rest
     } = props;
 
     const Component = asChild ? Slot : DefaultElement;
 
     return (
-      <Component
+      <Box
+        asChild={asChild}
+        className={textStyle({
+          size: size
+        })}
         {...rest}
         ref={forwardedRef}
-        // className={clsx(
-        // )}
-      />
+      >
+        {children}
+      </Box>
     );
   }
 );
