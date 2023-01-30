@@ -1,6 +1,6 @@
 ---
 title: Stack
-subGroup: Components
+subGroup: Layout
 ---
 
 # Stack

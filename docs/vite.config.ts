@@ -4,6 +4,12 @@ import react from "@vitejs/plugin-react";
 import pages, { DefaultPageStrategy } from "vite-plugin-react-pages";
 import { vanillaExtractPlugin } from "@vanilla-extract/vite-plugin";
 export default defineConfig({
+  server: {
+    fs: {
+      // Allow serving files from one level up to the project root
+      allow: [".."],
+    },
+  },
   plugins: [
     vanillaExtractPlugin(),
 

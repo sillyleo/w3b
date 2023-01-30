@@ -1,6 +1,6 @@
 ---
 title: Bento
-subGroup: Components
+subGroup: experimantal
 ---
 
 # Bento
@@ -13,4 +13,3 @@ A generic box element that can use custom sprinkle styles.
 - Usage https://github.com/TheMightyPenguin/dessert-box
 
 <Demo src="./demos/demo1.tsx" />
-

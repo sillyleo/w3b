@@ -1,6 +1,6 @@
 ---
 title: Box
-subGroup: Components
+subGroup: Layout
 ---
 
 # Box

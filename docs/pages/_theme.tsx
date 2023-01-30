@@ -38,6 +38,20 @@ export default createTheme({
   sideNavs: (ctx) => {
     return defaultSideNavs(ctx, {
       groupConfig: {
+        "/": {
+          components: {
+            label: "experimental",
+            order: -1,
+          },
+          layout: {
+            label: "Layout",
+            order: 2,
+          },
+          experimantal: {
+            label: "Experimental",
+            order: 20,
+          },
+        },
         components: {
           demos: {
             label: "Work In Progress",
@@ -47,9 +61,13 @@ export default createTheme({
             label: "General",
             order: 1,
           },
-          "data-display": {
-            label: "Data Display",
+          Layout: {
+            label: "Layout",
             order: 2,
+          },
+          experimental: {
+            label: "experimental",
+            order: 34,
           },
         },
       },
