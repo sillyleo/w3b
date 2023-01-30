@@ -14,11 +14,16 @@ import Stack from '../../Stack';
 
 const Demo1 = () => {
   return <Stack>
-    <Checkbox name={'c1'} fontSize={'xl'}>This is a checkbox</Checkbox>
-    <Checkbox name={'c2'} fontSize={'lg'}>This is a checkbox</Checkbox>
-    <Checkbox name={'c3'} fontSize={'base'}>This is a checkbox</Checkbox>
-    <Checkbox name={'c4'} fontSize={'sm'}>This is a checkbox</Checkbox>
-    <Checkbox name={'c5'} fontSize={'xs'}>This is a checkbox</Checkbox>
+    <Checkbox name={'c1'} tone={'tomato'} fontSize={'xl'}>This is a checkbox</Checkbox>
+    <Checkbox name={'c2'} tone={'blue'} fontSize={'lg'}>This is a checkbox</Checkbox>
+    <Checkbox name={'c3'} tone={'gray'} fontSize={'base'}>This is a checkbox</Checkbox>
+    <Checkbox name={'c4'} tone={'sky'} fontSize={'sm'}>This is a checkbox</Checkbox>
+    <Checkbox name={'c5'} tone={'amber'} fontSize={'xs'}>This is a checkbox</Checkbox>
+    <Checkbox name={'c1'} disabled tone={'tomato'} fontSize={'xl'}>This is a checkbox</Checkbox>
+    <Checkbox name={'c2'} disabled tone={'blue'} fontSize={'lg'}>This is a checkbox</Checkbox>
+    <Checkbox name={'c3'} disabled tone={'gray'} fontSize={'base'}>This is a checkbox</Checkbox>
+    <Checkbox name={'c4'} disabled tone={'sky'} fontSize={'sm'}>This is a checkbox</Checkbox>
+    <Checkbox name={'c5'} disabled tone={'amber'} fontSize={'xs'}>This is a checkbox</Checkbox>
   </Stack>;
 };
 

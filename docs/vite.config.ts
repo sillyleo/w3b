@@ -1,36 +1,32 @@
-import { defineConfig } from "vite";
-import * as path from "path";
-import react from "@vitejs/plugin-react";
-import pages, { DefaultPageStrategy } from "vite-plugin-react-pages";
-import { vanillaExtractPlugin } from "@vanilla-extract/vite-plugin";
+import { defineConfig } from 'vite';
+import * as path from 'path';
+import react from '@vitejs/plugin-react';
+import pages, { DefaultPageStrategy } from 'vite-plugin-react-pages';
+import { vanillaExtractPlugin } from '@vanilla-extract/vite-plugin';
+
 export default defineConfig({
-  server: {
-    fs: {
-      // Allow serving files from one level up to the project root
-      allow: [".."],
-    },
-  },
+
   plugins: [
     vanillaExtractPlugin(),
 
     react(),
     pages({
-      pagesDir: path.join(__dirname, "pages"),
+      pagesDir: path.join(__dirname, 'pages'),
       pageStrategy: new DefaultPageStrategy({
         extraFindPages: async (pagesDir, helpers) => {
-          const srcPath = path.join(__dirname, "../src");
-          if (String(process.env.SHOW_ALL_COMPONENT_DEMOS) === "true") {
+          const srcPath = path.join(__dirname, '../src');
+          if (String(process.env.SHOW_ALL_COMPONENT_DEMOS) === 'true') {
             // show all component demos during dev
             // put them in page `/components/demos/${componentName}`
             helpers.watchFiles(
               srcPath,
-              "*/demos/**/*.{[tj]sx,md?(x)}",
+              '*/demos/**/*.{[tj]sx,md?(x)}',
               async function fileHandler(file, api) {
                 const { relative, path: absolute } = file;
                 const match = relative.match(
                   /(.*)\/demos\/(.*)\.([tj]sx|mdx?)$/
                 );
-                if (!match) throw new Error("unexpected file: " + absolute);
+                if (!match) throw new Error('unexpected file: ' + absolute);
                 const [_, componentName, demoName] = match;
                 const pageId = `/demos/${componentName}`;
                 // register page data
@@ -42,7 +38,7 @@ export default defineConfig({
                   // that will be consumed by theme-doc
                   dataPath: `${absolute}?demo`,
                   // register demo static data
-                  staticData: await helpers.extractStaticData(file),
+                  staticData: await helpers.extractStaticData(file)
                 });
               }
             );
@@ -51,11 +47,11 @@ export default defineConfig({
           // find all component README
           helpers.watchFiles(
             srcPath,
-            "*/README.md?(x)",
+            '*/README.md?(x)',
             async function fileHandler(file, api) {
               const { relative, path: absolute } = file;
               const match = relative.match(/(.*)\/README\.mdx?$/);
-              if (!match) throw new Error("unexpected file: " + absolute);
+              if (!match) throw new Error('unexpected file: ' + absolute);
               const [_, componentName] = match;
               //              const pageId = `/components/${componentName}`;
               const pageId = `/${componentName}`; // this adds component to the main doc page
@@ -65,18 +61,13 @@ export default defineConfig({
                 // register demo runtime data path
                 dataPath: absolute,
                 // register demo static data
-                staticData: await helpers.extractStaticData(file),
+                staticData: await helpers.extractStaticData(file)
               });
             }
           );
-        },
-      }),
-    }),
-  ],
-  // resolve: {
-  //   alias: {
-  //     w3b: path.join(__dirname, "../../"),
-  //     nonimono: path.join(__dirname, "../../"),
-  //   },
-  // },
+        }
+      })
+    })
+  ]
+
 });
