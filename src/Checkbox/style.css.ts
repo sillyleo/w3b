@@ -22,14 +22,20 @@ export const checkboxRoot = style({
   border: 'none',
   display: 'inline-flex',
   alignItems: 'center',
+  transition: 'all 0.2s ease-in-out',
   ':focus': {
-    boxShadow: '0 0 0 2px black'
-  }, ':hover': {
+    // boxShadow: '0 0 0 2px black'
+  },
+  ':active': {
+    boxShadow: '0 0 0 2px black',
+    transform: 'scale(0.9)'
+
+  },
+  ':hover': {
     backgroundColor: 'black'
   },
   selectors: {
     ['&[data-state=checked]']: {
-      transform: 'scale(2)',
       backgroundColor: 'green'
 
     }
@@ -41,7 +47,12 @@ export const checkboxIndicator = style({
   aspectRatio: '1',
   color: 'white',
   padding: 0,
-  height: '100%'
+  height: '100%',
+  selectors: {
+    ['[data-state=checked] &']: {
+      color: 'red'
+    }
+  }
 });
 
 

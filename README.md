@@ -1,5 +1,10 @@
 # nomimono — a simple component library
 
+# Roadmap
+
+- https://github.com/pacocoursey/cmdk
+- divider
+
 - Bootstrapped with [`vite-plugin-react-pages`](https://github.com/vitejs/vite-plugin-react-pages)'s library starter
 
 # Installation
@@ -55,7 +60,8 @@ Edit `src/Button/demos/demo1.tsx` or other demo files, the demos will inflect yo
 
 # Fonts
 
-Fonts are not specific but prioritize [Sk-Modernist](https://seankanedesign.gumroad.com/l/sk-modernist) for heading and Inter for body.
+Fonts are not specific but prioritize [Sk-Modernist](https://seankanedesign.gumroad.com/l/sk-modernist) for heading and
+Inter for body.
 
 ## Sk-Modernist
 
@@ -67,6 +73,7 @@ Create font classnames:
 
 ```jsx
 import { globalFontFace } from "@macaron-css/core";
+
 const skModernistBold = "SkModernistBold";
 
 globalFontFace(skModernistBold, {
