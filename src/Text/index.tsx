@@ -15,8 +15,10 @@ export const Text = ({
                        ...props
                      }: TextProps) => {
   return (
-    <Bento as={element} className={textStyle({ size })}
-           {...props}>
+    <Bento as={element}
+           className={textStyle({ size })}
+           {...props}
+    >
       {children}
     </Bento>
   );

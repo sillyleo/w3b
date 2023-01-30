@@ -12,3 +12,5 @@ Text components is build upon `Bento` but with some additional variants.
 ```
 <TsInfo src="./index.tsx" name="TextProps" />
 ```
+
+<TsInfo src="./index.tsx" name="TextProps" />

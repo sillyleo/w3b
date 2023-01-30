@@ -1,6 +1,6 @@
 ---
 title: Avatar
-subGroup: Components
+subGroup: WIP
 ---
 
 # Avatar
