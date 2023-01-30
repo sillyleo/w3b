@@ -12,7 +12,7 @@ export const checkboxLabel = style({
 
 
 export const checkboxRoot = style({
-  backgroundColor: 'blue',
+  backgroundColor: 'gray',
   aspectRatio: '1',
   height: '120%',
   flexShrink: 1,
@@ -25,7 +25,14 @@ export const checkboxRoot = style({
   ':focus': {
     boxShadow: '0 0 0 2px black'
   }, ':hover': {
-    backgroundColor: 'red'
+    backgroundColor: 'black'
+  },
+  selectors: {
+    ['&[data-state=checked]']: {
+      transform: 'scale(2)',
+      backgroundColor: 'green'
+
+    }
   }
 });
 
