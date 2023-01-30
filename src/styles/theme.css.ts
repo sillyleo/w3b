@@ -196,12 +196,12 @@ export const secondaryClass = styleVariants(allTones, (tone: keyof Colors) => {
     tone === "amber"
   ) {
     return {
-      backgroundColor: theme.colors[tone + "5"],
+      backgroundColor: theme.colors[tone + "4"],
       ":hover": {
-        backgroundColor: theme.colors[tone + "6"],
+        backgroundColor: theme.colors[tone + "5"],
       },
       ":active": {
-        backgroundColor: theme.colors[tone + "7"],
+        backgroundColor: theme.colors[tone + "6"],
       },
       color: theme.colors[tone + "11"],
     };
@@ -228,12 +228,12 @@ export const secondaryClass = styleVariants(allTones, (tone: keyof Colors) => {
     // color bg
 
     return {
-      backgroundColor: theme.colors[tone + "6"],
+      backgroundColor: theme.colors[tone + "4"],
       ":hover": {
-        backgroundColor: theme.colors[tone + "7"],
+        backgroundColor: theme.colors[tone + "5"],
       },
       ":active": {
-        backgroundColor: theme.colors[tone + "8"],
+        backgroundColor: theme.colors[tone + "6"],
       },
       color: theme.colors[tone + "11"],
     };

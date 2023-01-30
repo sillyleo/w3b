@@ -6,6 +6,7 @@ import { defineConfig } from "vite";
 import typescript from "@rollup/plugin-typescript";
 // @ts-ignore
 import { vanillaExtractPlugin } from "@vanilla-extract/vite-plugin";
+import tsconfigPaths from "vite-tsconfig-paths";
 
 // import cssInjectedByJsPlugin from "vite-plugin-css-injected-by-js";
 
@@ -37,6 +38,7 @@ export default defineConfig({
   },
   plugins: [
     vanillaExtractPlugin(),
+
     // macaronVitePlugin(),
     // basic setup
     // dts(),

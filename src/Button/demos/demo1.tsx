@@ -3,10 +3,9 @@
  * @description Button shadow demo1 description
  */
 
-import { IceCream } from "lucide-react";
 import React from "react";
+import Icon from "../../Icon";
 import Button from "..";
-import { darkTheme } from "../../styles/theme.css";
 
 {
   /* <div> */
@@ -17,26 +16,29 @@ const Demo1 = () => {
       <Button
         align="left"
         style={{ width: "200px" }}
-        leftIcon={<IceCream />}
+        leftIcon={<Icon name="ice-cream" />}
         intent="primary"
         tone="blue"
+        size="sm"
       >
         New Button
       </Button>
       <Button
         align="between"
         style={{ width: "200px" }}
-        rightIcon={<IceCream />}
+        rightIcon={<Icon name="ice-cream" />}
         intent="secondary"
         tone="blue"
+        size="md"
       >
         New Button
       </Button>
       <Button
         style={{ width: "200px" }}
-        leftIcon={<IceCream />}
+        leftIcon={<Icon name="ice-cream" />}
         intent="ghost"
         tone="blue"
+        size="lg"
       >
         New Button
       </Button>
