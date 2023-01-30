@@ -7,6 +7,7 @@ export interface StackProps extends BentoProps {
   direction?: "row" | "column";
   gap?: Sprinkles["gap"];
   display?: Sprinkles["display"];
+  wrap?: Sprinkles["flexWrap"];
 }
 
 export const Stack = ({
@@ -14,10 +15,17 @@ export const Stack = ({
   direction = "column",
   gap = "4",
   display = "flex",
+  wrap = "wrap",
   ...props
 }: StackProps) => {
   return (
-    <Bento display={display} gap={gap} flexDirection={direction} {...props}>
+    <Bento
+      display={display}
+      flexWrap={wrap}
+      gap={gap}
+      flexDirection={direction}
+      {...props}
+    >
       {children}
     </Bento>
   );

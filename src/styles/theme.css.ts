@@ -595,6 +595,7 @@ const layoutStyles = defineProperties({
     minH: ["minHeight"],
     maxW: ["maxWidth"],
     maxH: ["maxHeight"],
+    boxSize: ["width", "height"],
   },
 });
 

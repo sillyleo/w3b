@@ -9,9 +9,9 @@ import Icon from "..";
 const Demo1 = () => {
   return (
     <div>
-        <Icon size={24} name="air-vent" />
-        <Icon  name="air-vent" />
-        <Icon name="camera" />
+      <Icon size={240} fill="rgba(0,0,0,0.2)" name="camera" />
+      <Icon name="air-vent" />
+      <Icon name="camera" />
     </div>
   );
 };

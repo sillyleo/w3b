@@ -7,37 +7,35 @@ import { loremIpsum } from "react-lorem-ipsum";
 import React from "react";
 import Text from "../../Text";
 import Stack from "..";
+import Bento from "../../Bento";
 
 const Demo1 = () => {
   return (
-    <Stack
-      borderRadius={"2xl"}
-      bg="slate3"
-      p="6"
-      boxShadow={"lg"}
-      direction="column"
-    >
-      <Text size="page-title">Page Title</Text>
-      <Text size="title1">Title 1</Text>
-      <Text size="title2">Title 2</Text>
-      <Text size="title3">Title 3</Text>
-      <Text size="subtitle1" color={"textSecondary"}>
-        Subtitle 1
-      </Text>
-      <Text size="subtitle2" color={"textSecondary"}>
-        Subtitle 2
-      </Text>
-      <Text size="overline" color={"textTertiary"}>
-        Overline
-      </Text>
-      <Text size="body">Body {loremIpsum()}</Text>
-      <Text size="body-bold">Body Bold </Text>
-      <Text size="label" color={"textSecondary"}>
-        Label
-      </Text>
-      <Text size="caption" color={"textTertiary"}>
-        Caption
-      </Text>
+    <Stack>
+      <Stack borderRadius={"2xl"} bg="slate3" p="6" direction="column">
+        {/* use for loop to create 10 <Bento/> */}
+        {[...Array(4)].map((_, index) => (
+          <Bento
+            boxSize={"20"}
+            key={index}
+            bg="slate6"
+            p="4"
+            borderRadius="lg"
+          />
+        ))}
+      </Stack>
+      <Stack borderRadius={"2xl"} bg="slate3" p="6" direction="row">
+        {/* use for loop to create 10 <Bento/> */}
+        {[...Array(17)].map((_, index) => (
+          <Bento
+            boxSize={"20"}
+            key={index}
+            bg="slate6"
+            p="4"
+            borderRadius="lg"
+          />
+        ))}
+      </Stack>
     </Stack>
   );
 };
