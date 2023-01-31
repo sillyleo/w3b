@@ -1,6 +1,6 @@
 ---
 title: Checkbox
-subGroup: WIP
+subGroup: Components
 ---
 
 # Avatar

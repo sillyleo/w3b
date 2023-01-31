@@ -1,14 +1,41 @@
 import { recipe, RecipeVariants } from '@vanilla-extract/recipes';
 import { theme } from '../styles/theme.css';
+import { styleVariants } from '@vanilla-extract/css';
 
+
+// Add some paddings if leftIcon and rightIcon are present
+export const iconPaddingX = styleVariants({
+  sm: {
+    paddingLeft: theme.spacing[2],
+    paddingRight: theme.spacing[2],
+    gap: theme.spacing[1]
+  },
+  md: {
+
+    paddingLeft: theme.spacing[2],
+    paddingRight: theme.spacing[2],
+    gap: theme.spacing[1]
+  },
+  lg: {
+
+    paddingLeft: theme.spacing[3],
+    paddingRight: theme.spacing[3],
+    gap: theme.spacing[2]
+
+  },
+  zero: {
+    paddingLeft: 0,
+    paddingRight: 0
+  }
+});
 export const iconButtonStyle = recipe({
   base: {
     fontFamily: theme.fontFamily.heading,
     fontWeight: 'bold',
     cursor: 'pointer',
     display: 'inline-flex',
-    gap: theme.spacing[2],
-    padding: 0,
+    gap: theme.spacing[0],
+    // padding: 0,
     alignItems: 'center',
     fontSize: theme.fontSize['base'],
     lineHeight: 1,
@@ -29,25 +56,25 @@ export const iconButtonStyle = recipe({
         borderRadius: theme.radii['lg'],
         fontSize: theme.fontSize['xs'],
         height: theme.spacing[7],
-        width: theme.spacing[7],
-        paddingLeft: theme.spacing[3],
-        paddingRight: theme.spacing[3]
+        minWidth: theme.spacing[7]
+        // paddingLeft: theme.spacing[3],
+        // paddingRight: theme.spacing[3]
       },
       md: {
         borderRadius: theme.radii['lg'],
         fontSize: theme.fontSize['sm'],
         height: theme.spacing[8],
-        width: theme.spacing[8],
-        paddingLeft: theme.spacing[4],
-        paddingRight: theme.spacing[4]
+        minWidth: theme.spacing[8]
+        // paddingLeft: theme.spacing[4],
+        // paddingRight: theme.spacing[4]
       },
       lg: {
         borderRadius: theme.radii['xl'],
         fontSize: theme.fontSize['base'],
         height: theme.spacing[11],
-        width: theme.spacing[11],
-        paddingLeft: theme.spacing[5],
-        paddingRight: theme.spacing[5]
+        minWidth: theme.spacing[11]
+        // paddingLeft: theme.spacing[5],
+        // paddingRight: theme.spacing[5]
       }
     },
 

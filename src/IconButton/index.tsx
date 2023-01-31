@@ -1,5 +1,5 @@
 import React from 'react';
-import { iconButtonStyle, IconButtonVariants } from './style.css';
+import { iconButtonStyle, IconButtonVariants, iconPaddingX } from './style.css';
 import { clsx } from 'clsx';
 import {
   primaryClass,
@@ -102,18 +102,24 @@ export const IconButton = ({
                              fill,
                              ...props
                            }: IconButtonProps) => {
+
+
+  console.log('leftIcon', leftIcon);
+  console.log('rightIcon', rightIcon);
   return (
     <button
       // clsx is only for combing multiple classes together
-      className={clsx(
-        iconButtonStyle({
-          size: size,
-          align: align,
-          gradient: gradient
-        }),
-        getVariant(intent, tone),
-        getShadowVariant(shadow, size, tone, intent)
-      )}
+      className={
+        clsx(
+          iconButtonStyle({
+            size: size,
+            align: align,
+            gradient: gradient
+          }),
+          leftIcon !== undefined || rightIcon !== undefined ? iconPaddingX[size] : iconPaddingX['zero'],
+          getVariant(intent, tone),
+          getShadowVariant(shadow, size, tone, intent)
+        )}
       {...props}
     >
       {leftIcon}

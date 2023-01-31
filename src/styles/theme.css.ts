@@ -254,8 +254,8 @@ export const ghostClass = styleVariants(allTones, (tone: keyof Colors) => {
 
       backgroundColor: 'transparent',
       ':hover': {
-        backgroundColor: theme.colors[tone + '3'],
-        color: theme.colors[tone + '12']
+        backgroundColor: theme.colors[tone + '3']
+        // color: theme.colors[tone + '12']
       },
       ':active': {
         backgroundColor: theme.colors[tone + '4']
@@ -267,7 +267,7 @@ export const ghostClass = styleVariants(allTones, (tone: keyof Colors) => {
     return {
       backgroundColor: 'transparent',
       ':hover': {
-        color: theme.colors[tone + '12'],
+        // color: theme.colors[tone + '12'],
         backgroundColor: theme.colors[tone + '3']
       },
       ':active': {
@@ -352,7 +352,7 @@ export const mdSecondaryShadowClass = styleVariants(allTones, (tone) => {
     selectors: {
       [`:not(${darkTheme}) > &`]: {
         boxShadow: `
-      0px 1px 4px ${theme.colors[tone + '7']},
+      0px 1px 4px ${theme.colors[tone + '5']},
       0px 0.2px 0.2px ${theme.colors[tone + '4']},
       0px 0.8px 0.9px -0.8px ${theme.colors[tone + '4']},
       -0.1px 2px 2.3px -1.7px ${theme.colors[tone + '4']},
@@ -368,15 +368,13 @@ export const lgSecondaryShadowClass = styleVariants(allTones, (tone) => {
     selectors: {
       [`:not(${darkTheme}) > &`]: {
         boxShadow: `
-          0px 1px 4px ${theme.colors[tone + '7']},
-    0px 0.1px 0.1px ${theme.colors[tone + '3']},
-    0px 0.7px 0.8px -0.4px ${theme.colors[tone + '3']},
-    -0.1px 1.3px 1.5px -0.7px ${theme.colors[tone + '3']},
-    -0.1px 2.2px 2.5px -1.1px ${theme.colors[tone + '3']},
-    -0.2px 3.4px 3.8px -1.4px ${theme.colors[tone + '3']},
-    -0.3px 5.4px 6.1px -1.8px ${theme.colors[tone + '3']},
-    -0.4px 8.2px 9.2px -2.1px ${theme.colors[tone + '3']},
-    -0.6px 12.1px 13.6px -2.5px ${theme.colors[tone + '3']}
+          0px 1px 4px ${theme.colors[tone + '5']},
+    0px 0.1px 0.1px ${theme.colors[tone + '4']},
+    0px 0.7px 0.8px -0.4px ${theme.colors[tone + '4']},
+    -0.1px 1.3px 1.5px -0.7px ${theme.colors[tone + '5']},
+    -0.1px 2.2px 2.5px -1.1px ${theme.colors[tone + '5']},
+    -0.2px 3.4px 3.8px -1.4px ${theme.colors[tone + '5']},
+    -0.3px 5.4px 6.1px -1.8px ${theme.colors[tone + '5']}
       `
       }
     }
