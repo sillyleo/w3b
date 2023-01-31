@@ -4,8 +4,9 @@ import { CheckIcon } from 'lucide-react';
 import Bento from '../Bento';
 import { TextProps } from '../Text';
 import './style.css';
-import { checkboxIcon, checkboxIndicator, checkboxLabel, checkboxRoot, checkboxRootTone } from './style.css';
+import { checkboxIcon, checkboxIndicator, checkboxLabel, checkboxRoot } from './style.css';
 import { clsx } from 'clsx';
+import { formTone } from '../styles/theme.css';
 
 export interface CheckboxProps {
 
@@ -49,7 +50,7 @@ export const Checkbox = ({
     <Bento
       fontSize={fontSize}
       as={'label'}
-      className={checkboxLabel} htmlFor={name}
+      className={checkboxLabel[!!disabled ? 'disabled' : 'enabled']} htmlFor={name}
       {...props}
     >
       <CheckboxPrimitive.Root
@@ -60,7 +61,7 @@ export const Checkbox = ({
         required={required}
         name={name}
         value={value}
-        className={clsx(checkboxRoot, checkboxRootTone[tone])} id={name}>
+        className={clsx(checkboxRoot, formTone[tone])} id={name}>
         <CheckboxPrimitive.Indicator className={checkboxIndicator}>
           <CheckIcon strokeWidth={3} className={checkboxIcon} />
         </CheckboxPrimitive.Indicator>

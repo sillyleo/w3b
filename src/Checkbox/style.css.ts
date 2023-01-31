@@ -2,13 +2,24 @@ import { style, styleVariants } from '@vanilla-extract/css';
 import { sprinkles, theme } from '../styles/theme.css';
 import { allTones } from '../constants';
 
-export const checkboxLabel = style({
+
+export const checkboxBase = style({
   lineHeight: 1,
   height: '1em',
   display: 'inline-flex',
   alignItems: 'center',
   gap: '0.4em',
   userSelect: 'none'
+});
+
+export const checkboxLabel = styleVariants({
+
+  enabled: [checkboxBase, {
+    cursor: 'pointer'
+  }],
+  disabled: [checkboxBase, {
+    cursor: 'not-allowed'
+  }]
 
 });
 
@@ -43,71 +54,6 @@ export const checkboxRoot = style({
 
 });
 
-// checkboxRootTone[tone]
-export const checkboxRootTone = styleVariants(allTones, (tone: keyof Colors) => {
-  // color bg + black text
-  if (
-    tone === 'sky' ||
-    tone === 'mint' ||
-    tone === 'lime' ||
-    tone === 'yellow' ||
-    tone === 'amber'
-  ) {
-    return {
-      backgroundColor: theme.colors[tone + '4'],
-      boxShadow: `0 0 0 1px ${theme.colors[tone + '7']}`,
-      ':hover': {
-        backgroundColor: theme.colors[tone + '5'],
-        boxShadow: `0 0 0 1px ${theme.colors[tone + '8']}`
-
-      },
-      ':active': {
-        backgroundColor: theme.colors[tone + '6']
-      },
-      color: theme.colors[tone + '11']
-    };
-  } else if (
-    tone === 'gray' ||
-    tone === 'mauve' ||
-    tone === 'slate' ||
-    tone === 'sage' ||
-    tone === 'olive' ||
-    tone === 'sand'
-  ) {
-    // grayscale series
-    return {
-      backgroundColor: theme.colors[tone + '5'],
-      boxShadow: `0 0 0 1px ${theme.colors[tone + '8']}`,
-
-      ':hover': {
-        backgroundColor: theme.colors[tone + '7'],
-        boxShadow: `0 0 0 1px ${theme.colors[tone + '9']}`
-
-      },
-      ':active': {
-        backgroundColor: theme.colors[tone + '8']
-      },
-      color: theme.colors[tone + '12']
-    };
-  } else {
-    // color bg
-
-    return {
-      backgroundColor: theme.colors[tone + '4'],
-      boxShadow: `0 0 0 1px ${theme.colors[tone + '7']}`,
-
-      ':hover': {
-        backgroundColor: theme.colors[tone + '5'],
-        boxShadow: `0 0 0 1px ${theme.colors[tone + '8']}`
-
-      },
-      ':active': {
-        backgroundColor: theme.colors[tone + '6']
-      },
-      color: theme.colors[tone + '11']
-    };
-  }
-});
 
 export const checkboxIndicator = style({
   aspectRatio: '1',
