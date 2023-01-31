@@ -1,15 +1,19 @@
-import React from 'react';
-import * as CheckboxPrimitive from '@radix-ui/react-checkbox';
-import { CheckIcon } from 'lucide-react';
-import Bento from '../Bento';
-import { TextProps } from '../Text';
-import './style.css';
-import { checkboxIcon, checkboxIndicator, checkboxLabel, checkboxRoot } from './style.css';
-import { clsx } from 'clsx';
-import { formTone } from '../styles/theme.css';
+import React from "react";
+import * as CheckboxPrimitive from "@radix-ui/react-checkbox";
+import { CheckIcon } from "lucide-react";
+import Bento from "../Bento";
+import { TextProps } from "../Text";
+import "./style.css";
+import {
+  checkboxIcon,
+  checkboxIndicator,
+  checkboxLabel,
+  checkboxRoot,
+} from "./style.css";
+import { clsx } from "clsx";
+import { formTone } from "../styles/theme.css";
 
 export interface CheckboxProps {
-
   // basic props from radix-ui
   children?: React.ReactNode | string;
   defaultChecked?: boolean;
@@ -22,35 +26,36 @@ export interface CheckboxProps {
 
   name?: string;
 
-  value?: 'on' | 'off';
+  value?: "on" | "off";
 
   // extra custom  props
+  checkEmoji?: React.ReactNode;
 
-  fontSize?: TextProps['fontSize'];
+  fontSize?: TextProps["fontSize"];
 
-  tone?: TextProps['tone'];
-
+  tone?: TextProps["tone"];
 }
 
 export const Checkbox = ({
-
-                           children,
-                           tone = 'gray',
-                           defaultChecked,
-                           checked,
-                           onCheckedChange,
-                           disabled,
-                           required,
-                           name,
-                           value = 'on',
-                           fontSize = 'base',
-                           ...props
-                         }: CheckboxProps) => {
+  children,
+  tone = "gray",
+  defaultChecked,
+  checked,
+  onCheckedChange,
+  disabled,
+  required,
+  name,
+  checkEmoji,
+  value = "on",
+  fontSize = "base",
+  ...props
+}: CheckboxProps) => {
   return (
     <Bento
       fontSize={fontSize}
-      as={'label'}
-      className={checkboxLabel[!!disabled ? 'disabled' : 'enabled']} htmlFor={name}
+      as={"label"}
+      className={checkboxLabel[!!disabled ? "disabled" : "enabled"]}
+      htmlFor={name}
       {...props}
     >
       <CheckboxPrimitive.Root
@@ -61,9 +66,15 @@ export const Checkbox = ({
         required={required}
         name={name}
         value={value}
-        className={clsx(checkboxRoot, formTone[tone])} id={name}>
+        className={clsx(checkboxRoot, formTone[tone])}
+        id={name}
+      >
         <CheckboxPrimitive.Indicator className={checkboxIndicator}>
-          <CheckIcon strokeWidth={3} className={checkboxIcon} />
+          {checkEmoji ? (
+            <div className={checkboxIcon}>{checkEmoji}</div>
+          ) : (
+            <CheckIcon className={checkboxIcon} />
+          )}
         </CheckboxPrimitive.Indicator>
       </CheckboxPrimitive.Root>
       {children}

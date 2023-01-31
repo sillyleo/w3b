@@ -3,7 +3,7 @@ title: Checkbox
 subGroup: components
 ---
 
-# Avatar
+# Checkbox
 
 https://www.radix-ui.com/docs/primitives/components/checkbox
 

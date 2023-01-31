@@ -50,6 +50,7 @@
     "colord": "^2.9.3",
     "framer-motion": "^8.5.4",
     "lucide-react": "^0.105.0",
+    "motion": "^10.15.5",
     "react": "^18.2.0",
     "use-sound": "^4.0.1"
   },

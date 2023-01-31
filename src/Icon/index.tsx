@@ -1,13 +1,14 @@
 import _ from "lodash";
 import * as icons from "lucide-react";
 import React from "react";
-
+import * as CSS from "csstype";
 export interface IconProps {
   name: string;
   color?: string;
   size?: number;
   strokeWidth?: number;
   fill?: string;
+  boxSize?: CSS.Properties["width"];
 }
 
 /**
@@ -27,6 +28,7 @@ const Icon = ({
   name,
   color,
   size,
+  boxSize,
   fill = "none",
   strokeWidth,
   ...props
@@ -39,11 +41,15 @@ const Icon = ({
   return (
     <LucideIcon
       color={color}
-  size={size ? size : "1.45em"}
-
-        strokeWidth={strokeWidth}
+      size={size ? size : "1.6em"}
+      strokeWidth={strokeWidth}
       fill={fill}
-      style={{ flexShrink: 0 }}
+      style={{
+        flexShrink: 0,
+        height: boxSize ? boxSize : undefined,
+        width: boxSize ? boxSize : undefined,
+        aspectRatio: "1",
+      }}
       {...props}
     />
   );

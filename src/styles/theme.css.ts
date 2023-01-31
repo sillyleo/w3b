@@ -3,11 +3,11 @@ import {
   createTheme,
   globalStyle,
   style,
-  styleVariants
-} from '@vanilla-extract/css';
-import { createSprinkles, defineProperties } from '@vanilla-extract/sprinkles';
-import { allTones } from 'src/constants';
-import figmaTokens from '../theme.json';
+  styleVariants,
+} from "@vanilla-extract/css";
+import { createSprinkles, defineProperties } from "@vanilla-extract/sprinkles";
+import { allTones } from "src/constants";
+import figmaTokens from "../theme.json";
 
 // Font setup
 // Usage:
@@ -32,13 +32,13 @@ import figmaTokens from '../theme.json';
 // e.g. { colors: { red: { 1: "#fff" } } } => "colors-red-1"
 function flattenKeys(
   obj: any,
-  sep = '',
-  parentKey = ''
+  sep = "",
+  parentKey = ""
 ): Record<string, string> {
   return Object.keys(obj).reduce((acc, key) => {
     const value = obj[key];
     const newKey = parentKey ? parentKey + sep + key : key;
-    if (typeof value === 'object') {
+    if (typeof value === "object") {
       Object.assign(acc, flattenKeys(value, sep, newKey));
     } else {
       acc[newKey] = value;
@@ -62,7 +62,7 @@ const letterSpacing: {
   [key: string]: string;
 } = Object.keys(figmaTokens.letterSpacing).reduce((acc, key) => {
   const value = figmaTokens.letterSpacing[key];
-  if (typeof value === 'string' && value.endsWith('%')) {
+  if (typeof value === "string" && value.endsWith("%")) {
     const percent = parseFloat(value.slice(0, -1));
     acc[key] = `${(percent / 100) * 0.01}rem`;
   } else {
@@ -77,7 +77,7 @@ const commonTokens = {
   opacity: figmaTokens.opacity,
   fontFamily: {
     heading: `${figmaTokens.fontFamilies.heading},'SkModernistBold','Sk-Modernist-Bold',sans-serif`,
-    body: `'Inter Tight',${figmaTokens.fontFamilies.body}, sans-serif`
+    body: `'Inter Tight',${figmaTokens.fontFamilies.body}, sans-serif`,
   },
   fontSize: figmaTokens.fontSizes,
   lineHeight: figmaTokens.lineHeights,
@@ -85,33 +85,33 @@ const commonTokens = {
   paragraphSpacing: figmaTokens.paragraphSpacing,
   letterSpacing: letterSpacing,
   spacing: figmaTokens.spacing,
-  screens: figmaTokens.screens
+  screens: figmaTokens.screens,
 };
 
-export const theme = createGlobalTheme(':root', {
+export const theme = createGlobalTheme(":root", {
   colors: {
     ...baseColors,
-    ...lightColors
+    ...lightColors,
   },
-  ...commonTokens
+  ...commonTokens,
 });
 
 export const darkTheme = createTheme(theme, {
   colors: {
     ...baseColors,
-    ...darkColors
+    ...darkColors,
   },
-  ...commonTokens
+  ...commonTokens,
 });
 
-globalStyle(':root', {
-  WebkitTapHighlightColor: 'rgba(0, 0, 0, 0)',
+globalStyle(":root", {
+  WebkitTapHighlightColor: "rgba(0, 0, 0, 0)",
   // WebkitFontSmoothing: "antialiased",
-  boxSizing: 'border-box',
+  boxSizing: "border-box",
   margin: 0,
   padding: 0,
-  fontSize: '100%',
-  lineHeight: 1
+  fontSize: "100%",
+  lineHeight: 1,
 });
 
 // export const resetStyle = style({
@@ -124,8 +124,8 @@ globalStyle(':root', {
 //   lineHeight: 1
 // });
 
-globalStyle('h1,h2,h3,h4,h5,h6', {
-  fontFamily: `SkModernistBold,'SkModernistBold','Sk-Modernist-Bold',sans-serif`
+globalStyle("h1,h2,h3,h4,h5,h6", {
+  fontFamily: `SkModernistBold,'SkModernistBold','Sk-Modernist-Bold',sans-serif`,
 });
 
 // color and shadow variants
@@ -134,53 +134,53 @@ globalStyle('h1,h2,h3,h4,h5,h6', {
 export const primaryClass = styleVariants(allTones, (tone) => {
   // color bg + black text
   if (
-    tone === 'sky' ||
-    tone === 'mint' ||
-    tone === 'lime' ||
-    tone === 'yellow' ||
-    tone === 'amber'
+    tone === "sky" ||
+    tone === "mint" ||
+    tone === "lime" ||
+    tone === "yellow" ||
+    tone === "amber"
   ) {
     return {
-      backgroundColor: theme.colors[tone + '9'],
-      ':hover': {
-        backgroundColor: theme.colors[tone + '10']
+      backgroundColor: theme.colors[tone + "9"],
+      ":hover": {
+        backgroundColor: theme.colors[tone + "10"],
       },
-      ':active': {
-        backgroundColor: theme.colors[tone + '11']
+      ":active": {
+        backgroundColor: theme.colors[tone + "11"],
       },
-      color: theme.colors.black
+      color: theme.colors.black,
     };
   } else if (
-    tone === 'gray' ||
-    tone === 'mauve' ||
-    tone === 'slate' ||
-    tone === 'sage' ||
-    tone === 'olive' ||
-    tone === 'sand'
+    tone === "gray" ||
+    tone === "mauve" ||
+    tone === "slate" ||
+    tone === "sage" ||
+    tone === "olive" ||
+    tone === "sand"
   ) {
     // grayscale series
     return {
-      backgroundColor: theme.colors[tone + '12'],
-      ':hover': {
-        backgroundColor: theme.colors[tone + '12']
+      backgroundColor: theme.colors[tone + "12"],
+      ":hover": {
+        backgroundColor: theme.colors[tone + "12"],
       },
-      ':active': {
-        backgroundColor: theme.colors[tone + '11']
+      ":active": {
+        backgroundColor: theme.colors[tone + "11"],
       },
-      color: theme.colors[tone + '2']
+      color: theme.colors[tone + "2"],
     };
   } else {
     // color bg + white text
 
     return {
-      backgroundColor: theme.colors[tone + '9'],
-      ':hover': {
-        backgroundColor: theme.colors[tone + '10']
+      backgroundColor: theme.colors[tone + "9"],
+      ":hover": {
+        backgroundColor: theme.colors[tone + "10"],
       },
-      ':active': {
-        backgroundColor: theme.colors[tone + '11']
+      ":active": {
+        backgroundColor: theme.colors[tone + "11"],
       },
-      color: theme.colors.white
+      color: theme.colors.white,
     };
   }
 });
@@ -189,91 +189,91 @@ export const primaryClass = styleVariants(allTones, (tone) => {
 export const secondaryClass = styleVariants(allTones, (tone: keyof Colors) => {
   // color bg + black text
   if (
-    tone === 'sky' ||
-    tone === 'mint' ||
-    tone === 'lime' ||
-    tone === 'yellow' ||
-    tone === 'amber'
+    tone === "sky" ||
+    tone === "mint" ||
+    tone === "lime" ||
+    tone === "yellow" ||
+    tone === "amber"
   ) {
     return {
-      backgroundColor: theme.colors[tone + '4'],
-      ':hover': {
-        backgroundColor: theme.colors[tone + '5']
+      backgroundColor: theme.colors[tone + "4"],
+      ":hover": {
+        backgroundColor: theme.colors[tone + "5"],
       },
-      ':active': {
-        backgroundColor: theme.colors[tone + '6']
+      ":active": {
+        backgroundColor: theme.colors[tone + "6"],
       },
-      color: theme.colors[tone + '11']
+      color: theme.colors[tone + "11"],
     };
   } else if (
-    tone === 'gray' ||
-    tone === 'mauve' ||
-    tone === 'slate' ||
-    tone === 'sage' ||
-    tone === 'olive' ||
-    tone === 'sand'
+    tone === "gray" ||
+    tone === "mauve" ||
+    tone === "slate" ||
+    tone === "sage" ||
+    tone === "olive" ||
+    tone === "sand"
   ) {
     // grayscale series
     return {
-      backgroundColor: theme.colors[tone + '6'],
-      ':hover': {
-        backgroundColor: theme.colors[tone + '7']
+      backgroundColor: theme.colors[tone + "6"],
+      ":hover": {
+        backgroundColor: theme.colors[tone + "7"],
       },
-      ':active': {
-        backgroundColor: theme.colors[tone + '8']
+      ":active": {
+        backgroundColor: theme.colors[tone + "8"],
       },
-      color: theme.colors[tone + '12']
+      color: theme.colors[tone + "12"],
     };
   } else {
     // color bg
 
     return {
-      backgroundColor: theme.colors[tone + '4'],
-      ':hover': {
-        backgroundColor: theme.colors[tone + '5']
+      backgroundColor: theme.colors[tone + "4"],
+      ":hover": {
+        backgroundColor: theme.colors[tone + "5"],
       },
-      ':active': {
-        backgroundColor: theme.colors[tone + '6']
+      ":active": {
+        backgroundColor: theme.colors[tone + "6"],
       },
-      color: theme.colors[tone + '11']
+      color: theme.colors[tone + "11"],
     };
   }
 });
 // tertiaryClass[tone]
 export const ghostClass = styleVariants(allTones, (tone: keyof Colors) => {
   if (
-    tone === 'gray' ||
-    tone === 'mauve' ||
-    tone === 'slate' ||
-    tone === 'sage' ||
-    tone === 'olive' ||
-    tone === 'sand'
+    tone === "gray" ||
+    tone === "mauve" ||
+    tone === "slate" ||
+    tone === "sage" ||
+    tone === "olive" ||
+    tone === "sand"
   ) {
     return {
       // grayscale series
 
-      backgroundColor: 'transparent',
-      ':hover': {
-        backgroundColor: theme.colors[tone + '3']
+      backgroundColor: "transparent",
+      ":hover": {
+        backgroundColor: theme.colors[tone + "3"],
         // color: theme.colors[tone + '12']
       },
-      ':active': {
-        backgroundColor: theme.colors[tone + '4']
+      ":active": {
+        backgroundColor: theme.colors[tone + "4"],
       },
 
-      color: theme.colors[tone + '11']
+      color: theme.colors[tone + "11"],
     };
   } else {
     return {
-      backgroundColor: 'transparent',
-      ':hover': {
+      backgroundColor: "transparent",
+      ":hover": {
         // color: theme.colors[tone + '12'],
-        backgroundColor: theme.colors[tone + '3']
+        backgroundColor: theme.colors[tone + "3"],
       },
-      ':active': {
-        backgroundColor: theme.colors[tone + '4']
+      ":active": {
+        backgroundColor: theme.colors[tone + "4"],
       },
-      color: theme.colors[tone + '11']
+      color: theme.colors[tone + "11"],
     };
   }
 });
@@ -286,12 +286,12 @@ export const smPrimaryShadowClass = styleVariants(allTones, (tone) => {
     selectors: {
       [`:not(${darkTheme}) > &`]: {
         boxShadow: `
-        0px 0.2px 0.2px ${theme.colors[tone + '7']},
-        0px 0.8px 0.9px -0.8px ${theme.colors[tone + '7']},
-        -0.1px 2px 2.3px -1.7px ${theme.colors[tone + '7']},
-      `
-      }
-    }
+        0px 0.2px 0.2px ${theme.colors[tone + "7"]},
+        0px 0.8px 0.9px -0.8px ${theme.colors[tone + "7"]},
+        -0.1px 2px 2.3px -1.7px ${theme.colors[tone + "7"]},
+      `,
+      },
+    },
   };
 });
 
@@ -301,13 +301,13 @@ export const mdPrimaryShadowClass = styleVariants(allTones, (tone) => {
     selectors: {
       [`:not(${darkTheme}) > &`]: {
         boxShadow: `
-      0px 0.2px 0.2px ${theme.colors[tone + '7']},
-      0px 0.8px 0.9px -0.8px ${theme.colors[tone + '7']},
-      -0.1px 2px 2.3px -1.7px ${theme.colors[tone + '7']},
-      -0.1px 4.8px 5.4px -2.5px ${theme.colors[tone + '7']}
-    `
-      }
-    }
+      0px 0.2px 0.2px ${theme.colors[tone + "7"]},
+      0px 0.8px 0.9px -0.8px ${theme.colors[tone + "7"]},
+      -0.1px 2px 2.3px -1.7px ${theme.colors[tone + "7"]},
+      -0.1px 4.8px 5.4px -2.5px ${theme.colors[tone + "7"]}
+    `,
+      },
+    },
   };
 });
 
@@ -316,17 +316,17 @@ export const lgPrimaryShadowClass = styleVariants(allTones, (tone) => {
     selectors: {
       [`:not(${darkTheme}) > &`]: {
         boxShadow: `
-    0px 0.1px 0.1px ${theme.colors[tone + '5']},
-    0px 0.7px 0.8px -0.4px ${theme.colors[tone + '5']},
-    -0.1px 1.3px 1.5px -0.7px ${theme.colors[tone + '5']},
-    -0.1px 2.2px 2.5px -1.1px ${theme.colors[tone + '5']},
-    -0.2px 3.4px 3.8px -1.4px ${theme.colors[tone + '5']},
-    -0.3px 5.4px 6.1px -1.8px ${theme.colors[tone + '5']},
-    -0.4px 8.2px 9.2px -2.1px ${theme.colors[tone + '5']},
-    -0.6px 12.1px 13.6px -2.5px ${theme.colors[tone + '5']};
-      `
-      }
-    }
+    0px 0.1px 0.1px ${theme.colors[tone + "5"]},
+    0px 0.7px 0.8px -0.4px ${theme.colors[tone + "5"]},
+    -0.1px 1.3px 1.5px -0.7px ${theme.colors[tone + "5"]},
+    -0.1px 2.2px 2.5px -1.1px ${theme.colors[tone + "5"]},
+    -0.2px 3.4px 3.8px -1.4px ${theme.colors[tone + "5"]},
+    -0.3px 5.4px 6.1px -1.8px ${theme.colors[tone + "5"]},
+    -0.4px 8.2px 9.2px -2.1px ${theme.colors[tone + "5"]},
+    -0.6px 12.1px 13.6px -2.5px ${theme.colors[tone + "5"]};
+      `,
+      },
+    },
   };
 });
 
@@ -336,13 +336,13 @@ export const smSecondaryShadowClass = styleVariants(allTones, (tone) => {
     selectors: {
       [`:not(${darkTheme}) > &`]: {
         boxShadow: `
-      0px 1px 4px ${theme.colors[tone + '6']},
-      0px 0.2px 0.2px ${theme.colors[tone + '5']},
-      0px 0.8px 0.9px -0.8px ${theme.colors[tone + '5']},
-      -0.1px 2px 2.3px -1.7px ${theme.colors[tone + '5']},
-    `
-      }
-    }
+      0px 1px 4px ${theme.colors[tone + "6"]},
+      0px 0.2px 0.2px ${theme.colors[tone + "5"]},
+      0px 0.8px 0.9px -0.8px ${theme.colors[tone + "5"]},
+      -0.1px 2px 2.3px -1.7px ${theme.colors[tone + "5"]},
+    `,
+      },
+    },
   };
 });
 
@@ -352,14 +352,14 @@ export const mdSecondaryShadowClass = styleVariants(allTones, (tone) => {
     selectors: {
       [`:not(${darkTheme}) > &`]: {
         boxShadow: `
-      0px 1px 4px ${theme.colors[tone + '5']},
-      0px 0.2px 0.2px ${theme.colors[tone + '4']},
-      0px 0.8px 0.9px -0.8px ${theme.colors[tone + '4']},
-      -0.1px 2px 2.3px -1.7px ${theme.colors[tone + '4']},
-      -0.1px 4.8px 5.4px -2.5px ${theme.colors[tone + '4']}
-    `
-      }
-    }
+      0px 1px 4px ${theme.colors[tone + "5"]},
+      0px 0.2px 0.2px ${theme.colors[tone + "4"]},
+      0px 0.8px 0.9px -0.8px ${theme.colors[tone + "4"]},
+      -0.1px 2px 2.3px -1.7px ${theme.colors[tone + "4"]},
+      -0.1px 4.8px 5.4px -2.5px ${theme.colors[tone + "4"]}
+    `,
+      },
+    },
   };
 });
 
@@ -368,23 +368,23 @@ export const lgSecondaryShadowClass = styleVariants(allTones, (tone) => {
     selectors: {
       [`:not(${darkTheme}) > &`]: {
         boxShadow: `
-          0px 1px 4px ${theme.colors[tone + '5']},
-    0px 0.1px 0.1px ${theme.colors[tone + '4']},
-    0px 0.7px 0.8px -0.4px ${theme.colors[tone + '4']},
-    -0.1px 1.3px 1.5px -0.7px ${theme.colors[tone + '5']},
-    -0.1px 2.2px 2.5px -1.1px ${theme.colors[tone + '5']},
-    -0.2px 3.4px 3.8px -1.4px ${theme.colors[tone + '5']},
-    -0.3px 5.4px 6.1px -1.8px ${theme.colors[tone + '5']}
-      `
-      }
-    }
+          0px 1px 4px ${theme.colors[tone + "5"]},
+    0px 0.1px 0.1px ${theme.colors[tone + "4"]},
+    0px 0.7px 0.8px -0.4px ${theme.colors[tone + "4"]},
+    -0.1px 1.3px 1.5px -0.7px ${theme.colors[tone + "5"]},
+    -0.1px 2.2px 2.5px -1.1px ${theme.colors[tone + "5"]},
+    -0.2px 3.4px 3.8px -1.4px ${theme.colors[tone + "5"]},
+    -0.3px 5.4px 6.1px -1.8px ${theme.colors[tone + "5"]}
+      `,
+      },
+    },
   };
 });
 
 export const smGhostShadowClass = styleVariants(allTones, (tone) => {
   // color bg + black text
   return {
-    boxShadow: 'none'
+    boxShadow: "none",
     // boxShadow: `
     //       0px 1px 4px ${theme.colors[tone + "5"]},
 
@@ -399,7 +399,7 @@ export const smGhostShadowClass = styleVariants(allTones, (tone) => {
 export const mdGhostShadowClass = styleVariants(allTones, (tone) => {
   // color bg + black text
   return {
-    boxShadow: 'none'
+    boxShadow: "none",
 
     // boxShadow: `
     //       0px 1px 4px ${theme.colors[tone + "6"]},
@@ -414,7 +414,7 @@ export const mdGhostShadowClass = styleVariants(allTones, (tone) => {
 
 export const lgGhostShadowClass = styleVariants(allTones, (tone) => {
   return {
-    boxShadow: 'none'
+    boxShadow: "none",
 
     // boxShadow: `
     //       0px 1px 4px ${theme.colors[tone + "6"]},
@@ -438,52 +438,53 @@ const colorStyles = defineProperties({
     color: theme.colors,
     background: theme.colors,
     backgroundColor: theme.colors,
-    borderColor: theme.colors
+    borderColor: theme.colors,
   },
   shorthands: {
-    bg: ['backgroundColor']
-  }
+    bg: ["backgroundColor"],
+  },
 });
 
 // General sprinkle shadow corlor
-const shadowColorSm = 'rgba(0,0,0,0.13)';
-const shadowColorMd = 'rgba(0,0,0,0.13)';
-const shadowColorLg = 'rgba(0,0,0,0.04)';
+const shadowColorSm = "rgba(0,0,0,0.13)";
+const shadowColorMd = "rgba(0,0,0,0.13)";
+const shadowColorLg = "rgba(0,0,0,0.04)";
 
 const layoutStyles = defineProperties({
   conditions: {
     xs: {},
-    sm: { '@media': `screen and (min-width: ${figmaTokens.screens.sm})` },
-    md: { '@media': `screen and (min-width: ${figmaTokens.screens.md})` },
-    lg: { '@media': `screen and (min-width: ${figmaTokens.screens.lg})` },
-    xl: { '@media': `screen and (min-width: ${figmaTokens.screens.xl})` },
-    '2xl': {
-      '@media': `screen and (min-width: ${figmaTokens.screens['2xl']})`
-    }
+    sm: { "@media": `screen and (min-width: ${figmaTokens.screens.sm})` },
+    md: { "@media": `screen and (min-width: ${figmaTokens.screens.md})` },
+    lg: { "@media": `screen and (min-width: ${figmaTokens.screens.lg})` },
+    xl: { "@media": `screen and (min-width: ${figmaTokens.screens.xl})` },
+    "2xl": {
+      "@media": `screen and (min-width: ${figmaTokens.screens["2xl"]})`,
+    },
   },
-  defaultCondition: 'xs',
+  defaultCondition: "xs",
   properties: {
-    textAlign: ['left', 'center', 'right'],
-    display: ['none', 'block', 'flex', 'inline', 'inline-block', 'inline-flex'],
-    flexDirection: ['row', 'column'],
-    flexWrap: ['nowrap', 'wrap', 'wrap-reverse'],
-    position: ['static', 'relative', 'absolute', 'fixed', 'sticky'],
+    textAlign: ["left", "center", "right"],
+    display: ["none", "block", "flex", "inline", "inline-block", "inline-flex"],
+    flexDirection: ["row", "column"],
+    flexWrap: ["nowrap", "wrap", "wrap-reverse"],
+    position: ["static", "relative", "absolute", "fixed", "sticky"],
     justifyContent: [
-      'stretch',
-      'flex-start',
-      'center',
-      'flex-end',
-      'space-around',
-      'space-between'
+      "stretch",
+      "flex-start",
+      "center",
+      "flex-end",
+      "space-around",
+      "space-between",
     ],
-    alignItems: ['stretch', 'flex-start', 'center', 'flex-end'],
+    alignItems: ["stretch", "flex-start", "center", "flex-end"],
+    alignSelf: ["auto", "flex-start", "center", "flex-end", "stretch"],
     gap: theme.spacing,
     lineHeight: theme.lineHeight,
     fontFamily: theme.fontFamily,
-    cursor: ['pointer', 'default', 'text', 'not-allowed'],
+    cursor: ["pointer", "default", "text", "not-allowed"],
     transition: {
-      fast: 'all 0.2s ease-in-out',
-      slow: 'all 0.4s ease-in-out'
+      fast: "all 0.2s ease-in-out",
+      slow: "all 0.4s ease-in-out",
     },
     letterSpacing: theme.letterSpacing,
     margin: theme.spacing,
@@ -499,26 +500,26 @@ const layoutStyles = defineProperties({
     fontSize: theme.fontSize,
     fontWeight: theme.fontWeight,
     borderRadius: theme.radii,
-    overflow: ['hidden', 'visible', 'scroll', 'auto'],
-    textTransform: ['uppercase', 'lowercase', 'capitalize', 'none'],
-    textDecoration: ['none', 'underline', 'line-through'],
+    overflow: ["hidden", "visible", "scroll", "auto"],
+    textTransform: ["uppercase", "lowercase", "capitalize", "none"],
+    textDecoration: ["none", "underline", "line-through"],
     border: {
-      '0': {
+      "0": {
         borderWidth: theme.borderWidth[0],
-        borderStyle: 'none'
+        borderStyle: "none",
       },
-      '2': {
+      "2": {
         borderWidth: theme.borderWidth[2],
-        borderStyle: 'solid'
+        borderStyle: "solid",
       },
-      '4': {
+      "4": {
         borderWidth: theme.borderWidth[4],
-        borderStyle: 'solid'
+        borderStyle: "solid",
       },
-      '8': {
+      "8": {
         borderWidth: theme.borderWidth[8],
-        borderStyle: 'solid'
-      }
+        borderStyle: "solid",
+      },
     },
     boxShadow: {
       // this is the generic gray shadow
@@ -530,9 +531,9 @@ const layoutStyles = defineProperties({
     0px 1.1px 1.2px -1.2px ${shadowColorSm},
     0px 2.7px 3px -2.5px ${shadowColorSm};
 
-      `
-          }
-        }
+      `,
+          },
+        },
       },
       md: {
         selectors: {
@@ -544,9 +545,9 @@ const layoutStyles = defineProperties({
     -0.1px 5px 5.6px -2.5px ${shadowColorMd}
 
 
-    `
-          }
-        }
+    `,
+          },
+        },
       },
       lg: {
         selectors: {
@@ -560,110 +561,105 @@ const layoutStyles = defineProperties({
     -0.2px 11.1px 12.5px -1.8px ${shadowColorLg},
     -0.3px 16.8px 18.9px -2.1px ${shadowColorLg},
     -0.5px 24.8px 27.9px -2.5px ${shadowColorLg};
-      `
-          }
-        }
-      }
+      `,
+          },
+        },
+      },
     },
     width: theme.spacing,
     height: theme.spacing,
     minWidth: theme.spacing,
     minHeight: theme.spacing,
     maxWidth: theme.spacing,
-    maxHeight: theme.spacing
+    maxHeight: theme.spacing,
   },
   shorthands: {
-    p: ['paddingTop', 'paddingBottom', 'paddingLeft', 'paddingRight'],
-    px: ['paddingLeft', 'paddingRight'],
-    py: ['paddingTop', 'paddingBottom'],
-    m: ['marginTop', 'marginBottom', 'marginLeft', 'marginRight'],
-    mx: ['marginLeft', 'marginRight'],
-    my: ['marginTop', 'marginBottom'],
-    pl: ['paddingLeft'],
-    pr: ['paddingRight'],
-    pt: ['paddingTop'],
-    pb: ['paddingBottom'],
-    ml: ['marginLeft'],
-    mr: ['marginRight'],
-    mt: ['marginTop'],
-    mb: ['marginBottom'],
-    w: ['width'],
-    h: ['height'],
-    minW: ['minWidth'],
-    minH: ['minHeight'],
-    maxW: ['maxWidth'],
-    maxH: ['maxHeight'],
-    boxSize: ['width', 'height']
-  }
+    p: ["paddingTop", "paddingBottom", "paddingLeft", "paddingRight"],
+    px: ["paddingLeft", "paddingRight"],
+    py: ["paddingTop", "paddingBottom"],
+    m: ["marginTop", "marginBottom", "marginLeft", "marginRight"],
+    mx: ["marginLeft", "marginRight"],
+    my: ["marginTop", "marginBottom"],
+    pl: ["paddingLeft"],
+    pr: ["paddingRight"],
+    pt: ["paddingTop"],
+    pb: ["paddingBottom"],
+    ml: ["marginLeft"],
+    mr: ["marginRight"],
+    mt: ["marginTop"],
+    mb: ["marginBottom"],
+    w: ["width"],
+    h: ["height"],
+    minW: ["minWidth"],
+    minH: ["minHeight"],
+    maxW: ["maxWidth"],
+    maxH: ["maxHeight"],
+    boxSize: ["width", "height"],
+  },
 });
-
 
 // checkboxRootTone[tone]
 export const formTone = styleVariants(allTones, (tone: keyof Colors) => {
   // color bg + black text
   if (
-    tone === 'sky' ||
-    tone === 'mint' ||
-    tone === 'lime' ||
-    tone === 'yellow' ||
-    tone === 'amber'
+    tone === "sky" ||
+    tone === "mint" ||
+    tone === "lime" ||
+    tone === "yellow" ||
+    tone === "amber"
   ) {
     return {
-      backgroundColor: theme.colors[tone + '2'],
-      boxShadow: `0 0 0 1.5px ${theme.colors[tone + '7']}`,
-      ':hover': {
-        backgroundColor: theme.colors[tone + '3'],
-        boxShadow: `0 0 0 1.5px ${theme.colors[tone + '8']}`
-
+      backgroundColor: theme.colors[tone + "2"],
+      boxShadow: `0 0 0 1.5px ${theme.colors[tone + "7"]}`,
+      ":hover": {
+        backgroundColor: theme.colors[tone + "3"],
+        boxShadow: `0 0 0 1.5px ${theme.colors[tone + "8"]}`,
       },
-      ':active': {
-        backgroundColor: theme.colors[tone + '3']
+      ":active": {
+        backgroundColor: theme.colors[tone + "3"],
       },
-      color: theme.colors[tone + '11']
+      color: theme.colors[tone + "11"],
     };
   } else if (
-    tone === 'gray' ||
-    tone === 'mauve' ||
-    tone === 'slate' ||
-    tone === 'sage' ||
-    tone === 'olive' ||
-    tone === 'sand'
+    tone === "gray" ||
+    tone === "mauve" ||
+    tone === "slate" ||
+    tone === "sage" ||
+    tone === "olive" ||
+    tone === "sand"
   ) {
     // grayscale series
     return {
-      backgroundColor: theme.colors[tone + '2'],
-      boxShadow: `0 0 0 1.5px ${theme.colors[tone + '7']}`,
+      backgroundColor: theme.colors[tone + "2"],
+      boxShadow: `0 0 0 1.5px ${theme.colors[tone + "7"]}`,
 
-      ':hover': {
-        backgroundColor: theme.colors[tone + '3'],
-        boxShadow: `0 0 0 1.5px ${theme.colors[tone + '8']}`
-
+      ":hover": {
+        backgroundColor: theme.colors[tone + "3"],
+        boxShadow: `0 0 0 1.5px ${theme.colors[tone + "8"]}`,
       },
-      ':active': {
-        backgroundColor: theme.colors[tone + '3']
+      ":active": {
+        backgroundColor: theme.colors[tone + "3"],
       },
-      color: theme.colors[tone + '12']
+      color: theme.colors[tone + "12"],
     };
   } else {
     // color bg
 
     return {
-      backgroundColor: theme.colors[tone + '2'],
-      boxShadow: `0 0 0 1.5px ${theme.colors[tone + '7']}`,
+      backgroundColor: theme.colors[tone + "2"],
+      boxShadow: `0 0 0 1.5px ${theme.colors[tone + "7"]}`,
 
-      ':hover': {
-        backgroundColor: theme.colors[tone + '3'],
-        boxShadow: `0 0 0 1.5px ${theme.colors[tone + '8']}`
-
+      ":hover": {
+        backgroundColor: theme.colors[tone + "3"],
+        boxShadow: `0 0 0 1.5px ${theme.colors[tone + "8"]}`,
       },
-      ':active': {
-        backgroundColor: theme.colors[tone + '3']
+      ":active": {
+        backgroundColor: theme.colors[tone + "3"],
       },
-      color: theme.colors[tone + '11']
+      color: theme.colors[tone + "11"],
     };
   }
 });
-
 
 export const sprinkles = createSprinkles(colorStyles, layoutStyles);
 export type Sprinkles = Parameters<typeof sprinkles>[0];
