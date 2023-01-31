@@ -68,8 +68,7 @@ export function getShadowVariant(
 }
 
 export interface ButtonProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement>,
-    ButtonVariants {
+  extends ButtonVariants {
   size?: 'sm' | 'md' | 'lg';
 
   align?: 'left' | 'center' | 'right' | 'between' | 'around';
@@ -79,6 +78,8 @@ export interface ButtonProps
   rightIcon?: React.ReactNode;
   gradient?: boolean;
   shadow?: boolean;
+
+  children?: React.ReactNode;
 }
 
 export const Button = ({
@@ -96,7 +97,7 @@ export const Button = ({
                        }: ButtonProps) => {
   return (
     <button
-        // clsx is only for combing multiple classes together
+      // clsx is only for combing multiple classes together
       className={clsx(
         buttonStyle({
           size: size,

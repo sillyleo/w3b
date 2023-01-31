@@ -7,10 +7,13 @@ import React from 'react';
 import IconButton from '..';
 import { darkTheme } from '../../styles/theme.css';
 import Icon from '../../Icon';
+import Stack from '../../Stack';
 
 const Demo1 = () => {
   return (
-    <div
+    <Stack
+      direction={'row'}
+      alignItems='flex-start'
       // className={darkTheme}
     >
       <IconButton shadow size='sm' rightIcon={
@@ -44,7 +47,7 @@ const Demo1 = () => {
 
 
       <IconButton tone={'amber'} gradient size={'lg'} shadow>💡</IconButton>
-    </div>
+    </Stack>
   );
 };
 

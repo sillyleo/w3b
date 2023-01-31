@@ -1,6 +1,6 @@
 ---
 title: Avatar
-subGroup: WIP
+subGroup: wip
 ---
 
 # Avatar

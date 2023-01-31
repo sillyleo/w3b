@@ -1,6 +1,6 @@
 ---
 title: Bento
-subGroup: experimantal
+subGroup: layout
 ---
 
 # Bento

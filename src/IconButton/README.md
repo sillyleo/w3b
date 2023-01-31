@@ -1,6 +1,6 @@
 ---
 title: Icon Button
-subGroup: Components
+subGroup: components
 ---
 
 # Icon Button

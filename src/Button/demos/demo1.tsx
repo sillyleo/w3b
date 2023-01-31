@@ -6,13 +6,14 @@
 import React from 'react';
 import Icon from '../../Icon';
 import Button from '..';
+import Stack from '../../Stack';
 
 {
   /* <div> */
 }
 const Demo1 = () => {
   return (
-    <div>
+    <Stack direction={'row'}>
       <Button
         align='left'
 
@@ -63,7 +64,7 @@ const Demo1 = () => {
         Button
       </Button>
 
-      <Button backgroundColor={'tomato9'} borderRadius={'full'} shadow tone={'sky'} size='sm' intent='secondary'>
+      <Button shadow tone={'sky'} size='sm' intent='secondary'>
         Button Here
       </Button>
       <Button shadow tone={'sky'} size='md' intent='secondary'>
@@ -103,7 +104,7 @@ const Demo1 = () => {
       <Button shadow size='lg' tone='gray' intent='ghost'>
         Button
       </Button>
-    </div>
+    </Stack>
   );
 };
 

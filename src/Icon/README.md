@@ -1,6 +1,6 @@
 ---
 title: Icon
-subGroup: Components
+subGroup: components
 ---
 
 # Icon

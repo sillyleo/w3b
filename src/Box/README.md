@@ -1,11 +1,11 @@
 ---
 title: Box
-subGroup: Layout
+subGroup: experimantal
 ---
 
 # Box
 
-A generic box element that can use custom sprinkle styles. My custom version with `asChild` support.
+A custom generic box element that can use custom sprinkle styles. My custom version with `asChild` support.
 
 <Demo src="./demos/demo1.tsx" />
 

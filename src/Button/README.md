@@ -1,6 +1,6 @@
 ---
 title: Button
-subGroup: Components
+subGroup: components
 ---
 
 # Button

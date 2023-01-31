@@ -1,6 +1,6 @@
 ---
 title: Text
-subGroup: Components
+subGroup: components
 ---
 
 # Text
