@@ -9,6 +9,79 @@ export const baseInputStyle = sprinkles({
   fontWeight: "normal",
 });
 
+export const outerStatusClass = style({
+  // border: "1px solid",
+  // outlineWidth: "1px",
+  selectors: {
+    ".disabled &": {
+      cursor: "not-allowed",
+      opacity: 0.65,
+    },
+    ".invalid  &": {
+      borderColor: theme.colors["yellow" + "3"],
+      backgroundColor: theme.colors["yellow" + "3"],
+
+      // outlineWidth: "0px",
+      // border: "0px solid",
+      boxShadow: `0 0 0 3px ${theme.colors["yellow" + "7"]}`,
+    },
+    ".invalid  &:focus-within": {
+      outlineColor: theme.colors["yellow8"],
+      borderColor: theme.colors["yellow" + "8"],
+    },
+    ".error  &": {
+      borderColor: theme.colors["red" + "3"],
+      backgroundColor: theme.colors["red" + "3"],
+
+      // outlineWidth: "0px",
+      // border: "0px solid",
+      boxShadow: `0 0 0 3px ${theme.colors["red" + "7"]}`,
+    },
+    ".error  &:focus-within": {
+      outlineColor: theme.colors["red"],
+      borderColor: theme.colors["red" + "8"],
+    },
+  },
+  // ":hover": {},
+  // ":focus-within": {
+  //   borderColor: "red",
+  // },
+  // outlineColor: "red",
+});
+
+export const innerStatusClass = style({
+  selectors: {
+    ".disabled &": {
+      cursor: "not-allowed",
+      // opacity: 0.65,
+      // borderColor: theme.colors["red" + "8"],
+      // color: theme.colors["red" + "8"],
+      // backgroundColor: "red",
+    },
+    ".invalid &": {
+      // borderColor: theme.colors["orange" + "8"],
+      // color: theme.colors["orange" + "8"],
+      // backgroundColor: "orange",
+    },
+  },
+  // cursor: "not-allowed",
+  // opacity: 0.65,
+  // border: "1px solid",
+  // outlineWidth: "1px",
+  // selectors: {
+  //   ".invalid > &": {
+  //     borderColor: theme.colors["orange" + "8"],
+  //     color: theme.colors["orange" + "8"],
+  //     backgroundColor: "orange",
+  //   },
+  // },
+  // ":hover": {},
+  // ":focus-within": {
+  //   borderColor: "orange",
+  // },
+  // outlineColor: "orange",
+});
+
 // // Add some paddings if leftIcon and rightIcon are present
 // export const inputPaddingX = styleVariants({
 //   sm: {
@@ -48,25 +121,17 @@ export const inputIcon = styleVariants({
   },
 });
 
-export const disabledClass = style({
-  cursor: "not-allowed",
-  opacity: 0.65,
-});
-
 export const inputStyle = recipe({
   base: [
     baseInputStyle,
     {
       width: "100%",
       border: "1px solid",
-      ":focus-within": {
-        outlineStyle: "solid",
-        outlineWidth: "1px",
-        border: "1px solid",
-      },
-      ":disabled": {
-        cursor: "not-allowed",
-      },
+      // ":focus-within": {
+      //   outlineStyle: "solid",
+      //   outlineWidth: "1px",
+      //   border: "1px solid",
+      // },
     },
   ],
   variants: {
@@ -97,9 +162,23 @@ export const inputStyle = recipe({
         paddingRight: theme.spacing[3],
       },
     },
+    // status: {
+    //   invalid: {},
+    //   disabled: {
+    //     cursor: "not-allowed",
+    //     opacity: 0.65,
+    //     border: "1px solid",
+    //     outlineWidth: "1px",
+    //     outlineColor: theme.colors["red" + "8"],
+    //     borderColor: theme.colors["red" + "8"],
+    //     color: theme.colors["red" + "8"],
+    //   },
+    //   default: {},
+    // },
   },
   defaultVariants: {
     size: "md",
+    // status: "default",
   },
 });
 
@@ -155,6 +234,7 @@ export const invisibleInput = styleVariants({
 });
 
 // inputToneVariants[tone]
+// controls the outer border input look-a-like
 export const inputToneVariants = styleVariants(allTones, (tone) => {
   // color bg + black text
   if (
@@ -213,6 +293,7 @@ export const inputToneVariants = styleVariants(allTones, (tone) => {
 });
 
 // inputTextVariants[tone]
+// controls the look of invisible input
 export const inputTextVariants = styleVariants(allTones, (tone) => {
   // color bg + black text
   if (
@@ -223,9 +304,13 @@ export const inputTextVariants = styleVariants(allTones, (tone) => {
     tone === "amber"
   ) {
     return {
+      background: "transparent",
       color: theme.colors[tone + "12"],
       "::placeholder": {
         color: theme.colors[tone + "8"],
+      },
+      ":invalid": {
+        color: theme.colors["red" + "8"],
       },
     };
   } else if (
@@ -238,6 +323,8 @@ export const inputTextVariants = styleVariants(allTones, (tone) => {
   ) {
     // grayscale seriesf
     return {
+      background: "transparent",
+
       color: theme.colors[tone + "12"],
       "::placeholder": {
         color: theme.colors[tone + "8"],
@@ -247,6 +334,8 @@ export const inputTextVariants = styleVariants(allTones, (tone) => {
     // color bg
 
     return {
+      background: "transparent",
+
       color: theme.colors[tone + "12"],
       "::placeholder": {
         color: theme.colors[tone + "7"],

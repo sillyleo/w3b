@@ -17,6 +17,8 @@ import {
 } from "../styles/theme.css";
 import Icon from "../Icon";
 import Bento from "../Bento";
+import Stack from "../Stack";
+import Text from "../Text";
 
 // set variant class names
 export function getVariant(intent: string, tone: keyof Colors) {
@@ -104,7 +106,8 @@ export const IconButton = ({
   ...props
 }: IconButtonProps) => {
   return (
-    <button
+    <Bento
+      as="button"
       // clsx is only for combing multiple classes together
       className={clsx(
         iconButtonStyle({
@@ -136,7 +139,7 @@ export const IconButton = ({
         <Icon name={name} color={color} strokeWidth={strokeWidth} fill={fill} />
       )}
       {rightIcon}
-    </button>
+    </Bento>
   );
 };
 

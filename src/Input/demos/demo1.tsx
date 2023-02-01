@@ -15,22 +15,33 @@ const Demo1 = () => {
     <Stack>
       <Stack direction="row">
         <Input
+          invalid
           label=""
           rightIcon={<Icon name={"chevron-down"} />}
           leftIcon={<Icon name={"search"} />}
           size={"sm"}
-          placeholder={"Input field"}
+          placeholder={"invalid Input field"}
         />
         <IconButton size="sm" />
       </Stack>
       <Input
+        disabled
         label="Label"
         rightIcon={<Icon name={"chevron-down"} />}
         leftIcon={<Icon name={"search"} />}
+        placeholder={"disabled Input field"}
         size={"md"}
-        placeholder={"Input field"}
       />
       <Input
+        error
+        label="Label"
+        rightIcon={<Icon name={"chevron-down"} />}
+        leftIcon={<Icon name={"search"} />}
+        placeholder={"error Input field"}
+        size={"md"}
+      />
+      <Input
+        invalid
         label="Label"
         rightIcon={<Icon name={"chevron-down"} />}
         leftIcon={<Icon name={"search"} />}

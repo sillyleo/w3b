@@ -4,24 +4,27 @@ import Bento, { BentoProps } from "../Bento";
 import Stack from "../Stack";
 import Text from "../Text";
 import {
+  innerStatusClass,
   inputIcon,
   inputStyle,
   InputStyleVariants,
-  inputToneVariants,
-  disabledClass,
-  invisibleInput,
   inputTextVariants,
+  inputToneVariants,
+  invisibleInput,
+  outerStatusClass,
 } from "./style.css";
 
 export interface InputProps extends InputStyleVariants, BentoProps {
   size?: "sm" | "md" | "lg";
-  disabled?: boolean;
   align?: "left" | "center" | "right";
   tone?: keyof Colors;
   leftIcon?: React.ReactNode;
   rightIcon?: React.ReactNode;
   type?: HTMLInputTypeAttribute;
   label?: string;
+  disabled?: boolean;
+  invalid?: boolean;
+  error?: boolean;
 }
 
 export const Input = ({
@@ -31,12 +34,27 @@ export const Input = ({
   tone = "gray",
   leftIcon,
   rightIcon,
-  disabled,
   label,
+  disabled,
+  invalid,
+  error,
   ...props
 }: InputProps) => {
+  const status = () => {
+    if (disabled) {
+      return "disabled";
+    }
+    if (invalid) {
+      return "invalid";
+    }
+    if (error) {
+      return "error";
+    }
+    return "default";
+  };
+
   return (
-    <Stack gap={"1"} alignItems={"stretch"}>
+    <Stack gap={"1"} alignItems={"stretch"} className={status()}>
       {label && (
         <Text size="label" color={"textTertiary"}>
           {label}
@@ -50,14 +68,18 @@ export const Input = ({
         className={clsx(
           inputStyle({ size: size }),
           inputToneVariants[tone],
-          disabled && disabledClass
+          outerStatusClass
         )}
       >
         {leftIcon && <div className={inputIcon["left"]}>{leftIcon}</div>}
         <Bento
           flexGrow={1}
           as={"input"}
-          className={clsx(invisibleInput[size], inputTextVariants[tone])}
+          className={clsx(
+            invisibleInput[size],
+            inputTextVariants[tone],
+            innerStatusClass
+          )}
           type={type}
           disabled={disabled}
           {...props}
