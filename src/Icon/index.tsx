@@ -1,38 +1,27 @@
-import _ from "lodash";
-import * as icons from "lucide-react";
-import React from "react";
-import * as CSS from "csstype";
+import _ from 'lodash';
+import * as icons from 'lucide-react';
+import React from 'react';
+import * as CSS from 'csstype';
+
 export interface IconProps {
   name: string;
   color?: string;
   size?: number;
   strokeWidth?: number;
   fill?: string;
-  boxSize?: CSS.Properties["width"];
+  boxSize?: CSS.Properties['width'];
 }
 
-/**
- *
- *
- * @param {IconProps} {
- *   name,
- *   color,
- *   size,
- *   fill = "none",
- *   strokeWidth,
- *   ...props
- * }
- * @returns
- */
+
 const Icon = ({
-  name,
-  color,
-  size,
-  boxSize,
-  fill = "none",
-  strokeWidth,
-  ...props
-}: IconProps) => {
+                name,
+                color,
+                size,
+                boxSize,
+                fill = 'none',
+                strokeWidth,
+                ...props
+              }: IconProps) => {
   const iconNameCamelCase = _.camelCase(name);
   const IconNameUpperCase =
     iconNameCamelCase.charAt(0).toUpperCase() + iconNameCamelCase.slice(1);
@@ -41,14 +30,14 @@ const Icon = ({
   return (
     <LucideIcon
       color={color}
-      size={size ? size : "1.45em"}
+      size={size ? size : '1.45em'}
       strokeWidth={strokeWidth}
       fill={fill}
       style={{
         flexShrink: 0,
         height: boxSize ? boxSize : undefined,
         width: boxSize ? boxSize : undefined,
-        aspectRatio: "1",
+        aspectRatio: '1'
       }}
       {...props}
     />

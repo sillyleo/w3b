@@ -13,4 +13,3 @@ Just a div
 <TsInfo src="./index.tsx" name="SeparatorProps" />
 ```
 
-<TsInfo src="./index.tsx" name="SeparatorProps" />

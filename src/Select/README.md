@@ -13,4 +13,3 @@ https://www.radix-ui.com/docs/primitives/components/select
 <TsInfo src="./index.tsx" name="SelectProps" />
 ```
 
-<TsInfo src="./index.tsx" name="SelectProps" />
