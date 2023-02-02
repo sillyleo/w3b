@@ -1,11 +1,11 @@
 ---
-title: Icon
+title: LucideIcon
 subGroup: components
 ---
 
-# Icon
+# LucideIcon
 
-This is a **markdown** document of the `Icon` component.
+This is a **markdown** document of the `LucideIcon` component.
 
 <Demo src="./demos/demo1.tsx" />
 

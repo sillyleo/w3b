@@ -13,15 +13,15 @@ export interface IconProps {
 }
 
 
-const Icon = ({
-                name,
-                color,
-                size,
-                boxSize,
-                fill = 'none',
-                strokeWidth,
-                ...props
-              }: IconProps) => {
+const LucideIcon = ({
+                      name,
+                      color,
+                      size,
+                      boxSize,
+                      fill = 'none',
+                      strokeWidth,
+                      ...props
+                    }: IconProps) => {
   const iconNameCamelCase = _.camelCase(name);
   const IconNameUpperCase =
     iconNameCamelCase.charAt(0).toUpperCase() + iconNameCamelCase.slice(1);
@@ -44,4 +44,4 @@ const Icon = ({
   );
 };
 
-export default Icon;
+export default LucideIcon;

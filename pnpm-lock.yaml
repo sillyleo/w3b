@@ -2,6 +2,7 @@ lockfileVersion: 5.4
 
 specifiers:
   '@dessert-box/react': ^0.5.0
+  '@heroicons/react': ^2.0.14
   '@mdx-js/react': ^2.2.1
   '@radix-ui/colors': ^0.1.8
   '@radix-ui/react-avatar': ^1.0.1
@@ -32,6 +33,7 @@ specifiers:
   motion: ^10.15.5
   react: ^18.2.0
   react-dom: ^18.2.0
+  react-icons: ^4.7.1
   react-lorem-ipsum: ^1.4.10
   react-router-dom: ^6.8.0
   react-separator: link:@types/@radix-ui/react-separator
@@ -48,6 +50,7 @@ specifiers:
 
 dependencies:
   '@dessert-box/react': 0.5.0_react@18.2.0
+  '@heroicons/react': 2.0.14_react@18.2.0
   '@radix-ui/colors': 0.1.8
   '@radix-ui/react-avatar': 1.0.1_biqbaboplfbrettd7655fr4n2y
   '@radix-ui/react-checkbox': 1.0.1_biqbaboplfbrettd7655fr4n2y
@@ -67,6 +70,7 @@ dependencies:
   lucide-react: 0.105.0_react@18.2.0
   motion: 10.15.5
   react: 18.2.0
+  react-icons: 4.7.1_react@18.2.0
   react-separator: link:@types/@radix-ui/react-separator
   use-sound: 4.0.1_react@18.2.0
 
@@ -561,6 +565,14 @@ packages:
       use-isomorphic-layout-effect: 1.1.2_3stiutgnnbnfnf3uowm5cip22i
     transitivePeerDependencies:
       - '@types/react'
+    dev: false
+
+  /@heroicons/react/2.0.14_react@18.2.0:
+    resolution: {integrity: sha512-eFL4if6L7woL1fUvk/jjXx4z9NxVESHHrQnEd2qKVelTFTIr/3VLGWdPb0biia9ZVe26P0JSs/xmOlRNur3SrQ==}
+    peerDependencies:
+      react: '>= 16'
+    dependencies:
+      react: 18.2.0
     dev: false
 
   /@jridgewell/gen-mapping/0.1.1:
@@ -4102,6 +4114,14 @@ packages:
       loose-envify: 1.4.0
       react: 18.2.0
       scheduler: 0.23.0
+
+  /react-icons/4.7.1_react@18.2.0:
+    resolution: {integrity: sha512-yHd3oKGMgm7zxo3EA7H2n7vxSoiGmHk5t6Ou4bXsfcgWyhfDKMpyKfhHR6Bjnn63c+YXBLBPUql9H4wPJM6sXw==}
+    peerDependencies:
+      react: '*'
+    dependencies:
+      react: 18.2.0
+    dev: false
 
   /react-lorem-ipsum/1.4.10:
     resolution: {integrity: sha512-PCEuauLZTGJkm++oxJeUycEgQOBg3qmmD7pn5sUyq9e0OvvNbW32RKQsSgalAYGUIbS91UkDgxvt6iHVAsqYJw==}
