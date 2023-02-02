@@ -476,6 +476,7 @@ const layoutStyles = defineProperties({
       "space-around",
       "space-between",
     ],
+    justifySelf: ["auto", "flex-start", "center", "flex-end", "stretch"],
     alignItems: ["stretch", "flex-start", "center", "flex-end"],
     alignSelf: ["auto", "flex-start", "center", "flex-end", "stretch"],
     gap: theme.spacing,
