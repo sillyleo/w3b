@@ -36,6 +36,13 @@
 
 Write components in its folder and export
 
+## Local dev
+
+- `pnpm link` in `nomimono`
+- `pnpm i folder/to/local-nomimono` in your project
+
+and `pnpm build-lib` in `nomimono` after updates, your project should see the changes.
+
 # Write docs
 
 > **Notice the "Components" navigation at the top bar!**
