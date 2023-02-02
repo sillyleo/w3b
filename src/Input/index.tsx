@@ -3,6 +3,7 @@ import React, { HTMLInputTypeAttribute } from "react";
 import Bento, { BentoProps } from "../Bento";
 import Stack from "../Stack";
 import Text from "../Text";
+
 import {
   innerStatusClass,
   inputIcon,
@@ -21,7 +22,9 @@ export interface InputProps extends InputStyleVariants, BentoProps {
   leftIcon?: React.ReactNode;
   rightIcon?: React.ReactNode;
   type?: HTMLInputTypeAttribute;
-  label?: string;
+  label?: React.ReactNode;
+  description?: React.ReactNode;
+  errorMessage?: React.ReactNode;
   disabled?: boolean;
   invalid?: boolean;
   error?: boolean;
@@ -38,6 +41,8 @@ export const Input = ({
   disabled,
   invalid,
   error,
+  description,
+  errorMessage,
   ...props
 }: InputProps) => {
   const status = () => {
@@ -55,10 +60,12 @@ export const Input = ({
 
   return (
     <Stack gap={"1"} alignItems={"stretch"} className={status()}>
-      {label && (
-        <Text size="label" color={"textTertiary"}>
+      {label && typeof label === "string" ? (
+        <Text pl="2" size="label" color={"textSecondary"}>
           {label}
         </Text>
+      ) : (
+        label
       )}
       <Stack
         gap={"1"}
@@ -86,6 +93,20 @@ export const Input = ({
         />
         {rightIcon && <div className={inputIcon["right"]}>{rightIcon}</div>}
       </Stack>
+      {description && typeof description === "string" ? (
+        <Text pl="2" size="label" color="textTertiary">
+          {description}
+        </Text>
+      ) : (
+        description
+      )}
+      {errorMessage && typeof errorMessage === "string" ? (
+        <Text pl="2" size="label" color="red9">
+          {errorMessage}
+        </Text>
+      ) : (
+        errorMessage
+      )}
     </Stack>
   );
 };

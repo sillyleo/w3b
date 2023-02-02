@@ -16,7 +16,7 @@ const Demo1 = () => {
       <Stack direction="row">
         <Input
           invalid
-          label=""
+          errorMessage={"meo"}
           rightIcon={<Icon name={"chevron-down"} />}
           leftIcon={<Icon name={"search"} />}
           size={"sm"}
