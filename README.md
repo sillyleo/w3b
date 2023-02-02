@@ -1,5 +1,12 @@
 # nomimono — a simple component library
 
+# Usage
+
+`pnpm install @sayaww/nomimono @fontsource/inter-tight`
+
+`import { Bento } from "@sayaww/nomimono"`
+`import "@sayaww/nomimono/style.css"`
+
 # Roadmap
 
 - https://github.com/pacocoursey/cmdk
@@ -51,12 +58,6 @@ Edit `src/Button/demos/demo1.tsx` or other demo files, the demos will inflect yo
 # Publishing
 
 - `pnpm run ship`
-
-# Usage
-
-`pnpm install @sayaww/nomimono @fontsource/inter-tight`
-
-`import "@sayaww/nomimono/style.css"`
 
 # Fonts
 

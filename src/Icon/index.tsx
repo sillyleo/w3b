@@ -41,7 +41,7 @@ const Icon = ({
   return (
     <LucideIcon
       color={color}
-      size={size ? size : "1.6em"}
+      size={size ? size : "1.45em"}
       strokeWidth={strokeWidth}
       fill={fill}
       style={{
