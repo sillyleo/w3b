@@ -1,15 +1,13 @@
-import React from 'react';
-import { createTheme, defaultSideNavs } from 'vite-pages-theme-doc';
-import Component404 from './404';
-import { skModernistBold } from './style.css';
+import React from "react";
+import { createTheme, defaultSideNavs } from "vite-pages-theme-doc";
+import Component404 from "./404";
 
 export default createTheme({
   logo: (
     <h1
       style={{
-        fontFamily: skModernistBold,
-        fontSize: '1.25rem',
-        fontWeight: 'bold'
+        fontSize: "1.25rem",
+        fontWeight: "bold",
       }}
     >
       🥤 Nomimono
@@ -38,44 +36,44 @@ export default createTheme({
   sideNavs: (ctx) => {
     return defaultSideNavs(ctx, {
       groupConfig: {
-        '/': {
+        "/": {
           components: {
-            label: 'Components',
-            order: -1
+            label: "Components",
+            order: -1,
           },
           layout: {
-            label: 'Layout',
-            order: 2
+            label: "Layout",
+            order: 2,
           },
           experimantal: {
-            label: 'Experimental',
-            order: 20
+            label: "Experimental",
+            order: 20,
           },
           wip: {
-            label: 'Work In Progress',
-            order: 30
-          }
+            label: "Work In Progress",
+            order: 30,
+          },
         },
         components: {
           demos: {
-            label: 'Work In Progress',
-            order: -1
+            label: "Work In Progress",
+            order: -1,
           },
           general: {
-            label: 'General',
-            order: 1
+            label: "General",
+            order: 1,
           },
           Layout: {
-            label: 'Layout',
-            order: 2
+            label: "Layout",
+            order: 2,
           },
           experimental: {
-            label: 'experimental',
-            order: 34
-          }
-        }
-      }
+            label: "experimental",
+            order: 34,
+          },
+        },
+      },
     });
   },
-  Component404
+  Component404,
 });

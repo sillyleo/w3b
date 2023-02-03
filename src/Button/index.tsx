@@ -15,6 +15,7 @@ import {
   mdGhostShadowClass,
   lgGhostShadowClass,
 } from "../styles/theme.css";
+import Bento from "../Bento";
 
 // set variant class names
 export function getVariant(intent: string, tone: keyof Colors) {
@@ -96,7 +97,7 @@ export const Button = ({
   ...props
 }: ButtonProps) => {
   return (
-    <button
+    <Bento
       // clsx is only for combing multiple classes together
       className={clsx(
         buttonStyle({
@@ -112,7 +113,7 @@ export const Button = ({
       {leftIcon}
       {children}
       {rightIcon}
-    </button>
+    </Bento>
   );
 };
 

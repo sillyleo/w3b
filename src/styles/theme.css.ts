@@ -1,6 +1,7 @@
 import {
   createGlobalTheme,
   createTheme,
+  globalFontFace,
   globalStyle,
   style,
   styleVariants,
@@ -8,24 +9,6 @@ import {
 import { createSprinkles, defineProperties } from "@vanilla-extract/sprinkles";
 import { allTones } from "src/constants";
 import figmaTokens from "../theme.json";
-
-// Font setup
-// Usage:
-// fontFamily: SkModernistBold
-// fontFamily: SkModernistRegular
-// These paths are relative to the deployment folder (/docs in this case. Put those in your own public folder.)
-
-// const skModernistBold = "SkModernistBold";
-// globalFontFace(skModernistBold, {
-//   src: 'url("/fonts/sk-modernist-bold-webfont.woff2") format("woff2"), url("/fonts/sk-modernist-bold-webfont.woff") format("woff"),url("/fonts/sk-modernist-bold-webfont.ttf") format("truetype")',
-//   fontWeight: "bold",
-// });
-
-// const skModernistRegular = "SkModernistRegular";
-// globalFontFace(skModernistRegular, {
-//   src: 'url("/fonts/sk-modernist-regular-webfont.woff2") format("woff2"), url("/fonts/sk-modernist-regular-webfont.woff") format("woff"),url("/fonts/sk-modernist-regular-webfont.ttf") format("truetype")',
-//   fontWeight: 400,
-// });
 
 // Process colors from tomato: {1: color} to tomato1: color
 // a function that takes an object and flattens its keys into a string with custom seperator
@@ -76,7 +59,7 @@ const commonTokens = {
   borderWidth: figmaTokens.borderWidth,
   opacity: figmaTokens.opacity,
   fontFamily: {
-    heading: `${figmaTokens.fontFamilies.heading},'SkModernistBold','Sk-Modernist-Bold',sans-serif`,
+    heading: `${figmaTokens.fontFamilies.heading},'SkModernistBold',SkModernistBold,'Sk-Modernist-Bold',sans-serif`,
     body: `'Inter Tight',${figmaTokens.fontFamilies.body}, sans-serif`,
   },
   fontSize: figmaTokens.fontSizes,
@@ -111,21 +94,36 @@ globalStyle(":root", {
   margin: 0,
   padding: 0,
   fontSize: "100%",
-  lineHeight: 1,
+  fontFamily: theme.fontFamily.body,
 });
 
-// export const resetStyle = style({
-//   WebkitTapHighlightColor: 'rgba(0, 0, 0, 0)',
-//   // WebkitFontSmoothing: "antialiased",
-//   boxSizing: 'border-box',
-//   margin: 0,
-//   padding: 0,
-//   fontSize: '100%',
-//   lineHeight: 1
-// });
+// reset
+globalStyle("body", {
+  margin: 0,
+  padding: 0,
+});
 
+// default styling
 globalStyle("h1,h2,h3,h4,h5,h6", {
-  fontFamily: `SkModernistBold,'SkModernistBold','Sk-Modernist-Bold',sans-serif`,
+  fontFamily: theme.fontFamily.heading,
+  marginTop: 0,
+  marginBottom: "0.5em",
+});
+globalStyle("p, ul, ol", {
+  marginTop: 0,
+  marginBottom: "1em",
+});
+
+export const skModernistBold = "SkModernistBold";
+globalFontFace(skModernistBold, {
+  src: 'url("/fonts/sk-modernist-bold-webfont.woff2") format("woff2"), url("/fonts/sk-modernist-bold-webfont.woff") format("woff"),url("/fonts/sk-modernist-bold-webfont.ttf") format("truetype")',
+  fontWeight: "bold",
+});
+
+export const skModernistRegular = "SkModernistRegular";
+globalFontFace(skModernistRegular, {
+  src: 'url("/fonts/sk-modernist-regular-webfont.woff2") format("woff2"), url("/fonts/sk-modernist-regular-webfont.woff") format("woff"),url("/fonts/sk-modernist-regular-webfont.ttf") format("truetype")',
+  fontWeight: 400,
 });
 
 // color and shadow variants

@@ -79,23 +79,7 @@ and add to `/fonts` or any place where css can access. (Relative to your public 
 
 Create font classnames:
 
-```jsx
-import { globalFontFace } from "@macaron-css/core";
-
-const skModernistBold = "SkModernistBold";
-
-globalFontFace(skModernistBold, {
-  src: 'url("/fonts/sk-modernist-bold-webfont.woff2") format("woff2"), url("/fonts/sk-modernist-bold-webfont.woff") format("woff"),url("/fonts/sk-modernist-bold-webfont.ttf") format("truetype")',
-  fontWeight: 500,
-});
-
-const skModernistRegular = "SkModernistRegular";
-
-globalFontFace(skModernistRegular, {
-  src: 'url("/fonts/sk-modernist-regular-webfont.woff2") format("woff2"), url("/fonts/sk-modernist-regular-webfont.woff") format("woff"),url("/fonts/sk-modernist-regular-webfont.ttf") format("truetype")',
-  fontWeight: 400,
-});
-```
+You can then use it like fontFamily: "SkModernistBold"
 
 Access with `SkModernistBold` or `SkModernistRegular`.
 
