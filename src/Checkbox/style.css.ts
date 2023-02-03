@@ -75,6 +75,7 @@ const up = keyframes({
 
 export const checkboxIndicator = style({
   aspectRatio: "1",
+  overflow: "hidden",
   display: "inline-flex",
   alignItems: "center",
   justifyContent: "center",
