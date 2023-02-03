@@ -15,7 +15,7 @@ import {
   mdGhostShadowClass,
   lgGhostShadowClass,
 } from "../styles/theme.css";
-import Bento from "../Bento";
+import Bento, { BentoProps } from "../Bento";
 
 // set variant class names
 export function getVariant(intent: string, tone: keyof Colors) {
@@ -68,7 +68,7 @@ export function getShadowVariant(
   }
 }
 
-export interface ButtonProps extends ButtonVariants {
+export interface ButtonProps extends ButtonVariants, BentoProps {
   size?: "sm" | "md" | "lg";
 
   align?: "left" | "center" | "right" | "between" | "around";
@@ -78,7 +78,7 @@ export interface ButtonProps extends ButtonVariants {
   rightIcon?: React.ReactNode;
   gradient?: boolean;
   shadow?: boolean;
-
+  isLoading?: boolean;
   children?: React.ReactNode;
 }
 
@@ -88,7 +88,7 @@ export const Button = ({
   align = "center",
   tone = "sand",
   intent = "primary",
-
+  isLoading = false,
   children,
   leftIcon,
   rightIcon,
@@ -104,17 +104,63 @@ export const Button = ({
           size: size,
           align: align,
           gradient: gradient,
+          isLoading: isLoading,
         }),
         getVariant(intent, tone),
         getShadowVariant(shadow, size, tone, intent)
       )}
       {...props}
     >
-      {leftIcon}
-      {children}
-      {rightIcon}
+      <Bento opacity={isLoading ? "0" : "100"}> {leftIcon}</Bento>
+      {isLoading && (
+        <Bento
+          position={"absolute"}
+          display="flex"
+          alignItems={"center"}
+          justifyContent="center"
+          left="0"
+          top="0"
+          right="0"
+          bottom="0"
+        >
+          {spinner}
+        </Bento>
+      )}
+      <Bento opacity={isLoading ? "0" : "100"}>{children}</Bento>
+      <Bento opacity={isLoading ? "0" : "100"}> {rightIcon}</Bento>
     </Bento>
   );
 };
+
+const spinner = (
+  <svg
+    version="1.1"
+    id="L9"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlnsXlink="http://www.w3.org/1999/xlink"
+    x="0px"
+    y="0px"
+    width={"100%"}
+    height={"100%"}
+    viewBox="0 0 100 100"
+    enableBackground="new 0 0 0 0"
+    xmlSpace="preserve"
+  >
+    <path
+      fill="currentColor"
+      d="M73,50c0-12.7-10.3-23-23-23S27,37.3,27,50 M30.9,50c0-10.5,8.5-19.1,19.1-19.1S69.1,39.5,69.1,50"
+    >
+      <animateTransform
+        attributeName="transform"
+        attributeType="XML"
+        type="rotate"
+        dur="1s"
+        from="0 50 50"
+        to="360 50 50"
+        repeatCount="indefinite"
+      />
+    </path>
+  </svg>
+);
 
 export default Button;

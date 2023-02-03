@@ -4,13 +4,20 @@ import { theme, sprinkles } from "../styles/theme.css";
 export const buttonStyle = recipe({
   base: [
     {
+      position: "relative",
       // all: "unset",
       ":disabled": {
         cursor: "not-allowed",
         opacity: 0.75,
       },
-      ":active": {
-        transform: "translateY(1px) scale(0.98)",
+
+      selectors: {
+        "&:hover": {
+          transform: "translateY(-1px)",
+        },
+        "&:active": {
+          transform: "translateY(1px) scale(0.98)",
+        },
       },
     },
     sprinkles({
@@ -92,6 +99,12 @@ export const buttonStyle = recipe({
       },
       around: {
         justifyContent: "space-around",
+      },
+    },
+    isLoading: {
+      true: {
+        opacity: 0.75,
+        cursor: "wait",
       },
     },
   },

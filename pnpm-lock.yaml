@@ -9,7 +9,6 @@ specifiers:
   '@radix-ui/react-checkbox': ^1.0.1
   '@radix-ui/react-popover': ^1.0.3
   '@radix-ui/react-select': ^1.2.0
-  '@radix-ui/react-separator': ^1.0.1
   '@radix-ui/react-slot': ^1.0.1
   '@radix-ui/react-toggle': ^1.0.1
   '@radix-ui/react-toggle-group': ^1.0.2
@@ -56,7 +55,6 @@ dependencies:
   '@radix-ui/react-checkbox': 1.0.1_biqbaboplfbrettd7655fr4n2y
   '@radix-ui/react-popover': 1.0.3_5ndqzdd6t4rivxsukjv3i3ak2q
   '@radix-ui/react-select': 1.2.0_5ndqzdd6t4rivxsukjv3i3ak2q
-  '@radix-ui/react-separator': 1.0.1_biqbaboplfbrettd7655fr4n2y
   '@radix-ui/react-slot': 1.0.1_react@18.2.0
   '@radix-ui/react-toggle': 1.0.1_biqbaboplfbrettd7655fr4n2y
   '@radix-ui/react-toggle-group': 1.0.2_biqbaboplfbrettd7655fr4n2y
@@ -1036,18 +1034,6 @@ packages:
       react-remove-scroll: 2.5.5_3stiutgnnbnfnf3uowm5cip22i
     transitivePeerDependencies:
       - '@types/react'
-    dev: false
-
-  /@radix-ui/react-separator/1.0.1_biqbaboplfbrettd7655fr4n2y:
-    resolution: {integrity: sha512-uc6Izot0D8uVz6T2nSb/HI7OaxkeaD50GgKr3W6HORnbfGVrG7LWuy+g6Fd58n8wHbrRblSYJZEfcjgymMlJjw==}
-    peerDependencies:
-      react: ^16.8 || ^17.0 || ^18.0
-      react-dom: ^16.8 || ^17.0 || ^18.0
-    dependencies:
-      '@babel/runtime': 7.20.13
-      '@radix-ui/react-primitive': 1.0.1_biqbaboplfbrettd7655fr4n2y
-      react: 18.2.0
-      react-dom: 18.2.0_react@18.2.0
     dev: false
 
   /@radix-ui/react-slot/1.0.1_react@18.2.0:

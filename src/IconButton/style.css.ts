@@ -42,8 +42,13 @@ export const iconButtonStyle = recipe({
       cursor: "not-allowed",
       opacity: 0.75,
     },
-    ":active": {
-      transform: "translateY(1px) scale(0.98)",
+    selectors: {
+      "&:hover": {
+        transform: "translateY(-1px)",
+      },
+      "&:active": {
+        transform: "translateY(1px) scale(0.98)",
+      },
     },
   },
   variants: {

@@ -461,6 +461,11 @@ const layoutStyles = defineProperties({
   },
   defaultCondition: "xs",
   properties: {
+    opacity: theme.opacity,
+    left: theme.spacing,
+    right: theme.spacing,
+    top: theme.spacing,
+    bottom: theme.spacing,
     textAlign: ["left", "center", "right"],
     display: ["none", "block", "flex", "inline", "inline-block", "inline-flex"],
     flexDirection: ["row", "column"],
