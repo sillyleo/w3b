@@ -28,12 +28,12 @@ specifiers:
   framer-motion: ^8.5.4
   json-to-ts-cli: ^1.0.2
   lodash: ^4.17.21
+  lorem-ipsum: ^2.0.8
   lucide-react: ^0.105.0
   motion: ^10.15.5
   react: ^18.2.0
   react-dom: ^18.2.0
   react-icons: ^4.7.1
-  react-lorem-ipsum: ^1.4.10
   react-router-dom: ^6.8.0
   rimraf: ^3.0.2
   rollup-plugin-typescript2: ^0.34.1
@@ -64,6 +64,7 @@ dependencies:
   clsx: 1.2.1
   colord: 2.9.3
   framer-motion: 8.5.5_biqbaboplfbrettd7655fr4n2y
+  lorem-ipsum: 2.0.8
   lucide-react: 0.105.0_react@18.2.0
   motion: 10.15.5
   react: 18.2.0
@@ -82,7 +83,6 @@ devDependencies:
   json-to-ts-cli: 1.0.2
   lodash: 4.17.21
   react-dom: 18.2.0_react@18.2.0
-  react-lorem-ipsum: 1.4.10
   react-router-dom: 6.8.0_biqbaboplfbrettd7655fr4n2y
   rimraf: 3.0.2
   rollup-plugin-typescript2: 0.34.1_typescript@4.9.5
@@ -1746,7 +1746,6 @@ packages:
   /commander/9.5.0:
     resolution: {integrity: sha512-KRs7WVDKg86PWiuAqhDrAQnTXZKraVcCc6vFdL14qrZ/DcWwuRo7VoiYXalXO7S5GKpqYiVEwCbgFDfxNHKJBQ==}
     engines: {node: ^12.20.0 || >=14}
-    dev: true
 
   /commondir/1.0.1:
     resolution: {integrity: sha512-W9pAhw0ja1Edb5GVdIF1mjZw/ASI0AlShXM83UUGe2DVr5TdAPEA1OA8m/g8zWp9x6On7gqufY+FatDbC3MDQg==}
@@ -3097,6 +3096,14 @@ packages:
     dependencies:
       js-tokens: 4.0.0
 
+  /lorem-ipsum/2.0.8:
+    resolution: {integrity: sha512-5RIwHuCb979RASgCJH0VKERn9cQo/+NcAi2BMe9ddj+gp7hujl6BI+qdOG4nVsLDpwWEJwTVYXNKP6BGgbcoGA==}
+    engines: {node: '>= 8.x', npm: '>= 5.x'}
+    hasBin: true
+    dependencies:
+      commander: 9.5.0
+    dev: false
+
   /lower-case/2.0.2:
     resolution: {integrity: sha512-7fm3l3NAF9WfN6W3JOmf5drwpVqX78JtoGJ3A6W0a6ZnldM41w2fV5D490psKFTpMds8TJse/eHLFFsNHHjHgg==}
     dependencies:
@@ -4134,10 +4141,6 @@ packages:
     dependencies:
       react: 18.2.0
     dev: false
-
-  /react-lorem-ipsum/1.4.10:
-    resolution: {integrity: sha512-PCEuauLZTGJkm++oxJeUycEgQOBg3qmmD7pn5sUyq9e0OvvNbW32RKQsSgalAYGUIbS91UkDgxvt6iHVAsqYJw==}
-    dev: true
 
   /react-refresh/0.14.0:
     resolution: {integrity: sha512-wViHqhAd8OHeLS/IRMJjTSDHF3U9eWi62F/MledQGPdJGDhodXJ9PBLNGr6WWL7qlH12Mt3TyTpbS+hGXMjCzQ==}

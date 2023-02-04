@@ -487,7 +487,7 @@ const layoutStyles = defineProperties({
     fontFamily: theme.fontFamily,
     cursor: ["pointer", "default", "text", "not-allowed"],
     transition: {
-      fast: "all 0.2s ease-in-out",
+      fast: "all 0.1s",
       slow: "all 0.4s ease-in-out",
     },
     letterSpacing: theme.letterSpacing,

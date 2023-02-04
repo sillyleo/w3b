@@ -35,7 +35,7 @@
     "build-docs": "rimraf docs/dist && vite build docs",
     "ssr-docs": "rimraf docs/dist && vite-pages ssr docs",
     "build-lib": "vite build",
-    "ship": "vite build && pnpm version patch && pnpm publish --access public"
+    "ship": "vite build && npm version patch && npm publish --access public"
   },
   "dependencies": {
     "@dessert-box/react": "^0.5.0",

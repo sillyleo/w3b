@@ -4,6 +4,7 @@ import { theme, sprinkles } from "../styles/theme.css";
 export const buttonStyle = recipe({
   base: [
     {
+      userSelect: "none",
       position: "relative",
       // all: "unset",
       ":disabled": {
