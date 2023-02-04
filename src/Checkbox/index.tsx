@@ -50,6 +50,7 @@ export const Checkbox = ({
   fontSize = "base",
   ...props
 }: CheckboxProps) => {
+  // return <div>check box</div>;
   return (
     <Bento
       fontSize={fontSize}
@@ -58,7 +59,10 @@ export const Checkbox = ({
       htmlFor={name}
       {...props}
     >
-      <CheckboxPrimitive.Root
+      <CheckboxPrimitive.Root>
+        <CheckboxPrimitive.Indicator />
+      </CheckboxPrimitive.Root>
+      {/* <CheckboxPrimitive.Root
         defaultChecked={defaultChecked}
         checked={checked}
         onCheckedChange={onCheckedChange}
@@ -69,7 +73,9 @@ export const Checkbox = ({
         className={clsx(checkboxRoot, formTone[tone])}
         id={name}
       >
-        <CheckboxPrimitive.Indicator className={checkboxIndicator}>
+        <CheckboxPrimitive.Indicator
+        // className={checkboxIndicator}
+        >
           {checkEmoji ? (
             <div className={checkboxIcon}>{checkEmoji}</div>
           ) : (
@@ -77,7 +83,7 @@ export const Checkbox = ({
           )}
         </CheckboxPrimitive.Indicator>
       </CheckboxPrimitive.Root>
-      {children}
+      {children} */}
     </Bento>
   );
 };
