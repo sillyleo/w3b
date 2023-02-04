@@ -90,7 +90,6 @@ export const darkTheme = createTheme(theme, {
 globalStyle(":root", {
   WebkitTapHighlightColor: "rgba(0, 0, 0, 0)",
   // WebkitFontSmoothing: "antialiased",
-  boxSizing: "border-box",
   margin: 0,
   padding: 0,
   fontSize: "100%",
@@ -98,9 +97,10 @@ globalStyle(":root", {
 });
 
 // reset
-globalStyle("body", {
+globalStyle("*", {
   margin: 0,
   padding: 0,
+  boxSizing: "border-box",
 });
 
 // default styling
