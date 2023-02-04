@@ -6,6 +6,9 @@
 import React from "react";
 import Text from "..";
 import Stack from "../../Stack";
+import { loremIpsum } from "lorem-ipsum";
+("lorem-ipsum");
+
 const Demo1 = () => {
   return (
     <Stack>
@@ -22,6 +25,7 @@ const Demo1 = () => {
       <Text size="overline" color={"textTertiary"}>
         Overline
       </Text>
+      <Text>{loremIpsum(4)}</Text>
       <Text size="body-bold">Body Bold </Text>
       <Text size="label" color={"textSecondary"}>
         Label
