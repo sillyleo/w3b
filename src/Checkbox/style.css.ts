@@ -29,12 +29,14 @@ export const checkboxLabel = styleVariants({
 // checkboxRoot
 
 export const checkboxRoot = style({
-  aspectRatio: "1",
+  aspectRatio: "1/1",
+  fontSize: "inherit",
+  width: "auto",
   height: "100%",
   flexShrink: 1,
   borderRadius: "25%",
   justifyContent: "center",
-  padding: "1px",
+  padding: "0",
   border: "none",
   display: "inline-flex",
   transition: "all 0.2s",
@@ -75,12 +77,16 @@ const up = keyframes({
 
 export const checkboxIndicator = style({
   aspectRatio: "1",
+  height: "100%",
+  // padding: "1px",
+  // background: "red",
+  position: "relative",
+  textAlign: "center",
   overflow: "hidden",
   display: "inline-flex",
   alignItems: "center",
   justifyContent: "center",
   padding: 0,
-  height: "100%",
   selectors: {
     [`${checkboxRoot}[data-state=checked] &`]: {
       animationName: up,
@@ -90,10 +96,27 @@ export const checkboxIndicator = style({
 });
 
 export const checkboxEmoji = style({
-  fontSize: "1.5em",
-  lineHeight: 1.1,
-  width: "100%",
-  height: "100%",
+  // width: "100%",
+  // aspectRatio: "1",
+  // margin: "1px",
+  // textAlign: "center",
+  // lineHeight: 1,
+  // padding: 0,
+  // background: "green",
+  fontSize: "0.8em",
+  // overflow: "hidden",
+  // background: "red",
+
+  // display: "block",
+
+  // position: "absolute",
+  // zIndex: 1,
+  // left: 0,
+  // top: 0,
+  // bottom: 0,
+  // right: 0,
+
+  textAlign: "center",
   selectors: {
     [`${checkboxRoot}[data-state=checked] &`]: {
       transform: "rotate(0deg)",

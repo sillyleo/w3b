@@ -79,7 +79,7 @@ export const Checkbox = ({
           )}
         </CheckboxPrimitive.Indicator>
       </CheckboxPrimitive.Root>
-      {children}
+      asasdasdasd {children}
     </Bento>
   );
 };
