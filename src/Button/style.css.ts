@@ -25,7 +25,7 @@ export const buttonStyle = recipe({
       fontWeight: "bold",
       cursor: "pointer",
       display: "inline-flex",
-      gap: "1",
+      gap: "2",
       p: "0",
       alignItems: "center",
       fontSize: "base",
