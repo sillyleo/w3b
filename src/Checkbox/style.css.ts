@@ -89,9 +89,22 @@ export const checkboxIndicator = style({
   },
 });
 
-export const checkboxIcon = style({
+export const checkboxEmoji = style({
   fontSize: "1.5em",
   lineHeight: 1.1,
+  width: "100%",
+  height: "100%",
+  selectors: {
+    [`${checkboxRoot}[data-state=checked] &`]: {
+      transform: "rotate(0deg)",
+    },
+    [`${checkboxRoot}[data-state=unchecked] &`]: {
+      transform: "rotate(145deg)",
+    },
+  },
+});
+
+export const checkboxIcon = style({
   width: "100%",
   height: "100%",
   selectors: {

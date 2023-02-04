@@ -5,6 +5,7 @@ import Bento from "../Bento";
 import { TextProps } from "../Text";
 import "./style.css";
 import {
+  checkboxEmoji,
   checkboxIcon,
   checkboxIndicator,
   checkboxLabel,
@@ -59,10 +60,7 @@ export const Checkbox = ({
       htmlFor={name}
       {...props}
     >
-      <CheckboxPrimitive.Root>
-        <CheckboxPrimitive.Indicator />
-      </CheckboxPrimitive.Root>
-      {/* <CheckboxPrimitive.Root
+      <CheckboxPrimitive.Root
         defaultChecked={defaultChecked}
         checked={checked}
         onCheckedChange={onCheckedChange}
@@ -73,17 +71,15 @@ export const Checkbox = ({
         className={clsx(checkboxRoot, formTone[tone])}
         id={name}
       >
-        <CheckboxPrimitive.Indicator
-        // className={checkboxIndicator}
-        >
+        <CheckboxPrimitive.Indicator className={checkboxIndicator}>
           {checkEmoji ? (
-            <div className={checkboxIcon}>{checkEmoji}</div>
+            <div className={checkboxEmoji}>{checkEmoji}</div>
           ) : (
             <CheckIcon className={checkboxIcon} />
           )}
         </CheckboxPrimitive.Indicator>
       </CheckboxPrimitive.Root>
-      {children} */}
+      {children}
     </Bento>
   );
 };
