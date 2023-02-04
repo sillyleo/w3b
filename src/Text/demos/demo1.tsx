@@ -2,7 +2,6 @@
  * @title Text Demo1 Title
  * @description Text demo1 description
  */
-import { loremIpsum } from "react-lorem-ipsum";
 
 import React from "react";
 import Text from "..";
@@ -23,7 +22,6 @@ const Demo1 = () => {
       <Text size="overline" color={"textTertiary"}>
         Overline
       </Text>
-      <Text size="body">Body {loremIpsum()}</Text>
       <Text size="body-bold">Body Bold </Text>
       <Text size="label" color={"textSecondary"}>
         Label
