@@ -10,7 +10,9 @@
 # Roadmap
 
 - https://github.com/pacocoursey/cmdk
-- divider
+- https://web.dev/speedy-css-tip-animated-gradient-text/
+- Nextra
+- framer like ring text
 
 - Bootstrapped with [`vite-plugin-react-pages`](https://github.com/vitejs/vite-plugin-react-pages)'s library starter
 
