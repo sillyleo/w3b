@@ -1,0 +1,32 @@
+# Welcome to Nextra
+
+Hello, world!
+
+## Hello MDX
+
+import { useState } from "react";
+
+export function Counter({ children }) {
+  const [count, setCount] = useState(0);
+  return (
+    <button onClick={() => setCount(count + 1)}>
+      {children}
+      {count}
+    </button>
+  );
+}
+
+<Counter>**Clicks**: </Counter>
+
+Hello
+
+import { Button, darkTheme } from "@sayaww/nomimono";
+import "@sayaww/nomimono/style.css";
+
+<div className={darkTheme}>
+  <Button>iluwhfeil</Button>
+</div>
+
+<Button>iluwhfeil</Button>
+
+use mutation observer to implement auto theme change wrapper and export it

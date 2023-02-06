@@ -30,3 +30,5 @@ export { default as Toggle } from "./Toggle";
 export { default as ToggleGroup } from "./ToggleGroup";
 // tooltip
 export { default as Tooltip } from "./Tooltip";
+// dark theme class
+export { darkTheme } from "./styles/theme.css";
