@@ -58,6 +58,9 @@
     "lorem-ipsum": "^2.0.8",
     "lucide-react": "^0.105.0",
     "motion": "^10.15.5",
+    "next": "^13.1.6",
+    "nextra": "^2.2.14",
+    "nextra-theme-docs": "^2.2.14",
     "react": "^18.2.0",
     "react-icons": "^4.7.1",
     "use-sound": "^4.0.1"
