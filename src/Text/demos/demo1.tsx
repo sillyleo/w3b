@@ -25,7 +25,7 @@ const Demo1 = () => {
       <Text size="overline" color={"textTertiary"}>
         Overline
       </Text>
-      <Text>{loremIpsum(4)}</Text>
+      <Text>{loremIpsum({ count: 4 })}</Text>
       <Text size="body-bold">Body Bold </Text>
       <Text size="label" color={"textSecondary"}>
         Label

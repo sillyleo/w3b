@@ -2,7 +2,6 @@
  * @title Avatar Demo1 Title
  * @description Avatar demo1 description
  */
-import { loremIpsum } from "react-lorem-ipsum";
 
 import React from "react";
 import Button from "../../Button";

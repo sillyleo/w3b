@@ -2,10 +2,7 @@
  * @title Stack Demo1 Title
  * @description Stack demo1 description
  */
-import { loremIpsum } from "react-lorem-ipsum";
 
-import React from "react";
-import Text from "../../Text";
 import Stack from "..";
 import Bento from "../../Bento";
 

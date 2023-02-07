@@ -39,6 +39,7 @@ specifiers:
   react: ^18.2.0
   react-dom: ^18.2.0
   react-icons: ^4.7.1
+  react-lorem-ipsum: ^1.4.10
   react-router-dom: ^6.8.0
   rimraf: ^3.0.2
   rollup-plugin-typescript2: ^0.34.1
@@ -78,6 +79,7 @@ dependencies:
   nextra-theme-docs: 2.2.14_u6qwm625rg3t7ll2t4ybomvrai
   react: 18.2.0
   react-icons: 4.7.1_react@18.2.0
+  react-lorem-ipsum: 1.4.10
   use-sound: 4.0.1_react@18.2.0
 
 devDependencies:
@@ -5060,6 +5062,10 @@ packages:
 
   /react-is/17.0.2:
     resolution: {integrity: sha512-w2GsyukL62IJnlaff/nRegPQR94C/XXamvMWmSHRJ4y7Ts/4ocGRmTHvOs8PSE6pB3dWOrD/nueuU5sduBsQ4w==}
+    dev: false
+
+  /react-lorem-ipsum/1.4.10:
+    resolution: {integrity: sha512-PCEuauLZTGJkm++oxJeUycEgQOBg3qmmD7pn5sUyq9e0OvvNbW32RKQsSgalAYGUIbS91UkDgxvt6iHVAsqYJw==}
     dev: false
 
   /react-refresh/0.14.0:
