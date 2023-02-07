@@ -1,6 +1,6 @@
 import Bento, { BentoProps } from "../Bento";
 import React from "react";
-import { Sprinkles } from "dist/dist/types/styles/theme.css";
+import { Sprinkles } from "src/styles/theme.css";
 
 export interface StackProps extends BentoProps {
   children?: React.ReactNode;
