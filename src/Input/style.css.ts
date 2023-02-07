@@ -13,33 +13,36 @@ export const baseInputStyle = sprinkles({
 
 export const outerStatusClass = style({
   // border: "1px solid",
-  // outlineWidth: "1px",
+  outlineWidth: "2px",
   selectors: {
     ".disabled &": {
       cursor: "not-allowed",
       opacity: 0.65,
     },
+    "&:focus-within": {
+      boxShadow: `0 0 0 1px`,
+    },
     ".invalid  &": {
       borderColor: theme.colors["yellow" + "3"],
-      backgroundColor: theme.colors["yellow" + "3"],
+      // backgroundColor: theme.colors["yellow" + "3"],
 
       // outlineWidth: "0px",
       // border: "0px solid",
       boxShadow: `0 0 0 3px ${theme.colors["yellow" + "7"]}`,
     },
-    ".invalid  &:focus-within": {
+    ".invalid &:focus-within": {
       outlineColor: theme.colors["yellow8"],
       borderColor: theme.colors["yellow" + "8"],
     },
-    ".error  &": {
+    ".error &": {
       borderColor: theme.colors["red" + "3"],
-      backgroundColor: theme.colors["red" + "3"],
+      // backgroundColor: theme.colors["red" + "3"],
 
       // outlineWidth: "0px",
       // border: "0px solid",
       boxShadow: `0 0 0 3px ${theme.colors["red" + "7"]}`,
     },
-    ".error  &:focus-within": {
+    ".error &:focus-within": {
       outlineColor: theme.colors["red"],
       borderColor: theme.colors["red" + "8"],
     },
@@ -129,11 +132,11 @@ export const inputStyle = recipe({
     {
       width: "100%",
       border: "1px solid",
-      // ":focus-within": {
-      //   outlineStyle: "solid",
-      //   outlineWidth: "1px",
-      //   border: "1px solid",
-      // },
+      ":focus-within": {
+        // outlineStyle: "solid",
+        // outlineWidth: "1px",
+        // border: "1px solid",
+      },
     },
   ],
   variants: {
@@ -142,9 +145,13 @@ export const inputStyle = recipe({
         fontSize: theme.fontSize.xs,
         borderRadius: theme.radii["lg"],
         height: theme.spacing[7],
+        paddingLeft: theme.spacing[1],
+        paddingRight: theme.spacing[1],
       },
       md: {
         fontSize: theme.fontSize.sm,
+        paddingLeft: theme.spacing[2],
+        paddingRight: theme.spacing[2],
 
         borderRadius: theme.radii["lg"],
 
@@ -154,23 +161,12 @@ export const inputStyle = recipe({
         fontSize: theme.fontSize.base,
 
         borderRadius: theme.radii["xl"],
+        paddingLeft: theme.spacing[3],
+        paddingRight: theme.spacing[3],
 
         height: theme.spacing[11],
       },
     },
-    // status: {
-    //   invalid: {},
-    //   disabled: {
-    //     cursor: "not-allowed",
-    //     opacity: 0.65,
-    //     border: "1px solid",
-    //     outlineWidth: "1px",
-    //     outlineColor: theme.colors["red" + "8"],
-    //     borderColor: theme.colors["red" + "8"],
-    //     color: theme.colors["red" + "8"],
-    //   },
-    //   default: {},
-    // },
   },
   defaultVariants: {
     size: "md",
@@ -178,11 +174,23 @@ export const inputStyle = recipe({
   },
 });
 
+export const inputBasicStyle = style({
+  ":focus": {
+    boxShadow: "none",
+  },
+  selectors: {
+    "&:focus-visible": {
+      boxShadow: "none",
+    },
+    "&[data-focus-visible]": {
+      boxShadow: "none",
+    },
+  },
+});
+
 export const invisibleInput = styleVariants({
   sm: {
     borderRadius: theme.radii["lg"],
-    paddingLeft: theme.spacing[1],
-    paddingRight: theme.spacing[1],
 
     width: "1fr",
     flexGrow: 1,
@@ -199,8 +207,6 @@ export const invisibleInput = styleVariants({
   },
   md: {
     borderRadius: theme.radii["lg"],
-    paddingLeft: theme.spacing[2],
-    paddingRight: theme.spacing[2],
 
     width: "1fr",
     flexGrow: 1,
@@ -217,8 +223,6 @@ export const invisibleInput = styleVariants({
   },
   lg: {
     borderRadius: theme.radii["xl"],
-    paddingLeft: theme.spacing[3],
-    paddingRight: theme.spacing[3],
 
     width: "1fr",
     flexGrow: 1,

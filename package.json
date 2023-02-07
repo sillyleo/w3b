@@ -32,12 +32,15 @@
   "scripts": {
     "token-type": "json-to-ts-cli src/theme.json > src/tokenType.d.ts",
     "dev": "json-to-ts-cli src/theme.json > src/tokenType.d.ts && SHOW_ALL_COMPONENT_DEMOS=true vite serve docs",
+    "next": "json-to-ts-cli src/theme.json > src/tokenType.d.ts && next",
     "build-docs": "rimraf docs/dist && vite build docs",
-    "ssr-docs": "rimraf docs/dist && vite-pages ssr docs",
     "build-lib": "vite build",
-    "ship": "vite build && npm version patch && npm publish --access public"
+    "ship": "vite build && npm version patch && npm publish --access public",
+    "playroom:start": "playroom start",
+    "playroom:build": "playroom build"
   },
   "dependencies": {
+    "@codesandbox/sandpack-react": "^1.20.8",
     "@dessert-box/react": "^0.5.0",
     "@heroicons/react": "^2.0.14",
     "@radix-ui/colors": "^0.1.8",

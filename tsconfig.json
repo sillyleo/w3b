@@ -20,7 +20,7 @@
     "module": "esnext",
     "isolatedModules": true,
     "paths": {
-      "ui": ["src/*"]
+      "ui": ["src"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
