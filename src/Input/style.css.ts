@@ -7,6 +7,8 @@ export const baseInputStyle = sprinkles({
   fontFamily: "body",
   borderRadius: "md",
   fontWeight: "normal",
+  paddingLeft: "0",
+  paddingRight: "0",
 });
 
 export const outerStatusClass = style({
@@ -140,8 +142,6 @@ export const inputStyle = recipe({
         fontSize: theme.fontSize.xs,
         borderRadius: theme.radii["lg"],
         height: theme.spacing[7],
-        paddingLeft: theme.spacing[1],
-        paddingRight: theme.spacing[1],
       },
       md: {
         fontSize: theme.fontSize.sm,
@@ -149,8 +149,6 @@ export const inputStyle = recipe({
         borderRadius: theme.radii["lg"],
 
         height: theme.spacing[8],
-        paddingLeft: theme.spacing[2],
-        paddingRight: theme.spacing[2],
       },
       lg: {
         fontSize: theme.fontSize.base,
@@ -158,8 +156,6 @@ export const inputStyle = recipe({
         borderRadius: theme.radii["xl"],
 
         height: theme.spacing[11],
-        paddingLeft: theme.spacing[3],
-        paddingRight: theme.spacing[3],
       },
     },
     // status: {
@@ -185,6 +181,8 @@ export const inputStyle = recipe({
 export const invisibleInput = styleVariants({
   sm: {
     borderRadius: theme.radii["lg"],
+    paddingLeft: theme.spacing[1],
+    paddingRight: theme.spacing[1],
 
     width: "1fr",
     flexGrow: 1,
@@ -201,6 +199,8 @@ export const invisibleInput = styleVariants({
   },
   md: {
     borderRadius: theme.radii["lg"],
+    paddingLeft: theme.spacing[2],
+    paddingRight: theme.spacing[2],
 
     width: "1fr",
     flexGrow: 1,
@@ -217,6 +217,8 @@ export const invisibleInput = styleVariants({
   },
   lg: {
     borderRadius: theme.radii["xl"],
+    paddingLeft: theme.spacing[3],
+    paddingRight: theme.spacing[3],
 
     width: "1fr",
     flexGrow: 1,
