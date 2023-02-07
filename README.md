@@ -1,5 +1,7 @@
 # nomimono — a simple component library
 
+Dont use
+
 # Usage
 
 `pnpm install @sayaww/nomimono @fontsource/inter-tight`
