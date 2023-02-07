@@ -1,5 +1,7 @@
 import nextra from "nextra";
+import { createVanillaExtractPlugin } from "@vanilla-extract/next-plugin";
 
+const withVanillaExtract = createVanillaExtractPlugin();
 /**
  * @type {import('next').NextConfig}
  */
@@ -10,4 +12,4 @@ const withNextra = nextra({
 });
 const nextConfig = {};
 
-export default withNextra(nextConfig);
+export default withNextra(withVanillaExtract(nextConfig));
