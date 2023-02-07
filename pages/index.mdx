@@ -1,24 +1,18 @@
-# Welcome to Nextra
+# Welcome to Nomimono
 
-Hello, world!
+A simple component library
 
-.nomimono-style for text styles
+## Usage
 
-<h1>Lorem</h1>
+`pnpm install @sayaww/nomimono @fontsource/inter-tight`
 
-<div>
-  <h1>Lorem</h1>
-</div>
+```jsx
+import { Button } from "@sayaww/nomimono";
+import "@sayaww/nomimono/style.css";
 
-<div class="nomimono-style">
-  <h1>Lorem</h1>
-</div>
+<Button>Hello</Button>;
+```
 
-import { Text } from "ui";
+## Nomimono style wrapper
 
-<Text size="page-title">nomimono!</Text>
-<Text size="page-title">Button!</Text>
-
-import { Button, LucideIcon } from "ui";
-
-<Button leftIcon={<LucideIcon name="wallet" />}>Lorem Button</Button>
+Use `.nomimono-style` for text styles other than builtin `Text` components.
