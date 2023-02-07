@@ -1,7 +1,7 @@
 {
   "name": "@sayaww/nomimono",
   "private": false,
-  "version": "0.0.81",
+  "version": "0.0.84",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/sillyleo/nomimono.git"
@@ -32,12 +32,15 @@
   "scripts": {
     "token-type": "json-to-ts-cli src/theme.json > src/tokenType.d.ts",
     "dev": "json-to-ts-cli src/theme.json > src/tokenType.d.ts && SHOW_ALL_COMPONENT_DEMOS=true vite serve docs",
+    "next": "json-to-ts-cli src/theme.json > src/tokenType.d.ts && next",
     "build-docs": "rimraf docs/dist && vite build docs",
-    "ssr-docs": "rimraf docs/dist && vite-pages ssr docs",
     "build-lib": "vite build",
-    "ship": "vite build && npm version patch && npm publish --access public"
+    "ship": "vite build && npm version patch && npm publish --access public",
+    "playroom:start": "playroom start",
+    "playroom:build": "playroom build"
   },
   "dependencies": {
+    "@codesandbox/sandpack-react": "^1.20.8",
     "@dessert-box/react": "^0.5.0",
     "@heroicons/react": "^2.0.14",
     "@radix-ui/colors": "^0.1.8",
@@ -58,6 +61,9 @@
     "lorem-ipsum": "^2.0.8",
     "lucide-react": "^0.105.0",
     "motion": "^10.15.5",
+    "next": "^13.1.6",
+    "nextra": "^2.2.14",
+    "nextra-theme-docs": "^2.2.14",
     "react": "^18.2.0",
     "react-icons": "^4.7.1",
     "use-sound": "^4.0.1"
@@ -68,6 +74,7 @@
     "@types/node": "^18.11.18",
     "@types/react": "^18.0.27",
     "@types/react-dom": "^18.0.10",
+    "@vanilla-extract/next-plugin": "^2.1.1",
     "@vanilla-extract/sprinkles": "^1.5.1",
     "@vitejs/plugin-react": "^3.0.1",
     "csstype": "^3.1.1",

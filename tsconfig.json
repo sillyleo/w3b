@@ -5,11 +5,24 @@
     "declarationMap": true,
     // "outDir": "dist",
     "baseUrl": ".",
-    "jsx": "react",
+    "jsx": "preserve",
     "moduleResolution": "Node",
     "lib": ["ES2015"],
     "esModuleInterop": true,
-    "resolveJsonModule": true
+    "resolveJsonModule": true,
     // "strict": true
-  }
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": false,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "incremental": true,
+    "module": "esnext",
+    "isolatedModules": true,
+    "paths": {
+      "ui": ["src"]
+    }
+  },
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "exclude": ["node_modules"]
 }

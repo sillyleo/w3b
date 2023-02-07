@@ -6,6 +6,7 @@ import Text from "../Text";
 
 import {
   innerStatusClass,
+  inputBasicStyle,
   inputIcon,
   inputStyle,
   InputStyleVariants,
@@ -85,7 +86,8 @@ export const Input = ({
           className={clsx(
             invisibleInput[size],
             inputTextVariants[tone],
-            innerStatusClass
+            innerStatusClass,
+            inputBasicStyle
           )}
           type={type}
           disabled={disabled}

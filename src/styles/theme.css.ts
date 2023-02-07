@@ -93,7 +93,6 @@ globalStyle(":root", {
   margin: 0,
   padding: 0,
   fontSize: "100%",
-  fontFamily: theme.fontFamily.body,
 });
 
 // reset
@@ -104,14 +103,18 @@ globalStyle("*", {
 });
 
 // default styling
-globalStyle("h1,h2,h3,h4,h5,h6", {
-  fontFamily: theme.fontFamily.heading,
-  marginTop: 0,
-  marginBottom: "0.5em",
-});
-globalStyle("p, ul, ol", {
+globalStyle(
+  ".nomimono-style h1,.nomimono-style h2,.nomimono-style h3,.nomimono-style h4,.nomimono-style h5,.nomimono-style h6",
+  {
+    fontFamily: theme.fontFamily.heading,
+    marginTop: 0,
+    marginBottom: "0.5em",
+  }
+);
+globalStyle(".nomimono-style p, .nomimono-style ul, .nomimono-style ol", {
   marginTop: 0,
   marginBottom: "1em",
+  fontFamily: theme.fontFamily.body,
 });
 
 export const skModernistBold = "SkModernistBold";
