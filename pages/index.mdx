@@ -1,24 +1,50 @@
-# Welcome to Nomimono
+import { Banner } from "../misc/Mono";
+import { Callout } from "nextra-theme-docs";
 
-A simple component library
+<Banner />
+
+<Callout>
+  Highly experimental and tailored to my personal usage. And my coding skill
+  isn't good. Don't use this at all.
+</Callout>
+
+## Installation
+
+Install the package with your favorite package manager:
+
+```zsh
+pnpm install @sayaww/nomimono
+```
+
+### Optional fonts
+
+Fonts are optional but prioritize [Sk-Modernist](https://seankanedesign.gumroad.com/l/sk-modernist) for heading and
+Inter for body.
+
+- Install SkModernest in your project's `public` folder
+- Install Inter with `pnpm i @fontsource/inter-tight`
 
 ## Usage
 
-`pnpm install @sayaww/nomimono @fontsource/inter-tight`
+In your `index.tsx` or `app.tsx`, where all compoenets can access, import the css file:
 
 ```jsx
-import { Button } from "@sayaww/nomimono";
 import "@sayaww/nomimono/style.css";
-
-<Button>Hello</Button>;
 ```
 
-import { Button, LucideIcon } from "ui";
+In your components, import the components you need:
 
-<Button leftIcon={<LucideIcon name="wallet" />}>Lorem Button</Button>
+```jsx
+import { Bento } from "@sayaww/nomimono";
+```
 
-<Button>Hello</Button>
+### Typography wrapper
 
-## Nomimono style wrapper
+Nomimono also exports a class `nomimono-style` for basic html elements. Wrap your content
 
-Use `.nomimono-style` for text styles other than builtin `Text` components.
+```html
+<div class="nomimono-style">
+  <h1>Heading</h1>
+  <p>Body</p>
+</div>
+```

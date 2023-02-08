@@ -7,7 +7,7 @@
     "baseUrl": ".",
     "jsx": "preserve",
     "moduleResolution": "Node",
-    "lib": ["ES2015"],
+    "lib": ["ES2015", "dom"],
     "esModuleInterop": true,
     "resolveJsonModule": true,
     // "strict": true
@@ -20,6 +20,7 @@
     "module": "esnext",
     "isolatedModules": true,
     "paths": {
+      "nomimono": ["src"],
       "ui": ["src"]
     }
   },

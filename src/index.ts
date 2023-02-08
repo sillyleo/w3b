@@ -4,7 +4,7 @@ export { default as Button } from "./Button";
 export { default as LucideIcon } from "./LucideIcon";
 export { default as HeroIcon } from "./HeroIcon";
 export { default as HeroIconOne } from "./HeroIconOne";
-
+export { default as Display } from "./Display";
 export { default as IconButton } from "./IconButton";
 export { default as Stack } from "./Stack";
 export { default as Text } from "./Text";

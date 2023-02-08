@@ -1,0 +1,67 @@
+## Installation
+
+```zsh
+pnpm install turbo --global
+```
+
+[More info about turbo here.](https://turbo.build/repo/docs/getting-started/add-to-project)
+
+```zsh
+pnpm i
+```
+
+## Running the dev server
+
+Available commands:
+
+```bash
+turbo dev # run dev server
+```
+
+```bash
+turbo build # build library into dist folder
+```
+
+```bash
+turbo ship # build library and publish to npm
+```
+
+```bash
+vercel # deploy doc website
+```
+
+### Folder structure
+
+- `tokens`: tokens from Figma
+- `src`: all components here
+- `pages`: previewing compoenets and documentation
+
+### Sync tokens with Figma
+
+- Push from Tokens Studio
+- Github workflow will run automatically open a PR to merge into your branch
+
+## Use dist build in local environment
+
+Generally you don't have to do this.
+
+In your `.mdx` files, import like this:
+
+```jsx
+import { Button, LucideIcon } from "../dist/nomimono";
+
+<Button leftIcon={<LucideIcon name="wallet" />}>Lorem Button</Button>;
+```
+
+And import css in `_app.tsx` in `pages` folder:
+
+```jsx
+import "../dist/style.css";
+import { AppProps } from "next/app";
+
+function MyApp({ Component, pageProps }: AppProps) {
+  return <Component {...pageProps} />;
+}
+
+export default MyApp;
+```

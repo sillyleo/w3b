@@ -104,13 +104,18 @@ globalStyle("*", {
 
 // default styling
 globalStyle(
-  ".nomimono-style h1,.nomimono-style h2,.nomimono-style h3,.nomimono-style h4,.nomimono-style h5,.nomimono-style h6",
+  ".nomimono-style h1,.nomimono-style h2,.nomimono-style h3,.nomimono-style h4,.nomimono-style h5,.nomimono-style h6,",
   {
     fontFamily: theme.fontFamily.heading,
     marginTop: 0,
     marginBottom: "0.5em",
   }
 );
+
+globalStyle(".nomimono-style", {
+  fontFamily: theme.fontFamily.heading,
+});
+
 globalStyle(".nomimono-style p, .nomimono-style ul, .nomimono-style ol", {
   marginTop: 0,
   marginBottom: "1em",
@@ -472,6 +477,8 @@ const layoutStyles = defineProperties({
     textAlign: ["left", "center", "right"],
     display: ["none", "block", "flex", "inline", "inline-block", "inline-flex"],
     flexDirection: ["row", "column"],
+    flexGrow: [0, 1],
+    flexShrink: [0, 1],
     flexWrap: ["nowrap", "wrap", "wrap-reverse"],
     position: ["static", "relative", "absolute", "fixed", "sticky"],
     justifyContent: [
