@@ -17,7 +17,13 @@ export default function Display(props) {
 
   return (
     <motion.div initial={{ opacity: 0 }} animate={{ opacity: loaded ? 1 : 0 }}>
-      <Stack __borderWidth="1px" p="6" borderRadius={"xl"} {...props} />
+      <Stack
+        __borderWidth="1px"
+        p="6"
+        borderColor="slate6"
+        borderRadius={"xl"}
+        {...props}
+      />
     </motion.div>
   );
 }
