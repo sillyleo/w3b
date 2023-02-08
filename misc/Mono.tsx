@@ -40,11 +40,11 @@ export const Banner = () => {
       display="flex"
       lineHeight="single"
       flexWrap="wrap"
-      __gap="1em"
+      __gap="1.3em"
       alignItems="center"
       justifyContent="center"
       px="8"
-      py="10"
+      py="12"
       borderRadius="2xl"
       background="backgroundSecondary"
     >
@@ -52,13 +52,26 @@ export const Banner = () => {
         <Mono />
       </div>
       <Stack gap="0">
-        <Text
-          size="page-title"
-          fontWeight="bold"
-          style={{ fontSize: "clamp(2rem, 5vw, 7rem)", lineHeight: 1.1 }}
-        >
-          Nomimono
-        </Text>
+        <Stack direction="column" gap="0">
+          <Text
+            size="page-title"
+            fontWeight="bold"
+            style={{
+              fontSize: "clamp(1rem, 2.5vw, 3rem)",
+              lineHeight: 0.6,
+              opacity: 0.3,
+            }}
+          >
+            のみもの
+          </Text>
+          <Text
+            size="page-title"
+            fontWeight="bold"
+            style={{ fontSize: "clamp(2rem, 5vw, 7rem)", lineHeight: 1.1 }}
+          >
+            Nomimono
+          </Text>
+        </Stack>
         <Text size="subtitle1" color="textTertiary">
           A simple web3-flavored component library
         </Text>

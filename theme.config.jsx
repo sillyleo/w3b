@@ -1,6 +1,52 @@
+import { motion } from "framer-motion";
+
+const logoStyle = {
+  height: "100%",
+  position: "absolute",
+  top: 0,
+  left: 30,
+  display: "flex",
+  alignItems: "center",
+};
+
+const logoMotion = {
+  initial: {
+    opacity: 0,
+  },
+  animate: {
+    opacity: 1,
+    transition: { duration: 0.5, delay: 0.5 },
+  },
+};
+
+const enLogoMotion = {
+  initial: { opacity: 1, y: "0%", scale: 1 },
+  hover: { opacity: 0, y: "-150%", scale: 1 },
+};
+
+const jpLogoMotion = {
+  initial: { opacity: 0, y: "-150%", scale: 1 },
+  hover: { opacity: 1, y: "0%", scale: 1 },
+};
+
 export default {
   logo: (
-    <div style={{ display: "flex", gap: "0.25em" }}>
+    <motion.div
+      layout
+      animate="animate"
+      initial="initial"
+      whileHover="hover"
+      variants={logoMotion}
+      style={{
+        position: "relative",
+        bg: "red",
+        display: "flex",
+        gap: "0.25em",
+        fontSize: "1.4em",
+        display: "flex",
+        alignItems: "center",
+      }}
+    >
       {/* <svg
         width="22"
         height="22"
@@ -66,8 +112,34 @@ export default {
           fill="white"
         />
       </svg> */}
-      <span className="nomimono-style">🥤 Nomimono</span>
-    </div>
+
+      <motion.span className="nomimono-style">🥤 </motion.span>
+      <motion.div
+        // a placeholder for logo width
+        style={{ opacity: 0 }}
+        className="nomimono-style"
+      >
+        Nomimono
+      </motion.div>
+      <motion.div
+        style={logoStyle}
+        variants={enLogoMotion}
+        // initial={{ y: 0 }}
+        // animate={{ y: -40 }}
+        className="nomimono-style"
+      >
+        Nomimono
+      </motion.div>
+      <motion.div
+        variants={jpLogoMotion}
+        style={logoStyle}
+        // initial={{ y: 40 }}
+        // animate={{ y: 0 }}
+        className="nomimono-style"
+      >
+        のみもの
+      </motion.div>
+    </motion.div>
   ),
   docsRepositoryBase: "https://github.com/sillyleo/nomimono",
   primaryHue: 27,
