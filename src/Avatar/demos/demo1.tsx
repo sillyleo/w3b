@@ -3,11 +3,6 @@
  * @description Avatar demo1 description
  */
 
-import React from "react";
-import Button from "../../Button";
-import Avatar from "..";
-import { motion } from "framer-motion";
-import Box from "../../Box";
 import AvatarDemo from "..";
 
 const Demo1 = () => {

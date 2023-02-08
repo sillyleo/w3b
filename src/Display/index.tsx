@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
-import { Bento, Stack } from "nomimono";
-import { useState, useEffect } from "react";
+import Stack from "../Stack";
+import { useEffect, useState } from "react";
 
 // An utility display for component
 export default function Display(props) {
