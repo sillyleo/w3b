@@ -104,7 +104,7 @@ globalStyle("*", {
 
 // default styling
 globalStyle(
-  ".nomimono-style h1,.nomimono-style h2,.nomimono-style h3,.nomimono-style h4,.nomimono-style h5,.nomimono-style h6,",
+  ".nomimono-style h1,.nomimono-style h2,.nomimono-style h3,.nomimono-style h4, .nomimono-style h5,.nomimono-style h6",
   {
     fontFamily: theme.fontFamily.heading,
     marginTop: 0,
