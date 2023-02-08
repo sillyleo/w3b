@@ -1,7 +1,5 @@
 import { AppProps } from "next/app";
 import { useEffect, useState } from "react";
-import "../dist/style.css";
-import { useReadLocalStorage } from "usehooks-ts";
 import { darkTheme } from "src/styles/theme.css";
 
 function MyApp({ Component, pageProps }: AppProps) {
