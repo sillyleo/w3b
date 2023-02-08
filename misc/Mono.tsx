@@ -1,5 +1,8 @@
 import { useEffect, useState } from "react";
 import { Bento, Button, Text, Stack } from "nomimono";
+import { motion } from "framer-motion";
+
+const MotionBento = motion(Bento);
 
 export const Mono = () => {
   // A function to cycle through the following characters: 🥃🥛🥤🍵🍶🍷🍸🍹🍺🧋🍼
@@ -35,8 +38,13 @@ export const Mono = () => {
 
 export const Banner = () => {
   return (
-    <Bento
+    <MotionBento
+      drag
+      dragElastic={2}
+      dragSnapToOrigin={true}
       mt="3"
+      zIndex="999"
+      position="relative"
       display="flex"
       lineHeight="single"
       flexWrap="wrap"
@@ -76,6 +84,6 @@ export const Banner = () => {
           A simple web3-flavored component library
         </Text>
       </Stack>
-    </Bento>
+    </MotionBento>
   );
 };
