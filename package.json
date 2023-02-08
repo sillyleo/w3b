@@ -33,7 +33,7 @@
     "token-type": "json-to-ts-cli src/theme.json > src/tokenType.d.ts",
     "dev": "json-to-ts-cli src/theme.json > src/tokenType.d.ts &&  next",
     "start": "json-to-ts-cli src/theme.json > src/tokenType.d.ts && next",
-    "build": "vite build",
+    "build-lib": "vite build",
     "ship": "vite build && npm version patch && npm publish --access public"
   },
   "dependencies": {
