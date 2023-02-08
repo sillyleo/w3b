@@ -1,22 +1,17 @@
 import { motion } from "framer-motion";
-import Stack from "../Stack";
-import { useEffect, useState } from "react";
+import { Stack, Text } from "ui";
 
 // An utility display for component
 export default function Display(props) {
-  // const [loaded, setLoaded] = useState(false);
-
-  // useEffect(() => {
-  //   const item = localStorage.getItem("theme");
-  //   if (item !== null) {
-  //     setLoaded(true);
-  //   } else {
-  //     setLoaded(false);
-  //   }
-  // }, []);
-
   return (
-    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      style={{ marginTop: "2em", marginBottom: "2em" }}
+    >
+      <Text mb="2" size="overline" color="textTertiary">
+        {props.label}
+      </Text>
       <Stack
         __borderWidth="1px"
         p="6"
