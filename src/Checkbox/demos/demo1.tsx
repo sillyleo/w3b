@@ -4,15 +4,14 @@
  */
 
 import React from "react";
-import Checkbox from "..";
-import Stack from "../../Stack";
+import { Checkbox, Stack, Text } from "../../";
 
 const Demo1 = () => {
   return (
     <Stack>
       <Checkbox>woifj</Checkbox>
       <Checkbox checkEmoji={"😃"} name={"c1"} tone={"tomato"} fontSize={"xl"}>
-        This is a checkbox
+        <Text>This wwis a checkbox</Text>
       </Checkbox>
       <Checkbox checkEmoji={"123"} name={"c61"} tone={"tomato"} fontSize={"xl"}>
         This is a checkbox
