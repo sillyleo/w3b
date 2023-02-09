@@ -20,12 +20,12 @@ export interface InputProps extends InputStyleVariants, BentoProps {
   size?: "sm" | "md" | "lg";
   align?: "left" | "center" | "right";
   tone?: keyof Colors;
-  leftIcon?: React.ReactNode;
-  rightIcon?: React.ReactNode;
+  leftIcon?: React.ReactNode | any;
+  rightIcon?: React.ReactNode | any;
   type?: HTMLInputTypeAttribute;
   label?: React.ReactNode;
-  description?: React.ReactNode;
-  errorMessage?: React.ReactNode;
+  description?: React.ReactNode | any;
+  errorMessage?: React.ReactNode | any;
   disabled?: boolean;
   invalid?: boolean;
   error?: boolean;
