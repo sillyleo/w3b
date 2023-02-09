@@ -1,5 +1,5 @@
 import { clsx } from "clsx";
-import React, { HTMLInputTypeAttribute } from "react";
+import React, { forwardRef, HTMLInputTypeAttribute } from "react";
 import Bento, { BentoProps } from "../Bento";
 import Stack from "../Stack";
 import Text from "../Text";
@@ -31,86 +31,92 @@ export interface InputProps extends InputStyleVariants, BentoProps {
   error?: boolean;
 }
 
-export const Input = ({
-  size = "md",
-  type = "text",
-  align = "left",
-  tone = "gray",
-  leftIcon,
-  rightIcon,
-  label,
-  disabled,
-  invalid,
-  error,
-  description,
-  errorMessage,
-  ...props
-}: InputProps) => {
-  const status = () => {
-    if (disabled) {
-      return "disabled";
-    }
-    if (invalid) {
-      return "invalid";
-    }
-    if (error) {
-      return "error";
-    }
-    return "default";
-  };
+export const Input = forwardRef<HTMLInputElement, InputProps>(
+  (
+    {
+      size = "md",
+      type = "text",
+      align = "left",
+      tone = "gray",
+      leftIcon,
+      rightIcon,
+      label,
+      disabled,
+      invalid,
+      error,
+      description,
+      errorMessage,
+      ...props
+    },
+    ref
+  ) => {
+    const status = () => {
+      if (disabled) {
+        return "disabled";
+      }
+      if (invalid) {
+        return "invalid";
+      }
+      if (error) {
+        return "error";
+      }
+      return "default";
+    };
 
-  return (
-    <Stack gap={"1"} alignItems={"stretch"} className={status()}>
-      {label && typeof label === "string" ? (
-        <Text pl="2" size="label" color={"textSecondary"}>
-          {label}
-        </Text>
-      ) : (
-        label
-      )}
-      <Stack
-        gap={"1"}
-        direction="row"
-        wrap={"nowrap"}
-        alignItems={"stretch"}
-        className={clsx(
-          inputStyle({ size: size }),
-          inputToneVariants[tone],
-          outerStatusClass
+    return (
+      <Stack gap={"1"} alignItems={"stretch"} className={status()}>
+        {label && typeof label === "string" ? (
+          <Text pl="2" size="label" color={"textSecondary"}>
+            {label}
+          </Text>
+        ) : (
+          label
         )}
-      >
-        {leftIcon && <div className={inputIcon["left"]}>{leftIcon}</div>}
-        <Bento
-          flexGrow={1}
-          as={"input"}
+        <Stack
+          gap={"1"}
+          direction="row"
+          wrap={"nowrap"}
+          alignItems={"stretch"}
           className={clsx(
-            invisibleInput[size],
-            inputTextVariants[tone],
-            innerStatusClass,
-            inputBasicStyle
+            inputStyle({ size: size }),
+            inputToneVariants[tone],
+            outerStatusClass
           )}
-          type={type}
-          disabled={disabled}
-          {...props}
-        />
-        {rightIcon && <div className={inputIcon["right"]}>{rightIcon}</div>}
+        >
+          {leftIcon && <div className={inputIcon["left"]}>{leftIcon}</div>}
+          <Bento
+            ref={ref}
+            flexGrow={1}
+            as={"input"}
+            className={clsx(
+              invisibleInput[size],
+              inputTextVariants[tone],
+              innerStatusClass,
+              inputBasicStyle
+            )}
+            type={type}
+            disabled={disabled}
+            {...props}
+          />
+          {rightIcon && <div className={inputIcon["right"]}>{rightIcon}</div>}
+        </Stack>
+        {description && typeof description === "string" ? (
+          <Text pl="2" size="label" color="textTertiary">
+            {description}
+          </Text>
+        ) : (
+          description
+        )}
+        {errorMessage && typeof errorMessage === "string" ? (
+          <Text pl="2" size="label" color="red9">
+            {errorMessage}
+          </Text>
+        ) : (
+          errorMessage
+        )}
       </Stack>
-      {description && typeof description === "string" ? (
-        <Text pl="2" size="label" color="textTertiary">
-          {description}
-        </Text>
-      ) : (
-        description
-      )}
-      {errorMessage && typeof errorMessage === "string" ? (
-        <Text pl="2" size="label" color="red9">
-          {errorMessage}
-        </Text>
-      ) : (
-        errorMessage
-      )}
-    </Stack>
-  );
-};
+    );
+  }
+);
 
 export default Input;
