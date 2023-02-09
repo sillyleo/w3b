@@ -37,59 +37,51 @@ export interface CheckboxProps {
   tone?: TextProps["tone"];
 }
 
-const Checkbox = React.forwardRef<
-  React.ElementRef<typeof CheckboxPrimitive.Root>,
-  CheckboxProps
->(
-  (
-    {
-      children,
-      tone = "gray",
-      defaultChecked,
-      checked,
-      onCheckedChange,
-      disabled,
-      required,
-      name,
-      checkEmoji,
-      value = "on",
-      fontSize = "base",
-      ...props
-    },
-    ref
-  ) => {
-    return (
-      <Bento
-        fontSize={fontSize}
-        as={"label"}
-        className={checkboxLabel[!!disabled ? "disabled" : "enabled"]}
-        htmlFor={name}
-        {...props}
+export const Checkbox = ({
+  children,
+  tone = "gray",
+  defaultChecked,
+  checked,
+  onCheckedChange,
+  disabled,
+  required,
+  name,
+  checkEmoji,
+  value = "on",
+  fontSize = "base",
+  ...props
+}: CheckboxProps) => {
+  // return <div>check box</div>;
+  return (
+    <Bento
+      fontSize={fontSize}
+      as={"label"}
+      className={checkboxLabel[!!disabled ? "disabled" : "enabled"]}
+      htmlFor={name}
+      {...props}
+    >
+      <CheckboxPrimitive.Root
+        defaultChecked={defaultChecked}
+        checked={checked}
+        onCheckedChange={onCheckedChange}
+        disabled={disabled}
+        required={required}
+        name={name}
+        value={value}
+        className={clsx(checkboxRoot, formTone[tone])}
+        id={name}
       >
-        <CheckboxPrimitive.Root
-          defaultChecked={defaultChecked}
-          checked={checked}
-          onCheckedChange={onCheckedChange}
-          disabled={disabled}
-          required={required}
-          name={name}
-          value={value}
-          className={clsx(checkboxRoot, formTone[tone])}
-          id={name}
-          ref={ref}
-        >
-          <CheckboxPrimitive.Indicator className={checkboxIndicator}>
-            {checkEmoji ? (
-              <div className={checkboxEmoji}>{checkEmoji}</div>
-            ) : (
-              <CheckIcon className={checkboxIcon} />
-            )}
-          </CheckboxPrimitive.Indicator>
-        </CheckboxPrimitive.Root>
-        <span>{children}</span>
-      </Bento>
-    );
-  }
-);
+        <CheckboxPrimitive.Indicator className={checkboxIndicator}>
+          {checkEmoji ? (
+            <div className={checkboxEmoji}>{checkEmoji}</div>
+          ) : (
+            <CheckIcon className={checkboxIcon} />
+          )}
+        </CheckboxPrimitive.Indicator>
+      </CheckboxPrimitive.Root>
+      <span>{children}</span>
+    </Bento>
+  );
+};
 
 export default Checkbox;
