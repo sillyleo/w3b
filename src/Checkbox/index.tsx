@@ -43,8 +43,7 @@ export interface CheckboxProps extends CheckboxPrimitive.CheckboxProps {
   children?: React.ReactNode | string;
   defaultChecked?: boolean;
   checked?: boolean;
-  onCheckedChange?: (checked: boolean) => void;
-  onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  // onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
   disabled?: boolean;
 
   required?: boolean;
@@ -73,6 +72,7 @@ export const Checkbox = React.forwardRef(
       checked,
       required,
       value,
+      name,
       onCheckedChange,
       onChange,
       checkEmoji,
@@ -95,7 +95,7 @@ export const Checkbox = React.forwardRef(
         htmlFor={appliedId}
       >
         {/* This is the real slim shaddy */}
-        <input
+        {/* <input
           style={{ display: !debug ? "none" : undefined }}
           defaultChecked={defaultChecked}
           checked={checked}
@@ -111,12 +111,20 @@ export const Checkbox = React.forwardRef(
             setCheckStatus(e.target.checked);
           }}
           {...props}
-        />
+        /> */}
         {/* This is only a shell for the real checkbox */}
         <CheckboxPrimitive.Root
-          checked={checkStatus}
+          value={value}
           disabled={disabled}
+          required={required}
+          defaultChecked={defaultChecked}
+          checked={checked}
+          onCheckedChange={onCheckedChange}
+          name={appliedId}
+          id={appliedId}
           className={clsx(checkboxRoot, formTone[tone])}
+          ref={ref}
+          {...props}
         >
           <CheckboxPrimitive.Indicator className={checkboxIndicator}>
             {checkEmoji ? (
