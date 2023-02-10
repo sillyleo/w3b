@@ -19,7 +19,8 @@ export interface CheckboxProps extends CheckboxPrimitive.CheckboxProps {
   children?: React.ReactNode | string;
 
   // map some standard props
-
+  // if standard onchange event comes in
+  onChange?: React.ChangeEventHandler<HTMLInputElement>;
   // extra custom  props
   checkEmoji?: React.ReactNode;
 
@@ -29,7 +30,14 @@ export interface CheckboxProps extends CheckboxPrimitive.CheckboxProps {
 }
 
 const Checkbox = (
-  { children, fontSize, tone = "gray", checkEmoji, ...props }: CheckboxProps,
+  {
+    children,
+    fontSize,
+    onChange,
+    tone = "gray",
+    checkEmoji,
+    ...props
+  }: CheckboxProps,
   ref
 ) => {
   return (
@@ -41,6 +49,7 @@ const Checkbox = (
       <CheckboxPrimitive.Root
         className={clsx(checkboxRoot, formTone[tone])}
         {...props}
+        onChange={onChange}
         ref={ref}
       >
         <CheckboxPrimitive.Indicator className={checkboxIndicator}>
@@ -56,46 +65,46 @@ const Checkbox = (
   );
 };
 
-const _Checkbox = (
-  {
-    children,
-    fontSize,
-    tone = "gray",
-    disabled,
+// const _Checkbox = (
+//   {
+//     children,
+//     fontSize,
+//     tone = "gray",
+//     disabled,
 
-    checkEmoji,
-    ...props
-  }: CheckboxProps,
-  ref
-) => {
-  let state = useToggleState(props);
-  let fallbackRef = React.useRef();
-  let domRef = ref || fallbackRef;
+//     checkEmoji,
+//     ...props
+//   }: CheckboxProps,
+//   ref
+// ) => {
+//   let state = useToggleState(props);
+//   let fallbackRef = React.useRef();
+//   let domRef = ref || fallbackRef;
 
-  let { inputProps } = useCheckbox(props, state, domRef);
-  // console.log("inputProps", inputProps);
-  return (
-    <label
-      // fontSize={fontSize}
-      className={checkboxLabel[!!disabled ? "disabled" : "enabled"]}
-    >
-      <VisuallyHidden>
-        <input ref={domRef} {...inputProps} disabled={disabled} />
-      </VisuallyHidden>
+//   let { inputProps } = useCheckbox(props, state, domRef);
+//   // console.log("inputProps", inputProps);
+//   return (
+//     <label
+//       // fontSize={fontSize}
+//       className={checkboxLabel[!!disabled ? "disabled" : "enabled"]}
+//     >
+//       <VisuallyHidden>
+//         <input ref={domRef} {...inputProps} disabled={disabled} />
+//       </VisuallyHidden>
 
-      <div className={clsx(checkboxRoot, formTone[tone])}>
-        <div className={checkboxIndicator}>
-          {state.isSelected &&
-            (checkEmoji ? (
-              <div className={checkboxEmoji}>{checkEmoji}</div>
-            ) : (
-              <LucideIcon name="check" className={checkboxIcon} />
-            ))}
-        </div>
-      </div>
-      <span>{children}</span>
-    </label>
-  );
-};
+//       <div className={clsx(checkboxRoot, formTone[tone])}>
+//         <div className={checkboxIndicator}>
+//           {state.isSelected &&
+//             (checkEmoji ? (
+//               <div className={checkboxEmoji}>{checkEmoji}</div>
+//             ) : (
+//               <LucideIcon name="check" className={checkboxIcon} />
+//             ))}
+//         </div>
+//       </div>
+//       <span>{children}</span>
+//     </label>
+//   );
+// };
 
 export default React.forwardRef(Checkbox);
