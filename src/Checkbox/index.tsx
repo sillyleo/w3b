@@ -16,10 +16,9 @@ import { formTone } from "../styles/theme.css";
 import { useCheckbox } from "@react-aria/checkbox";
 import { useToggleState } from "react-stately";
 
-function Checkbox(props) {
+function CheckboxBase(props, ref) {
   let { children } = props;
   let state = useToggleState(props);
-  let ref = React.useRef();
   let { inputProps } = useCheckbox(props, state, ref);
 
   return (
@@ -29,6 +28,9 @@ function Checkbox(props) {
     </label>
   );
 }
+
+const Checkbox = React.forwardRef(CheckboxBase);
+
 // export interface CheckboxProps {
 //   // basic props from radix-ui
 //   children?: React.ReactNode | string;
@@ -52,14 +54,14 @@ function Checkbox(props) {
 //   tone?: TextProps["tone"];
 // }
 
-export interface CheckboxProps extends CheckboxPrimitive.CheckboxProps {
-  // extra custom  props
-  checkEmoji?: React.ReactNode;
+// export interface CheckboxProps extends CheckboxPrimitive.CheckboxProps {
+//   // extra custom  props
+//   checkEmoji?: React.ReactNode;
 
-  fontSize?: TextProps["fontSize"];
+//   fontSize?: TextProps["fontSize"];
 
-  tone?: TextProps["tone"];
-}
+//   tone?: TextProps["tone"];
+// }
 
 // export const Checkbox = React.forwardRef(
 //   (
