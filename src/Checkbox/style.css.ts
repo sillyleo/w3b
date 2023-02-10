@@ -1,6 +1,4 @@
 import { keyframes, style, styleVariants } from "@vanilla-extract/css";
-import { sprinkles, theme } from "../styles/theme.css";
-import { allTones } from "../constants";
 
 export const checkboxBase = style({
   lineHeight: 1,
@@ -41,6 +39,7 @@ export const checkboxRoot = style({
   display: "inline-flex",
   transition: "all 0.2s",
   alignItems: "center",
+
   ":active": { transform: "scale(0.9)" },
   selectors: {
     [`${checkboxLabel.enabled}:active &`]: {

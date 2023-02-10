@@ -51,25 +51,36 @@ export const Checkbox = ({
   fontSize = "base",
   ...props
 }: CheckboxProps) => {
-  // return <div>check box</div>;
+  const generatedId = React.useId();
+  const appliedId = name || generatedId;
   return (
     <Bento
       fontSize={fontSize}
       as={"label"}
       className={checkboxLabel[!!disabled ? "disabled" : "enabled"]}
-      htmlFor={name}
+      htmlFor={appliedId}
       {...props}
     >
+      {/* <input
+        defaultChecked={defaultChecked}
+        checked={checked}
+        disabled={disabled}
+        required={required}
+        name={appliedId}
+        id={appliedId}
+        type="checkbox"
+        {...props}
+      /> */}
       <CheckboxPrimitive.Root
         defaultChecked={defaultChecked}
         checked={checked}
         onCheckedChange={onCheckedChange}
         disabled={disabled}
         required={required}
-        name={name}
+        name={appliedId}
+        id={appliedId}
         value={value}
         className={clsx(checkboxRoot, formTone[tone])}
-        id={name}
       >
         <CheckboxPrimitive.Indicator className={checkboxIndicator}>
           {checkEmoji ? (

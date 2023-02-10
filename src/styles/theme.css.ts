@@ -7,6 +7,7 @@ import {
   styleVariants,
 } from "@vanilla-extract/css";
 import { createSprinkles, defineProperties } from "@vanilla-extract/sprinkles";
+import { checkboxLabel } from "src/Checkbox/style.css";
 import { allTones } from "src/constants";
 import figmaTokens from "../theme.json";
 
@@ -629,6 +630,12 @@ export const formTone = styleVariants(allTones, (tone: keyof Colors) => {
         backgroundColor: theme.colors[tone + "3"],
         boxShadow: `0 0 0 1.5px ${theme.colors[tone + "8"]}`,
       },
+      selectors: {
+        [`${checkboxLabel["enabled"]}:hover &`]: {
+          backgroundColor: theme.colors[tone + "3"],
+          boxShadow: `0 0 0 1.5px ${theme.colors[tone + "8"]}`,
+        },
+      },
       ":active": {
         backgroundColor: theme.colors[tone + "3"],
       },
@@ -646,10 +653,15 @@ export const formTone = styleVariants(allTones, (tone: keyof Colors) => {
     return {
       backgroundColor: theme.colors[tone + "2"],
       boxShadow: `0 0 0 1.5px ${theme.colors[tone + "7"]}`,
-
       ":hover": {
         backgroundColor: theme.colors[tone + "3"],
         boxShadow: `0 0 0 1.5px ${theme.colors[tone + "8"]}`,
+      },
+      selectors: {
+        [`${checkboxLabel["enabled"]}:hover &`]: {
+          backgroundColor: theme.colors[tone + "3"],
+          boxShadow: `0 0 0 1.5px ${theme.colors[tone + "8"]}`,
+        },
       },
       ":active": {
         backgroundColor: theme.colors[tone + "3"],
@@ -666,6 +678,12 @@ export const formTone = styleVariants(allTones, (tone: keyof Colors) => {
       ":hover": {
         backgroundColor: theme.colors[tone + "3"],
         boxShadow: `0 0 0 1.5px ${theme.colors[tone + "8"]}`,
+      },
+      selectors: {
+        [`${checkboxLabel["enabled"]}:hover &`]: {
+          backgroundColor: theme.colors[tone + "3"],
+          boxShadow: `0 0 0 1.5px ${theme.colors[tone + "8"]}`,
+        },
       },
       ":active": {
         backgroundColor: theme.colors[tone + "3"],

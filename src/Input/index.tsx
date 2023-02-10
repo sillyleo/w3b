@@ -17,6 +17,7 @@ import {
 } from "./style.css";
 
 export interface InputProps extends InputStyleVariants, BentoProps {
+  id?: string;
   size?: "sm" | "md" | "lg";
   align?: "left" | "center" | "right";
   tone?: keyof Colors;
@@ -34,6 +35,7 @@ export interface InputProps extends InputStyleVariants, BentoProps {
 export const Input = forwardRef<HTMLInputElement, InputProps>(
   (
     {
+      id,
       size = "md",
       type = "text",
       align = "left",
@@ -62,11 +64,18 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
       }
       return "default";
     };
-
+    const generatedId = React.useId();
+    const appliedId = id || generatedId;
     return (
       <Stack gap={"1"} alignItems={"stretch"} className={status()}>
         {label && typeof label === "string" ? (
-          <Text pl="2" size="label" color={"textSecondary"}>
+          <Text
+            as={"label"}
+            htmlFor={appliedId}
+            pl="2"
+            size="label"
+            color={"textSecondary"}
+          >
             {label}
           </Text>
         ) : (
@@ -88,6 +97,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
             ref={ref}
             flexGrow={1}
             as={"input"}
+            id={appliedId}
             className={clsx(
               invisibleInput[size],
               inputTextVariants[tone],
