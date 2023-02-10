@@ -44,7 +44,7 @@ export interface CheckboxProps extends CheckboxPrimitive.CheckboxProps {
   defaultChecked?: boolean;
   checked?: boolean;
   onCheckedChange?: (checked: boolean) => void;
-
+  onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
   disabled?: boolean;
 
   required?: boolean;
@@ -74,6 +74,7 @@ export const Checkbox = React.forwardRef(
       required,
       value,
       onCheckedChange,
+      onChange,
       checkEmoji,
       tone = "gray",
 
@@ -83,10 +84,6 @@ export const Checkbox = React.forwardRef(
   ) => {
     const generatedId = React.useId();
     const appliedId = id || generatedId;
-
-    const handleChange = (event) => {
-      setCheckStatus(event.target.checked);
-    };
 
     const [checkStatus, setCheckStatus] = useState(defaultChecked);
 
@@ -109,7 +106,10 @@ export const Checkbox = React.forwardRef(
           id={appliedId}
           type="checkbox"
           ref={ref}
-          onChange={handleChange}
+          onChange={(e) => {
+            onChange;
+            setCheckStatus(e.target.checked);
+          }}
           {...props}
         />
         {/* This is only a shell for the real checkbox */}

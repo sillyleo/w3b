@@ -15,12 +15,15 @@ All components here
 import { Input, LucideIcon, Button, Display, Checkbox, Text } from "ui";
 
 <Display label="Checkbox">
+  <Checkbox checked={true} debug>
+    Default checked=true
+  </Checkbox>
   <Checkbox debug>Default</Checkbox>
-  <Checkbox checkEmoji={"😃"} tone={"tomato"} fontSize={"xl"}>
+  <Checkbox checked={false} checkEmoji={"😃"} tone={"tomato"} fontSize={"xl"}>
     This is a checkbox
   </Checkbox>
   <Checkbox checkEmoji={"123"} tone={"tomato"} fontSize={"xl"}>
-    This wwis a checkbox
+    This wwis a checkbox123 123
   </Checkbox>
   <Checkbox checkEmoji={"😃"} tone={"mint"} fontSize={"lg"}>
     This is a checkbox
