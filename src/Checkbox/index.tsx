@@ -40,9 +40,9 @@ const Checkbox = (
       // fontSize={fontSize}
       className={checkboxLabel[!!props.isDisabled ? "disabled" : "enabled"]}
     >
-      <>
+      <VisuallyHidden>
         <input ref={domRef} {...inputProps} />
-      </>
+      </VisuallyHidden>
 
       <div
         data-status={state.isSelected} // this is only for formTone checked styling
