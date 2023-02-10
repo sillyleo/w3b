@@ -13,7 +13,22 @@ import {
 } from "./style.css";
 import { clsx } from "clsx";
 import { formTone } from "../styles/theme.css";
+import { useCheckbox } from "@react-aria/checkbox";
+import { useToggleState } from "react-stately";
 
+function Checkbox(props) {
+  let { children } = props;
+  let state = useToggleState(props);
+  let ref = React.useRef();
+  let { inputProps } = useCheckbox(props, state, ref);
+
+  return (
+    <label style={{ display: "block" }}>
+      <input {...inputProps} ref={ref} />
+      {children}
+    </label>
+  );
+}
 // export interface CheckboxProps {
 //   // basic props from radix-ui
 //   children?: React.ReactNode | string;
@@ -46,55 +61,55 @@ export interface CheckboxProps extends CheckboxPrimitive.CheckboxProps {
   tone?: TextProps["tone"];
 }
 
-export const Checkbox = React.forwardRef(
-  (
-    {
-      checkEmoji,
-      fontSize,
-      tone = "gray",
+// export const Checkbox = React.forwardRef(
+//   (
+//     {
+//       checkEmoji,
+//       fontSize,
+//       tone = "gray",
 
-      ...props
-    }: CheckboxProps,
-    ref: React.ForwardedRef<HTMLInputElement>
-  ) => {
-    // const generatedId = React.useId();
-    // const appliedId = id || generatedId;
+//       ...props
+//     }: CheckboxProps,
+//     ref: React.ForwardedRef<HTMLInputElement>
+//   ) => {
+//     // const generatedId = React.useId();
+//     // const appliedId = id || generatedId;
 
-    // const [checkStatus, setCheckStatus] = useState(defaultChecked);
+//     // const [checkStatus, setCheckStatus] = useState(defaultChecked);
 
-    return (
-      <Bento
-        fontSize={fontSize}
-        as={"label"}
-        className={checkboxLabel[!!props.disabled ? "disabled" : "enabled"]}
-        htmlFor={props.name}
-      >
-        <CheckboxPrimitive.Root
-          // value={value}
-          // disabled={disabled}
-          // required={required}
-          // checked={checked}
-          // onCheckedChange={onCheckedChange}
-          // name={appliedId}
-          // defaultChecked={props.defaultChecked}
-          // checked={checked}
-          // id={appliedId}
-          className={clsx(checkboxRoot, formTone[tone])}
-          ref={ref}
-        >
-          <CheckboxPrimitive.Indicator className={checkboxIndicator}>
-            {checkEmoji ? (
-              <div className={checkboxEmoji}>{checkEmoji}</div>
-            ) : (
-              <CheckIcon className={checkboxIcon} />
-            )}
-          </CheckboxPrimitive.Indicator>
-        </CheckboxPrimitive.Root>
-        <span>{props.children}</span>
-      </Bento>
-    );
-  }
-);
+//     return (
+//       <Bento
+//         fontSize={fontSize}
+//         as={"label"}
+//         className={checkboxLabel[!!props.disabled ? "disabled" : "enabled"]}
+//         htmlFor={props.name}
+//       >
+//         <CheckboxPrimitive.Root
+//           // value={value}
+//           // disabled={disabled}
+//           // required={required}
+//           // checked={checked}
+//           // onCheckedChange={onCheckedChange}
+//           // name={appliedId}
+//           // defaultChecked={props.defaultChecked}
+//           // checked={checked}
+//           // id={appliedId}
+//           className={clsx(checkboxRoot, formTone[tone])}
+//           ref={ref}
+//         >
+//           <CheckboxPrimitive.Indicator className={checkboxIndicator}>
+//             {checkEmoji ? (
+//               <div className={checkboxEmoji}>{checkEmoji}</div>
+//             ) : (
+//               <CheckIcon className={checkboxIcon} />
+//             )}
+//           </CheckboxPrimitive.Indicator>
+//         </CheckboxPrimitive.Root>
+//         <span>{props.children}</span>
+//       </Bento>
+//     );
+//   }
+// );
 
 // export const Checkbox = React.forwardRef(
 //   (
