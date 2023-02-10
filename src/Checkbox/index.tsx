@@ -30,14 +30,7 @@ export interface CheckboxProps extends CheckboxPrimitive.CheckboxProps {
 }
 
 const Checkbox = (
-  {
-    children,
-    fontSize,
-    onChange,
-    tone = "gray",
-    checkEmoji,
-    ...props
-  }: CheckboxProps,
+  { children, fontSize, tone = "gray", checkEmoji, ...props }: CheckboxProps,
   ref
 ) => {
   return (
@@ -49,7 +42,6 @@ const Checkbox = (
       <CheckboxPrimitive.Root
         className={clsx(checkboxRoot, formTone[tone])}
         {...props}
-        onCheckedChange={onChange}
         ref={ref}
       >
         <CheckboxPrimitive.Indicator className={checkboxIndicator}>
