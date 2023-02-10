@@ -75,6 +75,7 @@ export const Checkbox = React.forwardRef(
           onCheckedChange={onCheckedChange}
           className={clsx(checkboxRoot, formTone[tone])}
           ref={ref}
+          {...props}
         >
           <CheckboxPrimitive.Indicator className={checkboxIndicator}>
             {checkEmoji ? (
