@@ -113,8 +113,12 @@ globalStyle(
   }
 );
 
-globalStyle(".nomimono-style", {
-  fontFamily: theme.fontFamily.heading,
+globalStyle(".nomimono-style .body", {
+  fontFamily: theme.fontFamily.body,
+});
+
+globalStyle(".nomimono-style .heading", {
+  fontFamily: theme.fontFamily.body,
 });
 
 globalStyle(".nomimono-style p, .nomimono-style ul, .nomimono-style ol", {
