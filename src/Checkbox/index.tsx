@@ -17,6 +17,10 @@ import { formTone } from "../styles/theme.css";
 export interface CheckboxProps extends AriaCheckboxProps {
   // basic props
   children?: React.ReactNode | string;
+
+  // map some standard props to react-aria
+  disabled?: boolean;
+
   // extra custom  props
   checkEmoji?: React.ReactNode;
 
@@ -26,7 +30,15 @@ export interface CheckboxProps extends AriaCheckboxProps {
 }
 
 const Checkbox = (
-  { children, fontSize, tone = "gray", checkEmoji, ...props }: CheckboxProps,
+  {
+    children,
+    fontSize,
+    tone = "gray",
+    disabled,
+
+    checkEmoji,
+    ...props
+  }: CheckboxProps,
   ref
 ) => {
   let state = useToggleState(props);
@@ -38,10 +50,10 @@ const Checkbox = (
   return (
     <label
       // fontSize={fontSize}
-      className={checkboxLabel[!!props.isDisabled ? "disabled" : "enabled"]}
+      className={checkboxLabel[!!disabled ? "disabled" : "enabled"]}
     >
       <VisuallyHidden>
-        <input ref={domRef} {...inputProps} />
+        <input ref={domRef} {...inputProps} disabled={disabled} />
       </VisuallyHidden>
 
       <div

@@ -646,19 +646,18 @@ export const formTone = styleVariants(allTones, (tone: keyof Colors) => {
         [`${checkboxLabel["enabled"]} [data-status=true]&`]: {
           backgroundColor: theme.colors[tone + "9"],
           boxShadow: `0 0 0 1.5px ${theme.colors[tone + "9"]}`,
-          color: theme.colors[tone + "1"],
         },
         [`${checkboxLabel["enabled"]}:hover [data-status=true]&`]: {
           backgroundColor: theme.colors[tone + "10"],
           boxShadow: `0 0 0 1.5px ${theme.colors[tone + "10"]}`,
-          color: theme.colors[tone + "11"],
+          color: theme.colors[tone + "12"],
         },
       },
 
       ":active": {
         backgroundColor: theme.colors[tone + "3"],
       },
-      color: theme.colors[tone + "11"],
+      color: theme.colors[tone + "12"],
     };
   } else if (
     tone === "gray" ||
