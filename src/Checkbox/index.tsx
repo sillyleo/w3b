@@ -43,7 +43,7 @@ export interface CheckboxProps extends CheckboxPrimitive.CheckboxProps {
   children?: React.ReactNode | string;
   defaultChecked?: boolean;
   checked?: boolean;
-  // onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
   disabled?: boolean;
 
   required?: boolean;
@@ -112,6 +112,7 @@ export const Checkbox = React.forwardRef(
           }}
           {...props}
         /> */}
+        Checkbox
         {/* This is only a shell for the real checkbox */}
         <CheckboxPrimitive.Root
           value={value}
@@ -119,6 +120,7 @@ export const Checkbox = React.forwardRef(
           required={required}
           defaultChecked={defaultChecked}
           checked={checked}
+          onChange={onChange}
           onCheckedChange={onCheckedChange}
           name={appliedId}
           id={appliedId}
