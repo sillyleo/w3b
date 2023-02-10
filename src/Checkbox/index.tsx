@@ -1,10 +1,12 @@
-import { useToggleState } from "react-stately";
-import { AriaCheckboxProps, useCheckbox, VisuallyHidden } from "react-aria";
+import * as CheckboxPrimitive from "@radix-ui/react-checkbox";
+import { clsx } from "clsx";
 import React from "react";
+import { AriaCheckboxProps, useCheckbox, VisuallyHidden } from "react-aria";
+import { useToggleState } from "react-stately";
 import { Bento, LucideIcon } from "../../src";
+import { formTone } from "../styles/theme.css";
 import { TextProps } from "../Text";
 import "./style.css";
-
 import {
   checkboxEmoji,
   checkboxIcon,
@@ -12,14 +14,11 @@ import {
   checkboxLabel,
   checkboxRoot,
 } from "./style.css";
-import { clsx } from "clsx";
-import { formTone } from "../styles/theme.css";
-export interface CheckboxProps extends AriaCheckboxProps {
+export interface CheckboxProps extends CheckboxPrimitive.CheckboxProps {
   // basic props
   children?: React.ReactNode | string;
 
-  // map some standard props to react-aria
-  disabled?: boolean;
+  // map some standard props
 
   // extra custom  props
   checkEmoji?: React.ReactNode;
@@ -30,6 +29,34 @@ export interface CheckboxProps extends AriaCheckboxProps {
 }
 
 const Checkbox = (
+  { children, fontSize, tone = "gray", checkEmoji, ...props }: CheckboxProps,
+  ref
+) => {
+  return (
+    <Bento
+      fontSize={fontSize}
+      as={"label"}
+      className={checkboxLabel[!!props.disabled ? "disabled" : "enabled"]}
+    >
+      <CheckboxPrimitive.Root
+        className={clsx(checkboxRoot, formTone[tone])}
+        {...props}
+        ref={ref}
+      >
+        <CheckboxPrimitive.Indicator className={checkboxIndicator}>
+          {checkEmoji ? (
+            <div className={checkboxEmoji}>{checkEmoji}</div>
+          ) : (
+            <LucideIcon name="check" className={checkboxIcon} />
+          )}
+        </CheckboxPrimitive.Indicator>
+      </CheckboxPrimitive.Root>
+      <span>{children}</span>
+    </Bento>
+  );
+};
+
+const _Checkbox = (
   {
     children,
     fontSize,
@@ -56,10 +83,7 @@ const Checkbox = (
         <input ref={domRef} {...inputProps} disabled={disabled} />
       </VisuallyHidden>
 
-      <div
-        data-status={state.isSelected} // this is only for formTone checked styling
-        className={clsx(checkboxRoot, formTone[tone])}
-      >
+      <div className={clsx(checkboxRoot, formTone[tone])}>
         <div className={checkboxIndicator}>
           {state.isSelected &&
             (checkEmoji ? (
