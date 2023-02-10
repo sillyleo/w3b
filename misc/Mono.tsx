@@ -43,7 +43,7 @@ export const Banner = () => {
       dragElastic={2}
       dragSnapToOrigin={true}
       mt="3"
-      zIndex="999"
+      zindex="999"
       position="relative"
       display="flex"
       lineHeight="single"
