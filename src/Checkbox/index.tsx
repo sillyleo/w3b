@@ -38,6 +38,7 @@ import { formTone } from "../styles/theme.css";
 // }
 
 export interface CheckboxProps extends CheckboxPrimitive.CheckboxProps {
+  debug?: boolean;
   id?: string;
   children?: React.ReactNode | string;
   defaultChecked?: boolean;
@@ -63,6 +64,7 @@ export interface CheckboxProps extends CheckboxPrimitive.CheckboxProps {
 export const Checkbox = React.forwardRef(
   (
     {
+      debug = false,
       id,
       children,
       defaultChecked,
@@ -97,7 +99,11 @@ export const Checkbox = React.forwardRef(
       >
         {/* This is the real slim shaddy */}
         <input
-          // style={{ display: "none" }}
+          style={{ display: !debug ? "none" : undefined }}
+          defaultChecked={defaultChecked}
+          checked={checked}
+          required={required}
+          value={value}
           disabled={disabled}
           name={appliedId}
           id={appliedId}
@@ -108,10 +114,8 @@ export const Checkbox = React.forwardRef(
         />
         {/* This is only a shell for the real checkbox */}
         <CheckboxPrimitive.Root
-          defaultChecked={defaultChecked}
           checked={checkStatus}
           disabled={disabled}
-          required={required}
           className={clsx(checkboxRoot, formTone[tone])}
         >
           <CheckboxPrimitive.Indicator className={checkboxIndicator}>
