@@ -34,7 +34,7 @@ const Checkbox = (
   let domRef = ref || fallbackRef;
 
   let { inputProps } = useCheckbox(props, state, domRef);
-  console.log("inputProps", inputProps);
+  // console.log("inputProps", inputProps);
   return (
     <label
       // fontSize={fontSize}
