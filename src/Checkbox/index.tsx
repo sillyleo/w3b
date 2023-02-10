@@ -20,7 +20,7 @@ export interface CheckboxProps extends CheckboxPrimitive.CheckboxProps {
 
   // map some standard props
   // if standard onchange event comes in
-  onChange?: React.ChangeEventHandler<HTMLInputElement>;
+  onChange?: (any) => void;
   // extra custom  props
   checkEmoji?: React.ReactNode;
 
@@ -49,7 +49,7 @@ const Checkbox = (
       <CheckboxPrimitive.Root
         className={clsx(checkboxRoot, formTone[tone])}
         {...props}
-        onChange={onChange}
+        onCheckedChange={onChange}
         ref={ref}
       >
         <CheckboxPrimitive.Indicator className={checkboxIndicator}>
