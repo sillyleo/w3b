@@ -39,7 +39,6 @@ export const checkboxRoot = style({
   display: "inline-flex",
   transition: "all 0.2s",
   alignItems: "center",
-
   ":active": { transform: "scale(0.9)" },
   selectors: {
     [`${checkboxLabel.enabled}:active &`]: {
@@ -76,7 +75,8 @@ const up = keyframes({
 
 export const checkboxIndicator = style({
   aspectRatio: "1",
-  height: "100%",
+  height: "24px",
+  width: "24px",
   // padding: "1px",
   // background: "red",
   position: "relative",

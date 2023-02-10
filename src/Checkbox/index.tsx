@@ -1,18 +1,63 @@
 import { useToggleState } from "react-stately";
-import { useCheckbox } from "react-aria";
+import { AriaCheckboxProps, useCheckbox, VisuallyHidden } from "react-aria";
 import React from "react";
+import { Bento, LucideIcon } from "../../src";
+import { TextProps } from "../Text";
+import "./style.css";
 
-const Checkbox = ({ children, ...props }, ref) => {
+import {
+  checkboxEmoji,
+  checkboxIcon,
+  checkboxIndicator,
+  checkboxLabel,
+  checkboxRoot,
+} from "./style.css";
+import { clsx } from "clsx";
+import { formTone } from "../styles/theme.css";
+export interface CheckboxProps extends AriaCheckboxProps {
+  // basic props
+  children?: React.ReactNode | string;
+  // extra custom  props
+  checkEmoji?: React.ReactNode;
+
+  fontSize?: TextProps["fontSize"];
+
+  tone?: TextProps["tone"];
+}
+
+const Checkbox = (
+  { children, fontSize, tone = "gray", checkEmoji, ...props }: CheckboxProps,
+  ref
+) => {
   let state = useToggleState(props);
   let fallbackRef = React.useRef();
   let domRef = ref || fallbackRef;
 
   let { inputProps } = useCheckbox(props, state, domRef);
-
+  console.log("inputProps", inputProps);
   return (
-    <label style={{ display: "block" }}>
-      <input {...inputProps} ref={domRef} />
-      {children}
+    <label
+      // fontSize={fontSize}
+      className={checkboxLabel[!!props.isDisabled ? "disabled" : "enabled"]}
+    >
+      <>
+        <input ref={domRef} {...inputProps} />
+      </>
+
+      <div
+        data-status={state.isSelected} // this is only for formTone checked styling
+        className={clsx(checkboxRoot, formTone[tone])}
+      >
+        <div className={checkboxIndicator}>
+          {state.isSelected &&
+            (checkEmoji ? (
+              <div className={checkboxEmoji}>{checkEmoji}</div>
+            ) : (
+              <LucideIcon name="check" className={checkboxIcon} />
+            ))}
+        </div>
+      </div>
+      <span>{children}</span>
     </label>
   );
 };

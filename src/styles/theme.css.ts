@@ -634,16 +634,27 @@ export const formTone = styleVariants(allTones, (tone: keyof Colors) => {
     return {
       backgroundColor: theme.colors[tone + "2"],
       boxShadow: `0 0 0 1.5px ${theme.colors[tone + "7"]}`,
-      ":hover": {
-        backgroundColor: theme.colors[tone + "3"],
-        boxShadow: `0 0 0 1.5px ${theme.colors[tone + "8"]}`,
-      },
+      // ":hover": {
+      //   backgroundColor: theme.colors[tone + "3"],
+      //   boxShadow: `0 0 0 1.5px ${theme.colors[tone + "8"]}`,
+      // },
       selectors: {
-        [`${checkboxLabel["enabled"]}:hover &`]: {
+        [`${checkboxLabel["enabled"]}:hover [data-status=false]&`]: {
           backgroundColor: theme.colors[tone + "3"],
           boxShadow: `0 0 0 1.5px ${theme.colors[tone + "8"]}`,
         },
+        [`${checkboxLabel["enabled"]} [data-status=true]&`]: {
+          backgroundColor: theme.colors[tone + "9"],
+          boxShadow: `0 0 0 1.5px ${theme.colors[tone + "9"]}`,
+          color: theme.colors[tone + "1"],
+        },
+        [`${checkboxLabel["enabled"]}:hover [data-status=true]&`]: {
+          backgroundColor: theme.colors[tone + "10"],
+          boxShadow: `0 0 0 1.5px ${theme.colors[tone + "10"]}`,
+          color: theme.colors[tone + "11"],
+        },
       },
+
       ":active": {
         backgroundColor: theme.colors[tone + "3"],
       },
@@ -659,20 +670,30 @@ export const formTone = styleVariants(allTones, (tone: keyof Colors) => {
   ) {
     // grayscale series
     return {
-      backgroundColor: theme.colors[tone + "2"],
-      boxShadow: `0 0 0 1.5px ${theme.colors[tone + "7"]}`,
-      ":hover": {
-        backgroundColor: theme.colors[tone + "3"],
-        boxShadow: `0 0 0 1.5px ${theme.colors[tone + "8"]}`,
-      },
+      backgroundColor: theme.colors[tone + "3"],
+      boxShadow: `0 0 0 1.5px ${theme.colors[tone + "8"]}`,
+      // ":hover": {
+      //   backgroundColor: theme.colors[tone + "4"],
+      //   boxShadow: `0 0 0 1.5px ${theme.colors[tone + "9"]}`,
+      // },
       selectors: {
-        [`${checkboxLabel["enabled"]}:hover &`]: {
-          backgroundColor: theme.colors[tone + "3"],
-          boxShadow: `0 0 0 1.5px ${theme.colors[tone + "8"]}`,
+        [`${checkboxLabel["enabled"]}:hover [data-status=false]&`]: {
+          backgroundColor: theme.colors[tone + "4"],
+          boxShadow: `0 0 0 1.5px ${theme.colors[tone + "9"]}`,
+        },
+        [`${checkboxLabel["enabled"]} [data-status=true]&`]: {
+          backgroundColor: theme.colors[tone + "11"],
+          boxShadow: `0 0 0 1.5px ${theme.colors[tone + "11"]}`,
+          color: theme.colors[tone + "1"],
+        },
+        [`${checkboxLabel["enabled"]}:hover [data-status=true]&`]: {
+          backgroundColor: theme.colors[tone + "12"],
+          boxShadow: `0 0 0 1.5px ${theme.colors[tone + "12"]}`,
+          color: theme.colors[tone + "1"],
         },
       },
       ":active": {
-        backgroundColor: theme.colors[tone + "3"],
+        backgroundColor: theme.colors[tone + "4"],
       },
       color: theme.colors[tone + "12"],
     };
@@ -683,20 +704,28 @@ export const formTone = styleVariants(allTones, (tone: keyof Colors) => {
       backgroundColor: theme.colors[tone + "2"],
       boxShadow: `0 0 0 1.5px ${theme.colors[tone + "7"]}`,
 
-      ":hover": {
-        backgroundColor: theme.colors[tone + "3"],
-        boxShadow: `0 0 0 1.5px ${theme.colors[tone + "8"]}`,
-      },
+      // ":hover": {
+      //   backgroundColor: theme.colors[tone + "3"],
+      //   boxShadow: `0 0 0 1.5px ${theme.colors[tone + "8"]}`,
+      // },
       selectors: {
-        [`${checkboxLabel["enabled"]}:hover &`]: {
+        [`${checkboxLabel["enabled"]}:hover [data-status=false]&`]: {
           backgroundColor: theme.colors[tone + "3"],
           boxShadow: `0 0 0 1.5px ${theme.colors[tone + "8"]}`,
+        },
+        [`${checkboxLabel["enabled"]} [data-status=true]&`]: {
+          backgroundColor: theme.colors[tone + "9"],
+          boxShadow: `0 0 0 1.5px ${theme.colors[tone + "9"]}`,
+        },
+        [`${checkboxLabel["enabled"]}:hover [data-status=true]&`]: {
+          backgroundColor: theme.colors[tone + "10"],
+          boxShadow: `0 0 0 1.5px ${theme.colors[tone + "10"]}`,
         },
       },
       ":active": {
         backgroundColor: theme.colors[tone + "3"],
       },
-      color: theme.colors[tone + "11"],
+      color: theme.colors.white,
     };
   }
 });

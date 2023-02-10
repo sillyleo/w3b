@@ -62,10 +62,14 @@ dependencies:
   '@radix-ui/react-slot': 1.0.1_react@18.2.0
   '@radix-ui/react-toggle': 1.0.1_biqbaboplfbrettd7655fr4n2y
   '@radix-ui/react-toggle-group': 1.0.2_biqbaboplfbrettd7655fr4n2y
+  '@types/react': 18.0.27
+  '@types/react-dom': 18.0.10
   '@vanilla-extract/css': 1.9.3
   '@vanilla-extract/recipes': 0.3.0_@vanilla-extract+css@1.9.3
+  '@vanilla-extract/sprinkles': 1.5.1_@vanilla-extract+css@1.9.3
   clsx: 1.2.1
   framer-motion: 8.5.5_biqbaboplfbrettd7655fr4n2y
+  lodash: 4.17.21
   lucide-react: 0.105.0_react@18.2.0
   motion: 10.15.5
   react: 18.2.0
@@ -73,21 +77,18 @@ dependencies:
   react-icons: 4.7.1_react@18.2.0
   react-stately: 3.20.0_react@18.2.0
   use-sound: 4.0.1_react@18.2.0
+  usehooks-ts: 2.9.1_biqbaboplfbrettd7655fr4n2y
 
 devDependencies:
   '@codesandbox/sandpack-react': 1.20.8_biqbaboplfbrettd7655fr4n2y
   '@mdx-js/react': 2.2.1_react@18.2.0
   '@rollup/plugin-typescript': 10.0.1_typescript@4.9.5
   '@types/node': 18.11.18
-  '@types/react': 18.0.27
-  '@types/react-dom': 18.0.10
   '@vanilla-extract/next-plugin': 2.1.1_next@13.1.6
-  '@vanilla-extract/sprinkles': 1.5.1_@vanilla-extract+css@1.9.3
   '@vanilla-extract/vite-plugin': 3.7.1_vite@4.1.1
   '@vitejs/plugin-react': 3.1.0_vite@4.1.1
   csstype: 3.1.1
   json-to-ts-cli: 1.0.2
-  lodash: 4.17.21
   lorem-ipsum: 2.0.8
   next: 13.1.6_biqbaboplfbrettd7655fr4n2y
   nextra: 2.2.14_3vryta7zmbcsw4rrqf4axjqggm
@@ -100,7 +101,6 @@ devDependencies:
   serve: 14.2.0
   tsup: 6.5.0_typescript@4.9.5
   typescript: 4.9.5
-  usehooks-ts: 2.9.1_biqbaboplfbrettd7655fr4n2y
   vite: 4.1.1_@types+node@18.11.18
   vite-pages-theme-doc: 4.0.1
   vite-plugin-css-injected-by-js: 2.4.0_vite@4.1.1
@@ -3023,7 +3023,7 @@ packages:
     resolution: {integrity: sha512-E42GW/JA4Qv15wQdqJq8DL4JhNpB3prJgjgapN3qJT9K2zO5IIAQh4VXvCEDupoqAwnz0cY4RlXeC/ajX5SFHg==}
     dependencies:
       '@types/react': 18.0.27
-    dev: true
+    dev: false
 
   /@types/react/18.0.27:
     resolution: {integrity: sha512-3vtRKHgVxu3Jp9t718R9BuzoD4NcQ8YJ5XRzsSKxNDiDonD2MXIT1TmSkenxuCycZJoQT5d2vE8LwWJxBC1gmA==}
@@ -3110,7 +3110,7 @@ packages:
       '@vanilla-extract/css': ^1.0.0
     dependencies:
       '@vanilla-extract/css': 1.9.3
-    dev: true
+    dev: false
 
   /@vanilla-extract/vite-plugin/3.7.1_vite@4.1.1:
     resolution: {integrity: sha512-KFeTSEJKtJDfQhUJh4jGmrJDLCU59DSA3YKZSdys4jTOLZ1ZFsKzDP2pnFwH/24Oc2ebK+EV5x3OPlWxvRYthg==}
@@ -5207,7 +5207,6 @@ packages:
 
   /lodash/4.17.21:
     resolution: {integrity: sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==}
-    dev: true
 
   /longest-streak/3.1.0:
     resolution: {integrity: sha512-9Ri+o0JYgehTaVBBDoMqIl8GXtbWg711O3srftcHhZ0dqnETqLaoIK0x17fUw9rFSlK/0NlsKe0Ahhyl5pXE2g==}
@@ -7669,7 +7668,7 @@ packages:
     dependencies:
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
-    dev: true
+    dev: false
 
   /uvu/0.5.6:
     resolution: {integrity: sha512-+g8ENReyr8YsOc6fv/NVJs2vFdHBnBNdfE49rshrTzDWOlUx4Gq7KOS2GD8eqhy2j+Ejq29+SbKH8yjkAqXqoA==}

@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Stack, Text } from "../";
+import { Stack, Text } from "../index";
 
 // An utility display for component
 export default function Display(props) {
