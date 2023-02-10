@@ -97,9 +97,9 @@ export const Checkbox = React.forwardRef(
       >
         {/* This is the real slim shaddy */}
         <input
-          style={{ display: "none" }}
-          name={appliedId}
+          // style={{ display: "none" }}
           disabled={disabled}
+          name={appliedId}
           id={appliedId}
           type="checkbox"
           ref={ref}
@@ -112,6 +112,8 @@ export const Checkbox = React.forwardRef(
           checked={checkStatus}
           disabled={disabled}
           required={required}
+          name={appliedId}
+          id={appliedId}
           className={clsx(checkboxRoot, formTone[tone])}
           {...props}
         >
