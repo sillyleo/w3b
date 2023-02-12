@@ -4,11 +4,24 @@ import {
   Checkbox as CheckboxPrimitive,
   CheckboxProps,
 } from "reakit/Checkbox";
-import { TextProps } from "src/Text";
-
+import { clsx } from "clsx";
+import { Bento, LucideIcon } from "../../src";
+import { formTone } from "../styles/theme.css";
+import { TextProps } from "../Text";
+import "./style.css";
+import {
+  checkboxEmoji,
+  checkboxIcon,
+  checkboxIndicator,
+  checkboxLabel,
+  checkboxRoot,
+} from "./style.css";
 export interface CheckboxExtendedProps extends CheckboxProps {
+  //realkit
+  disabled?: boolean | undefined;
+  //custom
+  defaultChecked?: boolean | undefined;
   children?: React.ReactNode;
-  defaultChecked?: boolean;
   tone?: TextProps["tone"];
   fontSize?: TextProps["fontSize"];
   checkEmoji?: React.ReactNode;
@@ -16,31 +29,74 @@ export interface CheckboxExtendedProps extends CheckboxProps {
 
 function Checkbox(
   {
-    children,
+    disabled,
     defaultChecked,
+    children,
     checkEmoji,
     fontSize,
     tone = "gray",
-    ...rest
+    ...props
   }: CheckboxExtendedProps,
   ref
 ) {
-  const checkbox = useCheckboxState({ state: defaultChecked });
-
+  const checkbox = useCheckboxState({
+    state: defaultChecked,
+  });
+  console.log(checkbox.state);
   return (
-    <label>
-      <CheckboxPrimitive {...checkbox} {...rest} ref={ref} />
-      {children}
-    </label>
+    <Bento
+      fontSize={fontSize}
+      as={"label"}
+      className={checkboxLabel[!!disabled ? "disabled" : "enabled"]}
+    >
+      <CheckboxPrimitive
+        disabled={disabled}
+        ref={ref}
+        {...checkbox}
+        {...props}
+      />
+
+      <div
+        data-state={
+          props.checked !== undefined
+            ? props.checked && "checked"
+            : checkbox.state && "checked"
+        } // styling based on state
+        className={clsx(checkboxRoot, formTone[tone])}
+      >
+        {/* use checked if it's present, else use state */}
+        {props.checked === true ? (
+          <div className={checkboxIndicator}>
+            {checkEmoji ? (
+              <div className={checkboxEmoji}>{checkEmoji}</div>
+            ) : (
+              <LucideIcon name="check" className={checkboxIcon} />
+            )}
+          </div>
+        ) : (
+          checkbox.state && (
+            <div className={checkboxIndicator}>
+              {checkEmoji ? (
+                <div className={checkboxEmoji}>{checkEmoji}</div>
+              ) : (
+                <LucideIcon name="check" className={checkboxIcon} />
+              )}
+            </div>
+          )
+        )}
+      </div>
+
+      <span>{children}</span>
+    </Bento>
   );
 }
 
 export default React.forwardRef(Checkbox);
 // import * as CheckboxPrimitive from "@radix-ui/react-checkbox";
-// import { clsx } from "clsx";
 // import React from "react";
 // import { AriaCheckboxProps, useCheckbox, VisuallyHidden } from "react-aria";
 // import { useToggleState } from "react-stately";
+// import { clsx } from "clsx";
 // import { Bento, LucideIcon } from "../../src";
 // import { formTone } from "../styles/theme.css";
 // import { TextProps } from "../Text";

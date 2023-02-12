@@ -3,17 +3,15 @@ import { Text, Display, Checkbox } from "nomimono";
 export function Demo() {
   return (
     <Display>
-      <input type={"checkbox"} defaultChecked />
-      <Checkbox defaultChecked>Checkbox</Checkbox>
+      <Checkbox defaultChecked>Checkbox defaultChecked</Checkbox>
       <Checkbox defaultChecked disabled tone="sky">
-        Checkbox
+        Checkbox defaultChecked disabled
       </Checkbox>
       <Checkbox checked={true} tone="lime">
-        Checkbox
+        Checkbox checked=true
       </Checkbox>
-      <Text color="text">Lorem</Text>
-      <Checkbox tone="tomato">Checkbox</Checkbox>
-      <Checkbox disabled>Checkbox</Checkbox>
+      <Checkbox tone="tomato"> normal Checkbox</Checkbox>
+      <Checkbox disabled> disabled Checkbox</Checkbox>
     </Display>
   );
 }
