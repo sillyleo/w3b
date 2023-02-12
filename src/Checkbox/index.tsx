@@ -16,6 +16,7 @@ import {
   checkboxLabel,
   checkboxRoot,
 } from "./style.css";
+import { VisuallyHidden } from "react-aria";
 export interface CheckboxExtendedProps extends CheckboxProps {
   //realkit
   disabled?: boolean | undefined;
@@ -49,13 +50,14 @@ function Checkbox(
       as={"label"}
       className={checkboxLabel[!!disabled ? "disabled" : "enabled"]}
     >
-      <CheckboxPrimitive
-        disabled={disabled}
-        ref={ref}
-        {...checkbox}
-        {...props}
-      />
-
+      <VisuallyHidden>
+        <CheckboxPrimitive
+          disabled={disabled}
+          ref={ref}
+          {...checkbox}
+          {...props}
+        />
+      </VisuallyHidden>
       <div
         data-state={
           props.checked !== undefined
