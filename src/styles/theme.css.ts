@@ -113,7 +113,7 @@ globalStyle(
   }
 );
 
-globalStyle(".nomimono-style .body", {
+globalStyle(".nomimono-style .body, .nomimono-style.body", {
   fontFamily: theme.fontFamily.body,
 });
 
@@ -121,7 +121,7 @@ globalStyle(".nomimono-style", {
   fontFamily: theme.fontFamily.body,
 });
 
-globalStyle(".nomimono-style .heading", {
+globalStyle(".nomimono-style .heading, .nomimono-style.heading", {
   fontFamily: theme.fontFamily.heading,
 });
 
@@ -639,19 +639,6 @@ export const formTone = styleVariants(allTones, (tone: keyof Colors) => {
       //   boxShadow: `0 0 0 1.5px ${theme.colors[tone + "8"]}`,
       // },
       selectors: {
-        [`${checkboxLabel["enabled"]}:hover [data-status=false]&`]: {
-          backgroundColor: theme.colors[tone + "3"],
-          boxShadow: `0 0 0 1.5px ${theme.colors[tone + "8"]}`,
-        },
-        [`${checkboxLabel["enabled"]} [data-status=true]&`]: {
-          backgroundColor: theme.colors[tone + "9"],
-          boxShadow: `0 0 0 1.5px ${theme.colors[tone + "9"]}`,
-        },
-        [`${checkboxLabel["enabled"]}:hover [data-status=true]&`]: {
-          backgroundColor: theme.colors[tone + "10"],
-          boxShadow: `0 0 0 1.5px ${theme.colors[tone + "10"]}`,
-          color: theme.colors[tone + "12"],
-        },
         // radix
         [`[data-state=checked]&`]: {
           backgroundColor: theme.colors[tone + "9"],
@@ -681,20 +668,6 @@ export const formTone = styleVariants(allTones, (tone: keyof Colors) => {
       //   boxShadow: `0 0 0 1.5px ${theme.colors[tone + "9"]}`,
       // },
       selectors: {
-        [`${checkboxLabel["enabled"]}:hover [data-status=false]&`]: {
-          backgroundColor: theme.colors[tone + "4"],
-          boxShadow: `0 0 0 1.5px ${theme.colors[tone + "9"]}`,
-        },
-        [`${checkboxLabel["enabled"]} [data-status=true]&`]: {
-          backgroundColor: theme.colors[tone + "11"],
-          boxShadow: `0 0 0 1.5px ${theme.colors[tone + "11"]}`,
-          color: theme.colors[tone + "1"],
-        },
-        [`${checkboxLabel["enabled"]}:hover [data-status=true]&`]: {
-          backgroundColor: theme.colors[tone + "12"],
-          boxShadow: `0 0 0 1.5px ${theme.colors[tone + "12"]}`,
-          color: theme.colors[tone + "1"],
-        },
         // radix
         [`[data-state=checked]&`]: {
           backgroundColor: theme.colors[tone + "11"],
@@ -719,19 +692,6 @@ export const formTone = styleVariants(allTones, (tone: keyof Colors) => {
       //   boxShadow: `0 0 0 1.5px ${theme.colors[tone + "8"]}`,
       // },
       selectors: {
-        [`${checkboxLabel["enabled"]}:hover [data-status=false]&`]: {
-          backgroundColor: theme.colors[tone + "3"],
-          boxShadow: `0 0 0 1.5px ${theme.colors[tone + "8"]}`,
-        },
-        [`${checkboxLabel["enabled"]} [data-status=true]&`]: {
-          backgroundColor: theme.colors[tone + "9"],
-          boxShadow: `0 0 0 1.5px ${theme.colors[tone + "9"]}`,
-        },
-        [`${checkboxLabel["enabled"]}:hover [data-status=true]&`]: {
-          backgroundColor: theme.colors[tone + "10"],
-          boxShadow: `0 0 0 1.5px ${theme.colors[tone + "10"]}`,
-        },
-
         // radix
         [`[data-state=checked]&`]: {
           backgroundColor: theme.colors[tone + "9"],

@@ -1,3 +1,4 @@
+import clsx from "clsx";
 import { motion } from "framer-motion";
 
 const logoStyle = {
@@ -32,6 +33,7 @@ const jpLogoMotion = {
 export default {
   logo: (
     <motion.div
+      className={clsx("nomimono-style", "heading")}
       layout
       animate="animate"
       initial="initial"
@@ -113,11 +115,10 @@ export default {
         />
       </svg> */}
 
-      <motion.span className="nomimono-style">🥤 </motion.span>
+      <motion.span>🥤 </motion.span>
       <motion.div
         // a placeholder for logo width
         style={{ opacity: 0 }}
-        className="nomimono-style"
       >
         Nomimono
       </motion.div>
@@ -126,7 +127,6 @@ export default {
         variants={enLogoMotion}
         // initial={{ y: 0 }}
         // animate={{ y: -40 }}
-        className="nomimono-style"
       >
         Nomimono
       </motion.div>
@@ -135,7 +135,6 @@ export default {
         style={logoStyle}
         // initial={{ y: 40 }}
         // animate={{ y: 0 }}
-        className="nomimono-style"
       >
         のみもの
       </motion.div>

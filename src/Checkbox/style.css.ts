@@ -19,6 +19,7 @@ export const checkboxLabel = styleVariants({
   disabled: [
     checkboxBase,
     {
+      opacity: 0.65,
       cursor: "not-allowed",
     },
   ],
@@ -43,10 +44,6 @@ export const checkboxRoot = style({
   selectors: {
     [`${checkboxLabel.enabled}:active &`]: {
       transform: "scale(0.9)",
-    },
-    [`&[data-disabled]`]: {
-      cursor: "not-allowed",
-      opacity: 0.65,
     },
   },
   // ':focus': {

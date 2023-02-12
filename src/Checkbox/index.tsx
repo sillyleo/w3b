@@ -61,8 +61,12 @@ function Checkbox(
       <div
         data-state={
           props.checked !== undefined
-            ? props.checked && "checked"
-            : checkbox.state && "checked"
+            ? props.checked
+              ? "checked"
+              : "unchecked"
+            : checkbox.state
+            ? "checked"
+            : "unchecked"
         } // styling based on state
         className={clsx(checkboxRoot, formTone[tone])}
       >
