@@ -42,7 +42,7 @@ function Checkbox(
   const checkbox = useCheckboxState({
     state: defaultChecked,
   });
-  console.log(checkbox.state);
+  // console.log(checkbox.state);
   return (
     <Bento
       fontSize={fontSize}
