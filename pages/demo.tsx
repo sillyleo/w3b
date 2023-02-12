@@ -1,6 +1,6 @@
 import { Text, Display, Checkbox } from "nomimono";
 
-export function Demo() {
+export default function Demo() {
   return (
     <Display>
       <Checkbox defaultChecked>Checkbox defaultChecked</Checkbox>
