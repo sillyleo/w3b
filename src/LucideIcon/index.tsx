@@ -35,7 +35,7 @@ const LucideIcon = ({
       strokeWidth={strokeWidth}
       fill={fill}
       style={{
-        flexShrink: 0,
+        flexShrink: 1,
         height: boxSize ? boxSize : undefined,
         width: boxSize ? boxSize : undefined,
         aspectRatio: "1",

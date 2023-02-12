@@ -28,10 +28,11 @@ export const checkboxLabel = styleVariants({
 // checkboxRoot
 
 export const checkboxRoot = style({
-  aspectRatio: "1/1",
+  aspectRatio: "1",
   fontSize: "inherit",
   width: "auto",
   height: "100%",
+  overflow: "hidden",
   flexShrink: 1,
   borderRadius: "25%",
   justifyContent: "center",
@@ -71,7 +72,7 @@ const up = keyframes({
 });
 
 export const checkboxIndicator = style({
-  aspectRatio: "1",
+  aspectRatio: "1/1",
   height: "24px",
   width: "24px",
   // padding: "1px",

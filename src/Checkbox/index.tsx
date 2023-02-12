@@ -8,7 +8,6 @@ import { clsx } from "clsx";
 import { Bento, LucideIcon } from "../../src";
 import { formTone } from "../styles/theme.css";
 import { TextProps } from "../Text";
-import "./style.css";
 import {
   checkboxEmoji,
   checkboxIcon,
