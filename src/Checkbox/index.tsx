@@ -14,25 +14,28 @@ export interface CheckboxExtendedProps extends CheckboxProps {
   checkEmoji?: React.ReactNode;
 }
 
-function Checkbox({
-  children,
-  defaultChecked,
-  checkEmoji,
-  fontSize,
-  tone = "gray",
-  ...rest
-}: CheckboxExtendedProps) {
+function Checkbox(
+  {
+    children,
+    defaultChecked,
+    checkEmoji,
+    fontSize,
+    tone = "gray",
+    ...rest
+  }: CheckboxExtendedProps,
+  ref
+) {
   const checkbox = useCheckboxState({ state: defaultChecked });
 
   return (
     <label>
-      <CheckboxPrimitive {...checkbox} {...rest} />
+      <CheckboxPrimitive {...checkbox} {...rest} ref={ref} />
       {children}
     </label>
   );
 }
 
-export default Checkbox;
+export default React.forwardRef(Checkbox);
 // import * as CheckboxPrimitive from "@radix-ui/react-checkbox";
 // import { clsx } from "clsx";
 // import React from "react";
