@@ -1495,6 +1495,10 @@
       }
     },
     "mauve": {
+      "0": {
+        "value": "white",
+        "type": "color"
+      },
       "1": {
         "value": "#fdfcfd",
         "type": "color"
@@ -1541,6 +1545,10 @@
       },
       "12": {
         "value": "#1a1523",
+        "type": "color"
+      },
+      "13": {
+        "value": "black",
         "type": "color"
       }
     },
