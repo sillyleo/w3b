@@ -1,51 +1,72 @@
-import _ from "lodash";
-import * as icons from "lucide-react";
-import React from "react";
+// Button.tsx
+import Bento, { BentoProps } from '../Bento';
+import { textStyle, TextStyleVariants } from './style.css';
+import React from 'react';
 
-export interface TextProps {
-  name: string;
-  color?: string;
-  size?: number;
-  strokeWidth?: number;
-  fill?: string;
+export interface TextProps extends TextStyleVariants, BentoProps {
+  children: React.ReactNode;
+  element?: keyof JSX.IntrinsicElements;
 }
 
-/**
- *
- *
- * @param {TextProps} {
- *   name,
- *   color,
- *   size,
- *   fill = "none",
- *   strokeWidth,
- *   ...props
- * }
- * @returns
- */
-const Text = ({
-  name,
-  color,
-  size,
-  fill = "none",
-  strokeWidth,
-  ...props
-}: TextProps) => {
-  const iconNameCamelCase = _.camelCase(name);
-  const IconNameUpperCase =
-    iconNameCamelCase.charAt(0).toUpperCase() + iconNameCamelCase.slice(1);
-
-  const LucideIcon = icons[IconNameUpperCase];
+export const Text = ({
+                       children,
+                       size = 'body',
+                       element = 'div', // set default element
+                       ...props
+                     }: TextProps) => {
   return (
-    <LucideIcon
-      color={color}
-      size={size ? size : "1.45em"}
-      strokeWidth={strokeWidth}
-      fill={fill}
-      style={{ flexShrink: 0 }}
-      {...props}
-    />
+    <Bento as={element}
+           className={textStyle({ size })}
+           {...props}
+    >
+      {children}
+    </Bento>
   );
 };
 
 export default Text;
+
+// import { Slot } from '@radix-ui/react-slot';
+// import React, { ReactElement } from 'react';
+// import Box, { BoxProps } from '../Box';
+// import { textStyle, TextStyleVariants } from './style.css';
+//
+// export const DefaultElement = 'p';
+//
+// // rewrite TextProps as interface
+// export interface TextProps
+//   extends BoxProps, TextStyleVariants {
+//
+//   children?: React.ReactNode;
+//   asChild?: boolean;
+// }
+//
+// const Text = React.forwardRef<ReactElement, TextProps>(
+//   (props, forwardedRef) => {
+//     // add default value here
+//     const {
+//       asChild,
+//       children,
+//       size,
+//       ...rest
+//     } = props;
+//
+//     const Component = asChild ? Slot : DefaultElement;
+//
+//
+//     return (
+//       <Box
+//         asChild={asChild}
+//         className={textStyle({
+//           size: size
+//         })}
+//         {...rest}
+//         ref={forwardedRef}
+//       >
+//         {children}
+//       </Box>
+//     );
+//   }
+// );
+//
+// export default Text;

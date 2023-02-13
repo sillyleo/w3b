@@ -1,15 +1,16 @@
-import React from "react";
-import { createTheme, defaultSideNavs } from "vite-pages-theme-doc";
-import Component404 from "./404";
-import '../../src/styles/theme.css'
-
+import React from 'react';
+import { createTheme, defaultSideNavs } from 'vite-pages-theme-doc';
+import Component404 from './404';
 
 export default createTheme({
   logo: (
     <h1
       style={{
-        fontSize: "1.25rem",
-        fontWeight: "bold",
+        fontSize: '1.25rem',
+        fontWeight: 'bold',
+        fontFamily: 'sKModernistBold',
+        lineHeight: 1,
+        margin:0,
       }}
     >
       🥤 Nomimono
@@ -38,18 +39,40 @@ export default createTheme({
   sideNavs: (ctx) => {
     return defaultSideNavs(ctx, {
       groupConfig: {
+        '/': {
+          components: {
+            label: 'Components',
+            order: -1,
+          },
+          layout: {
+            label: 'Layout',
+            order: 2,
+          },
+          experimantal: {
+            label: 'Experimental',
+            order: 20,
+          },
+          wip: {
+            label: 'Work In Progress',
+            order: 30,
+          },
+        },
         components: {
           demos: {
-            label: "Work In Progress",
+            label: 'Work In Progress',
             order: -1,
           },
           general: {
-            label: "General",
+            label: 'General',
             order: 1,
           },
-          "data-display": {
-            label: "Data Display",
+          Layout: {
+            label: 'Layout',
             order: 2,
+          },
+          experimental: {
+            label: 'experimental',
+            order: 34,
           },
         },
       },

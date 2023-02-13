@@ -1,48 +1,106 @@
 /**
- * @title Button Demo1 Title
- * @description Button demo1 description
+ * @title Button shadow Demo1 Title
+ * @description Button shadow demo1 description
  */
 
-import React from "react";
-import Icon from "../../Icon";
-import Button from "..";
+import React from 'react';
+import LucideIcon from '../../LucideIcon';
+import Button from '..';
+import Stack from '../../Stack';
 
+{
+  /* <div> */
+}
 const Demo1 = () => {
   return (
-    <div>
+    <Stack direction={'row'}>
       <Button
-        shadow
-        gradient
-        intent="secondary"
-        leftIcon={<Icon name="camera" />}
+        align='left'
+        leftIcon={<LucideIcon name='plus' />}
+        intent='primary'
+        tone='blue'
+        size='sm'
       >
-        Hello
+        New Button
       </Button>
       <Button
-        gradient
-        intent="secondary"
-        leftIcon={<Icon name="camera" />}
-        tone="indigo"
-        size="lg"
+        align='between'
+        rightIcon={<LucideIcon name='plus' />}
+        intent='secondary'
+        tone='blue'
+        size='md'
       >
-        Hello
-      </Button>{" "}
-      <Button leftIcon={<Icon name="camera" />} tone="indigo" size="md">
-        Hello
-      </Button>{" "}
+        New Button
+      </Button>
       <Button
-        gradient
-        intent="secondary"
-        leftIcon={<Icon name="camera" />}
-        tone="tomato"
-        size="sm"
+        leftIcon={<LucideIcon name='plus' />}
+        intent='ghost'
+        tone='blue'
+        size='lg'
       >
-        Hello
+        New Button
       </Button>
-      <Button intent="secondary" tone="sky">
-        Hello
+
+      <Button shadow size='sm' tone='gray' intent='primary'>
+        Button
       </Button>
-    </div>
+      <Button shadow size='md' tone='gray' intent='primary'>
+        Button
+      </Button>
+      <Button shadow size='lg' tone='gray' intent='primary'>
+        Button
+      </Button>
+
+      <Button shadow size='sm' tone='gray' intent='secondary'>
+        Button
+      </Button>
+      <Button shadow size='md' tone='gray' intent='secondary'>
+        Button
+      </Button>
+      <Button shadow size='lg' tone='gray' intent='secondary'>
+        Button
+      </Button>
+
+      <Button shadow tone={'sky'} size='sm' intent='secondary'>
+        Button Here
+      </Button>
+      <Button shadow tone={'sky'} size='md' intent='secondary'>
+        Button
+      </Button>
+      <Button shadow tone={'sky'} size='lg' intent='secondary'>
+        Button
+      </Button>
+
+      <Button shadow tone={'blue'} size='sm' intent='secondary'>
+        Button
+      </Button>
+      <Button shadow tone={'blue'} size='md' intent='secondary'>
+        Button
+      </Button>
+      <Button shadow tone={'blue'} size='lg' intent='secondary'>
+        Button
+      </Button>
+
+      <Button shadow tone={'lime'} size='sm' intent='secondary'>
+        Button
+      </Button>
+      <Button shadow tone={'lime'} size='md' intent='secondary'>
+        Button
+      </Button>
+      <Button shadow tone={'lime'} size='lg' intent='secondary'>
+        Button
+      </Button>
+
+      <Button shadow size='sm' tone='gray' intent='ghost'>
+        Button
+      </Button>
+      <Button shadow size='md' tone='gray' intent='ghost'>
+        Button
+      </Button>
+      <Button shadow size='lg' tone='gray' intent='ghost'>
+        Button
+      </Button>
+    </Stack>
   );
 };
 

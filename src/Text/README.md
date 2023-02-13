@@ -1,12 +1,16 @@
 ---
 title: Text
-subGroup: Components
+subGroup: components
 ---
 
 # Text
 
-This is a **markdown** document of the `Text` component.
+Text components is build upon `Bento` but with some additional variants.
 
 <Demo src="./demos/demo1.tsx" />
+
+```
+<TsInfo src="./index.tsx" name="TextProps" />
+```
 
 <TsInfo src="./index.tsx" name="TextProps" />

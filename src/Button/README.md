@@ -1,11 +1,12 @@
 ---
 title: Button
-subGroup: Components
+subGroup: components
 ---
 
 # Button
 
-This is a **markdown** document of the `Button` component.
+When use with `leftIcon` or `rightIcon`, make sure to use the built-in `LucideIcon` component so it can re-size
+automatically.
 
 <Demo src="./demos/demo1.tsx" />
 

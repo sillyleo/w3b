@@ -1,42 +1,41 @@
-import { styleVariants } from "@vanilla-extract/css";
 import { recipe, RecipeVariants } from "@vanilla-extract/recipes";
-import { theme } from "../../src/styles/theme.css";
-import { allTones } from "./../constants";
+import { theme, sprinkles } from "../styles/theme.css";
 
 export const buttonStyle = recipe({
-  base: {
-    fontFamily: theme.fontFamily.heading,
-    fontWeight: "bold",
-    cursor: "pointer",
-    display: "inline-flex",
-    gap: theme.spacing[2],
-    padding: 0,
-    alignItems: "center",
-    fontSize: theme.fontSize["base"],
-    lineHeight: 1,
-    border: "none",
-    position: "relative",
-    transition: "all 0.2s",
-    // ":before": {
-    //   filter:
-    //     "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='b' x='0' y='0'%3E%3CfeFlood x='4' y='4' height='2' width='2'/%3E%3CfeComposite width='10' height='10'/%3E%3CfeTile result='a'/%3E%3CfeComposite in='SourceGraphic' in2='a' operator='in'/%3E%3CfeMorphology operator='dilate' radius='5'/%3E%3C/filter%3E%3C/svg%3E#b\")",
-    //   background: "red",
-    //   position: "absolute",
-    //   content: "''",
-    //   top: 0,
-    //   left: -2,
-    //   right: -2,
-    //   bottom: -3,
-    //   zIndex: 1,
-    // },
-    ":disabled": {
-      cursor: "not-allowed",
-      opacity: 0.75,
+  base: [
+    {
+      userSelect: "none",
+      position: "relative",
+      // all: "unset",
+      ":disabled": {
+        cursor: "not-allowed",
+        opacity: 0.75,
+      },
+
+      selectors: {
+        "&:hover": {
+          transform: "translateY(-1px)",
+        },
+        "&:active": {
+          transform: "translateY(1px) scale(0.98)",
+        },
+      },
     },
-    ":active": {
-      transform: "translateY(1px) scale(0.98)",
-    },
-  },
+    sprinkles({
+      fontFamily: "heading",
+      fontWeight: "bold",
+      cursor: "pointer",
+      display: "inline-flex",
+      gap: "2",
+      p: "0",
+      alignItems: "center",
+      fontSize: "base",
+      lineHeight: "single",
+      border: "0",
+      position: "relative",
+      transition: "fast",
+    }),
+  ],
   variants: {
     size: {
       sm: {
@@ -103,6 +102,12 @@ export const buttonStyle = recipe({
         justifyContent: "space-around",
       },
     },
+    isLoading: {
+      true: {
+        opacity: 0.75,
+        cursor: "wait",
+      },
+    },
   },
   compoundVariants: [
     {
@@ -149,179 +154,3 @@ export const buttonStyle = recipe({
 export type ButtonVariants = RecipeVariants<typeof buttonStyle>;
 
 // Genertate tone and intent variants with code, using style variants
-
-// primaryClass[tone]
-export const primaryClass = styleVariants(allTones, (tone) => {
-  // color bg + black text
-  if (
-    tone === "sky" ||
-    tone === "mint" ||
-    tone === "lime" ||
-    tone === "yellow" ||
-    tone === "amber"
-  ) {
-    return {
-      backgroundColor: theme.colors[tone + "9"],
-      ":hover": {
-        backgroundColor: theme.colors[tone + "10"],
-      },
-      ":active": {
-        backgroundColor: theme.colors[tone + "11"],
-      },
-      color: theme.colors[tone + "12"],
-    };
-  } else if (
-    tone === "gray" ||
-    tone === "mauve" ||
-    tone === "slate" ||
-    tone === "sage" ||
-    tone === "olive" ||
-    tone === "sand"
-  ) {
-    // grayscale series
-    return {
-      backgroundColor: theme.colors[tone + "12"],
-      ":hover": {
-        backgroundColor: theme.colors[tone + "12"],
-      },
-      ":active": {
-        backgroundColor: theme.colors[tone + "11"],
-      },
-      color: theme.colors[tone + "2"],
-    };
-  } else {
-    // color bg + white text
-
-    return {
-      backgroundColor: theme.colors[tone + "9"],
-      ":hover": {
-        backgroundColor: theme.colors[tone + "10"],
-      },
-      ":active": {
-        backgroundColor: theme.colors[tone + "11"],
-      },
-      color: theme.colors.white,
-    };
-  }
-});
-
-// secondaryClass[tone]
-export const secondaryClass = styleVariants(allTones, (tone: keyof Colors) => {
-  // color bg + black text
-  if (
-    tone === "sky" ||
-    tone === "mint" ||
-    tone === "lime" ||
-    tone === "yellow" ||
-    tone === "amber"
-  ) {
-    return {
-      backgroundColor: theme.colors[tone + "4"],
-      ":hover": {
-        backgroundColor: theme.colors[tone + "5"],
-      },
-      ":active": {
-        backgroundColor: theme.colors[tone + "6"],
-      },
-      color: theme.colors[tone + "11"],
-    };
-  } else if (
-    tone === "gray" ||
-    tone === "mauve" ||
-    tone === "slate" ||
-    tone === "sage" ||
-    tone === "olive" ||
-    tone === "sand"
-  ) {
-    // grayscale series
-    return {
-      backgroundColor: theme.colors[tone + "4"],
-      ":hover": {
-        backgroundColor: theme.colors[tone + "5"],
-      },
-      ":active": {
-        backgroundColor: theme.colors[tone + "6"],
-      },
-      color: theme.colors[tone + "12"],
-    };
-  } else {
-    // color bg
-
-    return {
-      backgroundColor: theme.colors[tone + "4"],
-      ":hover": {
-        backgroundColor: theme.colors[tone + "5"],
-      },
-      ":active": {
-        backgroundColor: theme.colors[tone + "6"],
-      },
-      color: theme.colors[tone + "11"],
-    };
-  }
-});
-// tertiaryClass[tone]
-export const ghostClass = styleVariants(allTones, (tone: keyof Colors) => {
-  if (
-    tone === "gray" ||
-    tone === "mauve" ||
-    tone === "slate" ||
-    tone === "sage" ||
-    tone === "olive" ||
-    tone === "sand"
-  ) {
-    return {
-      // grayscale series
-
-      backgroundColor: "transparent",
-      ":hover": {
-        backgroundColor: theme.colors[tone + "3"],
-        color: theme.colors[tone + "12"],
-      },
-      ":active": {
-        backgroundColor: theme.colors[tone + "4"],
-      },
-
-      color: theme.colors[tone + "11"],
-    };
-  } else {
-    return {
-      backgroundColor: "transparent",
-      ":hover": {
-        color: theme.colors[tone + "12"],
-        backgroundColor: theme.colors[tone + "3"],
-      },
-      ":active": {
-        backgroundColor: theme.colors[tone + "4"],
-      },
-      color: theme.colors[tone + "11"],
-    };
-  }
-});
-
-// primaryClass[tone]
-export const primaryShadowClass = styleVariants(allTones, (tone) => {
-  // color bg + black text
-  return {
-    boxShadow: `0 5px 12px ${theme.colors[tone + "7"]}, 0 1px 6px ${
-      theme.colors[tone + "5"]
-    }`,
-  };
-});
-
-// primaryClass[tone]
-export const secondaryShadowClass = styleVariants(allTones, (tone) => {
-  // color bg + black text
-  return {
-    boxShadow: `0 5px 12px ${theme.colors[tone + "6"]}, 0 1px 6px ${
-      theme.colors[tone + "5"]
-    }`,
-  };
-});
-
-// tertiaryClass[tone]
-export const ghostShadowClass = styleVariants(allTones, (tone) => {
-  // color bg + black text
-  return {
-    boxShadow: "none",
-  };
-});

@@ -3,6 +3,7 @@ import * as path from "path";
 import react from "@vitejs/plugin-react";
 import pages, { DefaultPageStrategy } from "vite-plugin-react-pages";
 import { vanillaExtractPlugin } from "@vanilla-extract/vite-plugin";
+
 export default defineConfig({
   plugins: [
     vanillaExtractPlugin(),
@@ -67,10 +68,4 @@ export default defineConfig({
       }),
     }),
   ],
-  // resolve: {
-  //   alias: {
-  //     w3b: path.join(__dirname, "../../"),
-  //     nonimono: path.join(__dirname, "../../"),
-  //   },
-  // },
 });
