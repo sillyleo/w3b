@@ -1,14 +1,14 @@
 # Input
 
-import { Tabs,Display } from "ui";
+import { Tabs, Display } from "ui";
 
-<Tabs.Root defaultValue="tab1">
-    <Tabs.List aria-label="tabs">
-      <Tabs.Trigger value="tab1">One</Tabs.Trigger>
-      <Tabs.Trigger value="tab2">Two</Tabs.Trigger>
-      <Tabs.Trigger value="tab3">Three</Tabs.Trigger>
-    </Tabs.List>
-    <Tabs.Content value="tab1">Tab one content</Tabs.Content>
-    <Tabs.Content value="tab2">Tab two content</Tabs.Content>
-    <Tabs.Content value="tab3">Tab three content</Tabs.Content>
-  </Tabs.Root>
+<Display label="tabs">
+  <Tabs.TabList aria-label="My tabs">
+    <Tabs.TabItem>TabItem 1</Tabs.TabItem>
+    <Tabs.TabItem>TabItem 2</Tabs.TabItem>
+  </Tabs.TabList>
+  <Tabs.TabPanel>Tab 1</Tabs.TabPanel>
+  <Tabs.TabPanel>Tab 2</Tabs.TabPanel>
+</Display>
+
+<Tabs.TabDemo />
