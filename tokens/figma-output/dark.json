@@ -1458,5 +1458,15 @@
         "type": "color"
       }
     }
+  },
+  "pure": {
+    "background": {
+      "value": "black",
+      "type": "color"
+    },
+    "foreground": {
+      "value": "white",
+      "type": "color"
+    }
   }
 }
