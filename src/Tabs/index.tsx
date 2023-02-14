@@ -1,10 +1,27 @@
-import clsx from "clsx";
-import React from "react";
-import Bento, { BentoProps } from "../Bento";
-import { base } from "./style.css";
+import * as Tabs from '@radix-ui/react-tabs';
 
-export interface TabsProps extends BentoProps {}
+const Root = (props) => {
+  return (
+    <Tabs.Root {...props} />
+  )
+}
 
-const Tabs = ({ ...props }: TabsProps) => <Bento />;
+const List = (props) => {
+  return (
+    <Tabs.List {...props} />
+  )
+}
 
-export default Tabs;
+const Trigger = (props) => {
+  return (
+    <Tabs.Trigger {...props} />
+  )
+}
+
+const Content = (props) => {
+  return (
+    <Tabs.Content {...props} />
+  )
+}
+
+export default { Root, List, Trigger, Content }
