@@ -1,4 +1,19 @@
 {
+  "brand": {
+    "hover": "#6DEFBF",
+    "primary": "#3CEAAA",
+    "pressed": "#33C790",
+    "disable": "#1E7555",
+    "secondary": "#03BCE4"
+  },
+  "support": {
+    "red": "#F16769",
+    "orange": "#FFB459",
+    "blue": "#4EA3FE",
+    "purpple": "#C692E0",
+    "silver": "#D3D5F2",
+    "yellow": "#FFED70"
+  },
   "colors": {
     "tomato": {
       "1": "#fffcfc",
@@ -323,7 +338,6 @@
       "12": "#171717"
     },
     "mauve": {
-      "0": "black",
       "1": "#fdfcfd",
       "2": "#f9f8f9",
       "3": "#f4f2f4",
@@ -335,8 +349,7 @@
       "9": "#908e96",
       "10": "#86848d",
       "11": "#6f6e77",
-      "12": "#1a1523",
-      "13": "white"
+      "12": "#1a1523"
     },
     "slate": {
       "1": "#fbfcfd",
@@ -449,7 +462,7 @@
   },
   "lineHeights": {
     "heading": "110%",
-    "body": "140%",
+    "body": "150%",
     "single": "100%"
   },
   "letterSpacing": {
@@ -469,8 +482,8 @@
     "2xl": "36px",
     "xl": "24px",
     "lg": "18px",
-    "base": "15px",
-    "sm": "13px",
+    "base": "16px",
+    "sm": "14px",
     "xs": "11px"
   },
   "typography": {
@@ -513,7 +526,7 @@
       "fontFamily": "Sk-Modernist",
       "fontWeight": 700,
       "lineHeight": "110%",
-      "fontSize": "15px",
+      "fontSize": "16px",
       "letterSpacing": "-2%"
     },
     "overline": {
@@ -527,28 +540,28 @@
     "body": {
       "fontFamily": "Inter",
       "fontWeight": 400,
-      "lineHeight": "140%",
-      "fontSize": "15px",
+      "lineHeight": "150%",
+      "fontSize": "16px",
       "letterSpacing": "0%"
     },
     "body-bold": {
       "fontFamily": "Inter",
       "fontWeight": 700,
-      "lineHeight": "140%",
-      "fontSize": "15px",
+      "lineHeight": "150%",
+      "fontSize": "16px",
       "letterSpacing": "0%"
     },
     "label": {
       "fontFamily": "Inter",
       "fontWeight": 400,
-      "lineHeight": "140%",
-      "fontSize": "13px",
+      "lineHeight": "150%",
+      "fontSize": "14px",
       "letterSpacing": "0%"
     },
     "caption": {
       "fontFamily": "Inter",
       "fontWeight": 400,
-      "lineHeight": "140%",
+      "lineHeight": "150%",
       "fontSize": "11px",
       "letterSpacing": "0%"
     }
@@ -884,7 +897,6 @@
       "12": "#171717"
     },
     "mauve": {
-      "0": "white",
       "1": "#fdfcfd",
       "2": "#f9f8f9",
       "3": "#f4f2f4",
@@ -896,8 +908,7 @@
       "9": "#908e96",
       "10": "#86848d",
       "11": "#6f6e77",
-      "12": "#1a1523",
-      "13": "black"
+      "12": "#1a1523"
     },
     "slate": {
       "1": "#fbfcfd",
@@ -1527,6 +1538,10 @@
     "background": "#fbfcfd",
     "backgroundSecondary": "#f8f9fa",
     "backgroundTertiary": "#f1f3f5"
+  },
+  "pure": {
+    "background": "#FFFFFF",
+    "foreground": "black"
   },
   "tokenSetOrder": {
     "0": "global",

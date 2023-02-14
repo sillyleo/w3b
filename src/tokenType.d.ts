@@ -1,4 +1,6 @@
 interface RootObject {
+  brand: Brand;
+  support: Support;
   colors: Colors;
   borderRadius: BorderRadius;
   borderWidth: BorderWidth;
@@ -16,6 +18,7 @@ interface RootObject {
   screens: Screens;
   boxShadow: BoxShadow;
   base: Base;
+  pure: Pure;
   tokenSetOrder: TokenSetOrder;
 }
 interface TokenSetOrder {
@@ -23,6 +26,10 @@ interface TokenSetOrder {
   '1': string;
   '2': string;
   '3': string;
+}
+interface Pure {
+  background: string;
+  foreground: string;
 }
 interface Base {
   white: string;
@@ -242,4 +249,19 @@ interface Tomato {
   '10': string;
   '11': string;
   '12': string;
+}
+interface Support {
+  red: string;
+  orange: string;
+  blue: string;
+  purpple: string;
+  silver: string;
+  yellow: string;
+}
+interface Brand {
+  hover: string;
+  primary: string;
+  pressed: string;
+  disable: string;
+  secondary: string;
 }

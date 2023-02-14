@@ -1,4 +1,52 @@
 {
+  "brand": {
+    "hover": {
+      "value": "#6DEFBF",
+      "type": "color"
+    },
+    "primary": {
+      "value": "#3CEAAA",
+      "type": "color"
+    },
+    "pressed": {
+      "value": "#33C790",
+      "type": "color"
+    },
+    "disable": {
+      "value": "#1E7555",
+      "type": "color"
+    },
+    "secondary": {
+      "value": "#03BCE4",
+      "type": "color"
+    }
+  },
+  "support": {
+    "red": {
+      "value": "#F16769",
+      "type": "color"
+    },
+    "orange": {
+      "value": "#FFB459",
+      "type": "color"
+    },
+    "blue": {
+      "value": "#4EA3FE",
+      "type": "color"
+    },
+    "purpple": {
+      "value": "#C692E0",
+      "type": "color"
+    },
+    "silver": {
+      "value": "#D3D5F2",
+      "type": "color"
+    },
+    "yellow": {
+      "value": "#FFED70",
+      "type": "color"
+    }
+  },
   "colors": {
     "tomato": {
       "1": {
@@ -1151,10 +1199,6 @@
       }
     },
     "mauve": {
-      "0": {
-        "value": "black",
-        "type": "color"
-      },
       "1": {
         "value": "#fdfcfd",
         "type": "color"
@@ -1201,10 +1245,6 @@
       },
       "12": {
         "value": "#1a1523",
-        "type": "color"
-      },
-      "13": {
-        "value": "white",
         "type": "color"
       }
     },
@@ -1593,7 +1633,7 @@
       "type": "lineHeights"
     },
     "body": {
-      "value": "140%",
+      "value": "150%",
       "type": "lineHeights"
     },
     "single": {
@@ -1655,11 +1695,11 @@
       "type": "fontSizes"
     },
     "base": {
-      "value": "15px",
+      "value": "16px",
       "type": "fontSizes"
     },
     "sm": {
-      "value": "13px",
+      "value": "14px",
       "type": "fontSizes"
     },
     "xs": {
@@ -2955,10 +2995,6 @@
       }
     },
     "mauve": {
-      "0": {
-        "value": "white",
-        "type": "color"
-      },
       "1": {
         "value": "#fdfcfd",
         "type": "color"
@@ -3005,10 +3041,6 @@
       },
       "12": {
         "value": "#1a1523",
-        "type": "color"
-      },
-      "13": {
-        "value": "black",
         "type": "color"
       }
     },
@@ -5031,6 +5063,16 @@
     },
     "backgroundTertiary": {
       "value": "{colors.slate.3}",
+      "type": "color"
+    }
+  },
+  "pure": {
+    "background": {
+      "value": "#FFFFFF",
+      "type": "color"
+    },
+    "foreground": {
+      "value": "black",
       "type": "color"
     }
   },
