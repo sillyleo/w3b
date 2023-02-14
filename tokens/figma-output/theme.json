@@ -1,1 +1,50 @@
-{}
+{
+  "brand": {
+    "hover": {
+      "value": "#6DEFBF",
+      "type": "color"
+    },
+    "primary": {
+      "value": "#3CEAAA",
+      "type": "color"
+    },
+    "pressed": {
+      "value": "#33C790",
+      "type": "color"
+    },
+    "disable": {
+      "value": "#1E7555",
+      "type": "color"
+    },
+    "secondary": {
+      "value": "#03BCE4",
+      "type": "color"
+    }
+  },
+  "support": {
+    "red": {
+      "value": "#F16769",
+      "type": "color"
+    },
+    "orange": {
+      "value": "#FFB459",
+      "type": "color"
+    },
+    "blue": {
+      "value": "#4EA3FE",
+      "type": "color"
+    },
+    "purpple": {
+      "value": "#C692E0",
+      "type": "color"
+    },
+    "silver": {
+      "value": "#D3D5F2",
+      "type": "color"
+    },
+    "yellow": {
+      "value": "#FFED70",
+      "type": "color"
+    }
+  }
+}
