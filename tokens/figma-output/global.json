@@ -1793,6 +1793,32 @@
         "value": "#00254d",
         "type": "color"
       }
+    },
+    "base": {
+      "text": {
+        "value": "{colors.slate.12}",
+        "type": "color"
+      },
+      "textSecondary": {
+        "value": "{colors.slate.11}",
+        "type": "color"
+      },
+      "textTertiary": {
+        "value": "{colors.slate.9}",
+        "type": "color"
+      },
+      "background": {
+        "value": "{colors.slate.1}",
+        "type": "color"
+      },
+      "backgroundSecondary": {
+        "value": "{colors.slate.2}",
+        "type": "color"
+      },
+      "backgroundTertiary": {
+        "value": "{colors.slate.3}",
+        "type": "color"
+      }
     }
   },
   "dark": {
@@ -3245,6 +3271,32 @@
         "value": "#eaf6ff",
         "type": "color"
       }
+    },
+    "base": {
+      "text": {
+        "value": "{colors.slate.12}",
+        "type": "color"
+      },
+      "textSecondary": {
+        "value": "{colors.slate.11}",
+        "type": "color"
+      },
+      "textTertiary": {
+        "value": "{colors.slate.9}",
+        "type": "color"
+      },
+      "background": {
+        "value": "{colors.slate.1}",
+        "type": "color"
+      },
+      "backgroundSecondary": {
+        "value": "{colors.slate.2}",
+        "type": "color"
+      },
+      "backgroundTertiary": {
+        "value": "{colors.slate.3}",
+        "type": "color"
+      }
     }
   },
   "spacing": {
@@ -3530,40 +3582,6 @@
         "type": "innerShadow"
       },
       "type": "boxShadow"
-    }
-  },
-  "base": {
-    "white": {
-      "value": "#fff",
-      "type": "color"
-    },
-    "black": {
-      "value": "#000",
-      "type": "color"
-    },
-    "text": {
-      "value": "{colors.slate.12}",
-      "type": "color"
-    },
-    "textSecondary": {
-      "value": "{colors.slate.11}",
-      "type": "color"
-    },
-    "textTertiary": {
-      "value": "{colors.slate.9}",
-      "type": "color"
-    },
-    "background": {
-      "value": "{colors.slate.1}",
-      "type": "color"
-    },
-    "backgroundSecondary": {
-      "value": "{colors.slate.2}",
-      "type": "color"
-    },
-    "backgroundTertiary": {
-      "value": "{colors.slate.3}",
-      "type": "color"
     }
   },
   "pure": {
