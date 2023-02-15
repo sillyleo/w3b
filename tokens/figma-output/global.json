@@ -122,10 +122,6 @@
       "value": "Sk-Modernist",
       "type": "fontFamilies"
     },
-    "branding": {
-      "value": "Sk-Modernist",
-      "type": "fontFamilies"
-    },
     "body": {
       "value": "Inter",
       "type": "fontFamilies"
@@ -1800,27 +1796,27 @@
     },
     "base": {
       "text": {
-        "value": "{colors.slate.12}",
+        "value": "#11181c",
         "type": "color"
       },
       "textSecondary": {
-        "value": "{colors.slate.11}",
+        "value": "#687076",
         "type": "color"
       },
       "textTertiary": {
-        "value": "{colors.slate.9}",
+        "value": "#889096",
         "type": "color"
       },
       "background": {
-        "value": "{colors.slate.1}",
+        "value": "#fbfcfd",
         "type": "color"
       },
       "backgroundSecondary": {
-        "value": "{colors.slate.2}",
+        "value": "#f8f9fa",
         "type": "color"
       },
       "backgroundTertiary": {
-        "value": "{colors.slate.3}",
+        "value": "#f1f3f5",
         "type": "color"
       }
     }
@@ -3278,27 +3274,27 @@
     },
     "base": {
       "text": {
-        "value": "{colors.slate.12}",
+        "value": "#ecedee",
         "type": "color"
       },
       "textSecondary": {
-        "value": "{colors.slate.11}",
+        "value": "#9ba1a6",
         "type": "color"
       },
       "textTertiary": {
-        "value": "{colors.slate.9}",
+        "value": "#697177",
         "type": "color"
       },
       "background": {
-        "value": "{colors.slate.1}",
+        "value": "#151718",
         "type": "color"
       },
       "backgroundSecondary": {
-        "value": "{colors.slate.2}",
+        "value": "#1a1d1e",
         "type": "color"
       },
       "backgroundTertiary": {
-        "value": "{colors.slate.3}",
+        "value": "#202425",
         "type": "color"
       }
     }

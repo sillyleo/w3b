@@ -1400,32 +1400,6 @@
         "type": "color"
       }
     },
-    "base": {
-      "text": {
-        "value": "#ecedee",
-        "type": "color"
-      },
-      "textSecondary": {
-        "value": "#9ba1a6",
-        "type": "color"
-      },
-      "textTertiary": {
-        "value": "#697177",
-        "type": "color"
-      },
-      "background": {
-        "value": "#151718",
-        "type": "color"
-      },
-      "backgroundSecondary": {
-        "value": "#1a1d1e",
-        "type": "color"
-      },
-      "backgroundTertiary": {
-        "value": "#202425",
-        "type": "color"
-      }
-    },
     "accent": {
       "1": {
         "value": "#fbfdff",
@@ -1475,6 +1449,42 @@
         "value": "#00254d",
         "type": "color"
       }
+    },
+    "base": {
+      "text": {
+        "value": "#11181c",
+        "type": "color"
+      },
+      "textSecondary": {
+        "value": "#687076",
+        "type": "color"
+      },
+      "textTertiary": {
+        "value": "#889096",
+        "type": "color"
+      },
+      "background": {
+        "value": "#fbfcfd",
+        "type": "color"
+      },
+      "backgroundSecondary": {
+        "value": "#f8f9fa",
+        "type": "color"
+      },
+      "backgroundTertiary": {
+        "value": "#f1f3f5",
+        "type": "color"
+      }
+    }
+  },
+  "pure": {
+    "background": {
+      "value": "white",
+      "type": "color"
+    },
+    "foreground": {
+      "value": "black",
+      "type": "color"
     }
   }
 }
