@@ -58,15 +58,17 @@ const List = ({
   );
 };
 
-export type TriggerProps = React.ComponentProps<typeof Tabs.Trigger> & {
-  value: string;
-  tone?: keyof Colors;
-  size?: TriggerVariants["size"];
-};
+export type TriggerProps = React.ComponentProps<typeof Tabs.Trigger> &
+  React.ComponentProps<typeof Bento> & {
+    value: string;
+    tone?: keyof Colors;
+    size?: TriggerVariants["size"];
+  };
 
 const Trigger = ({ size = "md", tone = "slate", ...props }: TriggerProps) => {
   return (
-    <Tabs.Trigger
+    <Bento
+      as={Tabs.Trigger}
       className={clsx(
         triggerStyle({
           size: size,
