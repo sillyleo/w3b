@@ -54,7 +54,7 @@ export const Banner = () => {
       px="8"
       py="12"
       borderRadius="2xl"
-      background="basebackground"
+      background="basebackgroundTertiary"
     >
       <div style={{ fontSize: "clamp(5rem, 5vw, 8rem)", lineHeight: 1.2 }}>
         <Mono />
@@ -62,7 +62,7 @@ export const Banner = () => {
       <Stack gap="0">
         <Stack direction="column" gap="0">
           <Text
-            color="basetextSecondary"
+            color="basetextTertiary"
             size="page-title"
             fontWeight="bold"
             style={{

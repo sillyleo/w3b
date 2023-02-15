@@ -61,7 +61,7 @@ const commonTokens = {
   opacity: figmaTokens.opacity,
   fontFamily: {
     heading: `${figmaTokens.fontFamilies.heading},'SkModernistBold',SkModernistBold,'Sk-Modernist-Bold',sans-serif`,
-    branding: `${figmaTokens.fontFamilies.branding},'SkModernistRegular',SkModernistRegular,'Sk-Modernist-Regular',sans-serif`,
+    branding: `${figmaTokens.fontFamilies.heading},'SkModernistRegular',SkModernistRegular,'Sk-Modernist-Regular',sans-serif`,
     body: `'Inter Tight',${figmaTokens.fontFamilies.body}, sans-serif`,
   },
   fontSize: figmaTokens.fontSizes,
