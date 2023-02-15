@@ -109,25 +109,7 @@ export const triggerShadowTone = styleVariants(
 
 // triggerTone[tone]
 export const triggerTone = styleVariants(allTones, (tone: keyof Colors) => {
-  // color bg + black text
   if (
-    tone === "sky" ||
-    tone === "mint" ||
-    tone === "lime" ||
-    tone === "yellow" ||
-    tone === "amber"
-  ) {
-    return {
-      selectors: {
-        [`[data-state=active]&`]: {
-          backgroundColor: theme.colors.background,
-          color: theme.colors[tone + "11"],
-        },
-      },
-
-      color: theme.colors[tone + "8"],
-    };
-  } else if (
     tone === "gray" ||
     tone === "mauve" ||
     tone === "slate" ||
@@ -140,20 +122,18 @@ export const triggerTone = styleVariants(allTones, (tone: keyof Colors) => {
       selectors: {
         [`[data-state=active]&`]: {
           backgroundColor: theme.colors.background,
-          color: theme.colors[tone + "11"],
+          color: theme.colors.text,
         },
       },
 
-      color: theme.colors[tone + "8"],
+      color: theme.colors[tone + "10"],
     };
   } else {
-    // color bg
-
     return {
       selectors: {
         [`[data-state=active]&`]: {
           backgroundColor: theme.colors.background,
-          color: theme.colors[tone + "11"],
+          color: theme.colors.text,
         },
       },
 
