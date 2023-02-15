@@ -125,6 +125,7 @@ export const triggerTone = styleVariants(allTones, (tone: keyof Colors) => {
           color: theme.colors.text,
         },
       },
+      backgroundColor: "transparent",
 
       color: theme.colors[tone + "10"],
     };
@@ -136,6 +137,7 @@ export const triggerTone = styleVariants(allTones, (tone: keyof Colors) => {
           color: theme.colors.text,
         },
       },
+      backgroundColor: "transparent",
 
       color: theme.colors[tone + "8"],
     };

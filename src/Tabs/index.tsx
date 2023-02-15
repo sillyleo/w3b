@@ -1,18 +1,16 @@
+import * as Tabs from "@radix-ui/react-tabs";
 import "./style.css";
 import {
   contentStyle,
-  itemStyle,
   listStyle,
   listTone,
   ListVariant,
-  panelStyle,
   rootStyle,
   triggerShadowTone,
   triggerStyle,
   triggerTone,
   TriggerVariants,
 } from "./style.css";
-import * as Tabs from "@radix-ui/react-tabs";
 
 // import {
 //   Tab as TabPrimitive,
@@ -20,10 +18,9 @@ import * as Tabs from "@radix-ui/react-tabs";
 //   TabPanel as TabPanelPrimitive,
 //   useTabState,
 // } from "reakit/Tab";
-import Bento from "src/Bento";
-import { Button } from "src/Button";
-import React from "react";
 import clsx from "clsx";
+import React from "react";
+import Bento from "src/Bento";
 
 export type RootProps = React.ComponentProps<typeof Tabs.Root> &
   React.ComponentProps<typeof Bento> & {
