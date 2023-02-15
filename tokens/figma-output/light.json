@@ -1400,6 +1400,32 @@
         "type": "color"
       }
     },
+    "base": {
+      "text": {
+        "value": "#ecedee",
+        "type": "color"
+      },
+      "textSecondary": {
+        "value": "#9ba1a6",
+        "type": "color"
+      },
+      "textTertiary": {
+        "value": "#697177",
+        "type": "color"
+      },
+      "background": {
+        "value": "#151718",
+        "type": "color"
+      },
+      "backgroundSecondary": {
+        "value": "#1a1d1e",
+        "type": "color"
+      },
+      "backgroundTertiary": {
+        "value": "#202425",
+        "type": "color"
+      }
+    },
     "accent": {
       "1": {
         "value": "#fbfdff",
