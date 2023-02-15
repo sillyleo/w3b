@@ -32,6 +32,7 @@ export const triggerStyle = recipe({
     {},
     sprinkles({
       transition: "slow",
+      fontWeight: "normal",
       fontFamily: "heading",
       cursor: "pointer",
       display: "inline-flex",
