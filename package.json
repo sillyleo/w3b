@@ -1,7 +1,7 @@
 {
   "name": "@sayaww/nomimono",
   "private": false,
-  "version": "0.0.121",
+  "version": "0.0.132",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/sillyleo/nomimono.git"
@@ -44,6 +44,7 @@
     "@radix-ui/react-popover": "^1.0.3",
     "@radix-ui/react-select": "^1.2.0",
     "@radix-ui/react-slot": "^1.0.1",
+    "@radix-ui/react-tabs": "^1.0.2",
     "@radix-ui/react-toggle": "^1.0.1",
     "@radix-ui/react-toggle-group": "^1.0.2",
     "@vanilla-extract/css": "^1.9.5",

@@ -54,7 +54,7 @@ export const Banner = () => {
       px="8"
       py="12"
       borderRadius="2xl"
-      background="backgroundSecondary"
+      background="basebackground"
     >
       <div style={{ fontSize: "clamp(5rem, 5vw, 8rem)", lineHeight: 1.2 }}>
         <Mono />
@@ -62,6 +62,7 @@ export const Banner = () => {
       <Stack gap="0">
         <Stack direction="column" gap="0">
           <Text
+            color="basetextSecondary"
             size="page-title"
             fontWeight="bold"
             style={{
@@ -73,6 +74,7 @@ export const Banner = () => {
             のみもの
           </Text>
           <Text
+            color="basetext"
             size="page-title"
             fontWeight="bold"
             style={{ fontSize: "clamp(2rem, 5vw, 7rem)", lineHeight: 1.1 }}
@@ -80,7 +82,7 @@ export const Banner = () => {
             Nomimono
           </Text>
         </Stack>
-        <Text size="subtitle1" color="textTertiary">
+        <Text size="subtitle1" color="basetextTertiary">
           A simple web3-flavored component library
         </Text>
       </Stack>

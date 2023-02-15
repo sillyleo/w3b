@@ -1,4 +1,52 @@
 {
+  "brand": {
+    "hover": {
+      "value": "#6DEFBF",
+      "type": "color"
+    },
+    "primary": {
+      "value": "#3CEAAA",
+      "type": "color"
+    },
+    "pressed": {
+      "value": "#33C790",
+      "type": "color"
+    },
+    "disable": {
+      "value": "#1E7555",
+      "type": "color"
+    },
+    "secondary": {
+      "value": "#03BCE4",
+      "type": "color"
+    }
+  },
+  "support": {
+    "red": {
+      "value": "#F16769",
+      "type": "color"
+    },
+    "orange": {
+      "value": "#FFB459",
+      "type": "color"
+    },
+    "blue": {
+      "value": "#4EA3FE",
+      "type": "color"
+    },
+    "purpple": {
+      "value": "#C692E0",
+      "type": "color"
+    },
+    "silver": {
+      "value": "#D3D5F2",
+      "type": "color"
+    },
+    "yellow": {
+      "value": "#FFED70",
+      "type": "color"
+    }
+  },
   "colors": {
     "tomato": {
       "1": {
@@ -1151,10 +1199,6 @@
       }
     },
     "mauve": {
-      "0": {
-        "value": "black",
-        "type": "color"
-      },
       "1": {
         "value": "#fdfcfd",
         "type": "color"
@@ -1201,10 +1245,6 @@
       },
       "12": {
         "value": "#1a1523",
-        "type": "color"
-      },
-      "13": {
-        "value": "white",
         "type": "color"
       }
     },
@@ -1408,6 +1448,32 @@
         "type": "color"
       }
     },
+    "base": {
+      "text": {
+        "value": "#ecedee",
+        "type": "color"
+      },
+      "textSecondary": {
+        "value": "#9ba1a6",
+        "type": "color"
+      },
+      "textTertiary": {
+        "value": "#697177",
+        "type": "color"
+      },
+      "background": {
+        "value": "#151718",
+        "type": "color"
+      },
+      "backgroundSecondary": {
+        "value": "#1a1d1e",
+        "type": "color"
+      },
+      "backgroundTertiary": {
+        "value": "#202425",
+        "type": "color"
+      }
+    },
     "accent": {
       "1": {
         "value": "#fbfdff",
@@ -1582,6 +1648,10 @@
       "value": "Sk-Modernist",
       "type": "fontFamilies"
     },
+    "branding": {
+      "value": "Sk-Modernist",
+      "type": "fontFamilies"
+    },
     "body": {
       "value": "Inter",
       "type": "fontFamilies"
@@ -1593,7 +1663,7 @@
       "type": "lineHeights"
     },
     "body": {
-      "value": "140%",
+      "value": "150%",
       "type": "lineHeights"
     },
     "single": {
@@ -1655,11 +1725,11 @@
       "type": "fontSizes"
     },
     "base": {
-      "value": "15px",
+      "value": "16px",
       "type": "fontSizes"
     },
     "sm": {
-      "value": "13px",
+      "value": "14px",
       "type": "fontSizes"
     },
     "xs": {
@@ -2955,10 +3025,6 @@
       }
     },
     "mauve": {
-      "0": {
-        "value": "white",
-        "type": "color"
-      },
       "1": {
         "value": "#fdfcfd",
         "type": "color"
@@ -3005,10 +3071,6 @@
       },
       "12": {
         "value": "#1a1523",
-        "type": "color"
-      },
-      "13": {
-        "value": "black",
         "type": "color"
       }
     },
@@ -3259,6 +3321,32 @@
       },
       "12": {
         "value": "#00254d",
+        "type": "color"
+      }
+    },
+    "base": {
+      "text": {
+        "value": "{colors.slate.12}",
+        "type": "color"
+      },
+      "textSecondary": {
+        "value": "{colors.slate.11}",
+        "type": "color"
+      },
+      "textTertiary": {
+        "value": "{colors.slate.9}",
+        "type": "color"
+      },
+      "background": {
+        "value": "{colors.slate.1}",
+        "type": "color"
+      },
+      "backgroundSecondary": {
+        "value": "{colors.slate.2}",
+        "type": "color"
+      },
+      "backgroundTertiary": {
+        "value": "{colors.slate.3}",
         "type": "color"
       }
     }
@@ -4713,6 +4801,32 @@
         "value": "#eaf6ff",
         "type": "color"
       }
+    },
+    "base": {
+      "text": {
+        "value": "{colors.slate.12}",
+        "type": "color"
+      },
+      "textSecondary": {
+        "value": "{colors.slate.11}",
+        "type": "color"
+      },
+      "textTertiary": {
+        "value": "{colors.slate.9}",
+        "type": "color"
+      },
+      "background": {
+        "value": "{colors.slate.1}",
+        "type": "color"
+      },
+      "backgroundSecondary": {
+        "value": "{colors.slate.2}",
+        "type": "color"
+      },
+      "backgroundTertiary": {
+        "value": "{colors.slate.3}",
+        "type": "color"
+      }
     }
   },
   "spacing": {
@@ -5000,37 +5114,13 @@
       "type": "boxShadow"
     }
   },
-  "base": {
-    "white": {
-      "value": "#fff",
-      "type": "color"
-    },
-    "black": {
-      "value": "#000",
-      "type": "color"
-    },
-    "text": {
-      "value": "{colors.slate.12}",
-      "type": "color"
-    },
-    "textSecondary": {
-      "value": "{colors.slate.11}",
-      "type": "color"
-    },
-    "textTertiary": {
-      "value": "{colors.slate.9}",
-      "type": "color"
-    },
+  "pure": {
     "background": {
-      "value": "{colors.slate.1}",
+      "value": "#FFFFFF",
       "type": "color"
     },
-    "backgroundSecondary": {
-      "value": "{colors.slate.2}",
-      "type": "color"
-    },
-    "backgroundTertiary": {
-      "value": "{colors.slate.3}",
+    "foreground": {
+      "value": "black",
       "type": "color"
     }
   },

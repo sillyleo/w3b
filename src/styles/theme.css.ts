@@ -32,7 +32,7 @@ function flattenKeys(
 }
 
 const lightColors = flattenKeys(figmaTokens.light);
-const baseColors = flattenKeys(figmaTokens.base);
+const pureColors = flattenKeys(figmaTokens.pure);
 const darkColors = flattenKeys(figmaTokens.dark);
 
 const fontWeights: {
@@ -61,6 +61,7 @@ const commonTokens = {
   opacity: figmaTokens.opacity,
   fontFamily: {
     heading: `${figmaTokens.fontFamilies.heading},'SkModernistBold',SkModernistBold,'Sk-Modernist-Bold',sans-serif`,
+    branding: `${figmaTokens.fontFamilies.branding},'SkModernistRegular',SkModernistRegular,'Sk-Modernist-Regular',sans-serif`,
     body: `'Inter Tight',${figmaTokens.fontFamilies.body}, sans-serif`,
   },
   fontSize: figmaTokens.fontSizes,
@@ -74,7 +75,7 @@ const commonTokens = {
 
 export const theme = createGlobalTheme(":root", {
   colors: {
-    ...baseColors,
+    ...pureColors,
     ...lightColors,
   },
   ...commonTokens,
@@ -82,7 +83,7 @@ export const theme = createGlobalTheme(":root", {
 
 export const darkTheme = createTheme(theme, {
   colors: {
-    ...baseColors,
+    ...pureColors,
     ...darkColors,
   },
   ...commonTokens,
@@ -679,13 +680,13 @@ export const formTone = styleVariants(allTones, (tone: keyof Colors) => {
           boxShadow: `0 0 0 1.5px ${theme.colors[tone + "8"]}`,
         },
         [`[data-state=checked]&`]: {
-          backgroundColor: theme.colors[tone + "11"],
-          boxShadow: `0 0 0 1.5px ${theme.colors[tone + "11"]}`,
+          backgroundColor: theme.colors[tone + "9"],
+          boxShadow: `0 0 0 1.5px ${theme.colors[tone + "9"]}`,
           color: theme.colors.white,
         },
         [`${checkboxLabel["enabled"]}:hover [data-state=checked]&`]: {
-          backgroundColor: theme.colors[tone + "12"],
-          boxShadow: `0 0 0 1.5px ${theme.colors[tone + "12"]}`,
+          backgroundColor: theme.colors[tone + "10"],
+          boxShadow: `0 0 0 1.5px ${theme.colors[tone + "10"]}`,
         },
       },
       ":active": {
