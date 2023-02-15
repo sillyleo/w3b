@@ -97,10 +97,12 @@ export const triggerShadowTone = styleVariants(
   (tone: keyof Colors) => {
     return {
       selectors: {
-        [`:not(${darkTheme}) > [data-state=active]&`]: {
+        [`[data-state=active]&`]: {
           boxShadow: `
         0 3px 10px -4px ${theme.colors[tone + "8"]}`,
-          // border: "4px solid red",
+        },
+        [`${darkTheme} [data-state=active]&`]: {
+          boxShadow: "none",
         },
       },
     };
@@ -142,7 +144,7 @@ export const triggerTone = styleVariants(allTones, (tone: keyof Colors) => {
           color: theme.colors[tone + "12"],
         },
         [`${darkTheme} [data-state=active]&`]: {
-          backgroundColor: theme.colors[tone + "7"],
+          backgroundColor: "hsla(0, 0%, 100%, 0.176)",
           color: theme.colors.basetext,
         },
       },
@@ -155,7 +157,7 @@ export const triggerTone = styleVariants(allTones, (tone: keyof Colors) => {
 // triggerTone[tone]
 export const listTone = styleVariants(allTones, (tone: keyof Colors) => {
   return {
-    backgroundColor: theme.colors[tone + "4"],
+    backgroundColor: theme.colors[tone + "3"],
   };
 });
 
