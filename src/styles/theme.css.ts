@@ -61,6 +61,7 @@ const commonTokens = {
   opacity: figmaTokens.opacity,
   fontFamily: {
     heading: `${figmaTokens.fontFamilies.heading},'SkModernistBold',SkModernistBold,'Sk-Modernist-Bold',sans-serif`,
+    branding: `${figmaTokens.fontFamilies.branding},'SkModernistRegular',SkModernistRegular,'Sk-Modernist-Regular',sans-serif`,
     body: `'Inter Tight',${figmaTokens.fontFamilies.body}, sans-serif`,
   },
   fontSize: figmaTokens.fontSizes,
@@ -725,9 +726,6 @@ export const formTone = styleVariants(allTones, (tone: keyof Colors) => {
     };
   }
 });
-
-
-
 
 export const sprinkles = createSprinkles(colorStyles, layoutStyles);
 export type Sprinkles = Parameters<typeof sprinkles>[0];

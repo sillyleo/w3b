@@ -458,6 +458,7 @@
   },
   "fontFamilies": {
     "heading": "Sk-Modernist",
+    "branding": "Sk-Modernist",
     "body": "Inter"
   },
   "lineHeights": {

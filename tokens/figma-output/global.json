@@ -122,6 +122,10 @@
       "value": "Sk-Modernist",
       "type": "fontFamilies"
     },
+    "branding": {
+      "value": "Sk-Modernist",
+      "type": "fontFamilies"
+    },
     "body": {
       "value": "Inter",
       "type": "fontFamilies"

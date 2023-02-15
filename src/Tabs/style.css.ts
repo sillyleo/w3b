@@ -42,10 +42,9 @@ export const panelStyle = style({});
 
 export const triggerStyle = recipe({
   base: [
-    {},
+    { fontWeight: 400 },
     sprinkles({
       transition: "slow",
-      fontWeight: "normal",
       fontFamily: "heading",
       cursor: "pointer",
       display: "inline-flex",
