@@ -17,7 +17,6 @@ interface RootObject {
   spacing: Spacing;
   screens: Screens;
   boxShadow: BoxShadow;
-  base: Base;
   pure: Pure;
   tokenSetOrder: TokenSetOrder;
 }
@@ -30,16 +29,6 @@ interface TokenSetOrder {
 interface Pure {
   background: string;
   foreground: string;
-}
-interface Base {
-  white: string;
-  black: string;
-  text: string;
-  textSecondary: string;
-  textTertiary: string;
-  background: string;
-  backgroundSecondary: string;
-  backgroundTertiary: string;
 }
 interface BoxShadow {
   sm: Sm;
@@ -235,7 +224,16 @@ interface Colors {
   sage: Tomato;
   olive: Tomato;
   sand: Tomato;
+  base: Base;
   accent: Tomato;
+}
+interface Base {
+  text: string;
+  textSecondary: string;
+  textTertiary: string;
+  background: string;
+  backgroundSecondary: string;
+  backgroundTertiary: string;
 }
 interface Tomato {
   '1': string;

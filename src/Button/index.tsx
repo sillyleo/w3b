@@ -14,6 +14,7 @@ import {
   smGhostShadowClass,
   mdGhostShadowClass,
   lgGhostShadowClass,
+  theme,
 } from "../styles/theme.css";
 import Bento, { BentoProps } from "../Bento";
 
@@ -96,6 +97,7 @@ export const Button = ({
   shadow = false,
   ...props
 }: ButtonProps) => {
+  // console.log(theme.colors.basebackground);
   return (
     <Bento
       // clsx is only for combing multiple classes together

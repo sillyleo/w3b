@@ -121,8 +121,8 @@ export const triggerTone = styleVariants(allTones, (tone: keyof Colors) => {
     return {
       selectors: {
         [`[data-state=active]&`]: {
-          backgroundColor: theme.colors.background,
-          color: theme.colors.text,
+          backgroundColor: theme.colors.basebackground,
+          color: theme.colors.basetext,
         },
       },
       backgroundColor: "transparent",
@@ -133,8 +133,8 @@ export const triggerTone = styleVariants(allTones, (tone: keyof Colors) => {
     return {
       selectors: {
         [`[data-state=active]&`]: {
-          backgroundColor: theme.colors.background,
-          color: theme.colors.text,
+          backgroundColor: theme.colors.basebackground,
+          color: theme.colors.basetext,
         },
       },
       backgroundColor: "transparent",

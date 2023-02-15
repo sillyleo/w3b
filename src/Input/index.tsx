@@ -69,13 +69,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
     return (
       <Stack gap={"1"} alignItems={"stretch"} className={status()}>
         {label && typeof label === "string" ? (
-          <Text
-            as={"label"}
-            htmlFor={appliedId}
-            pl="2"
-            size="label"
-            color={"textSecondary"}
-          >
+          <Text as={"label"} htmlFor={appliedId} pl="2" size="label">
             {label}
           </Text>
         ) : (
@@ -111,7 +105,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
           {rightIcon && <div className={inputIcon["right"]}>{rightIcon}</div>}
         </Stack>
         {description && typeof description === "string" ? (
-          <Text pl="2" size="label" color="textTertiary">
+          <Text pl="2" size="label" color="slate10">
             {description}
           </Text>
         ) : (

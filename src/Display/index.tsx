@@ -9,7 +9,7 @@ export default function Display(props) {
       animate={{ opacity: 1 }}
       style={{ marginTop: "2em", marginBottom: "2em" }}
     >
-      <Text mb="2" size="overline" color="textTertiary">
+      <Text mb="2" size="overline" color="slate10">
         {props.label}
       </Text>
       <Stack

@@ -32,7 +32,7 @@ function flattenKeys(
 }
 
 const lightColors = flattenKeys(figmaTokens.light);
-const baseColors = flattenKeys(figmaTokens.base);
+const pureColors = flattenKeys(figmaTokens.pure);
 const darkColors = flattenKeys(figmaTokens.dark);
 
 const fontWeights: {
@@ -75,7 +75,7 @@ const commonTokens = {
 
 export const theme = createGlobalTheme(":root", {
   colors: {
-    ...baseColors,
+    ...pureColors,
     ...lightColors,
   },
   ...commonTokens,
@@ -83,7 +83,7 @@ export const theme = createGlobalTheme(":root", {
 
 export const darkTheme = createTheme(theme, {
   colors: {
-    ...baseColors,
+    ...pureColors,
     ...darkColors,
   },
   ...commonTokens,
