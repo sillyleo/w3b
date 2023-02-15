@@ -34,7 +34,8 @@
     "dev": "json-to-ts-cli src/theme.json > src/tokenType.d.ts && next",
     "start": "json-to-ts-cli src/theme.json > src/tokenType.d.ts && next",
     "build-lib": "vite build",
-    "ship": "vite build && npm version patch && npm publish --access public"
+    "ship": "vite build && npm version patch && npm publish --access public",
+    "build-token": "npx token-transformer tokens/figma-output/ tokens/theme-transformed.json --resolveReferences false && npx style-dictionary build --config sd.config.cjs"
   },
   "dependencies": {
     "@dessert-box/react": "^0.5.0",

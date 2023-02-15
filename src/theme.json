@@ -1,19 +1,4 @@
 {
-  "brand": {
-    "hover": "#6DEFBF",
-    "primary": "#3CEAAA",
-    "pressed": "#33C790",
-    "disable": "#1E7555",
-    "secondary": "#03BCE4"
-  },
-  "support": {
-    "red": "#F16769",
-    "orange": "#FFB459",
-    "blue": "#4EA3FE",
-    "purpple": "#C692E0",
-    "silver": "#D3D5F2",
-    "yellow": "#FFED70"
-  },
   "colors": {
     "tomato": {
       "1": "#fffcfc",
@@ -407,14 +392,6 @@
       "11": "#706f6c",
       "12": "#1b1b18"
     },
-    "base": {
-      "text": "#ecedee",
-      "textSecondary": "#9ba1a6",
-      "textTertiary": "#697177",
-      "background": "#151718",
-      "backgroundSecondary": "#1a1d1e",
-      "backgroundTertiary": "#202425"
-    },
     "accent": {
       "1": "#fbfdff",
       "2": "#f5faff",
@@ -428,7 +405,19 @@
       "10": "#0081f1",
       "11": "#006adc",
       "12": "#00254d"
+    },
+    "base": {
+      "text": "#11181c",
+      "textSecondary": "#687076",
+      "textTertiary": "#889096",
+      "background": "#fbfcfd",
+      "backgroundSecondary": "#f8f9fa",
+      "backgroundTertiary": "#f1f3f5"
     }
+  },
+  "pure": {
+    "background": "white",
+    "foreground": "black"
   },
   "borderRadius": {
     "none": "0px",
@@ -466,7 +455,6 @@
   },
   "fontFamilies": {
     "heading": "Sk-Modernist",
-    "branding": "Sk-Modernist",
     "body": "Inter"
   },
   "lineHeights": {
@@ -1406,12 +1394,12 @@
       "12": "#eaf6ff"
     },
     "base": {
-      "text": "#11181c",
-      "textSecondary": "#687076",
-      "textTertiary": "#889096",
-      "background": "#fbfcfd",
-      "backgroundSecondary": "#f8f9fa",
-      "backgroundTertiary": "#f1f3f5"
+      "text": "#ecedee",
+      "textSecondary": "#9ba1a6",
+      "textTertiary": "#697177",
+      "background": "#151718",
+      "backgroundSecondary": "#1a1d1e",
+      "backgroundTertiary": "#202425"
     }
   },
   "spacing": {
@@ -1553,10 +1541,6 @@
       "color": "rgba(0,0,0,0.05)",
       "type": "innerShadow"
     }
-  },
-  "pure": {
-    "background": "#FFFFFF",
-    "foreground": "black"
   },
   "tokenSetOrder": {
     "0": "global",
