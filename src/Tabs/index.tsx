@@ -4,11 +4,13 @@ import {
   itemStyle,
   listStyle,
   listTone,
+  ListVariant,
   panelStyle,
   rootStyle,
   triggerShadowTone,
   triggerStyle,
   triggerTone,
+  TriggerVariants,
 } from "./style.css";
 import * as Tabs from "@radix-ui/react-tabs";
 
@@ -34,16 +36,23 @@ const Root = (props: RootProps) => {
 };
 
 export type ListProps = React.ComponentProps<typeof Tabs.List> & {
-  tone: keyof Colors;
-  size: "sm" | "md" | "lg";
+  tone?: keyof Colors;
+  size?: ListVariant["size"];
+  tabSizing?: ListVariant["tabSizing"];
 };
 
-const List = ({ size = "md", tone = "lime", ...props }: ListProps) => {
+const List = ({
+  size = "md",
+  tone = "slate",
+  tabSizing = "content",
+  ...props
+}: ListProps) => {
   return (
     <Tabs.List
       className={clsx(
         listStyle({
           size: size,
+          tabSizing: tabSizing,
         }),
         listTone[tone]
       )}
@@ -54,11 +63,11 @@ const List = ({ size = "md", tone = "lime", ...props }: ListProps) => {
 
 export type TriggerProps = React.ComponentProps<typeof Tabs.Trigger> & {
   value: string;
-  tone: keyof Colors;
-  size: "sm" | "md" | "lg";
+  tone?: keyof Colors;
+  size?: TriggerVariants["size"];
 };
 
-const Trigger = ({ size = "md", tone = "lime", ...props }: TriggerProps) => {
+const Trigger = ({ size = "md", tone = "slate", ...props }: TriggerProps) => {
   return (
     <Tabs.Trigger
       className={clsx(

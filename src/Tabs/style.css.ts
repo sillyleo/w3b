@@ -4,6 +4,11 @@ import { allTones } from "src/constants";
 import { theme, sprinkles, darkTheme } from "../styles/theme.css";
 
 export const listStyle = recipe({
+  base: {
+    display: "grid",
+    gridAutoColumns: "minmax(0, 1fr)",
+    gridAutoFlow: "column",
+  },
   variants: {
     size: {
       sm: {
@@ -19,9 +24,17 @@ export const listStyle = recipe({
         padding: theme.spacing[2],
       },
     },
+    tabSizing: {
+      equal: {
+        gridAutoFlow: "column",
+      },
+      content: {
+        alignSelf: "flex-start",
+      },
+    },
   },
 });
-export type listVariant = RecipeVariants<typeof listStyle>;
+export type ListVariant = RecipeVariants<typeof listStyle>;
 
 export const itemStyle = style({});
 
@@ -39,6 +52,7 @@ export const triggerStyle = recipe({
       gap: "2",
       p: "0",
       alignItems: "center",
+      justifyContent: "center",
       fontSize: "base",
       lineHeight: "single",
       border: "0",
@@ -154,8 +168,12 @@ export const listTone = styleVariants(allTones, (tone: keyof Colors) => {
 });
 
 // Export type
-export type triggerVariants = RecipeVariants<typeof triggerStyle>;
+export type TriggerVariants = RecipeVariants<typeof triggerStyle>;
 
 export const contentStyle = style({});
 
-export const rootStyle = style({});
+export const rootStyle = style({
+  display: "flex",
+  alignItems: "stretch",
+  flexDirection: "column",
+});
