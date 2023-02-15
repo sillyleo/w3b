@@ -44,7 +44,7 @@ export type ListProps = React.ComponentProps<typeof Tabs.List> & {
 const List = ({
   size = "md",
   tone = "slate",
-  tabSizing = "content",
+  tabSizing = "equal",
   ...props
 }: ListProps) => {
   return (
