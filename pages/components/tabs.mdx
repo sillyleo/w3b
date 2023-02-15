@@ -1,14 +1,47 @@
-# Input
+# Tabs
 
 import { Tabs, Display } from "ui";
 
 <Display label="tabs">
-  <Tabs.TabList aria-label="My tabs">
+
+ <Tabs.Root defaultValue="1">
+    <Tabs.List size="md">
+      <Tabs.Trigger  value="1">1</Tabs.Trigger>
+      <Tabs.Trigger  value="2">2</Tabs.Trigger>
+      <Tabs.Trigger  value="3">3</Tabs.Trigger>
+    </Tabs.List>
+    <Tabs.Content value="1">11111</Tabs.Content>
+    <Tabs.Content value="2">22222</Tabs.Content>
+    <Tabs.Content value="3">33333</Tabs.Content>
+  </Tabs.Root>
+  {/* <Tabs.TabList aria-label="My tabs">
     <Tabs.TabItem>TabItem 1</Tabs.TabItem>
     <Tabs.TabItem>TabItem 2</Tabs.TabItem>
   </Tabs.TabList>
   <Tabs.TabPanel>Tab 1</Tabs.TabPanel>
-  <Tabs.TabPanel>Tab 2</Tabs.TabPanel>
+  <Tabs.TabPanel>Tab 2</Tabs.TabPanel> */}
 </Display>
 
-<Tabs.TabDemo />
+{/* <Tabs.TabDemo /> */}
+
+<Tabs.Root defaultValue="tab1">
+  <Tabs.List>
+    <Tabs.Trigger value="tab1">One</Tabs.Trigger>
+    <Tabs.Trigger value="tab2">Two</Tabs.Trigger>
+    <Tabs.Trigger value="tab3">Three</Tabs.Trigger>
+  </Tabs.List>
+  <Tabs.Content value="tab1">Tab one content</Tabs.Content>
+  <Tabs.Content value="tab2">Tab two content</Tabs.Content>
+  <Tabs.Content value="tab3">Tab three content</Tabs.Content>
+</Tabs.Root>
+
+<Tabs.Root defaultValue="1">
+  <Tabs.List>
+    <Tabs.Trigger value="1">1</Tabs.Trigger>
+    <Tabs.Trigger value="2">2</Tabs.Trigger>
+    <Tabs.Trigger value="3">3</Tabs.Trigger>
+  </Tabs.List>
+  <Tabs.Content value="1">11111</Tabs.Content>
+  <Tabs.Content value="2">22222</Tabs.Content>
+  <Tabs.Content value="3">33333</Tabs.Content>
+</Tabs.Root>
