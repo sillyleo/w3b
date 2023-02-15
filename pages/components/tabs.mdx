@@ -1,12 +1,13 @@
 # Tabs
 
-import { Tabs, Display } from "ui";
+import { Tabs, Display, darkTheme } from "ui";
+
+{darkTheme}
 
 <Display label="tabs">
-
- <Tabs.Root defaultValue="1">
+  <Tabs.Root defaultValue="1">
     <Tabs.List size="md">
-      <Tabs.Trigger  value="1">Deposit</Tabs.Trigger>
+      <Tabs.Trigger value="1">Deposit</Tabs.Trigger>
       <Tabs.Trigger value="2">Withdrawal</Tabs.Trigger>
       <Tabs.Trigger value="3">3</Tabs.Trigger>
     </Tabs.List>

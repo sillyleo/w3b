@@ -169,6 +169,7 @@ interface LineHeights {
 }
 interface FontFamilies {
   heading: string;
+  branding: string;
   body: string;
 }
 interface Opacity {
