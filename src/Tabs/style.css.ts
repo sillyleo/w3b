@@ -42,7 +42,10 @@ export const panelStyle = style({});
 
 export const triggerStyle = recipe({
   base: [
-    { fontWeight: 400 },
+    {
+      fontWeight: 400,
+      WebkitFontSmoothing: "antialiased",
+    },
     sprinkles({
       transition: "slow",
       fontFamily: "heading",
