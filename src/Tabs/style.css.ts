@@ -124,6 +124,11 @@ export const triggerTone = styleVariants(allTones, (tone: keyof Colors) => {
           backgroundColor: theme.colors.basebackground,
           color: theme.colors.basetext,
         },
+
+        [`${darkTheme} [data-state=active]&`]: {
+          backgroundColor: theme.colors[tone + "8"],
+          color: theme.colors.basetext,
+        },
       },
       backgroundColor: "transparent",
 
@@ -134,11 +139,14 @@ export const triggerTone = styleVariants(allTones, (tone: keyof Colors) => {
       selectors: {
         [`[data-state=active]&`]: {
           backgroundColor: theme.colors.basebackground,
+          color: theme.colors[tone + "12"],
+        },
+        [`${darkTheme} [data-state=active]&`]: {
+          backgroundColor: theme.colors[tone + "7"],
           color: theme.colors.basetext,
         },
       },
       backgroundColor: "transparent",
-
       color: theme.colors[tone + "8"],
     };
   }
@@ -147,7 +155,7 @@ export const triggerTone = styleVariants(allTones, (tone: keyof Colors) => {
 // triggerTone[tone]
 export const listTone = styleVariants(allTones, (tone: keyof Colors) => {
   return {
-    backgroundColor: theme.colors[tone + "3"],
+    backgroundColor: theme.colors[tone + "4"],
   };
 });
 
