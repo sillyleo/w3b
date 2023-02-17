@@ -19,7 +19,12 @@ export const Text = ({
   ...props
 }: TextProps) => {
   return (
-    <Bento as={element} className={textStyle({ size })} color={color}>
+    <Bento
+      as={element}
+      className={textStyle({ size })}
+      color={color}
+      {...props}
+    >
       {children}
     </Bento>
   );
