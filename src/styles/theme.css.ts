@@ -573,7 +573,7 @@ const layoutStyles = defineProperties({
       },
       "1": {
         borderWidth: theme.borderWidth[1],
-        borderStyle: "none",
+        borderStyle: "solid",
       },
       "2": {
         borderWidth: theme.borderWidth[2],

@@ -7,7 +7,10 @@ export default function Display(props) {
     <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      style={{ marginTop: "2em", marginBottom: "2em" }}
+      style={{
+        marginTop: "2em",
+        marginBottom: "2em",
+      }}
     >
       <Text mb="2" size="overline" color="slate10">
         {props.label}
