@@ -34,7 +34,6 @@ function flattenKeys(
 const lightColors = flattenKeys(figmaTokens.light);
 const pureColors = flattenKeys(figmaTokens.pure);
 const darkColors = flattenKeys(figmaTokens.dark);
-
 const fontWeights: {
   [key: string]: string;
 } = Object.keys(figmaTokens.fontWeights).reduce((acc, key) => {
