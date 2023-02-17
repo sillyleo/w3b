@@ -186,6 +186,7 @@ interface Opacity {
 }
 interface BorderWidth {
   '0': string;
+  '1': string;
   '2': string;
   '4': string;
   '8': string;
