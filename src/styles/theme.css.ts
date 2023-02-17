@@ -34,7 +34,6 @@ function flattenKeys(
 const lightColors = flattenKeys(figmaTokens.light);
 const pureColors = flattenKeys(figmaTokens.pure);
 const darkColors = flattenKeys(figmaTokens.dark);
-
 const fontWeights: {
   [key: string]: string;
 } = Object.keys(figmaTokens.fontWeights).reduce((acc, key) => {
@@ -61,7 +60,7 @@ const commonTokens = {
   opacity: figmaTokens.opacity,
   fontFamily: {
     heading: `${figmaTokens.fontFamilies.heading},'SkModernistBold',SkModernistBold,'Sk-Modernist-Bold',sans-serif`,
-    branding: `${figmaTokens.fontFamilies.branding},'SkModernistRegular',SkModernistRegular,'Sk-Modernist-Regular',sans-serif`,
+    branding: `${figmaTokens.fontFamilies.heading},'SkModernistRegular',SkModernistRegular,'Sk-Modernist-Regular',sans-serif`,
     body: `'Inter Tight',${figmaTokens.fontFamilies.body}, sans-serif`,
   },
   fontSize: figmaTokens.fontSizes,

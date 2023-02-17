@@ -1,7 +1,6 @@
 interface RootObject {
-  brand: Brand;
-  support: Support;
   colors: Colors;
+  pure: Pure;
   borderRadius: BorderRadius;
   borderWidth: BorderWidth;
   opacity: Opacity;
@@ -17,7 +16,6 @@ interface RootObject {
   spacing: Spacing;
   screens: Screens;
   boxShadow: BoxShadow;
-  pure: Pure;
   tokenSetOrder: TokenSetOrder;
 }
 interface TokenSetOrder {
@@ -25,10 +23,6 @@ interface TokenSetOrder {
   '1': string;
   '2': string;
   '3': string;
-}
-interface Pure {
-  background: string;
-  foreground: string;
 }
 interface BoxShadow {
   sm: Sm;
@@ -158,7 +152,6 @@ interface LineHeights {
 }
 interface FontFamilies {
   heading: string;
-  branding: string;
   body: string;
 }
 interface Opacity {
@@ -195,6 +188,10 @@ interface BorderRadius {
   '3xl': string;
   full: string;
 }
+interface Pure {
+  background: string;
+  foreground: string;
+}
 interface Colors {
   tomato: Tomato;
   red: Tomato;
@@ -224,8 +221,8 @@ interface Colors {
   sage: Tomato;
   olive: Tomato;
   sand: Tomato;
-  base: Base;
   accent: Tomato;
+  base: Base;
 }
 interface Base {
   text: string;
@@ -248,19 +245,4 @@ interface Tomato {
   '10': string;
   '11': string;
   '12': string;
-}
-interface Support {
-  red: string;
-  orange: string;
-  blue: string;
-  purpple: string;
-  silver: string;
-  yellow: string;
-}
-interface Brand {
-  hover: string;
-  primary: string;
-  pressed: string;
-  disable: string;
-  secondary: string;
 }

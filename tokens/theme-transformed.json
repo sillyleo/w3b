@@ -1,52 +1,4 @@
 {
-  "brand": {
-    "hover": {
-      "value": "#6DEFBF",
-      "type": "color"
-    },
-    "primary": {
-      "value": "#3CEAAA",
-      "type": "color"
-    },
-    "pressed": {
-      "value": "#33C790",
-      "type": "color"
-    },
-    "disable": {
-      "value": "#1E7555",
-      "type": "color"
-    },
-    "secondary": {
-      "value": "#03BCE4",
-      "type": "color"
-    }
-  },
-  "support": {
-    "red": {
-      "value": "#F16769",
-      "type": "color"
-    },
-    "orange": {
-      "value": "#FFB459",
-      "type": "color"
-    },
-    "blue": {
-      "value": "#4EA3FE",
-      "type": "color"
-    },
-    "purpple": {
-      "value": "#C692E0",
-      "type": "color"
-    },
-    "silver": {
-      "value": "#D3D5F2",
-      "type": "color"
-    },
-    "yellow": {
-      "value": "#FFED70",
-      "type": "color"
-    }
-  },
   "colors": {
     "tomato": {
       "1": {
@@ -1448,32 +1400,6 @@
         "type": "color"
       }
     },
-    "base": {
-      "text": {
-        "value": "#ecedee",
-        "type": "color"
-      },
-      "textSecondary": {
-        "value": "#9ba1a6",
-        "type": "color"
-      },
-      "textTertiary": {
-        "value": "#697177",
-        "type": "color"
-      },
-      "background": {
-        "value": "#151718",
-        "type": "color"
-      },
-      "backgroundSecondary": {
-        "value": "#1a1d1e",
-        "type": "color"
-      },
-      "backgroundTertiary": {
-        "value": "#202425",
-        "type": "color"
-      }
-    },
     "accent": {
       "1": {
         "value": "#fbfdff",
@@ -1523,6 +1449,42 @@
         "value": "#00254d",
         "type": "color"
       }
+    },
+    "base": {
+      "text": {
+        "value": "#11181c",
+        "type": "color"
+      },
+      "textSecondary": {
+        "value": "#687076",
+        "type": "color"
+      },
+      "textTertiary": {
+        "value": "#889096",
+        "type": "color"
+      },
+      "background": {
+        "value": "#fbfcfd",
+        "type": "color"
+      },
+      "backgroundSecondary": {
+        "value": "#f8f9fa",
+        "type": "color"
+      },
+      "backgroundTertiary": {
+        "value": "#f1f3f5",
+        "type": "color"
+      }
+    }
+  },
+  "pure": {
+    "background": {
+      "value": "white",
+      "type": "color"
+    },
+    "foreground": {
+      "value": "black",
+      "type": "color"
     }
   },
   "borderRadius": {
@@ -1645,10 +1607,6 @@
   },
   "fontFamilies": {
     "heading": {
-      "value": "Sk-Modernist",
-      "type": "fontFamilies"
-    },
-    "branding": {
       "value": "Sk-Modernist",
       "type": "fontFamilies"
     },
@@ -3326,27 +3284,27 @@
     },
     "base": {
       "text": {
-        "value": "{colors.slate.12}",
+        "value": "#11181c",
         "type": "color"
       },
       "textSecondary": {
-        "value": "{colors.slate.11}",
+        "value": "#687076",
         "type": "color"
       },
       "textTertiary": {
-        "value": "{colors.slate.9}",
+        "value": "#889096",
         "type": "color"
       },
       "background": {
-        "value": "{colors.slate.1}",
+        "value": "#fbfcfd",
         "type": "color"
       },
       "backgroundSecondary": {
-        "value": "{colors.slate.2}",
+        "value": "#f8f9fa",
         "type": "color"
       },
       "backgroundTertiary": {
-        "value": "{colors.slate.3}",
+        "value": "#f1f3f5",
         "type": "color"
       }
     }
@@ -4804,27 +4762,27 @@
     },
     "base": {
       "text": {
-        "value": "{colors.slate.12}",
+        "value": "#ecedee",
         "type": "color"
       },
       "textSecondary": {
-        "value": "{colors.slate.11}",
+        "value": "#9ba1a6",
         "type": "color"
       },
       "textTertiary": {
-        "value": "{colors.slate.9}",
+        "value": "#697177",
         "type": "color"
       },
       "background": {
-        "value": "{colors.slate.1}",
+        "value": "#151718",
         "type": "color"
       },
       "backgroundSecondary": {
-        "value": "{colors.slate.2}",
+        "value": "#1a1d1e",
         "type": "color"
       },
       "backgroundTertiary": {
-        "value": "{colors.slate.3}",
+        "value": "#202425",
         "type": "color"
       }
     }
@@ -5112,16 +5070,6 @@
         "type": "innerShadow"
       },
       "type": "boxShadow"
-    }
-  },
-  "pure": {
-    "background": {
-      "value": "#FFFFFF",
-      "type": "color"
-    },
-    "foreground": {
-      "value": "black",
-      "type": "color"
     }
   },
   "tokenSetOrder": {
