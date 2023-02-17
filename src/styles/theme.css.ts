@@ -46,17 +46,11 @@ const lightColors = flattenKeys(figmaTokens.light);
 const brandColors = flattenKeys(figmaTokens.brand);
 const supportColors = flattenKeys(figmaTokens.support);
 const darkColors = flattenKeys(figmaTokens.dark);
-console.log(lightColors);
-console.log(brandColors);
-console.log(supportColors);
-console.log(darkColors);
-
-// console log all light color starting with base
-for (const key in lightColors) {
-  if (key.startsWith("base")) {
-    console.log(key);
-  }
-}
+// console.log(lightColors);
+// console.log(brandColors);
+// console.log(supportColors);
+// console.log(figmaTokens.support);
+// console.log(darkColors);
 
 const fontWeights: {
   [key: string]: string;
