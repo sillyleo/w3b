@@ -1814,7 +1814,7 @@
       },
       "type": "typography"
     },
-    "body18": {
+    "body-heading": {
       "value": {
         "fontFamily": "{fontFamilies.body}",
         "fontWeight": "{fontWeights.normal}",
