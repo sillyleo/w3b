@@ -6,16 +6,20 @@ import React from "react";
 export interface TextProps extends TextStyleVariants, BentoProps {
   children: React.ReactNode;
   element?: keyof JSX.IntrinsicElements;
+  size?: TextStyleVariants["size"];
+  color?: string;
 }
 
 export const Text = ({
   children,
   size = "body",
-  element = "div", // set default element
+  element = "div",
+  color = "baseText",
+  // set default element
   ...props
 }: TextProps) => {
   return (
-    <Bento as={element} className={textStyle({ size })} {...props}>
+    <Bento as={element} className={textStyle({ size })} color={color}>
       {children}
     </Bento>
   );

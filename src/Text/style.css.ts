@@ -1,11 +1,13 @@
 import { recipe, RecipeVariants } from "@vanilla-extract/recipes";
-import { sprinkles } from "../styles/theme.css";
+import { sprinkles, theme } from "../styles/theme.css";
 
 export const baseTextStyle = sprinkles({
   fontFamily: "heading",
 });
 export const textStyle = recipe({
-  base: baseTextStyle,
+  base: {
+    fontFamily: theme.fontFamily.heading,
+  },
   variants: {
     size: {
       "page-title": sprinkles({
