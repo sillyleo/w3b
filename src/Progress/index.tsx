@@ -47,8 +47,16 @@ const Progress = ({
         direction="row"
         justifyContent={"space-between"}
       >
-        {leftLabel && <Text size="label">leftLabel</Text>}
-        {rightLabel && <Text size="label">rightLabel</Text>}
+        {leftLabel && typeof leftLabel === "string" ? (
+          <Text size="label">{leftLabel}</Text>
+        ) : (
+          leftLabel
+        )}
+        {rightLabel && typeof rightLabel === "string" ? (
+          <Text size="label">{rightLabel}</Text>
+        ) : (
+          rightLabel
+        )}
       </Stack>
       <ProgressPrimitive.Root
         className={clsx(rootStyle)}
