@@ -5,9 +5,7 @@ export const baseTextStyle = sprinkles({
   fontFamily: "heading",
 });
 export const textStyle = recipe({
-  base: {
-    fontFamily: theme.fontFamily.heading,
-  },
+  base: baseTextStyle,
   variants: {
     size: {
       "page-title": sprinkles({

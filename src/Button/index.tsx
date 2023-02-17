@@ -113,7 +113,7 @@ export const Button = ({
       )}
       {...props}
     >
-      <Bento opacity={isLoading ? "0" : "100"}> {leftIcon}</Bento>
+      <Bento opacity={isLoading ? "0" : "100"}>{leftIcon}</Bento>
       {isLoading && (
         <Bento
           position={"absolute"}
@@ -129,7 +129,7 @@ export const Button = ({
         </Bento>
       )}
       <Bento opacity={isLoading ? "0" : "100"}>{children}</Bento>
-      <Bento opacity={isLoading ? "0" : "100"}> {rightIcon}</Bento>
+      <Bento opacity={isLoading ? "0" : "100"}>{rightIcon}</Bento>
     </Bento>
   );
 };
