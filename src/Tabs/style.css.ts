@@ -3,7 +3,7 @@ import { style, styleVariants } from "@vanilla-extract/css";
 import { allTones } from "src/constants";
 import { theme, sprinkles, darkTheme } from "../styles/theme.css";
 
-console.log(theme.colors);
+// console.log(theme.colors);
 
 export const listStyle = recipe({
   base: {
