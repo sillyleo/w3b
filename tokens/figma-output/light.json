@@ -1474,17 +1474,15 @@
       "backgroundTertiary": {
         "value": "#f1f3f5",
         "type": "color"
+      },
+      "pureBackground": {
+        "value": "#FFFFFF",
+        "type": "color"
+      },
+      "pureForeground": {
+        "value": "black",
+        "type": "color"
       }
-    }
-  },
-  "pure": {
-    "background": {
-      "value": "white",
-      "type": "color"
-    },
-    "foreground": {
-      "value": "black",
-      "type": "color"
     }
   }
 }
