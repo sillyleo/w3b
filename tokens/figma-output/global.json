@@ -280,6 +280,17 @@
       },
       "type": "typography"
     },
+    "body18": {
+      "value": {
+        "fontFamily": "{fontFamilies.body}",
+        "fontWeight": "{fontWeights.normal}",
+        "lineHeight": "{lineHeights.body}",
+        "fontSize": "{fontSizes.lg}",
+        "letterSpacing": "{letterSpacing.default}",
+        "paragraphSpacing": "{paragraphSpacing.lg}"
+      },
+      "type": "typography"
+    },
     "body": {
       "value": {
         "fontFamily": "{fontFamilies.body}",
