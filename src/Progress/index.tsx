@@ -1,8 +1,8 @@
 import * as ProgressPrimitive from "@radix-ui/react-progress";
 import clsx from "clsx";
 import { motion } from "framer-motion";
-import Stack from "src/Stack";
-import Text from "src/Text";
+import Stack from "../Stack";
+import Text from "../Text";
 import Bento, { BentoProps } from "../Bento";
 import {
   indicatorColor,
