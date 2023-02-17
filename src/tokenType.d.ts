@@ -100,7 +100,7 @@ interface ParagraphSpacing {
 }
 interface Typography {
   'page-title': Pagetitle;
-  'page-title2': Pagetitle2;
+  'page-title2': Pagetitle;
   title1: Pagetitle;
   title2: Pagetitle;
   title3: Pagetitle;
@@ -128,12 +128,6 @@ interface Overline {
   fontSize: string;
   letterSpacing: string;
   textCase: string;
-}
-interface Pagetitle2 {
-  fontFamily: string;
-  fontWeight: number;
-  lineHeight: string;
-  fontSize: string;
 }
 interface Pagetitle {
   fontFamily: string;

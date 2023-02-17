@@ -510,7 +510,8 @@
       "fontFamily": "Sk-Modernist",
       "fontWeight": 700,
       "lineHeight": "110%",
-      "fontSize": "64px"
+      "fontSize": "64px",
+      "letterSpacing": "-2%"
     },
     "title1": {
       "fontFamily": "Sk-Modernist",

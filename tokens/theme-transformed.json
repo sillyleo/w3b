@@ -1766,7 +1766,8 @@
         "fontFamily": "{fontFamilies.heading}",
         "fontWeight": "{fontWeights.bold}",
         "lineHeight": "{lineHeights.heading}",
-        "fontSize": "{fontSizes.5xl}"
+        "fontSize": "{fontSizes.5xl}",
+        "letterSpacing": "{letterSpacing.decreased}"
       },
       "type": "typography"
     },
