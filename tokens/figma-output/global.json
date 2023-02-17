@@ -315,7 +315,7 @@
       "value": {
         "fontFamily": "{fontFamilies.body}",
         "fontWeight": "{fontWeights.normal}",
-        "lineHeight": "{lineHeights.body}",
+        "lineHeight": "{Body 14}",
         "fontSize": "{fontSizes.sm}",
         "letterSpacing": "{letterSpacing.default}"
       },
@@ -3610,5 +3610,9 @@
       },
       "type": "boxShadow"
     }
+  },
+  "Body 14": {
+    "value": "140%",
+    "type": "lineHeights"
   }
 }
