@@ -10,6 +10,7 @@ import {
   rootSize,
   rootStyle,
 } from "./style.css";
+import React from "react";
 
 export interface ProgressProps extends BentoProps {
   tone?: BentoProps["colors"];
