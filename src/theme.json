@@ -473,6 +473,7 @@
   "lineHeights": {
     "heading": "110%",
     "body": "150%",
+    "tight": "140%",
     "single": "100%"
   },
   "letterSpacing": {
@@ -1576,7 +1577,6 @@
       "type": "innerShadow"
     }
   },
-  "Body 14": "140%",
   "tokenSetOrder": {
     "0": "global",
     "1": "light",

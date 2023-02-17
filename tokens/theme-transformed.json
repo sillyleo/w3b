@@ -1670,6 +1670,10 @@
       "value": "150%",
       "type": "lineHeights"
     },
+    "tight": {
+      "value": "140%",
+      "type": "lineHeights"
+    },
     "single": {
       "value": "100%",
       "type": "lineHeights"
@@ -1867,7 +1871,7 @@
       "value": {
         "fontFamily": "{fontFamilies.body}",
         "fontWeight": "{fontWeights.normal}",
-        "lineHeight": "{Body 14}",
+        "lineHeight": "{lineHeights.tight}",
         "fontSize": "{fontSizes.sm}",
         "letterSpacing": "{letterSpacing.default}"
       },
@@ -5162,10 +5166,6 @@
       },
       "type": "boxShadow"
     }
-  },
-  "Body 14": {
-    "value": "140%",
-    "type": "lineHeights"
   },
   "tokenSetOrder": {
     "0": {
