@@ -17,7 +17,6 @@ interface RootObject {
   spacing: Spacing;
   screens: Screens;
   boxShadow: BoxShadow;
-  'Body 14': string;
   tokenSetOrder: TokenSetOrder;
 }
 interface TokenSetOrder {
@@ -162,6 +161,7 @@ interface LetterSpacing {
 interface LineHeights {
   heading: string;
   body: string;
+  tight: string;
   single: string;
 }
 interface FontFamilies {
