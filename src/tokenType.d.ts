@@ -1,6 +1,7 @@
 interface RootObject {
+  brand: Brand;
+  support: Support;
   colors: Colors;
-  pure: Pure;
   borderRadius: BorderRadius;
   borderWidth: BorderWidth;
   opacity: Opacity;
@@ -104,10 +105,19 @@ interface Typography {
   subtitle1: Pagetitle;
   subtitle2: Pagetitle;
   overline: Overline;
+  'body-heading': Bodyheading;
   body: Pagetitle;
   'body-bold': Pagetitle;
   label: Pagetitle;
   caption: Pagetitle;
+}
+interface Bodyheading {
+  fontFamily: string;
+  fontWeight: number;
+  lineHeight: string;
+  fontSize: string;
+  letterSpacing: string;
+  paragraphSpacing: string;
 }
 interface Overline {
   fontFamily: string;
@@ -188,10 +198,6 @@ interface BorderRadius {
   '3xl': string;
   full: string;
 }
-interface Pure {
-  background: string;
-  foreground: string;
-}
 interface Colors {
   tomato: Tomato;
   red: Tomato;
@@ -231,6 +237,8 @@ interface Base {
   background: string;
   backgroundSecondary: string;
   backgroundTertiary: string;
+  pureBackground: string;
+  pureForeground: string;
 }
 interface Tomato {
   '1': string;
@@ -245,4 +253,19 @@ interface Tomato {
   '10': string;
   '11': string;
   '12': string;
+}
+interface Support {
+  red: string;
+  orange: string;
+  blue: string;
+  purpple: string;
+  silver: string;
+  yellow: string;
+}
+interface Brand {
+  hover: string;
+  primary: string;
+  pressed: string;
+  disable: string;
+  secondary: string;
 }

@@ -3,7 +3,7 @@ import { sprinkles } from "../styles/theme.css";
 
 export const baseTextStyle = sprinkles({
   fontFamily: "heading",
-  color: "basetext",
+  color: "baseText",
 });
 export const textStyle = recipe({
   base: baseTextStyle,

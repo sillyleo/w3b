@@ -3,6 +3,8 @@ import { style, styleVariants } from "@vanilla-extract/css";
 import { allTones } from "src/constants";
 import { theme, sprinkles, darkTheme } from "../styles/theme.css";
 
+console.log(theme.colors);
+
 export const listStyle = recipe({
   base: {
     display: "grid",
@@ -123,13 +125,13 @@ export const triggerTone = styleVariants(allTones, (tone: keyof Colors) => {
     return {
       selectors: {
         [`[data-state=active]&`]: {
-          backgroundColor: theme.colors.basebackground,
-          color: theme.colors.basetext,
+          backgroundColor: theme.colors.baseBackground,
+          color: theme.colors.baseText,
         },
 
         [`${darkTheme} [data-state=active]&`]: {
           backgroundColor: theme.colors[tone + "8"],
-          color: theme.colors.basetext,
+          color: theme.colors.baseText,
         },
       },
       backgroundColor: "transparent",
@@ -140,12 +142,12 @@ export const triggerTone = styleVariants(allTones, (tone: keyof Colors) => {
     return {
       selectors: {
         [`[data-state=active]&`]: {
-          backgroundColor: theme.colors.basebackground,
+          backgroundColor: theme.colors.baseBackground,
           color: theme.colors[tone + "12"],
         },
         [`${darkTheme} [data-state=active]&`]: {
           backgroundColor: "hsla(0, 0%, 100%, 0.176)",
-          color: theme.colors.basetext,
+          color: theme.colors.baseText,
         },
       },
       backgroundColor: "transparent",

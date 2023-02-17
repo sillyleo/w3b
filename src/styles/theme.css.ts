@@ -14,6 +14,17 @@ import figmaTokens from "../theme.json";
 // Process colors from tomato: {1: color} to tomato1: color
 // a function that takes an object and flattens its keys into a string with custom seperator
 // e.g. { colors: { red: { 1: "#fff" } } } => "colors-red-1"
+function camelCase(str: string): string {
+  return str
+    .replace(/(?:^\w|[A-Z]|\b\w)/g, function (word, index) {
+      return index === 0 ? word.toLowerCase() : word.toUpperCase();
+    })
+    .replace(/\s+/g, "");
+}
+function capitalize(str: string): string {
+  return str.charAt(0).toUpperCase() + str.slice(1);
+}
+
 function flattenKeys(
   obj: any,
   sep = "",
@@ -21,7 +32,7 @@ function flattenKeys(
 ): Record<string, string> {
   return Object.keys(obj).reduce((acc, key) => {
     const value = obj[key];
-    const newKey = parentKey ? parentKey + sep + key : key;
+    const newKey = parentKey ? parentKey + sep + capitalize(key) : key;
     if (typeof value === "object") {
       Object.assign(acc, flattenKeys(value, sep, newKey));
     } else {
@@ -32,8 +43,21 @@ function flattenKeys(
 }
 
 const lightColors = flattenKeys(figmaTokens.light);
-const pureColors = flattenKeys(figmaTokens.pure);
+const brandColors = flattenKeys(figmaTokens.brand);
+const supportColors = flattenKeys(figmaTokens.support);
 const darkColors = flattenKeys(figmaTokens.dark);
+console.log(lightColors);
+console.log(brandColors);
+console.log(supportColors);
+console.log(darkColors);
+
+// console log all light color starting with base
+for (const key in lightColors) {
+  if (key.startsWith("base")) {
+    console.log(key);
+  }
+}
+
 const fontWeights: {
   [key: string]: string;
 } = Object.keys(figmaTokens.fontWeights).reduce((acc, key) => {
@@ -74,7 +98,8 @@ const commonTokens = {
 
 export const theme = createGlobalTheme(":root", {
   colors: {
-    ...pureColors,
+    ...brandColors,
+    ...supportColors,
     ...lightColors,
   },
   ...commonTokens,
@@ -82,7 +107,8 @@ export const theme = createGlobalTheme(":root", {
 
 export const darkTheme = createTheme(theme, {
   colors: {
-    ...pureColors,
+    ...brandColors,
+    ...supportColors,
     ...darkColors,
   },
   ...commonTokens,
@@ -163,7 +189,7 @@ export const primaryClass = styleVariants(allTones, (tone) => {
       ":active": {
         backgroundColor: theme.colors[tone + "11"],
       },
-      color: theme.colors.black,
+      color: "black",
     };
   } else if (
     tone === "gray" ||
@@ -654,7 +680,7 @@ export const formTone = styleVariants(allTones, (tone: keyof Colors) => {
       ":active": {
         backgroundColor: theme.colors[tone + "3"],
       },
-      color: theme.colors.black,
+      color: "black",
     };
   } else if (
     tone === "gray" ||
