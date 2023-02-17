@@ -1829,6 +1829,14 @@
       "backgroundTertiary": {
         "value": "#f1f3f5",
         "type": "color"
+      },
+      "pureBackground": {
+        "value": "#FFFFFF",
+        "type": "color"
+      },
+      "pureForeground": {
+        "value": "black",
+        "type": "color"
       }
     }
   },
@@ -3307,6 +3315,14 @@
       "backgroundTertiary": {
         "value": "#202425",
         "type": "color"
+      },
+      "pureForeground": {
+        "value": "#FFFFFF",
+        "type": "color"
+      },
+      "pureBackground": {
+        "value": "black",
+        "type": "color"
       }
     }
   },
@@ -3593,16 +3609,6 @@
         "type": "innerShadow"
       },
       "type": "boxShadow"
-    }
-  },
-  "pure": {
-    "background": {
-      "value": "#FFFFFF",
-      "type": "color"
-    },
-    "foreground": {
-      "value": "black",
-      "type": "color"
     }
   }
 }
