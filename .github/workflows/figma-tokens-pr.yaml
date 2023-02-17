@@ -16,7 +16,7 @@ jobs:
           ref: ${{ github.event.pull_request.head.ref }}
 
       - name: Install Dependencies
-        run: npm install
+        run: npm install --force
 
       - name: Run token-transformer
         run: npx token-transformer tokens/figma-output/ tokens/theme-transformed.json --resolveReferences false
@@ -29,5 +29,5 @@ jobs:
         with:
           author_name: Leo
           author_email: sillyleo@gmail.com
-          message: 'chore: style-dictionary output'
-          add: '.'
+          message: "chore: style-dictionary output"
+          add: "."
