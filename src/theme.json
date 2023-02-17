@@ -487,7 +487,9 @@
     "extrabold": 800
   },
   "fontSizes": {
-    "4xl": "72px",
+    "6xl": "72px",
+    "5xl": "64px",
+    "4xl": "56px",
     "3xl": "48px",
     "2xl": "36px",
     "xl": "24px",
@@ -503,6 +505,12 @@
       "lineHeight": "110%",
       "fontSize": "72px",
       "letterSpacing": "-2%"
+    },
+    "page-title2": {
+      "fontFamily": "Sk-Modernist",
+      "fontWeight": 700,
+      "lineHeight": "110%",
+      "fontSize": "64px"
     },
     "title1": {
       "fontFamily": "Sk-Modernist",
@@ -572,7 +580,7 @@
     "label": {
       "fontFamily": "Inter",
       "fontWeight": 400,
-      "lineHeight": "150%",
+      "lineHeight": "140%",
       "fontSize": "14px",
       "letterSpacing": "0%"
     },
@@ -1567,6 +1575,7 @@
       "type": "innerShadow"
     }
   },
+  "Body 14": "140%",
   "tokenSetOrder": {
     "0": "global",
     "1": "light",
