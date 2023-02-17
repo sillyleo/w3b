@@ -75,6 +75,8 @@
     "@vanilla-extract/vite-plugin": "^3.8.0",
     "@vitejs/plugin-react": "^3.1.0",
     "csstype": "^3.1.1",
+    "eslint": "8.34.0",
+    "eslint-config-next": "13.1.6",
     "json-to-ts-cli": "^1.0.2",
     "lorem-ipsum": "^2.0.8",
     "next": "^13.1.6",

@@ -17,6 +17,7 @@ interface RootObject {
   spacing: Spacing;
   screens: Screens;
   boxShadow: BoxShadow;
+  'Body 14': string;
   tokenSetOrder: TokenSetOrder;
 }
 interface TokenSetOrder {
@@ -99,6 +100,7 @@ interface ParagraphSpacing {
 }
 interface Typography {
   'page-title': Pagetitle;
+  'page-title2': Pagetitle2;
   title1: Pagetitle;
   title2: Pagetitle;
   title3: Pagetitle;
@@ -127,6 +129,12 @@ interface Overline {
   letterSpacing: string;
   textCase: string;
 }
+interface Pagetitle2 {
+  fontFamily: string;
+  fontWeight: number;
+  lineHeight: string;
+  fontSize: string;
+}
 interface Pagetitle {
   fontFamily: string;
   fontWeight: number;
@@ -135,6 +143,8 @@ interface Pagetitle {
   letterSpacing: string;
 }
 interface FontSizes {
+  '6xl': string;
+  '5xl': string;
   '4xl': string;
   '3xl': string;
   '2xl': string;

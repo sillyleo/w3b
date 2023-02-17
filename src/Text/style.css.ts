@@ -10,7 +10,13 @@ export const textStyle = recipe({
     size: {
       "page-title": sprinkles({
         fontWeight: "bold",
-        fontSize: "4xl",
+        fontSize: "6xl",
+        lineHeight: "heading",
+        letterSpacing: "decreased",
+      }),
+      "page-title2": sprinkles({
+        fontWeight: "bold",
+        fontSize: "5xl",
         lineHeight: "heading",
         letterSpacing: "decreased",
       }),

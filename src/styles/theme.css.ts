@@ -86,7 +86,10 @@ const commonTokens = {
   fontWeight: fontWeights,
   paragraphSpacing: figmaTokens.paragraphSpacing,
   letterSpacing: letterSpacing,
-  spacing: figmaTokens.spacing,
+  spacing: {
+    "100%": "100%",
+    ...figmaTokens.spacing,
+  },
   screens: figmaTokens.screens,
 };
 
@@ -469,6 +472,20 @@ export const lgGhostShadowClass = styleVariants(allTones, (tone) => {
 // Sprinkles
 
 const colorStyles = defineProperties({
+  conditions: {
+    default: {},
+    hover: { selector: "&:hover" },
+    focus: { selector: "&:focus" },
+    xs: {},
+    sm: { "@media": `screen and (min-width: ${figmaTokens.screens.sm})` },
+    md: { "@media": `screen and (min-width: ${figmaTokens.screens.md})` },
+    lg: { "@media": `screen and (min-width: ${figmaTokens.screens.lg})` },
+    xl: { "@media": `screen and (min-width: ${figmaTokens.screens.xl})` },
+    "2xl": {
+      "@media": `screen and (min-width: ${figmaTokens.screens["2xl"]})`,
+    },
+  },
+  defaultCondition: "default",
   properties: {
     color: theme.colors,
     background: theme.colors,
@@ -487,6 +504,9 @@ const shadowColorLg = "rgba(0,0,0,0.04)";
 
 const layoutStyles = defineProperties({
   conditions: {
+    default: {},
+    hover: { selector: "&:hover" },
+    focus: { selector: "&:focus" },
     xs: {},
     sm: { "@media": `screen and (min-width: ${figmaTokens.screens.sm})` },
     md: { "@media": `screen and (min-width: ${figmaTokens.screens.md})` },
@@ -496,7 +516,7 @@ const layoutStyles = defineProperties({
       "@media": `screen and (min-width: ${figmaTokens.screens["2xl"]})`,
     },
   },
-  defaultCondition: "xs",
+  defaultCondition: "default",
   properties: {
     opacity: theme.opacity,
     left: theme.spacing,
@@ -748,3 +768,7 @@ export const formTone = styleVariants(allTones, (tone: keyof Colors) => {
 
 export const sprinkles = createSprinkles(colorStyles, layoutStyles);
 export type Sprinkles = Parameters<typeof sprinkles>[0];
+
+export const resetStyle = style({
+  all: "unset",
+});

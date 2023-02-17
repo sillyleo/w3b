@@ -18,7 +18,7 @@ import {
 
 export interface InputProps extends InputStyleVariants, BentoProps {
   id?: string;
-  size?: "sm" | "md" | "lg";
+  size?: InputStyleVariants["size"];
   align?: "left" | "center" | "right";
   tone?: keyof Colors;
   leftIcon?: React.ReactNode | any;
@@ -32,95 +32,93 @@ export interface InputProps extends InputStyleVariants, BentoProps {
   error?: boolean;
 }
 
-export const Input = forwardRef<HTMLInputElement, InputProps>(
-  (
-    {
-      id,
-      size = "md",
-      type = "text",
-      align = "left",
-      tone = "gray",
-      leftIcon,
-      rightIcon,
-      label,
-      disabled,
-      invalid,
-      error,
-      description,
-      errorMessage,
-      ...props
-    },
-    ref
-  ) => {
-    const status = () => {
-      if (disabled) {
-        return "disabled";
-      }
-      if (invalid) {
-        return "invalid";
-      }
-      if (error) {
-        return "error";
-      }
-      return "default";
-    };
-    const generatedId = React.useId();
-    const appliedId = id || generatedId;
-    return (
-      <Stack gap={"1"} alignItems={"stretch"} className={status()}>
-        {label && typeof label === "string" ? (
-          <Text as={"label"} htmlFor={appliedId} pl="2" size="label">
-            {label}
-          </Text>
-        ) : (
-          label
+export const Input = (
+  {
+    id,
+    size = "md" as InputStyleVariants["size"],
+    type = "text",
+    align = "left",
+    tone = "gray",
+    leftIcon,
+    rightIcon,
+    label,
+    disabled,
+    invalid,
+    error,
+    description,
+    errorMessage,
+    ...props
+  },
+  ref
+) => {
+  const status = () => {
+    if (disabled) {
+      return "disabled";
+    }
+    if (invalid) {
+      return "invalid";
+    }
+    if (error) {
+      return "error";
+    }
+    return "default";
+  };
+  const generatedId = React.useId();
+  const appliedId = id || generatedId;
+  return (
+    <Stack gap={"1"} alignItems={"stretch"} className={status()}>
+      {label && typeof label === "string" ? (
+        <Text as={"label"} htmlFor={appliedId} pl="2" size="label">
+          {label}
+        </Text>
+      ) : (
+        label
+      )}
+      <Stack
+        gap={"1"}
+        direction="row"
+        wrap={"nowrap"}
+        alignItems={"stretch"}
+        className={clsx(
+          inputStyle({ size: size }),
+          inputToneVariants[tone],
+          outerStatusClass
         )}
-        <Stack
-          gap={"1"}
-          direction="row"
-          wrap={"nowrap"}
-          alignItems={"stretch"}
+      >
+        {leftIcon && <div className={inputIcon["left"]}>{leftIcon}</div>}
+        <Bento
+          ref={ref}
+          flexGrow={1}
+          as={"input"}
+          id={appliedId}
           className={clsx(
-            inputStyle({ size: size }),
-            inputToneVariants[tone],
-            outerStatusClass
+            invisibleInput[size],
+            inputTextVariants[tone],
+            innerStatusClass,
+            inputBasicStyle
           )}
-        >
-          {leftIcon && <div className={inputIcon["left"]}>{leftIcon}</div>}
-          <Bento
-            ref={ref}
-            flexGrow={1}
-            as={"input"}
-            id={appliedId}
-            className={clsx(
-              invisibleInput[size],
-              inputTextVariants[tone],
-              innerStatusClass,
-              inputBasicStyle
-            )}
-            type={type}
-            disabled={disabled}
-            {...props}
-          />
-          {rightIcon && <div className={inputIcon["right"]}>{rightIcon}</div>}
-        </Stack>
-        {description && typeof description === "string" ? (
-          <Text pl="2" size="label" color="slate10">
-            {description}
-          </Text>
-        ) : (
-          description
-        )}
-        {errorMessage && typeof errorMessage === "string" ? (
-          <Text pl="2" size="label" color="red9">
-            {errorMessage}
-          </Text>
-        ) : (
-          errorMessage
-        )}
+          type={type}
+          disabled={disabled}
+          {...props}
+        />
+        {rightIcon && <div className={inputIcon["right"]}>{rightIcon}</div>}
       </Stack>
-    );
-  }
-);
+      {description && typeof description === "string" ? (
+        <Text pl="2" size="label" color="slate10">
+          {description}
+        </Text>
+      ) : (
+        description
+      )}
+      {errorMessage && typeof errorMessage === "string" ? (
+        <Text pl="2" size="label" color="red9">
+          {errorMessage}
+        </Text>
+      ) : (
+        errorMessage
+      )}
+    </Stack>
+  );
+};
 
-export default Input;
+export default React.forwardRef(Input);

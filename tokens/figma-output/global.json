@@ -136,6 +136,10 @@
       "value": "150%",
       "type": "lineHeights"
     },
+    "tight": {
+      "value": "140%",
+      "type": "lineHeights"
+    },
     "single": {
       "value": "100%",
       "type": "lineHeights"
@@ -3627,9 +3631,5 @@
       },
       "type": "boxShadow"
     }
-  },
-  "Body 14": {
-    "value": "140%",
-    "type": "lineHeights"
   }
 }
