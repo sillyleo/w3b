@@ -528,6 +528,7 @@ const layoutStyles = defineProperties({
     flexDirection: ["row", "column"],
     flexGrow: [0, 1],
     flexShrink: [0, 1],
+    flexBasis: ["auto", "0%", "25%", "50%", "75%", "100%"],
     flexWrap: ["nowrap", "wrap", "wrap-reverse"],
     position: ["static", "relative", "absolute", "fixed", "sticky"],
     justifyContent: [
