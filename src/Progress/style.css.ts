@@ -33,6 +33,7 @@ export const indicatorColor = styleVariants(allTones, (tone) => {
 
 export const indicatorStyle = style({
   boxSizing: "border-box",
+  maxWidth: "100%",
   borderRadius: theme.radii["full"],
   transform: "translateZ(0)",
   transition: "transform 660ms cubic-bezier(0.65, 0, 0.35, 1)",
