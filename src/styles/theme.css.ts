@@ -535,6 +535,7 @@ const layoutStyles = defineProperties({
     ],
     gridAutoColumns: ["auto", "min-content", "max-content", "fit-content"],
     gridAutoRows: ["auto", "min-content", "max-content", "fit-content"],
+    gridAutoFlow: ["row", "column", "dense", "row dense", "column dense"],
     gridTemplateColumns: [
       "none",
       "auto",
