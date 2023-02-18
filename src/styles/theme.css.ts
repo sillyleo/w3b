@@ -526,6 +526,8 @@ const layoutStyles = defineProperties({
     textAlign: ["left", "center", "right"],
     display: ["none", "block", "flex", "inline", "inline-block", "inline-flex"],
     flexDirection: ["row", "column"],
+    columns: ["auto", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"],
+    columnGap: theme.spacing,
     flexGrow: [0, 1],
     flexShrink: [0, 1],
     flexBasis: ["auto", "0%", "25%", "50%", "75%", "100%"],
