@@ -1,0 +1,58 @@
+# Progress
+
+import {Bento, IconButton, Text, Input, LucideIcon, Progress, Display} from "ui";
+
+<Display label="progress">
+
+    <Bento>
+        <IconButton
+            shadow
+            borderRadius='full'
+            size='sm'
+            rightIcon={<LucideIcon name={'chevron-down'}/>}
+            tone='gray'
+            intent='primary'
+        />
+        <IconButton
+            shadow
+            size='md'
+            rightIcon={<LucideIcon name={'chevron-down'}/>}
+            tone='gray'
+            intent='primary'
+        />
+        <IconButton
+            shadow
+            size='lg'
+            tone='gray'
+            intent='primary'
+            rightIcon={<LucideIcon name={'chevron-down'}/>}
+        />
+
+        <IconButton shadow size='sm' tone='gray' intent='secondary'/>
+        <IconButton shadow size='md' tone='gray' intent='secondary'/>
+        <IconButton shadow size='lg' tone='gray' intent='secondary'/>
+
+        <IconButton shadow size='sm' tone='gray' intent='primary'/>
+        <IconButton shadow size='md' tone='gray' intent='primary'/>
+        <IconButton shadow size='lg' tone='gray' intent='primary'/>
+        <IconButton shadow size='sm' tone='orange' intent='primary'/>
+        <IconButton shadow size='md' tone='orange' intent='primary'/>
+        <IconButton shadow size='lg' tone='orange' intent='primary'/>
+        <IconButton shadow size='sm' tone='amber' intent='primary'/>
+        <IconButton shadow size='md' tone='amber' intent='primary'/>
+        <IconButton shadow size='lg' tone='amber' intent='primary'/>
+        <IconButton shadow size='sm' tone='blue' intent='primary'/>
+        <IconButton shadow size='md' tone='blue' intent='primary'/>
+        <IconButton shadow size='lg' tone='blue' intent='primary'/>
+
+        <IconButton tone={'amber'} gradient size={'sm'} shadow>
+            💡
+        </IconButton>
+        <IconButton tone={'amber'} gradient size={'md'} shadow>
+            💡
+        </IconButton>
+        <IconButton tone={'amber'} gradient size={'lg'} shadow>
+            💡
+        </IconButton>
+    </Bento>
+</Display>

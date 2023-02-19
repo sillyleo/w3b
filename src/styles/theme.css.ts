@@ -6,9 +6,9 @@ import {
   style,
   styleVariants,
 } from "@vanilla-extract/css";
-import { createSprinkles, defineProperties } from "@vanilla-extract/sprinkles";
-import { checkboxLabel } from "src/Checkbox/style.css";
-import { allTones } from "src/constants";
+import {createSprinkles, defineProperties} from "@vanilla-extract/sprinkles";
+import {checkboxLabel} from "src/Checkbox/style.css";
+import {allTones} from "src/constants";
 import figmaTokens from "../theme.json";
 
 // Process colors from tomato: {1: color} to tomato1: color
@@ -16,19 +16,20 @@ import figmaTokens from "../theme.json";
 // e.g. { colors: { red: { 1: "#fff" } } } => "colors-red-1"
 function camelCase(str: string): string {
   return str
-    .replace(/(?:^\w|[A-Z]|\b\w)/g, function (word, index) {
-      return index === 0 ? word.toLowerCase() : word.toUpperCase();
-    })
-    .replace(/\s+/g, "");
+      .replace(/(?:^\w|[A-Z]|\b\w)/g, function (word, index) {
+        return index === 0 ? word.toLowerCase() : word.toUpperCase();
+      })
+      .replace(/\s+/g, "");
 }
+
 function capitalize(str: string): string {
   return str.charAt(0).toUpperCase() + str.slice(1);
 }
 
 function flattenKeys(
-  obj: any,
-  sep = "",
-  parentKey = ""
+    obj: any,
+    sep = "",
+    parentKey = ""
 ): Record<string, string> {
   return Object.keys(obj).reduce((acc, key) => {
     const value = obj[key];
@@ -128,12 +129,12 @@ globalStyle("*", {
 
 // default styling
 globalStyle(
-  ".nomimono-style h1,.nomimono-style h2,.nomimono-style h3,.nomimono-style h4, .nomimono-style h5,.nomimono-style h6",
-  {
-    fontFamily: theme.fontFamily.heading,
-    marginTop: 0,
-    marginBottom: "0.5em",
-  }
+    ".nomimono-style h1,.nomimono-style h2,.nomimono-style h3,.nomimono-style h4, .nomimono-style h5,.nomimono-style h6",
+    {
+      fontFamily: theme.fontFamily.heading,
+      marginTop: 0,
+      marginBottom: "0.5em",
+    }
 );
 
 globalStyle(".nomimono-style .body, .nomimono-style.body", {
@@ -172,11 +173,11 @@ globalFontFace(skModernistRegular, {
 export const primaryClass = styleVariants(allTones, (tone) => {
   // color bg + black text
   if (
-    tone === "sky" ||
-    tone === "mint" ||
-    tone === "lime" ||
-    tone === "yellow" ||
-    tone === "amber"
+      tone === "sky" ||
+      tone === "mint" ||
+      tone === "lime" ||
+      tone === "yellow" ||
+      tone === "amber"
   ) {
     return {
       backgroundColor: theme.colors[tone + "9"],
@@ -189,12 +190,12 @@ export const primaryClass = styleVariants(allTones, (tone) => {
       color: "black",
     };
   } else if (
-    tone === "gray" ||
-    tone === "mauve" ||
-    tone === "slate" ||
-    tone === "sage" ||
-    tone === "olive" ||
-    tone === "sand"
+      tone === "gray" ||
+      tone === "mauve" ||
+      tone === "slate" ||
+      tone === "sage" ||
+      tone === "olive" ||
+      tone === "sand"
   ) {
     // grayscale series
     return {
@@ -218,7 +219,7 @@ export const primaryClass = styleVariants(allTones, (tone) => {
       ":active": {
         backgroundColor: theme.colors[tone + "11"],
       },
-      color: theme.colors.white,
+      color: 'white',
     };
   }
 });
@@ -227,11 +228,11 @@ export const primaryClass = styleVariants(allTones, (tone) => {
 export const secondaryClass = styleVariants(allTones, (tone: keyof Colors) => {
   // color bg + black text
   if (
-    tone === "sky" ||
-    tone === "mint" ||
-    tone === "lime" ||
-    tone === "yellow" ||
-    tone === "amber"
+      tone === "sky" ||
+      tone === "mint" ||
+      tone === "lime" ||
+      tone === "yellow" ||
+      tone === "amber"
   ) {
     return {
       backgroundColor: theme.colors[tone + "4"],
@@ -244,12 +245,12 @@ export const secondaryClass = styleVariants(allTones, (tone: keyof Colors) => {
       color: theme.colors[tone + "11"],
     };
   } else if (
-    tone === "gray" ||
-    tone === "mauve" ||
-    tone === "slate" ||
-    tone === "sage" ||
-    tone === "olive" ||
-    tone === "sand"
+      tone === "gray" ||
+      tone === "mauve" ||
+      tone === "slate" ||
+      tone === "sage" ||
+      tone === "olive" ||
+      tone === "sand"
   ) {
     // grayscale series
     return {
@@ -280,12 +281,12 @@ export const secondaryClass = styleVariants(allTones, (tone: keyof Colors) => {
 // tertiaryClass[tone]
 export const ghostClass = styleVariants(allTones, (tone: keyof Colors) => {
   if (
-    tone === "gray" ||
-    tone === "mauve" ||
-    tone === "slate" ||
-    tone === "sage" ||
-    tone === "olive" ||
-    tone === "sand"
+      tone === "gray" ||
+      tone === "mauve" ||
+      tone === "slate" ||
+      tone === "sage" ||
+      tone === "olive" ||
+      tone === "sand"
   ) {
     return {
       // grayscale series
@@ -474,13 +475,13 @@ export const lgGhostShadowClass = styleVariants(allTones, (tone) => {
 const colorStyles = defineProperties({
   conditions: {
     default: {},
-    hover: { selector: "&:hover" },
-    focus: { selector: "&:focus" },
+    hover: {selector: "&:hover"},
+    focus: {selector: "&:focus"},
     xs: {},
-    sm: { "@media": `screen and (min-width: ${figmaTokens.screens.sm})` },
-    md: { "@media": `screen and (min-width: ${figmaTokens.screens.md})` },
-    lg: { "@media": `screen and (min-width: ${figmaTokens.screens.lg})` },
-    xl: { "@media": `screen and (min-width: ${figmaTokens.screens.xl})` },
+    sm: {"@media": `screen and (min-width: ${figmaTokens.screens.sm})`},
+    md: {"@media": `screen and (min-width: ${figmaTokens.screens.md})`},
+    lg: {"@media": `screen and (min-width: ${figmaTokens.screens.lg})`},
+    xl: {"@media": `screen and (min-width: ${figmaTokens.screens.xl})`},
     "2xl": {
       "@media": `screen and (min-width: ${figmaTokens.screens["2xl"]})`,
     },
@@ -505,13 +506,13 @@ const shadowColorLg = "rgba(0,0,0,0.04)";
 const layoutStyles = defineProperties({
   conditions: {
     default: {},
-    hover: { selector: "&:hover" },
-    focus: { selector: "&:focus" },
+    hover: {selector: "&:hover"},
+    focus: {selector: "&:focus"},
     xs: {},
-    sm: { "@media": `screen and (min-width: ${figmaTokens.screens.sm})` },
-    md: { "@media": `screen and (min-width: ${figmaTokens.screens.md})` },
-    lg: { "@media": `screen and (min-width: ${figmaTokens.screens.lg})` },
-    xl: { "@media": `screen and (min-width: ${figmaTokens.screens.xl})` },
+    sm: {"@media": `screen and (min-width: ${figmaTokens.screens.sm})`},
+    md: {"@media": `screen and (min-width: ${figmaTokens.screens.md})`},
+    lg: {"@media": `screen and (min-width: ${figmaTokens.screens.lg})`},
+    xl: {"@media": `screen and (min-width: ${figmaTokens.screens.xl})`},
     "2xl": {
       "@media": `screen and (min-width: ${figmaTokens.screens["2xl"]})`,
     },
@@ -704,11 +705,11 @@ const layoutStyles = defineProperties({
 export const formTone = styleVariants(allTones, (tone: keyof Colors) => {
   // color bg + black text
   if (
-    tone === "sky" ||
-    tone === "mint" ||
-    tone === "lime" ||
-    tone === "yellow" ||
-    tone === "amber"
+      tone === "sky" ||
+      tone === "mint" ||
+      tone === "lime" ||
+      tone === "yellow" ||
+      tone === "amber"
   ) {
     return {
       backgroundColor: theme.colors[tone + "2"],
@@ -736,12 +737,12 @@ export const formTone = styleVariants(allTones, (tone: keyof Colors) => {
       color: "black",
     };
   } else if (
-    tone === "gray" ||
-    tone === "mauve" ||
-    tone === "slate" ||
-    tone === "sage" ||
-    tone === "olive" ||
-    tone === "sand"
+      tone === "gray" ||
+      tone === "mauve" ||
+      tone === "slate" ||
+      tone === "sage" ||
+      tone === "olive" ||
+      tone === "sand"
   ) {
     // grayscale series
     return {
