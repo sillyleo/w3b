@@ -1,10 +1,12 @@
-import { AppProps } from "next/app";
-import { useEffect, useState } from "react";
-import { darkTheme } from "src/styles/theme.css";
+import {AppProps} from "next/app";
+import {useEffect, useState} from "react";
+import {darkTheme} from "src/styles/theme.css";
 
-function MyApp({ Component, pageProps }: AppProps) {
+function MyApp({Component, pageProps}: AppProps) {
   const [isDark, setIsDark] = useState(false);
 
+
+  // this watches the next-themes key in localstorage and updates the state
   useEffect(() => {
     const item = localStorage.getItem("theme");
     if (item === "dark") {
@@ -14,6 +16,8 @@ function MyApp({ Component, pageProps }: AppProps) {
     }
   }, []);
 
+
+  // this watches html class change by next-themes
   useEffect(() => {
     const html = document.querySelector("html");
     const options = {
@@ -23,14 +27,16 @@ function MyApp({ Component, pageProps }: AppProps) {
     function callback(mutationList, observer) {
       mutationList.forEach(function (mutation) {
         if (
-          mutation.type === "attributes" &&
-          mutation.attributeName === "class"
+            mutation.type === "attributes" &&
+            mutation.attributeName === "class"
         ) {
           const item = localStorage.getItem("theme");
           if (item === "dark") {
             setIsDark(true);
+
           } else {
             setIsDark(false);
+
           }
         }
       });
@@ -38,13 +44,21 @@ function MyApp({ Component, pageProps }: AppProps) {
 
     const observer = new MutationObserver(callback);
     observer.observe(html, options);
+
   }, []);
 
-  return (
-    <div className={isDark ? darkTheme : null}>
-      <Component {...pageProps} />
-    </div>
-  );
+  // this adds or removes the dark theme class to the html tag
+  useEffect(() => {
+        if (isDark) {
+          document.getElementsByTagName("html")[0].classList.add(darkTheme)
+        } else {
+          document.getElementsByTagName("html")[0].classList.remove(darkTheme)
+        }
+      }
+      , [isDark]);
+
+
+  return <Component {...pageProps} />;
 }
 
 export default MyApp;
