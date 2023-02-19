@@ -25,5 +25,5 @@ dist-ssr
 .vercel
 .next
 .turbo
-.rollup.cache
-.rollup
+.rollup.cache/*
+.rollup/*
