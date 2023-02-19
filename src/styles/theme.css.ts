@@ -763,7 +763,7 @@ export const formTone = styleVariants(allTones, (tone: keyof Colors) => {
       ":active": {
         backgroundColor: theme.colors[tone + "4"],
       },
-      color: theme.colors[tone + "12"],
+      color: "white",
     };
   } else {
     // color bg
@@ -793,7 +793,7 @@ export const formTone = styleVariants(allTones, (tone: keyof Colors) => {
       ":active": {
         backgroundColor: theme.colors[tone + "3"],
       },
-      color: theme.colors.white,
+      color: "white",
     };
   }
 });
