@@ -27,3 +27,5 @@ dist-ssr
 .turbo
 .rollup.cache/*
 .rollup/*
+.rollup.cache
+.rollup.*
