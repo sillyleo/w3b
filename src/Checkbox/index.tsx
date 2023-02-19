@@ -91,7 +91,9 @@ function Checkbox(
         )}
       </div>
 
-      <span>{children}</span>
+      <Bento as="span" fontSize={fontSize}>
+        {children}
+      </Bento>
     </Bento>
   );
 }

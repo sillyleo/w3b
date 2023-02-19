@@ -27,6 +27,7 @@ const HeroIcon: FC<{ icon: string }> = (props) => {
 
 const HeroIconOne = ({
   name = "HiArchive",
+  // from react-icons
   boxSize = "24px",
   ...props
 }: HeroIconOneProps) => {
