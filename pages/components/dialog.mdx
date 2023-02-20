@@ -1,62 +1,70 @@
 # Dialog
 
-import {Dialog, Display, Text, Button} from "ui";
-import {loremIpsum} from "react-lorem-ipsum";
+import { Dialog, Display, Text, Button } from "ui";
+import { loremIpsum } from "react-lorem-ipsum";
 
 Examples:
 
 ```jsx
 <Dialog.Root>
-    <Dialog.Trigger><Button>Open Dialog</Button></Dialog.Trigger>
-    <Dialog.Portal>
-        <Dialog.Overlay/>
-        <Dialog.Content>
-            <Text>Lorem ipsum odor amet, consectetuer adipiscing elit. Ac purus in massa egestas mollis varius;
-    dignissim elementum. Mollis tincidunt mattis hendrerit dolor eros enim, nisi ligula ornare.
-    Hendrerit parturient habitant pharetra rutrum gravida porttitor eros feugiat. Mollis elit
-    sodales taciti duis praesent id. Consequat urna vitae morbi nunc congue.
-</Text>
-            <Dialog.Close>Close</Dialog.Close>
-        </Dialog.Content>
-    </Dialog.Portal>
+  <Dialog.Trigger>
+    <Button>Open Dialog</Button>
+  </Dialog.Trigger>
+  <Dialog.Portal>
+    <Dialog.Overlay />
+    <Dialog.Content>
+      <Text>
+        Lorem ipsum odor amet, consectetuer adipiscing elit. Ac purus in massa
+        egestas mollis varius; dignissim elementum. Mollis tincidunt mattis
+        hendrerit dolor eros enim, nisi ligula ornare. Hendrerit parturient
+        habitant pharetra rutrum gravida porttitor eros feugiat. Mollis elit
+        sodales taciti duis praesent id. Consequat urna vitae morbi nunc congue.
+      </Text>
+      <Dialog.Close>Close</Dialog.Close>
+    </Dialog.Content>
+  </Dialog.Portal>
 </Dialog.Root>
 ```
 
 <Dialog.Root>
-    <Dialog.Trigger><Button>Open Dialog</Button></Dialog.Trigger>
-    <Dialog.Portal>
-        <Dialog.Overlay/>
-        <Dialog.Content>
-            <Text>{loremIpsum(3)}</Text>
-            <Dialog.Close>Close</Dialog.Close>
-        </Dialog.Content>
-    </Dialog.Portal>
+  <Dialog.Trigger>
+    <Button>Open Dialog</Button>
+  </Dialog.Trigger>
+  <Dialog.Portal>
+    <Dialog.Overlay />
+    <Dialog.Content>
+      <Text>{loremIpsum(3)}</Text>
+      <Dialog.Close>Close</Dialog.Close>
+    </Dialog.Content>
+  </Dialog.Portal>
 </Dialog.Root>
-
-
 
 ```jsx
 <Dialog.Root>
-    <Dialog.Trigger><Button>Open Dialog</Button></Dialog.Trigger>
-    <Dialog.Portal>
-        <Dialog.Overlay/>
-        <Dialog.Content>
-            <Dialog.Title>Title (optional)</Dialog.Title>
-            <Dialog.Description>Description (optional)</Dialog.Description>
-            <Dialog.Close>Close</Dialog.Close>
-        </Dialog.Content>
-    </Dialog.Portal>
+  <Dialog.Trigger>
+    <Button>Open Dialog</Button>
+  </Dialog.Trigger>
+  <Dialog.Portal>
+    <Dialog.Overlay />
+    <Dialog.Content>
+      <Dialog.Title>Title (optional)</Dialog.Title>
+      <Dialog.Description>Description (optional)</Dialog.Description>
+      <Dialog.Close>Close</Dialog.Close>
+    </Dialog.Content>
+  </Dialog.Portal>
 </Dialog.Root>
 ```
 
 <Dialog.Root>
-    <Dialog.Trigger><Button>Open Dialog</Button></Dialog.Trigger>
-    <Dialog.Portal>
-        <Dialog.Overlay/>
-        <Dialog.Content>
-            <Dialog.Title>Title (optional)</Dialog.Title>
-            <Dialog.Description>Description (optional)</Dialog.Description>
-            <Dialog.Close>Close</Dialog.Close>
-        </Dialog.Content>
-    </Dialog.Portal>
+  <Dialog.Trigger>
+    <Button>Open Dialog</Button>
+  </Dialog.Trigger>
+  <Dialog.Portal>
+    <Dialog.Overlay />
+    <Dialog.Content>
+      <Dialog.Title>Title (optional)</Dialog.Title>
+      <Dialog.Description>Description (optional)</Dialog.Description>
+      <Dialog.Close>Close</Dialog.Close>
+    </Dialog.Content>
+  </Dialog.Portal>
 </Dialog.Root>
