@@ -1,21 +1,18 @@
-/**
- * @title Button shadow Demo1 Title
- * @description Button shadow demo1 description
- */
+# Button
 
-import React from 'react';
-import LucideIcon from '../../LucideIcon';
-import Button from '..';
-import Stack from '../../Stack';
+import {
+  Bento,
+  IconButton,
+  Text,
+  Input,
+  LucideIcon,
+  Progress,
+  Button,
+  Display,
+} from "ui";
 
-{
-  /* <div> */
-}
-const Demo1 = () => {
-  
-  return (
-    <Stack direction={'row'}>
-      <Button
+<Display label="Icon button">
+   <Button
         align='left'
         leftIcon={<LucideIcon name='plus' />}
         intent='primary'
@@ -101,8 +98,4 @@ const Demo1 = () => {
       <Button shadow size='lg' tone='gray' intent='ghost'>
         Button
       </Button>
-    </Stack>
-  );
-};
-
-export default Demo1;
+      </Display>

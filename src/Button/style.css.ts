@@ -54,7 +54,7 @@ export const buttonStyle = recipe({
       },
       lg: {
         borderRadius: theme.radii["xl"],
-        fontSize: theme.fontSize["base"],
+        fontSize: theme.fontSize["lg"],
         height: theme.spacing[11],
         paddingLeft: theme.spacing[5],
         paddingRight: theme.spacing[5],
