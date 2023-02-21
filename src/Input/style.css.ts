@@ -206,8 +206,7 @@ export const invisibleInput = styleVariants({
   },
   md: {
     borderRadius: theme.radii["lg"],
-
-    width: "1fr",
+    width: "inherit",
     flexGrow: 1,
     ":disabled": {
       cursor: "not-allowed",
@@ -222,8 +221,7 @@ export const invisibleInput = styleVariants({
   },
   lg: {
     borderRadius: theme.radii["xl"],
-
-    width: "1fr",
+    width: "inherit",
     flexGrow: 1,
     ":disabled": {
       cursor: "not-allowed",
