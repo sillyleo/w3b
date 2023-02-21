@@ -17,7 +17,6 @@ export const contentStyle = style([
     backgroundColor: "baseBackground",
     borderRadius: "2xl",
     boxShadow: "lg",
-    padding: "6",
   }),
   {
     zIndex: 30,
@@ -27,19 +26,51 @@ export const contentStyle = style([
     transform: "translate(-50%, -50%)",
     width: "90vw",
     maxWidth: "650px",
-    maxHeight: "85vh",
+    // maxHeight: "85vh",
+    overflow: "hidden",
     ":focus": { outline: "none" },
   },
 ]);
+export const contentWrapperStyle = style([
+  sprinkles({
+    padding: "6",
+  }),
+  {
+    position: "relative",
+    WebkitMaskImage:
+      "linear-gradient(to bottom, rgba(0, 0, 0, 1) 95%, rgba(0, 0, 0, 0) 100%)",
+    maskImage:
+      "linear-gradient(to bottom, rgba(0, 0, 0, 1) 95%, rgba(0, 0, 0, 0) 100%)",
+    width: "100%",
+    minWidth: "100%",
+    maxHeight: "85vh",
+    overflowY: "auto",
+    ":focus": { outline: "none" },
+    // "::-webkit-scrollbar": {
+    //   width: "6px",
+    // },
+    // "::-webkit-scrollbar-track": {
+    //   background: "rgba(0, 0, 0, 0)",
+    //   // opacity: 0.2,
+    //   borderRadius: "5px",
+    // },
 
-export const titleStyle = style({});
-export const descriptionStyle = style({});
+    // /* Handle */
+    // "::-webkit-scrollbar-thumb": {
+    //   background: "rgba(255, 255, 255, 0.5)",
+    //   // opacity: 0.5,
+    //   borderRadius: "5px",
+    // },
+  },
+]);
 
-export const closeStyle = style([
+export const closePositionStyle = style([
   sprinkles({
     position: "absolute",
     top: "2",
     right: "2",
   }),
-  {},
+  {
+    zIndex: "32",
+  },
 ]);
