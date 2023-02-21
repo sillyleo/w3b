@@ -191,8 +191,7 @@ export const inputBasicStyle = style({
 export const invisibleInput = styleVariants({
   sm: {
     borderRadius: theme.radii["lg"],
-
-    width: "1fr",
+    width: "inherit",
     flexGrow: 1,
     ":disabled": {
       cursor: "not-allowed",
