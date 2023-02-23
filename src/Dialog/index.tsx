@@ -85,13 +85,5 @@ const Close = (props: CloseProps) => {
   );
 };
 
-export default {
-  Root,
-  Content,
-  Title,
-  Description,
-  Trigger,
-  Portal,
-  Overlay,
-  Close,
-};
+export default Dialog;
+export { Root, Content, Title, Description, Trigger, Portal, Overlay, Close };
