@@ -8,23 +8,22 @@ function capitalize(str: string): string {
   return str.charAt(0).toUpperCase() + str.slice(1);
 }
 
-function flattenKeys(
-  obj: any,
-  sep = "",
-  parentKey = ""
-): Record<string, string> {
-  return Object.keys(obj).reduce((acc, key) => {
-    const value = obj[key];
-    const newKey = parentKey ? parentKey + sep + capitalize(key) : key;
-    if (typeof value === "object") {
-      Object.assign(acc, flattenKeys(value, sep, newKey));
-    } else {
-      acc[newKey] = value;
-    }
-    return acc;
-  }, {});
-}
 // process colors from tomato: {1: color} to tomato1: color
+
+function flattenKeys(obj: any) {
+  const result: any = {};
+  Object.keys(obj).forEach((key) => {
+    if (typeof obj[key] === "object") {
+      const flatObject = flattenKeys(obj[key]);
+      Object.keys(flatObject).forEach((key2) => {
+        result[key + capitalize(key2)] = flatObject[key2];
+      });
+    } else {
+      result[key] = obj[key];
+    }
+  });
+  return result;
+}
 
 const lightColors = flattenKeys(figmaTokens.light);
 const brandColors = flattenKeys(figmaTokens.brand);
