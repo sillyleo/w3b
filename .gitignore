@@ -29,3 +29,4 @@ dist-ssr
 .rollup/*
 .rollup.cache
 .rollup.*
+vite.config.ts.timestamp*
