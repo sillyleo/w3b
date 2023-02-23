@@ -1,6 +1,6 @@
 import { createStitches, defaultThemeMap } from "@stitches/react";
 import figmaTokens from "./theme.json";
-import type { ScaleValue } from "@stitches/react";
+import type * as Stitches from "@stitches/react";
 function capitalize(str: string): string {
   return str.charAt(0).toUpperCase() + str.slice(1);
 }
@@ -148,8 +148,6 @@ const borderToneScales = {
   }),
 };
 
-export type Colors = typeof lightColors & typeof brandColors;
-
 export const {
   styled,
   css,
@@ -207,9 +205,6 @@ export const {
     ...borderToneScales,
     m: (value: any) => ({
       margin: value,
-    }),
-    mt: (value: ScaleValue<"space">) => ({
-      marginTop: value,
     }),
     mr: (value: any) => ({
       marginRight: value,
@@ -279,6 +274,9 @@ export const {
     ...defaultThemeMap,
   },
 });
+
+// use for css props
+export type CSSprops = Stitches.CSS<typeof config>;
 
 // only override some colors
 export const darkTheme = createTheme({
