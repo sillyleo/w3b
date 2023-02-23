@@ -1,4 +1,4 @@
-import { styled, darkTheme, CSS } from "../stitches.config";
+import { styled, darkTheme } from "../stitches.config";
 import React from "react";
 
 const TogglePrimitive = styled("div", {
@@ -22,7 +22,7 @@ const TogglePrimitive = styled("div", {
 
 type ToggleProps = React.ComponentProps<typeof TogglePrimitive> & {
   tone?: keyof Colors;
-  css?: CSS;
+  css?: any;
 };
 
 const Toggle = ({ tone, css, ...props }: ToggleProps) => {

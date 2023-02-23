@@ -18,6 +18,7 @@ specifiers:
   '@radix-ui/react-toggle-group': ^1.0.2
   '@rollup/plugin-typescript': ^10.0.1
   '@stitches/react': ^1.2.8
+  '@types/lodash': ^4.14.191
   '@types/node': ^18.13.0
   '@types/react': ^18.0.28
   '@types/react-dom': ^18.0.11
@@ -95,6 +96,7 @@ devDependencies:
   '@codesandbox/sandpack-react': 1.20.9_biqbaboplfbrettd7655fr4n2y
   '@mdx-js/react': 2.3.0_react@18.2.0
   '@rollup/plugin-typescript': 10.0.1_typescript@4.9.5
+  '@types/lodash': 4.14.191
   '@types/node': 18.13.0
   '@types/react': 18.0.28
   '@types/react-dom': 18.0.11
@@ -3325,6 +3327,10 @@ packages:
 
   /@types/katex/0.11.1:
     resolution: {integrity: sha512-DUlIj2nk0YnJdlWgsFuVKcX27MLW0KbKmGVoUHmFr+74FYYNUDAaj9ZqTADvsbE8rfxuVmSFc7KczYn5Y09ozg==}
+    dev: true
+
+  /@types/lodash/4.14.191:
+    resolution: {integrity: sha512-BdZ5BCCvho3EIXw6wUCXHe7rS53AIDPLE+JzwgT+OsJk53oBfbSmZZ7CX4VaRoN78N+TJpFi9QPlfIVNmJYWxQ==}
     dev: true
 
   /@types/mdast/3.0.10:

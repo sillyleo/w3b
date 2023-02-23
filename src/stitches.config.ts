@@ -1,8 +1,4 @@
-import {
-  createStitches,
-  defaultThemeMap,
-  CSS as StitchesCSS,
-} from "@stitches/react";
+import { createStitches, defaultThemeMap } from "@stitches/react";
 import figmaTokens from "./theme.json";
 function capitalize(str: string): string {
   return str.charAt(0).toUpperCase() + str.slice(1);
@@ -277,8 +273,6 @@ export const {
     ...defaultThemeMap,
   },
 });
-
-export type CSS = StitchesCSS<typeof config>;
 
 // only override some colors
 export const darkTheme = createTheme({
