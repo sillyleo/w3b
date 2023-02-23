@@ -13,7 +13,7 @@ export default function Demo() {
       <Checkbox defaultChecked>Checkbox defaultChecked</Checkbox>
       <Checkbox defaultChecked tone="sky">
         Checkbox defaultChecked
-      </Checkbox>
+    </Checkbox>
       <Checkbox checked={true} tone="lime">
         Checkbox checked=true
       </Checkbox>

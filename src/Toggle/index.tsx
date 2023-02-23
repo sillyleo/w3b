@@ -1,4 +1,5 @@
 import { styled, darkTheme, CSS } from "../stitches.config";
+import React from "react";
 
 const TogglePrimitive = styled("div", {
   variants: {
