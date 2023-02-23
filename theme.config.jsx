@@ -30,7 +30,7 @@ const jpLogoMotion = {
   hover: { opacity: 1, y: "0%", scale: 1 },
 };
 
-export default {
+const config = {
   logo: (
     <motion.div
       className={clsx("nomimono-style", "heading")}
@@ -213,12 +213,13 @@ export default {
     text: (
       <span>
         MIT {new Date().getFullYear()} ©{" "}
-        <a href="https://github.com/sillyleo" target="_blank">
+        <a href="https://github.com/sillyleo" target="_blank" rel="noreferrer">
           Leo Lin
         </a>
         .
       </span>
     ),
   },
-  // ...
 };
+
+export default config;
