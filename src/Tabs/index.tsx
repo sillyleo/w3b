@@ -90,4 +90,5 @@ const Content = (props: ContentProps) => {
   return <Tabs.Content className={contentStyle} {...props} />;
 };
 
-export default { Root, List, Trigger, Content };
+export default Tabs;
+export { Root, List, Trigger, Content };
