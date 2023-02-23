@@ -1,7 +1,7 @@
 import { styled, darkTheme } from "../stitches.config";
 
 const TogglePrimitive = styled("div", {
-  borderRadius: "9999px",
+  mt: "$3",
   variants: {
     size: {
       sm: {
@@ -30,7 +30,7 @@ const Toggle = ({ tone, ...props }: ToggleProps) => {
       {...props}
       css={{
         // backgroundColor: `$${props.tone}9`,
-        bgTone: tone,
+        bgTone7: "brown",
       }}
     >
       Toggle
