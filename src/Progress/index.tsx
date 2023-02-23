@@ -19,6 +19,7 @@ export interface ProgressProps extends BentoProps {
   max?: number;
   size?: "sm" | "md" | "lg";
   barColor?: string;
+  trackColor?: string;
   leftLabel?: React.ReactNode | string;
   rightLabel?: React.ReactNode | string;
   labelPosition?: "top" | "bottom";
@@ -31,6 +32,7 @@ const Progress = ({
   max = 100,
   size = "md",
   barColor,
+  trackColor,
   leftLabel,
   rightLabel,
   labelPosition = "bottom",
@@ -60,6 +62,9 @@ const Progress = ({
       </Stack>
       <ProgressPrimitive.Root
         className={clsx(rootStyle)}
+        style={{
+          backgroundColor: trackColor,
+        }}
         value={value}
         max={max}
       >
