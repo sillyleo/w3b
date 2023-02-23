@@ -49,7 +49,7 @@ export default defineConfig({
 
     typescript({
       tsconfig: "./tsconfig.vite.json",
-
+      strict: true,
       declaration: true,
       // emitDeclarationOnly: true,
       noForceEmit: true,
