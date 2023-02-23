@@ -1,0 +1,20 @@
+import { Html, Head, Main, NextScript } from "next/document";
+import { getCssText } from "src/stitches.config";
+export default function Document() {
+  return (
+    <Html>
+      <Head>
+        <style
+          id="stitches"
+          dangerouslySetInnerHTML={{ __html: getCssText() }}
+        />
+      </Head>
+      <body>
+        <Main />
+        <NextScript />
+      </body>
+    </Html>
+  );
+}
+
+// Next 13: https://github.com/stitchesjs/stitches/issues/1109
