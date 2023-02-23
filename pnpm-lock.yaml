@@ -17,6 +17,7 @@ specifiers:
   '@radix-ui/react-toggle': ^1.0.1
   '@radix-ui/react-toggle-group': ^1.0.2
   '@rollup/plugin-typescript': ^10.0.1
+  '@stitches/react': ^1.2.8
   '@types/node': ^18.13.0
   '@types/react': ^18.0.28
   '@types/react-dom': ^18.0.11
@@ -73,6 +74,7 @@ dependencies:
   '@radix-ui/react-tabs': 1.0.2_biqbaboplfbrettd7655fr4n2y
   '@radix-ui/react-toggle': 1.0.1_biqbaboplfbrettd7655fr4n2y
   '@radix-ui/react-toggle-group': 1.0.2_biqbaboplfbrettd7655fr4n2y
+  '@stitches/react': 1.2.8_react@18.2.0
   '@vanilla-extract/css': 1.9.5
   '@vanilla-extract/recipes': 0.3.0_@vanilla-extract+css@1.9.5
   '@vanilla-extract/sprinkles': 1.5.1_@vanilla-extract+css@1.9.5
@@ -3271,6 +3273,14 @@ packages:
   /@stitches/core/1.2.8:
     resolution: {integrity: sha512-Gfkvwk9o9kE9r9XNBmJRfV8zONvXThnm1tcuojL04Uy5uRyqg93DC83lDebl0rocZCfKSjUv+fWYtMQmEDJldg==}
     dev: true
+
+  /@stitches/react/1.2.8_react@18.2.0:
+    resolution: {integrity: sha512-9g9dWI4gsSVe8bNLlb+lMkBYsnIKCZTmvqvDG+Avnn69XfmHZKiaMrx7cgTaddq7aTPPmXiTsbFcUy0xgI4+wA==}
+    peerDependencies:
+      react: '>= 16.3.0'
+    dependencies:
+      react: 18.2.0
+    dev: false
 
   /@swc/helpers/0.4.14:
     resolution: {integrity: sha512-4C7nX/dvpzB7za4Ql9K81xK3HPxCpHMgwTZVyf+9JQ6VUbn9jjZVN7/Nkdz/Ugzs2CSjqnL/UPXroiVBVHUWUw==}
