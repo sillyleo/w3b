@@ -1,4 +1,3 @@
-import {Button} from "reakit/Button";
 import {css, styled} from "src/stitches.config";
 import Spinner from "../Spinner";
 
@@ -77,8 +76,6 @@ const StyledButton = styled("button", {
                 "& .spinner": {
                     boxSize: 20,
                 },
-
-
             },
             l: {
                 px: "$6",
@@ -86,7 +83,6 @@ const StyledButton = styled("button", {
                 "& .spinner": {
                     boxSize: 24,
                 },
-
             }
         },
         intent: {
@@ -114,6 +110,7 @@ const StyledButton = styled("button", {
                     opacity: 0.5,
                 },
             }
+
         }
 
     },
@@ -128,9 +125,24 @@ const innterWrapper = css({
     px: 6
 })
 
+
 function BrandButton(props) {
+
+    function getToneStyle() {
+        if (!props.tone) {
+            return props.css
+        }
+        return {
+            bgTone10: props.tone,
+            ...props.css
+        }
+    }
+
     return (
-        <StyledButton {...props}>
+        <StyledButton
+
+            css={getToneStyle()}
+            {...props}>
             <Spinner className={"spinner"}/>
             <span className={innterWrapper()}>{props.children}</span>
         </StyledButton>
