@@ -20,8 +20,6 @@ const StyledButton = styled("button", {
   variants: {
     size: {
       xs: {
-        borderRadius: "$lg",
-
         px: "$2",
         py: "$2",
         fontSize: "$sm",
@@ -30,8 +28,6 @@ const StyledButton = styled("button", {
         },
       },
       s: {
-        borderRadius: "$xl",
-
         px: "$3",
         py: "$2",
         "& .spinner": {
@@ -39,8 +35,6 @@ const StyledButton = styled("button", {
         },
       },
       m: {
-        borderRadius: "$xl",
-
         px: "$4",
         py: "$3",
         "& .spinner": {
@@ -48,8 +42,6 @@ const StyledButton = styled("button", {
         },
       },
       l: {
-        borderRadius: "$2xl",
-
         px: "$6",
         py: "$4",
         "& .spinner": {
@@ -75,22 +67,11 @@ const StyledButton = styled("button", {
         },
       },
     },
-    // border: {
-    //   1: {
-    //     borderRadius: "$lg",
-    //   },
-    //   2: {
-    //     borderRadius: "$xl",
-    //   },
-    //   3: {
-    //     borderRadius: "$full",
-    //   },
-    // },
   },
   defaultVariants: {
     size: "m",
+    brand: "primary",
   },
-  compoundVariants: [{}],
 });
 
 const innterWrapper = css({
@@ -100,71 +81,15 @@ const innterWrapper = css({
   },
 });
 
-function getButtonToneStyle(
-  tone: keyof Colors
-  //   intent: "primary" | "secondary" | "ghost"
-) {
-  if (!tone) {
-    return;
-  } else if (
-    tone === "sky" ||
-    tone === "mint" ||
-    tone === "lime" ||
-    tone === "yellow" ||
-    tone === "amber"
-  ) {
-    return {
-      bgTone9: tone,
-      "&:hover": {
-        bgTone10: tone,
-      },
-      "&:active": {
-        bgTone11: tone,
-      },
-      color: "black",
-    };
-  } else if (
-    tone === "gray" ||
-    tone === "mauve" ||
-    tone === "slate" ||
-    tone === "sage" ||
-    tone === "olive" ||
-    tone === "sand"
-  ) {
-    // grayscale series
-    return {
-      bgTone12: tone,
-      "&:hover": {
-        bgTone12: tone,
-      },
-      "&:active": {
-        bgTone11: tone,
-      },
-      color: `$${tone}2`,
-    };
-  } else {
-    return {
-      bgTone9: tone,
-      "&:hover": {
-        bgTone10: tone,
-      },
-      "&:active": {
-        bgTone11: tone,
-      },
-      color: "white",
-    };
-  }
-}
-
 export interface BrandButtonProps
   extends React.ComponentProps<typeof StyledButton> {
-  tone?: keyof Colors;
+  isLoading?: boolean;
 }
 
-function BrandButton({ tone = "slate", ...props }: BrandButtonProps) {
+function BrandButton({ isLoading, ...props }) {
   return (
-    <StyledButton css={_.merge(getButtonToneStyle(tone), props.css)} {...props}>
-      <Spinner className={"spinner"} />
+    <StyledButton {...props}>
+      {isLoading && <Spinner className={"spinner"} />}
       <span className={innterWrapper()}>{props.children}</span>
     </StyledButton>
   );
