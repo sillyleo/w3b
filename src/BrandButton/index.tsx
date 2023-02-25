@@ -6,7 +6,8 @@ const BaseButton = styled("button", {
   color: "white",
 });
 
-export interface BrandButtonProps {
+export interface BrandButtonProps
+  extends React.ComponentProps<typeof BaseButton> {
   children?: ReactNode;
   leftIcon?: ReactNode;
   // onClick: () => void;
