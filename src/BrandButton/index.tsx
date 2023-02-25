@@ -30,8 +30,7 @@ const BaseButton = styled("button", {
 // }
 
 export interface BrandButtonProps
-  extends React.ComponentProps<typeof BaseButton>,
-    Stitches.VariantProps<typeof BaseButton> {
+  extends React.ComponentProps<typeof BaseButton> {
   children?: ReactNode;
   leftIcon?: ReactNode;
   size?: "sm" | "md" | "lg";
