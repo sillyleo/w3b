@@ -1,45 +1,25 @@
 # Button
 
 import {
-    Bento,
-    IconButton,
-    Text,
-    Input,
-    LucideIcon,
-    Progress,
-    Button,
-    Display,
+  Bento,
+  IconButton,
+  Text,
+  Input,
+  LucideIcon,
+  HeroIconOne,
+  Progress,
+  Button,
+  Display,
 } from "ui";
 
 <Display label="button">
     <Button
-        align='left'
-        leftIcon={<LucideIcon name='plus'/>}
-        intent='primary'
-        tone='blue'
-        size='sm'
-    >
-        New Button
-    </Button>
-    <Button
-        align='between'
-        rightIcon={<LucideIcon name='plus'/>}
-        intent='secondary'
-        tone='blue'
-        size='md'
-    >
-        New Button
-    </Button>
-    <Button
-        leftIcon={<LucideIcon name='plus'/>}
-        intent='ghost'
-        tone='blue'
-        size='lg'
-    >
-        New Button
-    </Button>
-
-    <Button size='sm' tone='gray' intent='primary'>
+    tone="lime"
+    size="lg"
+    as="button"
+    leftIcon={<HeroIconOne name={"HiOutlineArrowSmDown"} />}
+    >Deposit</Button>
+    <Button  size='sm' tone='gray' intent='primary'>
         Button
     </Button>
     <Button size='md' tone='gray' intent='primary'>
@@ -98,4 +78,5 @@ import {
     <Button size='lg' tone='gray' intent='ghost'>
         Button
     </Button>
+
 </Display>
