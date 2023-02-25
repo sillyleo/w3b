@@ -1,124 +1,100 @@
 import React, { ForwardedRef, ReactNode } from "react";
-import { styled } from "src/stitches.config";
-const ButtonPrimitive = styled("button", {
-  userSelect: "none",
-  position: "relative",
+import { css, styled } from "src/stitches.config";
+const BaseButton = styled("button", {
+  display: "flex",
+  alignItems: "center",
+  fontWeight: "$medium",
+  overflow: "hidden",
+  lineHeight: 1.5,
+  transition: "$fast",
+  "&:active": {
+    transform: "scale(0.98) translateY(1px)",
+  },
   "&:disabled": {
+    transform: "none",
     cursor: "not-allowed",
     opacity: 0.75,
   },
-
-  "&:hover": {
-    transform: "translateY(-1px)",
-  },
-  "&:active": {
-    transform: "translateY(1px)",
-  },
-  // mdx fix
-  "& > p": {
-    lineHeight: 1,
-  },
-  fontFamily: "$heading",
-  fontWeight: "$bold",
-  cursor: "pointer",
-  display: "inline-flex",
-  gap: "$2",
-  lineHeight: 1,
-  alignItems: "center",
-  fontSize: "$base",
-  border: "0",
-  transition: "$fast",
+  borderRadius: "$xl",
   variants: {
     size: {
-      sm: {
-        borderRadius: "$lg",
-        fontSize: 11,
-        height: "$7",
+      xs: {
+        px: "$2",
+        py: "$2",
+        fontSize: "$sm",
+        "& .spinner": {
+          boxSize: 16,
+        },
+      },
+      s: {
         px: "$3",
         py: "$2",
+        "& .spinner": {
+          boxSize: 20,
+        },
       },
-      md: {
-        borderRadius: "$lg",
-        fontSize: 13,
-        height: "$8",
+      m: {
         px: "$4",
-        py: "$2",
-      },
-      lg: {
-        borderRadius: "$xl",
-        fontSize: 15,
-        height: "$11",
-        px: "$5",
         py: "$3",
+        "& .spinner": {
+          boxSize: 20,
+        },
       },
-      xl: {
-        borderRadius: "$xl",
-        fontSize: 17,
-        height: "$11",
+      l: {
         px: "$6",
         py: "$4",
+        "& .spinner": {
+          boxSize: 24,
+        },
       },
     },
-
-    align: {
-      left: {
-        justifyContent: "flex-start",
+    brand: {
+      primary: {
+        borderRadius: "$full",
+        background: "$colors$primary",
+        color: "black",
+        "&:hover": {
+          background: "$colors$hover",
+        },
       },
-      center: {
-        justifyContent: "center",
-      },
-      right: {
-        justifyContent: "flex-end",
-      },
-      between: {
-        justifyContent: "space-between",
-      },
-      around: {
-        justifyContent: "space-around",
+      secondary: {
+        borderRadius: "$xl",
+        background: "$colors$gray6",
+        color: "$colors$gray12",
+        "&:hover": {
+          background: "$colors$gray7",
+        },
       },
     },
   },
   defaultVariants: {
-    size: "md",
-    align: "center",
+    size: "m",
+    brand: "primary",
   },
 });
 
-const BaseButton = styled("button", {
-  backgroundColor: "red",
-  color: "white",
-  variants: {
-    tone: {
-      red: {
-        backgroundColor: "red",
-      },
-      green: {
-        backgroundColor: "green",
-      },
-    },
-  },
-  defaultVariants: {
-    tone: "red",
+const innerWrapper = css({
+  px: 6,
+  "& > p": {
+    lineHeight: "inherit",
   },
 });
 
 export interface BrandButtonProps
-  extends React.ComponentProps<typeof ButtonPrimitive> {
+  extends React.ComponentProps<typeof BaseButton> {
+  isLoading?: boolean;
   children?: ReactNode;
-  leftIcon?: ReactNode;
-  // onClick: () => void;
-  // variant: 'primary' | 'secondary';
 }
 
 const BrandButton = (
-  { children, size, leftIcon, ...props }: BrandButtonProps,
+  { children, isLoading, ...props }: BrandButtonProps,
   ref: ForwardedRef<HTMLButtonElement>
 ) => {
   return (
-    <ButtonPrimitive ref={ref} {...props}>
-      {leftIcon}
-      xxx {children} xxx
-    </ButtonPrimitive>
+    <BaseButton ref={ref} {...props}>
+      {isLoading && <span>spinner...</span>}
+      <span className={innerWrapper()}>{children}</span>
+    </BaseButton>
   );
 };
 
