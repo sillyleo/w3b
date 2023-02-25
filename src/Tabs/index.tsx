@@ -11,13 +11,6 @@ import {
   triggerTone,
   TriggerVariants,
 } from "./style.css";
-
-// import {
-//   Tab as TabPrimitive,
-//   TabList as TabListPrimitive,
-//   TabPanel as TabPanelPrimitive,
-//   useTabState,
-// } from "reakit/Tab";
 import clsx from "clsx";
 import React from "react";
 import Bento from "src/Bento";

@@ -7,21 +7,6 @@ import Box from "../Box";
 import { AutoSpinner } from "../Spinner";
 import type * as Stitches from "@stitches/react";
 
-export interface ButtonProps
-  extends Stitches.VariantProps<typeof ButtonPrimitive>,
-    React.ComponentPropsWithoutRef<"button"> {
-  size?: "sm" | "md" | "lg" | "xl";
-  align?: "left" | "center" | "right" | "between" | "around";
-  tone?: keyof Colors;
-  intent?: "primary" | "secondary" | "ghost";
-  leftIcon?: React.ReactNode;
-  rightIcon?: React.ReactNode;
-  isLoading?: boolean | undefined;
-  children?: React.ReactNode;
-  depth?: "0" | "1" | "2" | "3";
-  css?: CSS;
-}
-
 const ButtonPrimitive = styled("button", {
   userSelect: "none",
   position: "relative",
@@ -105,6 +90,20 @@ const ButtonPrimitive = styled("button", {
     align: "center",
   },
 });
+
+export interface ButtonProps
+    extends Stitches.VariantProps<typeof ButtonPrimitive> {
+  size?: "sm" | "md" | "lg" | "xl";
+  align?: "left" | "center" | "right" | "between" | "around";
+  tone?: keyof Colors;
+  intent?: "primary" | "secondary" | "ghost";
+  leftIcon?: React.ReactNode;
+  rightIcon?: React.ReactNode;
+  isLoading?: boolean | undefined;
+  children?: React.ReactNode;
+  depth?: "0" | "1" | "2" | "3";
+  css?: CSS;
+}
 
 const Button = ({
   size,
