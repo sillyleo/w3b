@@ -1,6 +1,9 @@
 import React, { ForwardedRef, ReactNode } from "react";
 import { styled } from "src/stitches.config";
+import Spinner from "../Spinner";
+
 const BaseButton = styled("button", {
+  all: "unset",
   display: "flex",
   alignItems: "center",
   fontWeight: "$medium",
@@ -92,7 +95,7 @@ const BrandButton = (
 ) => {
   return (
     <BaseButton ref={ref} {...props}>
-      {isLoading && <span>spinner...</span>}
+      {isLoading && <Spinner className={"spinner"} />}
       {children}
     </BaseButton>
   );

@@ -1,6 +1,7 @@
 export { default as Bento } from "./Bento";
 export { default as Button } from "./Button";
 export { default as BrandButton } from "./BrandButton";
+export { default as Box } from "./Box";
 export { default as LucideIcon } from "./LucideIcon";
 export { default as HeroIcon } from "./HeroIcon";
 export { default as HeroIconOne } from "./HeroIconOne";
