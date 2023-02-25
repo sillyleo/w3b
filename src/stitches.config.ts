@@ -1,9 +1,6 @@
-import {
-    createStitches,
-    defaultThemeMap,
-    CSS as StitchesCSS,
-} from "@stitches/react";
+import {createStitches, defaultThemeMap} from "@stitches/react";
 import figmaTokens from "./theme.json";
+import type * as Stitches from "@stitches/react";
 
 function capitalize(str: string): string {
     return str.charAt(0).toUpperCase() + str.slice(1);
@@ -31,6 +28,7 @@ const lightColors = flattenKeys(figmaTokens.light);
 const brandColors = flattenKeys(figmaTokens.brand);
 const supportColors = flattenKeys(figmaTokens.support);
 const darkColors = flattenKeys(figmaTokens.dark);
+
 
 // bgToneScales
 const bgToneScales = {
@@ -198,24 +196,6 @@ export const {
         radii: {
             ...figmaTokens.borderRadius,
         },
-        shadows: {
-            0: "none",
-            1: `
-        0.5px 1px 1px hsl(var(--shadow-color) / 0.333)
-      `,
-            2: `
-        1px 2px 2px hsl(var(--shadow-color) / 0.333),
-        2px 4px 4px hsl(var(--shadow-color) / 0.333),
-        3px 6px 6px hsl(var(--shadow-color) / 0.333)
-      `,
-            3: `
-        1px 2px 2px hsl(var(--shadow-color) / 0.2),
-        2px 4px 4px hsl(var(--shadow-color) / 0.2),
-        4px 8px 8px hsl(var(--shadow-color) / 0.2),
-        8px 16px 16px hsl(var(--shadow-color) / 0.2),
-        16px 32px 32px hsl(var(--shadow-color) / 0.2)
-      `,
-        },
         zIndices: {},
         transitions: {
             fast: "all 0.1s",
@@ -307,12 +287,12 @@ export const {
     },
 });
 
-export type CSSProps = StitchesCSS<typeof config>;
+export type CSS = Stitches.CSS<typeof config>;
 
 // only override some colors
 export const darkTheme = createTheme({
     colors: {
-        ...darkColors
+        ...darkColors,
     },
 });
 
