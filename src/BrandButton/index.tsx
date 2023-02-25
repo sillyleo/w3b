@@ -1,5 +1,6 @@
 import React, { ForwardedRef, ReactNode } from "react";
 import { styled } from "src/stitches.config";
+import type * as Stitches from "@stitches/react";
 
 const BaseButton = styled("button", {
   backgroundColor: "red",
@@ -19,8 +20,17 @@ const BaseButton = styled("button", {
   },
 });
 
+// export interface BrandButtonProps
+//   extends React.ComponentProps<typeof BaseButton> {
+//   children?: ReactNode;
+//   leftIcon?: ReactNode;
+//   size?: "sm" | "md" | "lg";
+//   // onClick: () => void;
+//   // variant: 'primary' | 'secondary';
+// }
+
 export interface BrandButtonProps
-  extends React.ComponentProps<typeof BaseButton> {
+  extends Stitches.VariantProps<typeof BaseButton> {
   children?: ReactNode;
   leftIcon?: ReactNode;
   size?: "sm" | "md" | "lg";
