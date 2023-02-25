@@ -1,7 +1,9 @@
 import React from "react";
+import { styled } from "src/stitches.config";
 
-const BrandButton = (children, ...props) => {
-  return <button {...props}>{children}</button>;
-};
+const BrandButton = styled("button", {
+  backgroundColor: "red",
+  color: "white",
+});
 
 export default BrandButton;
