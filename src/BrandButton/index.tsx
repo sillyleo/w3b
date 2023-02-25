@@ -6,8 +6,12 @@ const BaseButton = styled("button", {
   color: "white",
 });
 
-const BrandButton = (props, ref) => {
-  return <BaseButton ref={ref} {...props} />;
+const BrandButton = ({ children, ...props }, ref) => {
+  return (
+    <BaseButton ref={ref} {...props}>
+      xxx {children} xxx
+    </BaseButton>
+  );
 };
 
 export default React.forwardRef(BrandButton);
