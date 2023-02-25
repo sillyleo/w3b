@@ -99,12 +99,6 @@ const ButtonPrimitive = styled("button", {
         justifyContent: "space-around",
       },
     },
-    isLoading: {
-      true: {
-        opacity: 0.75,
-        cursor: "wait",
-      },
-    },
   },
   defaultVariants: {
     size: "md",
