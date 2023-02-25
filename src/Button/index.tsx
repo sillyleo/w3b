@@ -16,7 +16,7 @@ export interface ButtonProps
   intent?: "primary" | "secondary" | "ghost";
   leftIcon?: React.ReactNode;
   rightIcon?: React.ReactNode;
-  isLoading?: boolean;
+  isLoading?: boolean | undefined;
   children?: React.ReactNode;
   depth?: "0" | "1" | "2" | "3";
   css?: CSS;
@@ -103,7 +103,6 @@ const ButtonPrimitive = styled("button", {
   defaultVariants: {
     size: "md",
     align: "center",
-    isLoading: false,
   },
 });
 
