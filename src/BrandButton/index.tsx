@@ -1,5 +1,5 @@
 import React, { ForwardedRef, ReactNode } from "react";
-import { css, styled } from "src/stitches.config";
+import { styled } from "src/stitches.config";
 const BaseButton = styled("button", {
   display: "flex",
   alignItems: "center",
@@ -73,12 +73,12 @@ const BaseButton = styled("button", {
   },
 });
 
-const innerWrapper = css({
-  px: 6,
-  "& > p": {
-    lineHeight: "inherit",
-  },
-});
+// const innerWrapper = css({
+//   px: 6,
+//   "& > p": {
+//     lineHeight: "inherit",
+//   },
+// });
 
 export interface BrandButtonProps
   extends React.ComponentProps<typeof BaseButton> {
@@ -93,7 +93,7 @@ const BrandButton = (
   return (
     <BaseButton ref={ref} {...props}>
       {isLoading && <span>spinner...</span>}
-      <span className={innerWrapper()}>{children}</span>
+      {children}
     </BaseButton>
   );
 };
