@@ -4,6 +4,19 @@ import { styled } from "src/stitches.config";
 const BaseButton = styled("button", {
   backgroundColor: "red",
   color: "white",
+  variants: {
+    tone: {
+      red: {
+        backgroundColor: "red",
+      },
+      green: {
+        backgroundColor: "green",
+      },
+    },
+  },
+  defaultVariants: {
+    tone: "red",
+  },
 });
 
 export interface BrandButtonProps
