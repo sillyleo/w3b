@@ -136,7 +136,7 @@ export function getButtonToneStyle(
 // generate tonal shadows
 export function getButtonShadowStyle(
     tone: keyof Colors, // default value is from the component
-    depth: "0" | "1" | "2" | "3"
+    depth: "0" | "1" | "2" | "3" | undefined
 ) {
     // console.log(radixColorsPrimitive.blueA)
     const {...radixColors} = radixColorsPrimitive;
