@@ -1,4 +1,4 @@
-import React from "react";
+import React, { ForwardedRef, ReactNode } from "react";
 import { styled } from "src/stitches.config";
 
 const BaseButton = styled("button", {
@@ -6,9 +6,20 @@ const BaseButton = styled("button", {
   color: "white",
 });
 
-const BrandButton = ({ children, ...props }, ref) => {
+export interface BrandButtonProps {
+  children?: ReactNode;
+  leftIcon?: ReactNode;
+  // onClick: () => void;
+  // variant: 'primary' | 'secondary';
+}
+
+const BrandButton = (
+  { children, leftIcon, ...props }: BrandButtonProps,
+  ref: ForwardedRef<HTMLButtonElement>
+) => {
   return (
     <BaseButton ref={ref} {...props}>
+      {leftIcon}
       xxx {children} xxx
     </BaseButton>
   );
