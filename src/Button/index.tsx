@@ -5,9 +5,10 @@ import {styled} from "src/stitches.config";
 import {getButtonShadowStyle, getButtonToneStyle} from "src/util/tones";
 import Box from "../Box";
 import {AutoSpinner} from "../Spinner";
+import type * as Stitches from '@stitches/react';
 
 export interface ButtonProps
-    extends React.ReactComponentElement<typeof ButtonPrimitive> {
+    extends Stitches.VariantProps<typeof ButtonPrimitive> {
     size?: "sm" | "md" | "lg" | "xl";
     align?: "left" | "center" | "right" | "between" | "around";
     tone?: keyof Colors;
