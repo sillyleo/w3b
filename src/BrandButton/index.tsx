@@ -10,13 +10,13 @@ export interface BrandButtonProps
   extends React.ComponentProps<typeof BaseButton> {
   children?: ReactNode;
   leftIcon?: ReactNode;
-  size: "sm" | "md" | "lg";
+  size?: "sm" | "md" | "lg";
   // onClick: () => void;
   // variant: 'primary' | 'secondary';
 }
 
 const BrandButton = (
-  { children, leftIcon, ...props }: BrandButtonProps,
+  { children, size, leftIcon, ...props }: BrandButtonProps,
   ref: ForwardedRef<HTMLButtonElement>
 ) => {
   return (
