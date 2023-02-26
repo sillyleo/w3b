@@ -34,7 +34,7 @@
     "dev": "json-to-ts-cli src/theme.json > src/tokenType.d.ts && next",
     "start": "json-to-ts-cli src/theme.json > src/tokenType.d.ts && next",
     "build-lib": "vite build",
-    "ship": "git vite build && npm version patch && npm publish --access public && say 'shipped'",
+    "ship": "git commit -a -m shipped && vite build && npm version patch && npm publish --access public && say 'shipped'",
     "build-token": "npx token-transformer tokens/figma-output/ tokens/theme-transformed.json --resolveReferences false && npx style-dictionary build --config sd.config.cjs"
   },
   "dependencies": {
