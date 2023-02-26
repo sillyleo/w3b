@@ -29,6 +29,7 @@ export const BrandButton = <T extends ElementType = "span">(
       ref={ref}
       {...props}
     >
+      {isLoading && <Spinner />}
       {children}
     </Component>
   );
