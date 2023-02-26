@@ -87,6 +87,7 @@ export interface BrandButtonProps
   extends React.ComponentProps<typeof BaseButton> {
   isLoading?: boolean;
   children?: ReactNode;
+  as?: React.ElementType;
 }
 
 const BrandButton = (

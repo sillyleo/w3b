@@ -102,6 +102,7 @@ export interface ButtonProps
   children?: React.ReactNode;
   depth?: "0" | "1" | "2" | "3";
   css?: CSS;
+  as?: React.ElementType;
 }
 
 const Button = (
@@ -120,7 +121,6 @@ const Button = (
   }: ButtonProps,
   ref
 ) => {
-  console.log(props);
   return (
     <ButtonPrimitive
       ref={ref}
