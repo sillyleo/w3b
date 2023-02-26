@@ -3,10 +3,24 @@ import { Callout } from "nextra-theme-docs";
 
 <Banner />
 
-<Callout>
-  Highly experimental and tailored to my personal usage. And my coding skill
-  isn't good. Don't use this at all.
-</Callout>
+<Callout>Breaking Change: Stitches theme</Callout>
+
+## Using css-in-js theme
+
+Create your own components.
+
+```jsx
+import { styled } from "@sayaww/nomimono";
+```
+
+Dark theme: add this to the top of your app
+
+```jsx
+import { stitchesDarkTheme } from "@sayaww/nomimono";
+
+// In App.tsx
+<div className={stitchesDarkTheme} />;
+```
 
 ## Installation
 
