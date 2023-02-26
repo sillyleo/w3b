@@ -100,7 +100,7 @@ export interface ButtonProps
   intent?: "primary" | "secondary" | "ghost";
   leftIcon?: React.ReactNode;
   rightIcon?: React.ReactNode;
-  isLoading?: boolean;
+  loading?: boolean;
   children?: React.ReactNode;
   depth?: "0" | "1" | "2" | "3";
   css?: CSS;
@@ -112,7 +112,7 @@ const Button = (
     align,
     tone = "slate",
     intent = "primary",
-    isLoading,
+    loading,
     children,
     leftIcon,
     rightIcon,
@@ -134,7 +134,7 @@ const Button = (
       )}
       {...props}
     >
-      {isLoading && "loading"}
+      {loading && "loading"}
       {/*left icon*/}
       <div>{leftIcon}</div>
 
