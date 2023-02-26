@@ -95,7 +95,7 @@ const BrandButton = (
   ref: ForwardedRef<HTMLButtonElement>
 ) => {
   return (
-    <BaseButton ref={ref} {...props}>
+    <BaseButton as={as} ref={ref} {...props}>
       {isLoading && <Spinner className={"spinner"} />}
       {children}
     </BaseButton>
