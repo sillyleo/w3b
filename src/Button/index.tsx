@@ -1,12 +1,10 @@
-import React from "react";
 import _ from "lodash";
+import React from "react";
 import type { CSS } from "src/stitches.config";
 import { styled } from "src/stitches.config";
 import { getButtonShadowStyle, getButtonToneStyle } from "src/util/tones";
 import Box from "../Box";
 import { AutoSpinner } from "../Spinner";
-import type * as Stitches from "@stitches/react";
-
 const ButtonPrimitive = styled("button", {
   all: "unset",
   userSelect: "none",
@@ -100,7 +98,7 @@ export interface ButtonProps
   intent?: "primary" | "secondary" | "ghost";
   leftIcon?: React.ReactNode;
   rightIcon?: React.ReactNode;
-  loading?: boolean;
+  isLoading?: boolean;
   children?: React.ReactNode;
   depth?: "0" | "1" | "2" | "3";
   css?: CSS;
@@ -112,7 +110,7 @@ const Button = (
     align,
     tone = "slate",
     intent = "primary",
-    loading,
+    isLoading,
     children,
     leftIcon,
     rightIcon,
@@ -122,6 +120,7 @@ const Button = (
   }: ButtonProps,
   ref
 ) => {
+  console.log(props);
   return (
     <ButtonPrimitive
       ref={ref}
@@ -134,13 +133,45 @@ const Button = (
       )}
       {...props}
     >
-      {loading && "loading"}
       {/*left icon*/}
-      <div>{leftIcon}</div>
+      <Box
+        css={{
+          opacity: isLoading ? 0 : 1,
+        }}
+      >
+        {leftIcon}
+      </Box>
+      {/*loading*/}
+      {isLoading && (
+        <Box
+          css={{
+            position: "absolute",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            inset: 0,
+          }}
+        >
+          <AutoSpinner />
+        </Box>
+      )}
 
-      <div>{children}</div>
+      <Box
+        css={{
+          "& p": { lineHeight: 1 },
+          opacity: isLoading ? 0 : 1,
+        }}
+      >
+        {children}
+      </Box>
       {/*right icon*/}
-      <div>{rightIcon}</div>
+      <Box
+        css={{
+          opacity: isLoading ? 0 : 1,
+        }}
+      >
+        {rightIcon}
+      </Box>
     </ButtonPrimitive>
   );
 };
