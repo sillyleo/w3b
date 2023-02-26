@@ -4,8 +4,8 @@ export default function Demo() {
   return (
     <Display>
       <BrandButton>Brand</BrandButton>
-      <BrandButton as="a" href="https://apple.com">
-        woerfj
+      <BrandButton>
+        <a href="#">woerfj</a>
       </BrandButton>
       <Checkbox defaultChecked>Checkbox defaultChecked</Checkbox>
       <Checkbox defaultChecked tone="sky">
