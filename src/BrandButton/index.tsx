@@ -84,25 +84,39 @@ const BaseButton = styled("button", {
 //   },
 // });
 
-export interface BrandButtonProps
-  extends React.ComponentPropsWithoutRef<typeof BaseButton> {
-  isLoading?: boolean;
-  children?: ReactNode;
-  as?: ReactNode;
-  size?: "xs" | "s" | "m" | "l";
-  brand?: "primary" | "secondary";
-}
+// export interface BrandButtonProps
+//   extends React.ComponentPropsWithoutRef<typeof BaseButton> {
+//   isLoading?: boolean;
+//   children?: ReactNode;
+//   as?: ReactNode;
+//   size?: "xs" | "s" | "m" | "l";
+//   brand?: "primary" | "secondary";
+// }
 
-const BrandButton = (
-  { children, isLoading, as, size, brand, ...props }: BrandButtonProps,
+type ButtonOwnProps<E extends React.ElementType = React.ElementType> = {
+  children: ReactNode;
+  as?: E;
+};
+
+type ButtonProps<E extends React.ElementType> = ButtonOwnProps<E> &
+  Omit<React.ComponentProps<E>, keyof ButtonOwnProps> & {
+    isLoading?: boolean;
+    size?: "xs" | "s" | "m" | "l";
+    brand?: "primary" | "secondary";
+  };
+
+const __DEFAULT_ELEMENT__ = "button";
+
+function BrandButton<E extends React.ElementType = typeof __DEFAULT_ELEMENT__>(
+  { children, isLoading, as, size, brand, ...props }: ButtonProps<E>,
   ref
-) => {
+) {
   return (
     <BaseButton as={as || "button"} ref={ref} {...props}>
       {isLoading && <Spinner className={"spinner"} />}
       {children}
     </BaseButton>
   );
-};
+}
 
 export default React.forwardRef(BrandButton);
