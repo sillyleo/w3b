@@ -1,9 +1,40 @@
-import React, { ForwardedRef, ReactNode } from "react";
+import React, { ComponentPropsWithoutRef, ElementType, ReactNode } from "react";
 import { styled, css } from "src/stitches.config";
 import Spinner from "../Spinner";
 import { Slot } from "@radix-ui/react-slot";
+import * as Stitches from "@stitches/react";
 
-const BaseButton = styled("button", {
+type BrandButtonProps<T extends ElementType> = Stitches.VariantProps<
+  typeof buttonStyle
+> & {
+  as?: T;
+  children: ReactNode;
+  isLoading?: boolean;
+};
+
+export const BrandButton = <T extends ElementType = "span">(
+  {
+    as,
+    children,
+    isLoading,
+    ...props
+  }: BrandButtonProps<T> & ComponentPropsWithoutRef<T>,
+  ref
+) => {
+  let Component = as || "span";
+
+  return (
+    <Component
+      className={buttonStyle({ size: props.size, brand: props.brand })}
+      ref={ref}
+      {...props}
+    >
+      {children}
+    </Component>
+  );
+};
+
+const buttonStyle = css({
   all: "unset",
   display: "flex",
   alignItems: "center",
@@ -76,47 +107,5 @@ const BaseButton = styled("button", {
     brand: "primary",
   },
 });
-
-// const innerWrapper = css({
-//   px: 6,
-//   "& > p": {
-//     lineHeight: "inherit",
-//   },
-// });
-
-// export interface BrandButtonProps
-//   extends React.ComponentPropsWithoutRef<typeof BaseButton> {
-//   isLoading?: boolean;
-//   children?: ReactNode;
-//   as?: ReactNode;
-//   size?: "xs" | "s" | "m" | "l";
-//   brand?: "primary" | "secondary";
-// }
-
-type ButtonOwnProps<E extends React.ElementType = React.ElementType> = {
-  children: ReactNode;
-  as?: E;
-};
-
-type ButtonProps<E extends React.ElementType> = ButtonOwnProps<E> &
-  Omit<React.ComponentProps<E>, keyof ButtonOwnProps> & {
-    isLoading?: boolean;
-    size?: "xs" | "s" | "m" | "l";
-    brand?: "primary" | "secondary";
-  };
-
-const __DEFAULT_ELEMENT__ = "button";
-
-function BrandButton<E extends React.ElementType = typeof __DEFAULT_ELEMENT__>(
-  { children, isLoading, as, size, brand, ...props }: ButtonProps<E>,
-  ref
-) {
-  return (
-    <BaseButton as={as || "button"} ref={ref} {...props}>
-      {isLoading && <Spinner className={"spinner"} />}
-      {children}
-    </BaseButton>
-  );
-}
 
 export default React.forwardRef(BrandButton);
