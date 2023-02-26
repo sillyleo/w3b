@@ -85,17 +85,17 @@ const BaseButton = styled("button", {
 
 export interface BrandButtonProps
   extends React.ComponentProps<typeof BaseButton> {
-  isLoading?: boolean;
+  loading?: boolean;
   children?: ReactNode;
 }
 
 const BrandButton = (
-  { children, isLoading, ...props }: BrandButtonProps,
+  { children, loading, ...props }: BrandButtonProps,
   ref: ForwardedRef<HTMLButtonElement>
 ) => {
   return (
     <BaseButton ref={ref} {...props}>
-      {isLoading && <Spinner className={"spinner"} />}
+      {loading && <Spinner className={"spinner"} />}
       {children}
     </BaseButton>
   );
