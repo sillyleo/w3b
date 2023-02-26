@@ -66,7 +66,7 @@ export function getButtonToneStyle(
           bgTone12: tone,
         },
         "&:active": {
-          bgTone11: tone,
+          bgTone12: tone,
         },
         color: `$${tone}2`,
       };

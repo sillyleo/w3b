@@ -289,7 +289,7 @@ export const {
 export type CSS = Stitches.CSS<typeof config>;
 
 // only override some colors
-export const darkTheme = createTheme({
+export const stitchesDarkTheme = createTheme({
   colors: {
     ...darkColors,
   },

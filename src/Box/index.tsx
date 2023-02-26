@@ -1,23 +1,30 @@
-import React, { ComponentPropsWithoutRef, ElementType, ReactNode } from "react";
+import React from "react";
+import { styled } from "src/stitches.config";
 
-type BoxProps<T extends ElementType> = {
-  as?: T;
-  children: ReactNode;
-};
+const Box = styled("div", {});
 
-const Box = <T extends ElementType = "span">(
-  { as, children, ...others }: BoxProps<T> & ComponentPropsWithoutRef<T>,
-  ref
-) => {
-  let Component = as || "span";
+export default Box;
 
-  return (
-    <Component ref={ref} {...others}>
-      {children}
-    </Component>
-  );
-};
+// import React, { ComponentPropsWithoutRef, ElementType, ReactNode } from "react";
 
-export default React.forwardRef(Box);
+// type BoxProps<T extends ElementType> = {
+//   as?: T;
+//   children: ReactNode;
+// };
 
-// https://betterprogramming.pub/polymorphic-react-components-in-typescript-b6ce455ca70e
+// const Box = <T extends ElementType = "span">(
+//   { as, children, ...others }: BoxProps<T> & ComponentPropsWithoutRef<T>,
+//   ref
+// ) => {
+//   let Component = as || "span";
+
+//   return (
+//     <Component ref={ref} {...others}>
+//       {children}
+//     </Component>
+//   );
+// };
+
+// export default React.forwardRef(Box);
+
+// // https://betterprogramming.pub/polymorphic-react-components-in-typescript-b6ce455ca70e
