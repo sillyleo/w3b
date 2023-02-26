@@ -4,8 +4,8 @@ export default function Demo() {
   return (
     <Display>
       <BrandButton>Brand</BrandButton>
-      <BrandButton>
-        <a href="#">woerfj</a>
+      <BrandButton as="a" href="#">
+        As a button{" "}
       </BrandButton>
       <Checkbox defaultChecked>Checkbox defaultChecked</Checkbox>
       <Checkbox defaultChecked tone="sky">

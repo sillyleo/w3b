@@ -3,7 +3,7 @@ import { styled, css } from "src/stitches.config";
 import Spinner from "../Spinner";
 import { Slot } from "@radix-ui/react-slot";
 
-const buttonStyle = css("button", {
+const BaseButton = styled("button", {
   all: "unset",
   display: "flex",
   alignItems: "center",
@@ -85,29 +85,23 @@ const buttonStyle = css("button", {
 // });
 
 export interface BrandButtonProps
-  extends Stitches.VariantProps<typeof buttonStyle> {
+  extends React.ComponentPropsWithoutRef<typeof BaseButton> {
   isLoading?: boolean;
   children?: ReactNode;
-  asChild?: boolean;
+  as?: ReactNode;
   size?: "xs" | "s" | "m" | "l";
   brand?: "primary" | "secondary";
 }
 
 const BrandButton = (
-  { children, isLoading, size, brand, asChild, ...props }: BrandButtonProps,
+  { children, isLoading, as, size, brand, ...props }: BrandButtonProps,
   ref
 ) => {
-  const Comp = asChild ? Slot : "button";
-
   return (
-    <Comp
-      className={buttonStyle({ size: size, brand: brand })}
-      ref={ref}
-      {...props}
-    >
+    <BaseButton as={as || "button"} ref={ref} {...props}>
       {isLoading && <Spinner className={"spinner"} />}
-      {!asChild && children}
-    </Comp>
+      {children}
+    </BaseButton>
   );
 };
 
