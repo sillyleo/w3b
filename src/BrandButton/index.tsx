@@ -1,6 +1,7 @@
 import React, { ForwardedRef, ReactNode } from "react";
 import { styled } from "src/stitches.config";
 import Spinner from "../Spinner";
+import { Slot } from "@radix-ui/react-slot";
 
 const BaseButton = styled("button", {
   all: "unset",
@@ -87,15 +88,17 @@ export interface BrandButtonProps
   extends React.ComponentPropsWithRef<typeof BaseButton> {
   isLoading?: boolean;
   children?: ReactNode;
-  as?: React.ElementType;
+  asChild?: boolean;
 }
 
 const BrandButton = (
-  { children, isLoading, ...props }: BrandButtonProps,
+  { children, isLoading, asChild, ...props }: BrandButtonProps,
   ref
 ) => {
+  const Comp = asChild ? Slot : "button";
+
   return (
-    <BaseButton ref={ref} {...props}>
+    <BaseButton as={Comp} ref={ref} {...props}>
       {isLoading && <Spinner className={"spinner"} />}
       {children}
     </BaseButton>
