@@ -8,14 +8,13 @@ export interface BrandButtonProps
   children?: React.ReactNode;
 }
 
-
 export const BrandButton = (
   { children, isLoading, ...props }: BrandButtonProps,
   ref
 ) => {
   return (
     <BaseButton ref={ref} {...props}>
-      {isLoading && <Spinner />}
+      {isLoading && <Spinner className={"spinner"} />}
       {children}
     </BaseButton>
   );
