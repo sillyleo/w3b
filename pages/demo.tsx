@@ -1,8 +1,12 @@
-import { Text, Display, Checkbox } from "nomimono";
+import { Text, BrandButton, Display, Checkbox } from "nomimono";
 
 export default function Demo() {
   return (
     <Display>
+      <BrandButton>Brand</BrandButton>
+      <BrandButton as="a" href="https://apple.com">
+        woerfj
+      </BrandButton>
       <Checkbox defaultChecked>Checkbox defaultChecked</Checkbox>
       <Checkbox defaultChecked tone="sky">
         Checkbox defaultChecked
