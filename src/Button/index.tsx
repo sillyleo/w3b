@@ -6,7 +6,7 @@ import { getButtonShadowStyle, getButtonToneStyle } from "src/util/tones";
 import Box from "../Box";
 import { AutoSpinner } from "../Spinner";
 
-const ButtonPrimitive = styled(Box, {
+const ButtonPrimitive = styled("button", {
   all: "unset",
   userSelect: "none",
   position: "relative",
@@ -103,7 +103,6 @@ export interface ButtonProps
   children?: React.ReactNode;
   depth?: "0" | "1" | "2" | "3";
   css?: CSS;
-  as?: React.ElementType;
 }
 
 const Button = (

@@ -1,41 +1,26 @@
 import React, { ComponentPropsWithoutRef, ElementType, ReactNode } from "react";
-import { styled, css } from "src/stitches.config";
+import { styled } from "src/stitches.config";
 import Spinner from "../Spinner";
-import { Slot } from "@radix-ui/react-slot";
-import * as Stitches from "@stitches/react";
 
-type BrandButtonProps<T extends ElementType> = Stitches.VariantProps<
-  typeof buttonStyle
-> & {
-  as?: T;
-  children: ReactNode;
+export interface BrandButtonProps
+  extends React.ComponentProps<typeof BaseButton> {
   isLoading?: boolean;
-};
+  children?: React.ReactNode;
+}
 
-export const BrandButton = <T extends ElementType = "span">(
-  {
-    as,
-    children,
-    isLoading,
-    ...props
-  }: BrandButtonProps<T> & ComponentPropsWithoutRef<T>,
+export const BrandButton = (
+  { children, isLoading, ...props }: BrandButtonProps,
   ref
 ) => {
-  let Component = as || "span";
-
   return (
-    <Component
-      className={buttonStyle({ size: props.size, brand: props.brand })}
-      ref={ref}
-      {...props}
-    >
+    <BaseButton ref={ref} {...props}>
       {isLoading && <Spinner />}
       {children}
-    </Component>
+    </BaseButton>
   );
 };
 
-const buttonStyle = css({
+const BaseButton = styled("button", {
   all: "unset",
   display: "flex",
   alignItems: "center",
