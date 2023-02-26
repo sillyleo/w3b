@@ -1,4 +1,4 @@
-import { Text, BrandButton, Display, Checkbox } from "nomimono";
+import { Text, Box, BrandButton, Display, Checkbox } from "nomimono";
 
 export default function Demo() {
   return (

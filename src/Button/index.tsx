@@ -5,7 +5,8 @@ import { styled } from "src/stitches.config";
 import { getButtonShadowStyle, getButtonToneStyle } from "src/util/tones";
 import Box from "../Box";
 import { AutoSpinner } from "../Spinner";
-const ButtonPrimitive = styled("button", {
+
+const ButtonPrimitive = styled(Box, {
   all: "unset",
   userSelect: "none",
   position: "relative",
@@ -135,7 +136,7 @@ const Button = (
     >
       {/*left icon*/}
       <Box
-        css={{
+        style={{
           opacity: isLoading ? 0 : 1,
         }}
       >
@@ -144,7 +145,7 @@ const Button = (
       {/*loading*/}
       {isLoading && (
         <Box
-          css={{
+          style={{
             position: "absolute",
             display: "flex",
             alignItems: "center",
@@ -157,8 +158,7 @@ const Button = (
       )}
 
       <Box
-        css={{
-          "& p": { lineHeight: 1 },
+        style={{
           opacity: isLoading ? 0 : 1,
         }}
       >
@@ -166,7 +166,7 @@ const Button = (
       </Box>
       {/*right icon*/}
       <Box
-        css={{
+        style={{
           opacity: isLoading ? 0 : 1,
         }}
       >
