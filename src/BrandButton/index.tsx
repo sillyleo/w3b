@@ -93,7 +93,7 @@ export interface BrandButtonProps
 
 const BrandButton = (
   { children, isLoading, asChild, ...props }: BrandButtonProps,
-  ref: ForwardedRef<HTMLButtonElement>
+  ref
 ) => {
   const Comp = asChild ? Slot : BaseButton;
 
