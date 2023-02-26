@@ -84,7 +84,7 @@ const BaseButton = styled("button", {
 // });
 
 export interface BrandButtonProps
-  extends React.ComponentProps<typeof BaseButton> {
+  extends React.ComponentPropsWithRef<typeof BaseButton> {
   isLoading?: boolean;
   children?: ReactNode;
   as?: React.ElementType;
