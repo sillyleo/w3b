@@ -1,7 +1,6 @@
 # Dialog
 
 import { Dialog, Display, Text, Button } from "ui";
-import { loremIpsum, LoremIpsum } from "react-lorem-ipsum";
 
 Examples:
 
@@ -35,37 +34,14 @@ Examples:
     <Dialog.Overlay>
       <Dialog.Content close={<Dialog.Close>Close</Dialog.Close>}>
         <Text>
-          <LoremIpsum p={10} />
+          Lorem ipsum odor amet, consectetuer adipiscing elit. Ac purus in massa
+          egestas mollis varius; dignissim elementum. Mollis tincidunt mattis
+          hendrerit dolor eros enim, nisi ligula ornare. Hendrerit parturient
+          habitant pharetra rutrum gravida porttitor eros feugiat. Mollis elit
+          sodales taciti duis praesent id. Consequat urna vitae morbi nunc
+          congue.
         </Text>
       </Dialog.Content>
     </Dialog.Overlay>
-  </Dialog.Portal>
-</Dialog.Root>
-
-```jsx
-<Dialog.Root>
-  <Dialog.Trigger>
-    <Button>Open Dialog</Button>
-  </Dialog.Trigger>
-  <Dialog.Portal>
-    <Dialog.Overlay />
-    <Dialog.Content close={<Dialog.Close>Close</Dialog.Close>}>
-      <Dialog.Title>Title (optional)</Dialog.Title>
-      <Dialog.Description>Description (optional)</Dialog.Description>
-    </Dialog.Content>
-  </Dialog.Portal>
-</Dialog.Root>
-```
-
-<Dialog.Root>
-  <Dialog.Trigger>
-    <Button>Open Dialog</Button>
-  </Dialog.Trigger>
-  <Dialog.Portal>
-    <Dialog.Overlay />
-    <Dialog.Content close={<Dialog.Close>Close</Dialog.Close>}>
-      <Dialog.Title>Title (optional)</Dialog.Title>
-      <Dialog.Description>Description (optional)</Dialog.Description>
-    </Dialog.Content>
   </Dialog.Portal>
 </Dialog.Root>

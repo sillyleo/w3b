@@ -1,4 +1,4 @@
-import { sprinkles } from "./../styles/theme.css";
+import { sprinkles } from "../styles/theme.css";
 import { style, styleVariants } from "@vanilla-extract/css";
 import { allTones } from "src/constants";
 import { theme } from "src/styles/theme.css";
