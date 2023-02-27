@@ -1,0 +1,22 @@
+# Portable Mode
+
+Consume the design tokens from Nomimono in your projects.
+
+Suitable for composing components that are not tied to a specific design system, or for components that are not yet supported by Nomimono.
+
+## Using Nomimono's `styled`
+
+Import `styled` from `@sayaww/nomimono` and use it like you would with stitches.
+
+```jsx
+import { styled } from "@sayaww/nomimono";
+```
+
+To apply the dark theme: add this on the top of your app:
+
+```jsx
+import { stitchesDarkTheme } from "@sayaww/nomimono";
+
+// In App.tsx
+<div className={stitchesDarkTheme} />;
+```
