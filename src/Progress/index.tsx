@@ -6,7 +6,6 @@ import { getIndicatorToneStyle, getBarToneStyle } from "src/util/tones";
 
 export interface ProgressProps {
   tone?: keyof Colors;
-  initialValue?: number;
   value?: number;
   position: "relative";
   glow?: boolean;
@@ -24,7 +23,6 @@ export interface ProgressProps {
 
 const Progress = ({
   max = 100,
-  initialValue = 0,
   value = 46,
   tone = "slate",
   barColor,
@@ -41,7 +39,6 @@ const Progress = ({
   const progress = Math.min(Math.max(rawProgress, 0), 100);
   return (
     <ProgressRoot
-      initialValue={initialValue}
       css={_.merge(
         getIndicatorToneStyle(tone),
         {
