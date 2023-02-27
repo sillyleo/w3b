@@ -1,21 +1,14 @@
-import * as ProgressPrimitive from "@radix-ui/react-progress";
-import clsx from "clsx";
-import { motion } from "framer-motion";
-import Stack from "../Stack";
-import Text from "../Text";
-import Bento, { BentoProps } from "../Bento";
-import {
-  indicatorColor,
-  indicatorStyle,
-  rootSize,
-  rootStyle,
-} from "./style.css";
 import React from "react";
+import _ from "lodash";
+import * as ProgressPrimitive from "@radix-ui/react-progress";
+import { styled, CSS, Radix } from "../stitches.config";
+import { getIndicatorToneStyle, getBarToneStyle } from "src/util/tones";
 
-export interface ProgressProps extends BentoProps {
-  tone?: BentoProps["colors"];
+export interface ProgressProps {
+  tone?: keyof Colors;
   initialValue?: number;
   value?: number;
+  position: "relative";
   max?: number;
   size?: "sm" | "md" | "lg";
   barColor?: string;
@@ -23,70 +16,128 @@ export interface ProgressProps extends BentoProps {
   leftLabel?: React.ReactNode | string;
   rightLabel?: React.ReactNode | string;
   labelPosition?: "top" | "bottom";
+  css?: CSS;
 }
 
 const Progress = ({
-  tone = "slate",
-  initialValue = 0,
-  value = 50,
   max = 100,
-  size = "md",
+  value = 200,
+  tone = "slate",
   barColor,
   trackColor,
-  leftLabel,
-  rightLabel,
-  labelPosition = "bottom",
+  size = "lg",
+  spacing = 1,
+  css,
   ...props
-}: ProgressProps) => (
-  <Bento {...props}>
-    <Stack gap="1">
-      <Stack
-        __paddingLeft="6px"
-        __paddingRight="6px"
-        __order={
-          labelPosition === "top" ? -1 : labelPosition === "bottom" ? 2 : 1
-        }
-        direction="row"
-        justifyContent={"space-between"}
-      >
-        {leftLabel && typeof leftLabel === "string" ? (
-          <Text size="label">{leftLabel}</Text>
-        ) : (
-          leftLabel
+}: ProgressProps) => {
+  const rawProgress = value ? (value / max) * 100 : 0;
+  // make sure progress is between 0 and 100
+  const progress = Math.min(Math.max(rawProgress, 0), 100);
+  return (
+    <ProgressRoot
+      css={_.merge(
+        getIndicatorToneStyle(tone),
+        {
+          bg: trackColor,
+        },
+        css
+      )}
+      spacing={spacing}
+      size={size}
+    >
+      <ProgressIndicator
+        glow
+        css={_.merge(
+          // getBarToneStyle(tone),
+          // {
+          //   width: `${progress}%`,
+          //   // transform: `translateX(40%)`,
+          //   bg: barColor,
+          // },
+          css
         )}
-        {rightLabel && typeof rightLabel === "string" ? (
-          <Text size="label">{rightLabel}</Text>
-        ) : (
-          rightLabel
-        )}
-      </Stack>
-      <ProgressPrimitive.Root
-        className={clsx(rootStyle)}
-        style={{
-          backgroundColor: trackColor,
-        }}
-        value={value}
-        max={max}
-      >
-        <ProgressPrimitive.Indicator
-          className={clsx(indicatorStyle, indicatorColor[tone], rootSize[size])}
-          style={{
-            width: `${(value / max) * 100}%`,
-            backgroundColor: barColor,
-          }}
-          asChild
-        >
-          <motion.div
-            initial={{ width: `${(initialValue / max) * 100}%` }}
-            animate={{
-              width: `${(value / max) * 100}%`,
-              transition: { duration: 2, easings: "easeInOut" },
-            }}
-          />
-        </ProgressPrimitive.Indicator>
-      </ProgressPrimitive.Root>
-    </Stack>
-  </Bento>
-);
+      />
+    </ProgressRoot>
+  );
+};
+
+const ProgressRoot = styled(ProgressPrimitive.Root, {
+  boxSizing: "border-box",
+  display: "block",
+  position: "relative",
+  // overflow: "hidden",
+  borderRadius: "99999px",
+  borderStyle: "inset",
+  borderWidth: "1px",
+  bg: Radix.blackA.blackA7,
+  borderColor: Radix.blackA.blackA7,
+  // Fix overflow clipping in Safari
+  // https://gist.github.com/domske/b66047671c780a238b51c51ffde8d3a0
+  transform: "translateZ(0)",
+  variants: {
+    size: {
+      sm: {
+        height: "$2",
+      },
+      md: {
+        height: "$3",
+      },
+      lg: {
+        height: "$4",
+      },
+    },
+    spacing: {
+      0: {
+        p: 0,
+      },
+      1: {
+        p: 2,
+      },
+      2: {
+        p: 4,
+      },
+    },
+  },
+  defaultVariants: {
+    spacing: 1,
+    size: "md",
+  },
+});
+
+const ProgressIndicator = styled(ProgressPrimitive.Indicator, {
+  boxSizing: "border-box",
+  position: "relative",
+  boxSize: "100%",
+  zIndex: 1,
+  borderRadius: "99999px",
+  bg: "green",
+  "&::after": {
+    zIndex: 2,
+    bg: "red",
+    content: "",
+    position: "absolute",
+    boxSize: "100%",
+    inset: 0,
+    top: 10,
+  },
+  variants: {
+    glow: {
+      true: {
+        // this is shadow
+        "&::before": {
+          zIndex: 0,
+          bg: "blue",
+          filter: "blur(0px)",
+          content: "''",
+          boxSize: "100%",
+          inset: 0,
+          top: 16,
+        },
+      },
+    },
+  },
+  transition: "width 660ms cubic-bezier(0.65, 0, 0.35, 1)",
+  // this is bar
+});
 
 export default Progress;

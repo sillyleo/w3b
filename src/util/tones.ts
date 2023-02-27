@@ -1,8 +1,11 @@
+import * as RadixColors from "@radix-ui/colors";
+
+//Info:
 // get intent and tone from props, and return the correct style
 // in your component:
 // css = { _.merge(getButtonToneStyle(tone,intent), props.css) }
-import * as radixColorsPrimitive from "@radix-ui/colors";
 
+// button tone
 export function getButtonToneStyle(
   tone: keyof Colors,
   intent: "primary" | "secondary" | "ghost"
@@ -131,16 +134,14 @@ export function getButtonToneStyle(
   }
 }
 
-// import all radix colors
-
 // generate tonal shadows
 export function getButtonShadowStyle(
   tone: keyof Colors, // default value is from the component
   depth: "0" | "1" | "2" | "3" | undefined
 ) {
   // console.log(radixColorsPrimitive.blueA)
-  const { ...radixColors } = radixColorsPrimitive;
-  const shadowColor = radixColors[tone + "A"];
+  const { ...colorFromRadix } = RadixColors;
+  const shadowColor = colorFromRadix[tone + "A"];
 
   if (depth === "0") {
     return {
@@ -172,4 +173,39 @@ export function getButtonShadowStyle(
                 11.2px 22.3px 28.1px -1.8px $$shadowColor`,
     };
   } else return {};
+}
+
+// progress bar tone
+export function getIndicatorToneStyle(tone: keyof Colors) {
+  if (!tone) {
+    return {
+      bgTone2: "slate",
+      "&::after": {
+        bgTone2: "slate",
+      },
+    };
+  }
+  return {
+    bgTone2: tone,
+    "&::after": {
+      bgTone2: tone,
+    },
+  };
+}
+
+export function getBarToneStyle(tone: keyof Colors) {
+  if (!tone) {
+    return {
+      bgTone6: "slate",
+      "&::before": {
+        bgTone9: "slate",
+      },
+    };
+  }
+  return {
+    bgTone6: tone,
+    "&::before": {
+      bgTone9: tone,
+    },
+  };
 }

@@ -10,10 +10,9 @@
     "lib": ["ES2015", "dom"],
     "esModuleInterop": true,
     "resolveJsonModule": true,
-    // "strict": true
+    "strict": false,
     "allowJs": true,
     "skipLibCheck": true,
-    "strict": false,
     "forceConsistentCasingInFileNames": true,
     "noEmit": true,
     "incremental": true,

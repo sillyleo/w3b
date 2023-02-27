@@ -1,6 +1,7 @@
 import { createStitches, defaultThemeMap } from "@stitches/react";
 import figmaTokens from "./theme.json";
 import type * as Stitches from "@stitches/react";
+import * as RadixColors from "@radix-ui/colors";
 
 function capitalize(str: string): string {
   return str.charAt(0).toUpperCase() + str.slice(1);
@@ -147,6 +148,7 @@ const borderToneScales = {
   }),
 };
 
+// error comes from typescript bug
 export const {
   styled,
   css,
@@ -167,6 +169,10 @@ export const {
       "100%": "100%",
       ...figmaTokens.spacing,
     },
+    sizes: {
+      "100%": "100%",
+      ...figmaTokens.spacing,
+    },
     fontSizes: {
       ...figmaTokens.fontSizes,
     },
@@ -181,9 +187,6 @@ export const {
     },
     letterSpacings: {
       ...figmaTokens.letterSpacing,
-    },
-    sizes: {
-      ...figmaTokens.screens,
     },
     borderWidths: {
       ...figmaTokens.borderWidth,
@@ -276,9 +279,18 @@ export const {
       width: value,
       height: value,
     }),
+    w: (value: Stitches.PropertyValue<"width">) => ({
+      width: value,
+    }),
+    h: (value: any) => ({
+      height: value,
+    }),
     // An abbreviated property for border-radius
     br: (value: any) => ({
       borderRadius: value,
+    }),
+    bg: (value: any) => ({
+      backgroundColor: value,
     }),
   },
   themeMap: {
@@ -298,3 +310,6 @@ export const stitchesDarkTheme = createTheme({
 export const globalStyles = globalCss({
   "*": { margin: 0, boxSizing: "border-box" },
 });
+
+// radix colors
+export const Radix = RadixColors;
