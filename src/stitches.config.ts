@@ -148,7 +148,6 @@ const borderToneScales = {
   }),
 };
 
-// error comes from typescript bug
 export const {
   styled,
   css,

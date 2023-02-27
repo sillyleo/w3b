@@ -13,7 +13,7 @@ export interface ProgressProps {
   max?: number;
   size?: "sm" | "md" | "lg";
   barColor?: string;
-  spacing?: number | string;
+  spacing?: 0 | 1 | 2;
   trackColor?: string;
   borderColor?: string;
   leftLabel?: React.ReactNode | string;
@@ -50,8 +50,8 @@ const Progress = ({
         },
         css
       )}
-      spacing={spacing}
       size={size}
+      spacing={spacing}
     >
       <ProgressIndicator
         glow={glow}

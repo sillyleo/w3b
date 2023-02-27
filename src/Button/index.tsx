@@ -6,7 +6,7 @@ import { getButtonShadowStyle, getButtonToneStyle } from "src/util/tones";
 import Box from "../Box";
 import { AutoSpinner } from "../Spinner";
 
-const ButtonPrimitive = styled("button", {
+const BaseButton = styled("button", {
   all: "unset",
   userSelect: "none",
   position: "relative",
@@ -91,8 +91,7 @@ const ButtonPrimitive = styled("button", {
   },
 });
 
-export interface ButtonProps
-  extends React.ComponentProps<typeof ButtonPrimitive> {
+export interface ButtonProps extends React.ComponentProps<typeof BaseButton> {
   size?: "sm" | "md" | "lg" | "xl";
   align?: "left" | "center" | "right" | "between" | "around";
   tone?: keyof Colors;
@@ -122,7 +121,7 @@ const Button = (
   ref
 ) => {
   return (
-    <ButtonPrimitive
+    <BaseButton
       ref={ref}
       size={size}
       align={align}
@@ -171,7 +170,7 @@ const Button = (
       >
         {rightIcon}
       </Box>
-    </ButtonPrimitive>
+    </BaseButton>
   );
 };
 
