@@ -8,6 +8,7 @@ import { AutoSpinner } from "../Spinner";
 
 const BaseButton = styled("button", {
   all: "unset",
+  boxSizing: "border-box",
   userSelect: "none",
   position: "relative",
   "&:disabled": {
@@ -22,15 +23,17 @@ const BaseButton = styled("button", {
     transform: "translateY(1px)",
   },
   // mdx fix
-  "& p": {
+  "& .button-text p": {
     lineHeight: 1,
+    // opacity: 0,
   },
+  overflow: "hidden",
   fontFamily: "$heading",
   fontWeight: "$bold",
   cursor: "pointer",
   display: "inline-flex",
   gap: "$2",
-  lineHeight: 1,
+  // lineHeight: ,
   alignItems: "center",
   fontSize: "$base",
   border: "0",
@@ -40,7 +43,7 @@ const BaseButton = styled("button", {
       sm: {
         borderRadius: "$lg",
         fontSize: 11,
-        height: "$7",
+        height: 30,
         px: "$3",
         py: "$2",
       },
@@ -54,7 +57,7 @@ const BaseButton = styled("button", {
       lg: {
         borderRadius: "$xl",
         fontSize: 15,
-        height: "$11",
+        height: "$10",
         px: "$5",
         py: "$3",
       },
@@ -156,6 +159,7 @@ const Button = (
       )}
 
       <Box
+        className="button-text"
         style={{
           opacity: isLoading ? 0 : 1,
         }}

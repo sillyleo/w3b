@@ -31,7 +31,7 @@ const Progress = ({
   trackColor,
   borderColor,
   glow,
-  spacing = 0,
+  spacing = 1,
   size = "lg",
   css,
   ...props
@@ -75,10 +75,9 @@ const ProgressRoot = styled(ProgressPrimitive.Root, {
   position: "relative",
   // overflow: "hidden",
   borderRadius: "99999px",
-  borderStyle: "inset",
   borderWidth: "1px",
-  bg: Radix.blackA.blackA3,
-  borderColor: Radix.blackA.blackA7,
+  bg: "$slate1",
+  borderColor: "$slate7",
   // Fix overflow clipping in Safari
   // https://gist.github.com/domske/b66047671c780a238b51c51ffde8d3a0
   transform: "translateZ(0)",
@@ -99,7 +98,7 @@ const ProgressRoot = styled(ProgressPrimitive.Root, {
         p: 0,
       },
       1: {
-        p: 2,
+        p: 3,
       },
       2: {
         p: 4,
