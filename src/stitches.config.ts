@@ -278,7 +278,7 @@ export const {
       width: value,
       height: value,
     }),
-    w: (value: Stitches.PropertyValue<"width">) => ({
+    w: (value: any) => ({
       width: value,
     }),
     h: (value: any) => ({
