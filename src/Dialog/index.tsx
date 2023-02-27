@@ -1,7 +1,20 @@
+import React from "react";
 import * as DialogPrimitive from "@radix-ui/react-dialog";
-import { styled } from "src/stitches.config";
+import { styled, keyframes } from "@stitches/react";
+import { violet, blackA, mauve, green } from "@radix-ui/colors";
 
 const Root = styled(DialogPrimitive.Root, {});
+const Trigger = styled(DialogPrimitive.Trigger, {});
+const Portal = styled(DialogPrimitive.Portal, {});
+const Title = styled(DialogPrimitive.Title, {});
+const Description = styled(DialogPrimitive.Description, {});
+const Close = styled(DialogPrimitive.Close, {});
+const Overlay = styled(DialogPrimitive.Overlay, {
+  backgroundColor: blackA.blackA9,
+  position: "fixed",
+  inset: 0,
+});
+
 const Content = styled(DialogPrimitive.Content, {
   backgroundColor: "white",
   borderRadius: 6,
@@ -15,23 +28,17 @@ const Content = styled(DialogPrimitive.Content, {
   maxWidth: "450px",
   maxHeight: "85vh",
   padding: 25,
-  zIndex: 30,
   "&:focus": { outline: "none" },
 });
-const Title = styled(DialogPrimitive.Title, {});
-const Description = styled(DialogPrimitive.Description, {});
-const Trigger = styled(DialogPrimitive.Trigger, {});
-const Portal = styled(DialogPrimitive.Portal, {});
-const Overlay = styled(DialogPrimitive.Overlay, {
-  backgroundColor: "black",
-  position: "fixed",
-  top: 0,
-  left: 0,
-  right: 0,
-  bottom: 0,
-  zIndex: 20,
-});
-const Close = styled(DialogPrimitive.Close, {});
-const Dialog = DialogPrimitive;
-export default Dialog;
-export { Root, Content, Title, Description, Trigger, Portal, Overlay, Close };
+
+// export all components from DialogPrimitive as Dialog
+export default {
+  Root,
+  Trigger,
+  Portal,
+  Title,
+  Description,
+  Overlay,
+  Content,
+  Close,
+};
