@@ -9,10 +9,13 @@ export interface ProgressProps {
   initialValue?: number;
   value?: number;
   position: "relative";
+  glow?: boolean;
   max?: number;
   size?: "sm" | "md" | "lg";
   barColor?: string;
+  spacing?: number | string;
   trackColor?: string;
+  borderColor?: string;
   leftLabel?: React.ReactNode | string;
   rightLabel?: React.ReactNode | string;
   labelPosition?: "top" | "bottom";
@@ -21,12 +24,15 @@ export interface ProgressProps {
 
 const Progress = ({
   max = 100,
-  value = 200,
+  initialValue = 0,
+  value = 46,
   tone = "slate",
   barColor,
   trackColor,
+  borderColor,
+  glow,
+  spacing = 0,
   size = "lg",
-  spacing = 1,
   css,
   ...props
 }: ProgressProps) => {
@@ -35,10 +41,12 @@ const Progress = ({
   const progress = Math.min(Math.max(rawProgress, 0), 100);
   return (
     <ProgressRoot
+      initialValue={initialValue}
       css={_.merge(
         getIndicatorToneStyle(tone),
         {
           bg: trackColor,
+          borderColor: borderColor,
         },
         css
       )}
@@ -46,14 +54,14 @@ const Progress = ({
       size={size}
     >
       <ProgressIndicator
-        glow
+        glow={glow}
         css={_.merge(
-          // getBarToneStyle(tone),
-          // {
-          //   width: `${progress}%`,
-          //   // transform: `translateX(40%)`,
-          //   bg: barColor,
-          // },
+          getBarToneStyle(tone),
+          {
+            bg: barColor,
+            width: `${progress}%`,
+            // transform: `translateX(40%)`,
+          },
           css
         )}
       />
@@ -69,7 +77,7 @@ const ProgressRoot = styled(ProgressPrimitive.Root, {
   borderRadius: "99999px",
   borderStyle: "inset",
   borderWidth: "1px",
-  bg: Radix.blackA.blackA7,
+  bg: Radix.blackA.blackA3,
   borderColor: Radix.blackA.blackA7,
   // Fix overflow clipping in Safari
   // https://gist.github.com/domske/b66047671c780a238b51c51ffde8d3a0
@@ -110,34 +118,50 @@ const ProgressIndicator = styled(ProgressPrimitive.Indicator, {
   boxSize: "100%",
   zIndex: 1,
   borderRadius: "99999px",
-  bg: "green",
+  bg: "transparent",
+  transition: "width 660ms cubic-bezier(0.65, 0, 0.35, 1)",
+
+  // bar
   "&::after": {
-    zIndex: 2,
-    bg: "red",
+    zIndex: 1,
+    borderRadius: "99999px",
     content: "",
     position: "absolute",
     boxSize: "100%",
     inset: 0,
-    top: 10,
+    top: 0,
+    transition: "width 660ms cubic-bezier(0.65, 0, 0.35, 1)",
+  },
+  "&::before": {
+    zIndex: 1,
+    borderRadius: "99999px",
+    content: "",
+    opacity: 0,
+    filter: "blur(4px)",
+    position: "absolute",
+    boxSize: "100%",
+    inset: 0,
+    top: 4,
+    transition: "width 660ms cubic-bezier(0.65, 0, 0.35, 1)",
   },
   variants: {
     glow: {
       true: {
-        // this is shadow
         "&::before": {
-          zIndex: 0,
-          bg: "blue",
-          filter: "blur(0px)",
-          content: "''",
+          zIndex: 1,
+          borderRadius: "99999px",
+          content: "",
+          opacity: 0.3,
+          filter: "blur(4px)",
+          position: "absolute",
           boxSize: "100%",
           inset: 0,
-          top: 16,
+          top: "60%",
+          transition: "width 660ms cubic-bezier(0.65, 0, 0.35, 1)",
         },
       },
     },
   },
-  transition: "width 660ms cubic-bezier(0.65, 0, 0.35, 1)",
-  // this is bar
 });
 
 export default Progress;

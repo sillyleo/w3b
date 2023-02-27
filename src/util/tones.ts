@@ -179,15 +179,20 @@ export function getButtonShadowStyle(
 export function getIndicatorToneStyle(tone: keyof Colors) {
   if (!tone) {
     return {
-      bgTone2: "slate",
       "&::after": {
+        bgTone2: "slate",
+      },
+      bgTone2: "slate",
+      "&::before": {
         bgTone2: "slate",
       },
     };
   }
   return {
-    bgTone2: tone,
     "&::after": {
+      bgTone2: tone,
+    },
+    "&::before": {
       bgTone2: tone,
     },
   };
@@ -196,14 +201,18 @@ export function getIndicatorToneStyle(tone: keyof Colors) {
 export function getBarToneStyle(tone: keyof Colors) {
   if (!tone) {
     return {
-      bgTone6: "slate",
+      "&::after": {
+        bgTone9: "slate",
+      },
       "&::before": {
         bgTone9: "slate",
       },
     };
   }
   return {
-    bgTone6: tone,
+    "&::after": {
+      bgTone9: tone,
+    },
     "&::before": {
       bgTone9: tone,
     },
