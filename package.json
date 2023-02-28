@@ -80,7 +80,7 @@
     "eslint-config-next": "13.1.6",
     "framer-motion": "^8.5.5",
     "json-to-ts-cli": "^1.0.2",
-    "next": "^13.1.6",
+    "next": "^13.2.1",
     "nextra": "^2.2.16",
     "nextra-theme-docs": "^2.2.16",
     "react-dom": "^18.2.0",
