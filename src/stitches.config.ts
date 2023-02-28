@@ -1,4 +1,4 @@
-import { createStitches, defaultThemeMap } from "@stitches/react";
+import {createStitches, defaultThemeMap} from "@stitches/react";
 import figmaTokens from "./theme.json";
 import type * as Stitches from "@stitches/react";
 import * as RadixColors from "@radix-ui/colors";
@@ -10,9 +10,9 @@ function capitalize(str: string): string {
 }
 
 function flattenKeys(
-  obj: any,
-  sep = "",
-  parentKey = ""
+    obj: any,
+    sep = "",
+    parentKey = ""
 ): Record<string, string> {
   return Object.keys(obj).reduce((acc, key) => {
     const value = obj[key];
@@ -20,6 +20,7 @@ function flattenKeys(
     if (typeof value === "object") {
       Object.assign(acc, flattenKeys(value, sep, newKey));
     } else {
+      // @ts-ignore
       acc[newKey] = value;
     }
     return acc;
@@ -182,7 +183,7 @@ export const {
       branding: `${figmaTokens.fontFamilies.heading},'SkModernistRegular',SkModernistRegular,'Sk-Modernist-Regular',sans-serif`,
       body: `'Inter Tight',${figmaTokens.fontFamilies.body}, sans-serif`,
     },
-    fontWeights: { ...figmaTokens.fontWeights },
+    fontWeights: {...figmaTokens.fontWeights},
     lineHeights: {
       ...figmaTokens.lineHeights,
     },
@@ -323,5 +324,5 @@ export const stitchesDarkTheme = createTheme("dark", {
 });
 
 export const globalStyles = globalCss({
-  "*": { margin: 0, boxSizing: "border-box" },
+  "*": {margin: 0, boxSizing: "border-box"},
 });
