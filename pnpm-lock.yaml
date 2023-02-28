@@ -34,6 +34,7 @@ specifiers:
   framer-motion: ^8.5.5
   json-to-ts-cli: ^1.0.2
   lodash: ^4.17.21
+  lorem-ipsum: latest
   lucide-react: ^0.105.0
   next: ^13.1.6
   nextra: ^2.2.16
@@ -42,7 +43,6 @@ specifiers:
   react-aria: ^3.22.0
   react-dom: ^18.2.0
   react-icons: ^4.7.1
-  react-lorem-ipsum: ^1.4.10
   react-router-dom: ^6.8.1
   reakit: ^1.3.11
   rimraf: ^3.0.2
@@ -93,11 +93,11 @@ devDependencies:
   eslint-config-next: 13.1.6_7kw3g6rralp5ps6mg3uyzz6azm
   framer-motion: 8.5.5_biqbaboplfbrettd7655fr4n2y
   json-to-ts-cli: 1.0.2
+  lorem-ipsum: 2.0.8
   next: 13.1.6_biqbaboplfbrettd7655fr4n2y
   nextra: 2.2.16_3vryta7zmbcsw4rrqf4axjqggm
   nextra-theme-docs: 2.2.16_rx2c2lgi4kk2voowlhd7uitkla
   react-dom: 18.2.0_react@18.2.0
-  react-lorem-ipsum: 1.4.10
   react-router-dom: 6.8.1_biqbaboplfbrettd7655fr4n2y
   rimraf: 3.0.2
   typescript: 4.9.5
@@ -3410,6 +3410,11 @@ packages:
     engines: {node: '>= 12'}
     dev: true
 
+  /commander/9.5.0:
+    resolution: {integrity: sha512-KRs7WVDKg86PWiuAqhDrAQnTXZKraVcCc6vFdL14qrZ/DcWwuRo7VoiYXalXO7S5GKpqYiVEwCbgFDfxNHKJBQ==}
+    engines: {node: ^12.20.0 || >=14}
+    dev: true
+
   /compute-scroll-into-view/3.0.0:
     resolution: {integrity: sha512-Yk1An4qzo5++Cu6peT9PsmRKIU8tALpmdoE09n//AfGQFcPfx21/tMGMsmKYmLJWaBJrGOJ5Jz5hoU+7cZZUWQ==}
     dev: true
@@ -4990,6 +4995,14 @@ packages:
     dependencies:
       js-tokens: 4.0.0
 
+  /lorem-ipsum/2.0.8:
+    resolution: {integrity: sha512-5RIwHuCb979RASgCJH0VKERn9cQo/+NcAi2BMe9ddj+gp7hujl6BI+qdOG4nVsLDpwWEJwTVYXNKP6BGgbcoGA==}
+    engines: {node: '>= 8.x', npm: '>= 5.x'}
+    hasBin: true
+    dependencies:
+      commander: 9.5.0
+    dev: true
+
   /lru-cache/4.1.5:
     resolution: {integrity: sha512-sWZlbEP2OsHNkXrMl5GYk/jKk70MBng6UU4YI/qGDYbgf6YbP4EvmqISbXCoJiRKs+1bSpFHVgQxvJ17F2li5g==}
     dependencies:
@@ -6158,10 +6171,6 @@ packages:
 
   /react-is/16.13.1:
     resolution: {integrity: sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==}
-    dev: true
-
-  /react-lorem-ipsum/1.4.10:
-    resolution: {integrity: sha512-PCEuauLZTGJkm++oxJeUycEgQOBg3qmmD7pn5sUyq9e0OvvNbW32RKQsSgalAYGUIbS91UkDgxvt6iHVAsqYJw==}
     dev: true
 
   /react-refresh/0.14.0:
