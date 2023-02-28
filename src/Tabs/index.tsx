@@ -1,15 +1,15 @@
 import * as Tabs from "@radix-ui/react-tabs";
 import "./style.css";
 import {
-  contentStyle,
-  listStyle,
-  listTone,
-  ListVariant,
-  rootStyle,
-  triggerShadowTone,
-  triggerStyle,
-  triggerTone,
-  TriggerVariants,
+	contentStyle,
+	listStyle,
+	listTone,
+	ListVariant,
+	rootStyle,
+	triggerShadowTone,
+	triggerStyle,
+	triggerTone,
+	TriggerVariants,
 } from "./style.css";
 
 // import {
@@ -23,80 +23,80 @@ import React from "react";
 import Bento from "src/Bento";
 
 export type RootProps = React.ComponentProps<typeof Tabs.Root> &
-  React.ComponentProps<typeof Bento> & {
-    defaultValue: string;
-  };
+	React.ComponentProps<typeof Bento> & {
+	defaultValue: string;
+};
 
 const Root = (props: RootProps) => {
-  // this takes Bento styles
-  return <Bento as={Tabs.Root} className={rootStyle} {...props} />;
+	// this takes Bento styles
+	return <Bento as={Tabs.Root} className={rootStyle} {...props} />;
 };
 
 export type ListProps = React.ComponentProps<typeof Tabs.List> & {
-  tone?: keyof Colors;
-  // @ts-ignore
-  size?: ListVariant["size"];
-  // @ts-ignore
-  tabSizing?: ListVariant["tabSizing"];
+	tone?: keyof Colors;
+	// @ts-ignore
+	size?: ListVariant["size"];
+	// @ts-ignore
+	tabSizing?: ListVariant["tabSizing"];
 };
 
 const List = ({
-  size = "md",
-  tone = "slate",
-  tabSizing = "equal",
-  ...props
-}: ListProps) => {
-  return (
-    <Tabs.List
-      className={clsx(
-        listStyle({
-          size: size,
-          tabSizing: tabSizing,
-        }),
-        // @ts-ignore
-        listTone[tone]
-      )}
-      {...props}
-    />
-  );
+				  size = "md",
+				  tone = "slate",
+				  tabSizing = "equal",
+				  ...props
+			  }: ListProps) => {
+	return (
+		<Tabs.List
+			className={clsx(
+				listStyle({
+					size: size,
+					tabSizing: tabSizing,
+				}),
+				// @ts-ignore
+				listTone[tone]
+			)}
+			{...props}
+		/>
+	);
 };
 
 export type TriggerProps = React.ComponentProps<typeof Tabs.Trigger> &
-  React.ComponentProps<typeof Bento> & {
-    value: string;
-    tone?: keyof Colors;
-    // @ts-ignore
+	React.ComponentProps<typeof Bento> & {
+	value: string;
+	tone?: keyof Colors;
+	// @ts-ignore
 
-    size?: TriggerVariants["size"];
-  };
+	size?: TriggerVariants["size"];
+};
 
-const Trigger = ({ size = "md", tone = "slate", ...props }: TriggerProps) => {
-  return (
-    <Bento
-      as={Tabs.Trigger}
-      className={clsx(
-        triggerStyle({
-          size: size,
-        }),
-        // @ts-ignore
+const Trigger = ({size = "md", tone = "slate", ...props}: TriggerProps) => {
+	return (
+		<Bento
+			as={Tabs.Trigger}
+			className={clsx(
+				triggerStyle({
+					size: size,
+				}),
+				// @ts-ignore
 
-        triggerTone[tone],
-        // @ts-ignore
+				triggerTone[tone],
+				// @ts-ignore
 
-        triggerShadowTone[tone]
-      )}
-      {...props}
-    />
-  );
+				triggerShadowTone[tone]
+			)}
+			{...props}
+		/>
+	);
 };
 
 export type ContentProps = React.ComponentProps<typeof Tabs.Content> &
-  React.ComponentProps<typeof Bento> & {
-    value: string;
-  };
+	React.ComponentProps<typeof Bento> & {
+	value: string;
+};
 
 const Content = (props: ContentProps) => {
-  return <Tabs.Content className={contentStyle} {...props} />;
+	return <Tabs.Content className={contentStyle} {...props} />;
 };
 
 export default Tabs;

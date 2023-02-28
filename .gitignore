@@ -30,3 +30,4 @@ dist-ssr
 .rollup.cache
 .rollup.*
 vite.config.ts.timestamp*
+vite.config.ts.timestamp*.*

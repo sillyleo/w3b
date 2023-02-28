@@ -6,15 +6,13 @@
 import React from "react";
 import Stack from "../../Stack";
 import Toggle from "..";
-import Bento from "../../Bento";
-import Text from "../../Text";
 
 const Demo1 = () => {
-  return (
-    <Stack>
-      <Toggle />
-    </Stack>
-  );
+	return (
+		<Stack>
+			<Toggle/>
+		</Stack>
+	);
 };
 
 export default Demo1;

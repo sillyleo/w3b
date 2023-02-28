@@ -6,15 +6,13 @@
 import React from "react";
 import Stack from "../../Stack";
 import Tooltip from "..";
-import Bento from "../../Bento";
-import Text from "../../Text";
 
 const Demo1 = () => {
-  return (
-    <Stack>
-      <Tooltip />
-    </Stack>
-  );
+	return (
+		<Stack>
+			<Tooltip/>
+		</Stack>
+	);
 };
 
 export default Demo1;

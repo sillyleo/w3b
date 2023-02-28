@@ -35,10 +35,10 @@ export { default as Tooltip } from "./Tooltip";
 export { darkTheme, theme, sprinkles } from "./styles/theme.css";
 // stitches
 export {
-  styled,
-  css,
-  globalCss,
-  theme as stitchesTheme,
-  stitchesDarkTheme,
-  globalStyles,
+	styled,
+	css,
+	globalCss,
+	theme as stitchesTheme,
+	stitchesDarkTheme,
+	globalStyles,
 } from "./stitches.config";
