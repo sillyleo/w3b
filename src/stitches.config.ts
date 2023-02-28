@@ -2,6 +2,8 @@ import { createStitches, defaultThemeMap } from "@stitches/react";
 import figmaTokens from "./theme.json";
 import type * as Stitches from "@stitches/react";
 import * as RadixColors from "@radix-ui/colors";
+// radix colors
+export const Radix = RadixColors;
 
 function capitalize(str: string): string {
   return str.charAt(0).toUpperCase() + str.slice(1);
@@ -202,8 +204,22 @@ export const {
       fast: "all 0.1s",
       slow: "all 0.4s ease-in-out",
     },
+    shadows: {
+      1: `0.3px 0.5px 0.7px ${Radix.blackA.blackA5},
+          0.4px 0.8px 1px -1.2px ${Radix.blackA.blackA5},
+          1px 2px 2.5px -2.5px ${Radix.blackA.blackA5}`,
+      2: `0.3px 0.5px 0.7px ${Radix.blackA.blackA5},
+          0.8px 1.6px 2px -0.8px ${Radix.blackA.blackA5},
+          2.1px 4.1px 5.2px -1.7px ${Radix.blackA.blackA5},
+          5px 10px 12.6px -2.5px ${Radix.blackA.blackA5}`,
+      3: `0.3px 0.5px 0.7px ${Radix.blackA.blackA5},
+          1.5px 2.9px 3.7px -0.4px ${Radix.blackA.blackA4},
+          2.7px 5.4px 6.8px -0.7px ${Radix.blackA.blackA4},
+          4.5px 8.9px 11.2px -1.1px ${Radix.blackA.blackA4},
+          7.1px 14.3px 18px -1.4px ${Radix.blackA.blackA4},
+          11.2px 22.3px 28.1px -1.8px ${Radix.blackA.blackA4}`,
+    },
   },
-
   media: {
     sm: "(min-width: 640px)",
     md: "(min-width: 768px)",
@@ -309,6 +325,3 @@ export const stitchesDarkTheme = createTheme("dark", {
 export const globalStyles = globalCss({
   "*": { margin: 0, boxSizing: "border-box" },
 });
-
-// radix colors
-export const Radix = RadixColors;
