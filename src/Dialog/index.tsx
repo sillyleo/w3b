@@ -59,7 +59,7 @@ export const Content = styled(DialogPrimitive.Content, {
 Content.displayName = "Content";
 Dialog.Content = Content;
 
-export const ContentWithClose = (props) => {
+export const ContentWithClose = (props: any) => {
   return (
     <Content {...props}>
       <Box

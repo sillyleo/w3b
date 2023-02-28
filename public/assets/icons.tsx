@@ -1,4 +1,4 @@
-export const HotTubLogo = (props) => {
+export const HotTubLogo = (props: any) => {
   return (
     <svg
       width="102"

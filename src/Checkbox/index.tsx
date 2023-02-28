@@ -22,7 +22,7 @@ export interface CheckboxExtendedProps extends CheckboxProps {
   //custom
   defaultChecked?: boolean | undefined;
   children?: React.ReactNode;
-  tone?: TextProps["tone"];
+  tone?: keyof Colors;
   fontSize?: TextProps["fontSize"];
   checkEmoji?: React.ReactNode;
 }
@@ -37,7 +37,7 @@ function Checkbox(
     tone = "gray",
     ...props
   }: CheckboxExtendedProps,
-  ref
+  ref: React.ForwardedRef<HTMLInputElement>
 ) {
   const checkbox = useCheckboxState({
     state: defaultChecked,
@@ -67,6 +67,7 @@ function Checkbox(
             ? "checked"
             : "unchecked"
         } // styling based on state
+        //@ts-ignore
         className={clsx(checkboxRoot, formTone[tone])}
       >
         {/* use checked if it's present, else use state */}

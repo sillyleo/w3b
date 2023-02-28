@@ -34,7 +34,9 @@ const Root = (props: RootProps) => {
 
 export type ListProps = React.ComponentProps<typeof Tabs.List> & {
   tone?: keyof Colors;
+  // @ts-ignore
   size?: ListVariant["size"];
+  // @ts-ignore
   tabSizing?: ListVariant["tabSizing"];
 };
 
@@ -51,6 +53,7 @@ const List = ({
           size: size,
           tabSizing: tabSizing,
         }),
+        // @ts-ignore
         listTone[tone]
       )}
       {...props}
@@ -62,6 +65,8 @@ export type TriggerProps = React.ComponentProps<typeof Tabs.Trigger> &
   React.ComponentProps<typeof Bento> & {
     value: string;
     tone?: keyof Colors;
+    // @ts-ignore
+
     size?: TriggerVariants["size"];
   };
 
@@ -73,7 +78,11 @@ const Trigger = ({ size = "md", tone = "slate", ...props }: TriggerProps) => {
         triggerStyle({
           size: size,
         }),
+        // @ts-ignore
+
         triggerTone[tone],
+        // @ts-ignore
+
         triggerShadowTone[tone]
       )}
       {...props}

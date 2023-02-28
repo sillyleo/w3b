@@ -10,7 +10,7 @@ export interface BrandButtonProps
 
 export const BrandButton = (
   { children, isLoading, ...props }: BrandButtonProps,
-  ref
+  ref: React.ForwardedRef<HTMLButtonElement>
 ) => {
   return (
     <BaseButton ref={ref} {...props}>

@@ -13,6 +13,7 @@ export interface HeroIconOneProps {
 const HeroIcon: FC<{ icon: string }> = (props) => {
   const { ...icons } = HeroIcons;
   // console.log(props.icon);
+  // @ts-ignore
   const OutlineIcon: JSX.Element = icons[props.icon] || icons["HiArchive"];
   return (
     <>

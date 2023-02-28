@@ -141,6 +141,8 @@ export function getButtonShadowStyle(
 ) {
   // console.log(radixColorsPrimitive.blueA)
   const { ...colorFromRadix } = RadixColors;
+  // shadowColor
+  //@ts-ignore
   const shadowColor = colorFromRadix[tone + "A"];
 
   if (depth === "0") {

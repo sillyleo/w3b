@@ -121,7 +121,7 @@ const Button = (
     css,
     ...props
   }: ButtonProps,
-  ref
+  ref: React.ForwardedRef<HTMLButtonElement>
 ) => {
   return (
     <BaseButton
