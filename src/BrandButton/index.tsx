@@ -55,7 +55,6 @@ const BaseButton = styled("button", {
         px: "$3",
         py: "$2",
         fontSize: "$base",
-
         "& .spinner": {
           boxSize: 20,
         },
@@ -64,7 +63,6 @@ const BaseButton = styled("button", {
         px: "$4",
         py: "$3",
         fontSize: "$base",
-
         "& .spinner": {
           boxSize: 20,
         },
@@ -73,7 +71,6 @@ const BaseButton = styled("button", {
         px: "$6",
         py: "$4",
         fontSize: "$base",
-
         "& .spinner": {
           boxSize: 24,
         },
