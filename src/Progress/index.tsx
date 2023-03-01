@@ -72,9 +72,13 @@ const Progress = ({
           css={_.merge(
             getBarToneStyle(tone),
             {
-              bg: barColor,
+              "&::after": {
+                background: barColor,
+              },
+              "&::before": {
+                background: barColor,
+              },
               width: `${progress}%`,
-              // transform: `translateX(40%)`,
             },
             css
           )}
