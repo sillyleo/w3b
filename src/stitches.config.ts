@@ -227,7 +227,7 @@ export const {
   media: {
     sm: "(max-width: 480px)",
     md: "(min-width: 480px) and (max-width: 768px)",
-    lg: "min-width: 768px) and (max-width: 1024px)",
+    lg: "(min-width: 768px) and (max-width: 1024px)",
     xl: "(min-width: 1024px) and (max-width: 1280px)",
     "2xl": "(min-width: 1280px)",
   },
