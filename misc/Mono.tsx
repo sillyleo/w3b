@@ -62,9 +62,10 @@ export const Banner = () => {
       <Stack gap="0">
         <Stack direction="column" gap="0">
           <Text
-            color="baseTextTertiary"
+            css={{
+              color: "$baseTextTertiary",
+            }}
             size="page-title"
-            fontWeight="bold"
             style={{
               fontSize: "clamp(1rem, 2.5vw, 3rem)",
               lineHeight: 0.6,
@@ -74,9 +75,8 @@ export const Banner = () => {
             のみもの
           </Text>
           <Text
-            color="baseText"
+            color="$baseText"
             size="page-title"
-            fontWeight="bold"
             style={{ fontSize: "clamp(2rem, 5vw, 7rem)", lineHeight: 1.1 }}
           >
             Nomimono
