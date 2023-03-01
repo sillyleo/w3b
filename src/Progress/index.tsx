@@ -60,7 +60,7 @@ const Progress = ({
           getIndicatorToneStyle(tone),
           {
             bg: trackColor,
-            borderColor: borderColor,
+            border: borderColor ? `1px solid ${borderColor}` : undefined,
           },
           css
         )}
