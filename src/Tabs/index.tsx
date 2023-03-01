@@ -70,6 +70,7 @@ function List({
 }
 
 const StyledTrigger = styled(TabsPrimitive.Trigger, {
+    all: 'unset',
     fontWeight: "$normal",
     WebkitFontSmoothing: "antialiased",
     transition: "$fast",
