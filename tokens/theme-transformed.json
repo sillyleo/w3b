@@ -1899,6 +1899,15 @@
         "fontSize": "{fontSizes.base}"
       },
       "type": "typography"
+    },
+    "button-small": {
+      "value": {
+        "fontFamily": "{fontFamilies.body}",
+        "fontWeight": "{fontWeights.medium}",
+        "lineHeight": "{lineHeights.tight}",
+        "fontSize": "{fontSizes.sm}"
+      },
+      "type": "typography"
     }
   },
   "paragraphSpacing": {

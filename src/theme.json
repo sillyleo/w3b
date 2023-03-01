@@ -599,6 +599,12 @@
       "fontWeight": 500,
       "lineHeight": "150%",
       "fontSize": "16px"
+    },
+    "button-small": {
+      "fontFamily": "Inter",
+      "fontWeight": 500,
+      "lineHeight": "140%",
+      "fontSize": "14px"
     }
   },
   "paragraphSpacing": {
