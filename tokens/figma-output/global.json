@@ -302,7 +302,7 @@
         "lineHeight": "{lineHeights.heading}",
         "fontSize": "{fontSizes.xs}",
         "letterSpacing": "{letterSpacing.increased}",
-        "textCase": "uppercase"
+        "textCase": ""
       },
       "type": "typography"
     },
@@ -354,6 +354,15 @@
         "lineHeight": "{lineHeights.body}",
         "fontSize": "{fontSizes.xs}",
         "letterSpacing": "{letterSpacing.default}"
+      },
+      "type": "typography"
+    },
+    "button": {
+      "value": {
+        "fontFamily": "{fontFamilies.body}",
+        "fontWeight": "{fontWeights.medium}",
+        "lineHeight": "{lineHeights.body}",
+        "fontSize": "{fontSizes.base}"
       },
       "type": "typography"
     }
