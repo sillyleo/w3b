@@ -14,15 +14,27 @@ import {
 
 <Display label="Icon button">
 <Button>Hello</Button>
-      <Button  size='sm' intent='primary'>
-        Button
-      </Button>
-      <Button  size='md' intent='primary'>
-        Button
-      </Button>
-      <Button  size='lg' intent='primary'>
-        Button
-      </Button>
+  <BrandButton size={{
+  '@initial': 'xs',
+  '@sm': 's',
+  '@md': 's',
+  '@lg': 'm',
+  '@xl': 'l',
+  '@2xl': 'l'
+}}>Responsive Brand Brand</BrandButton>
+
+<BrandButton size="s">Brand</BrandButton>
+<BrandButton size="m">Brand</BrandButton>
+<BrandButton size="l">Brand</BrandButton>
+<Button size="sm" intent="primary">
+  Button
+</Button>
+<Button size="md" intent="primary">
+  Button
+</Button>
+<Button size="lg" intent="primary">
+  Button
+</Button>
 
       <Button  size='xl' intent='primary'>
         Button

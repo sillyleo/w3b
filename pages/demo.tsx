@@ -4,6 +4,18 @@ export default function Demo() {
   return (
     <Display>
       <BrandButton>Brand</BrandButton>
+      <BrandButton
+        size={{
+          "@initial": "xs",
+          "@sm": "s",
+          "@md": "s",
+          "@lg": "m",
+          "@xl": "l",
+          "@2xl": "l",
+        }}
+      >
+        Responsive Brand Brand
+      </BrandButton>
 
       <Checkbox defaultChecked>Checkbox defaultChecked</Checkbox>
       <Checkbox defaultChecked tone="sky">
