@@ -1,7 +1,7 @@
 {
     "name": "@sayaww/nomimono",
     "private": false,
-    "version": "0.0.276",
+    "version": "0.0.277",
     "repository": {
         "type": "git",
         "url": "git+https://github.com/sillyleo/nomimono.git"
