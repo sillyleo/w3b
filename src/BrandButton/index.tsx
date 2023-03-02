@@ -29,6 +29,7 @@ const BaseButton = styled("button", {
   gap: "$1",
   alignItems: "center",
   fontWeight: "$medium",
+  fontFamily: "$body",
   overflow: "hidden",
   lineHeight: 1.5,
   transition: "$fast",
