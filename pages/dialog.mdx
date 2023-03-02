@@ -4,7 +4,7 @@ import { Box, Dialog, Display, Text, Button, Separator } from "ui";
 
 ```jsx
 <Dialog.Root>
-  <Dialog.Trigger>
+  <Dialog.Trigger asChild>
     <Button>Open Dialog with Close + Scroll</Button>
   </Dialog.Trigger>
   <Dialog.Portal>
@@ -21,7 +21,7 @@ import { Box, Dialog, Display, Text, Button, Separator } from "ui";
             morbi nunc congue.
           </Text>
         ))}
-        <Dialog.Close>
+        <Dialog.Close asChild>
           <Button>Close Button in content</Button>
         </Dialog.Close>
       </Dialog.ContentWithClose>
@@ -61,7 +61,7 @@ import { Box, Dialog, Display, Text, Button, Separator } from "ui";
 
 ```jsx
 <Dialog.Root>
-  <Dialog.Trigger>
+  <Dialog.Trigger asChild>
     <Button>Optional Title and Description</Button>
   </Dialog.Trigger>
   <Dialog.Portal>
@@ -79,7 +79,7 @@ import { Box, Dialog, Display, Text, Button, Separator } from "ui";
           sodales taciti duis praesent id. Consequat urna vitae morbi nunc
           congue.
         </Text>
-        <Dialog.Close>
+        <Dialog.Close asChild>
           <Button>Close Button in content</Button>
         </Dialog.Close>
 
@@ -136,7 +136,7 @@ import { Box, Dialog, Display, Text, Button, Separator } from "ui";
 
 ```jsx
 <Dialog.Root>
-  <Dialog.Trigger>
+  <Dialog.Trigger asChild>
     <Button>Open Dialog</Button>
   </Dialog.Trigger>
   <Dialog.Portal>
@@ -152,7 +152,7 @@ import { Box, Dialog, Display, Text, Button, Separator } from "ui";
               zIndex: "32",
             }}
           >
-            <Dialog.Close>
+            <Dialog.Close asChild>
               <Button>Close</Button>
             </Dialog.Close>
           </Box>
