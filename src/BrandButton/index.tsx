@@ -25,11 +25,11 @@ export const BrandButton = (
 
 const BaseButton = styled("button", {
   all: "unset",
+  boxSizing: "border-box",
   display: "flex",
   gap: "$1",
   alignItems: "center",
   fontWeight: "$medium",
-
   fontFamily: "$body",
   overflow: "hidden",
   lineHeight: 1.5,
