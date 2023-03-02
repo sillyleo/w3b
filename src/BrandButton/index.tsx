@@ -85,6 +85,15 @@ const BaseButton = styled("button", {
           background: "$colors$hover",
         },
       },
+      normal: {
+        borderRadius: "$full",
+        background: "$mauve12",
+        color: "white",
+        "&:hover": {
+          bg: "$mauve12",
+          color: "white",
+        },
+      },
       secondary: {
         borderRadius: "$xl",
         background: "$colors$gray6",
