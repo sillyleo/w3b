@@ -42,4 +42,5 @@ export {
   theme as stitchesTheme,
   stitchesDarkTheme,
   globalStyles,
+  Radix,
 } from "./stitches.config";
