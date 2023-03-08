@@ -49,7 +49,7 @@ export const Content = styled(DialogPrimitive.Content, {
   borderRadius: "$2xl",
   boxShadow: "$2",
   zIndex: 30,
-  position: "fixed",
+  position: "relative",
   width: "90vw",
   maxWidth: "650px",
   // maxHeight: "85vh",
