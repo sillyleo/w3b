@@ -38,6 +38,9 @@ export const Overlay = styled(DialogPrimitive.Overlay, {
   backgroundColor: blackA.blackA8,
   position: "fixed",
   inset: 0,
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
 });
 Overlay.displayName = "Overlay";
 Dialog.Overlay = Overlay;
@@ -47,13 +50,10 @@ export const Content = styled(DialogPrimitive.Content, {
   boxShadow: "$2",
   zIndex: 30,
   position: "fixed",
-  top: "50%",
-  left: "50%",
-  transform: "perspective(1px) translate(-50%, -50%)",
   width: "90vw",
   maxWidth: "650px",
   // maxHeight: "85vh",
-  overflow: "hidden",
+  overflowY: "auto",
   "&:focus": { outline: "none" },
 });
 Content.displayName = "Content";
