@@ -3,7 +3,6 @@
 
 import { resolve } from "path";
 import { defineConfig } from "vite";
-import React from "react";
 import typescript from "@rollup/plugin-typescript";
 // @ts-ignore
 import { vanillaExtractPlugin } from "@vanilla-extract/vite-plugin";
@@ -39,7 +38,6 @@ export default defineConfig({
   },
   plugins: [
     vanillaExtractPlugin(),
-
     // macaronVitePlugin(),
     // basic setup
     // dts(),

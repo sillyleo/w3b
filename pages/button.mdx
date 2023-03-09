@@ -1,95 +1,270 @@
 # Button
 
 import {
-  Bento,
-  IconButton,
-  Text,
-  Input,
-  LucideIcon,
-  BrandButton,
-  Progress,
-  Button,
-  Display,
+	Bento,
+	IconButton,
+	Text,
+	Input,
+	LucideIcon,
+	BrandButton,
+	Progress,
+	Button,
+	Display,
 } from "ui";
 
-<Display label="Icon button">
-<Button>Hello</Button>
-  <BrandButton size={{
-  '@initial': 'xs',
-  '@sm': 's',
-  '@md': 's',
-  '@lg': 'm',
-  '@xl': 'l',
-  '@2xl': 'l'
-}}>Responsive Brand Brand</BrandButton>
+import { Props } from "../src/Button/props";
 
-<BrandButton size="s" brand="normal">
-  Brand
-</BrandButton>
-<BrandButton size="m">Brand</BrandButton>
-<BrandButton size="l">Brand</BrandButton>
+```zsh
+pnpm react-docgen src/Button/index.tsx -o src/Button/readme.json --pretty
+```
+
+In `mdx`:
+
+```jsx
+import { Props } from "../src/Button/props";
+<Props />;
+```
+
+<Props />
+
+<Display label="icon button">
+
 <Button size="sm" intent="primary">
-  Button
+	Button
 </Button>
 <Button size="md" intent="primary">
-  Button
+	Button
 </Button>
 <Button size="lg" intent="primary">
-  Button
+	Button
+</Button>
+<Button tone={"sky"} size="sm" intent="secondary">
+	Button Here
+</Button>
+<Button tone={"sky"} size="md" intent="secondary">
+	Button
+</Button>
+<Button tone={"sky"} size="lg" intent="secondary">
+	Button
+</Button>
+<Button tone={"blue"} size="sm" intent="secondary">
+	Button
+</Button>
+<Button tone={"blue"} size="md" intent="secondary">
+	Button
+</Button>
+<Button tone={"blue"} size="lg" intent="secondary">
+	Button
 </Button>
 
-      <Button  size='xl' intent='primary'>
-        Button
-      </Button>
-
-      <Button  size='sm' intent='secondary'>
-        Button
-      </Button>
-      <Button  size='md' intent='secondary'>
-        Button
-      </Button>
-      <Button  size='lg' intent='secondary'>
-        Button
-      </Button>
-
-      <Button  tone={'sky'} size='sm' intent='secondary'>
-        Button Here
-      </Button>
-      <Button  tone={'sky'} size='md' intent='secondary'>
-        Button
-      </Button>
-      <Button  tone={'sky'} size='lg' intent='secondary'>
-        Button
-      </Button>
-
-      <Button  tone={'blue'} size='sm' intent='secondary'>
-        Button
-      </Button>
-      <Button  tone={'blue'} size='md' intent='secondary'>
-        Button
-      </Button>
-      <Button  tone={'blue'} size='lg' intent='secondary'>
-        Button
-      </Button>
-
-      <Button  tone={'lime'} size='sm' intent='secondary'>
-        Button
-      </Button>
-      <Button  tone={'lime'} size='md' intent='secondary'>
-        Button
-      </Button>
-      <Button  tone={'lime'} size='lg' intent='secondary'>
-        Button
-      </Button>
-
-      <Button  size='sm' intent='ghost'>
-        Button
-      </Button>
-      <Button  size='md' intent='ghost'>
-        Button
-      </Button>
-      <Button  size='lg' intent='ghost'>
-        Button
-      </Button>
+<Button tone={"lime"} size="sm" intent="secondary">
+	Button
+</Button>
+<Button tone={"lime"} size="md" intent="secondary">
+	Button
+</Button>
+<Button tone={"lime"} size="lg" intent="secondary">
+	Button
+</Button>
+<Button size="sm" intent="ghost">
+	Button
+</Button>
+<Button size="md" intent="ghost">
+	Button
+</Button>
+<Button size="lg" intent="ghost">
+	Button
+</Button>
 
 </Display>
+
+```jsx
+<!--begin react doc markdown-->
+## Table Content
+
+- [index.tsx](#index.tsx)
+
+import _ from "lodash";
+import React from "react";
+import type { CSS } from "src/stitches.config";
+import { styled } from "src/stitches.config";
+import { getButtonShadowStyle, getButtonToneStyle } from "src/util/tones";
+import Box from "../Box";
+import { AutoSpinner } from "../Spinner";
+
+const BaseButton = styled("button", {
+	all: "unset",
+	border: "none",
+	boxSizing: "border-box",
+	userSelect: "none",
+	position: "relative",
+	"&:disabled": {
+		cursor: "not-allowed",
+		opacity: 0.75,
+	},
+
+	"&:hover": {
+		transform: "translateY(-1px)",
+	},
+	"&:active": {
+		transform: "translateY(1px)",
+	},
+	// mdx fix
+	"& .button-text p": {
+		lineHeight: 1,
+		// opacity: 0,
+	},
+	overflow: "hidden",
+	fontFamily: "$heading",
+	fontWeight: "$bold",
+	cursor: "pointer",
+	display: "inline-flex",
+	gap: "$2",
+	// lineHeight: ,
+	alignItems: "center",
+	fontSize: "$base",
+	transition: "$fast",
+	variants: {
+		size: {
+			sm: {
+				borderRadius: "$lg",
+				fontSize: 11,
+				height: 30,
+				px: "$3",
+				py: "$2",
+			},
+			md: {
+				borderRadius: "$lg",
+				fontSize: 13,
+				height: "$8",
+				px: "$4",
+				py: "$2",
+			},
+			lg: {
+				borderRadius: "$xl",
+				fontSize: 15,
+				height: "$10",
+				px: "$5",
+				py: "$3",
+			},
+			xl: {
+				borderRadius: "$xl",
+				fontSize: 17,
+				height: "$11",
+				px: "$6",
+				py: "$4",
+			},
+		},
+
+		align: {
+			left: {
+				justifyContent: "flex-start",
+			},
+			center: {
+				justifyContent: "center",
+			},
+			right: {
+				justifyContent: "flex-end",
+			},
+			between: {
+				justifyContent: "space-between",
+			},
+			around: {
+				justifyContent: "space-around",
+			},
+		},
+	},
+	defaultVariants: {
+		size: "md",
+		align: "center",
+	},
+});
+
+export interface ButtonProps extends React.ComponentProps<typeof BaseButton> {
+	size?: "sm" | "md" | "lg" | "xl";
+	align?: "left" | "center" | "right" | "between" | "around";
+	tone?: keyof Colors;
+	intent?: "primary" | "secondary" | "ghost";
+	leftIcon?: React.ReactNode;
+	rightIcon?: React.ReactNode;
+	isLoading?: boolean;
+	children?: React.ReactNode;
+	depth?: "0" | "1" | "2" | "3";
+	css?: CSS;
+}
+
+const Button = (
+	{
+		size,
+		align,
+		tone = "slate",
+		intent = "primary",
+		isLoading,
+		children,
+		leftIcon,
+		rightIcon,
+		depth,
+		css,
+		...props
+	}: ButtonProps,
+	ref: React.ForwardedRef<HTMLButtonElement>
+) => {
+	return (
+		<BaseButton
+			ref={ref}
+			size={size}
+			align={align}
+			css={_.merge(
+				getButtonToneStyle(tone, intent),
+				getButtonShadowStyle(tone, depth),
+				css
+			)}
+			{...props}
+		>
+			{/*left icon*/}
+			<Box
+				style={{
+					opacity: isLoading ? 0 : 1,
+				}}
+			>
+				{leftIcon}
+			</Box>
+			{/*loading*/}
+			{isLoading && (
+				<Box
+					style={{
+						position: "absolute",
+						display: "flex",
+						alignItems: "center",
+						justifyContent: "center",
+						inset: 0,
+					}}
+				>
+					<AutoSpinner />
+				</Box>
+			)}
+
+			<Box
+				className="button-text"
+				style={{
+					opacity: isLoading ? 0 : 1,
+				}}
+			>
+				{children}
+			</Box>
+			{/*right icon*/}
+			<Box
+				style={{
+					opacity: isLoading ? 0 : 1,
+				}}
+			>
+				{rightIcon}
+			</Box>
+		</BaseButton>
+	);
+};
+
+export default React.forwardRef(Button);
+
+<!--end react doc markdown-->
+```
