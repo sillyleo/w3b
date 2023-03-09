@@ -1,0 +1,163 @@
+{
+  "description": "",
+  "methods": [],
+  "props": {
+    "size": {
+      "required": false,
+      "tsType": {
+        "name": "union",
+        "raw": "\"sm\" | \"md\" | \"lg\" | \"xl\"",
+        "elements": [
+          {
+            "name": "literal",
+            "value": "\"sm\""
+          },
+          {
+            "name": "literal",
+            "value": "\"md\""
+          },
+          {
+            "name": "literal",
+            "value": "\"lg\""
+          },
+          {
+            "name": "literal",
+            "value": "\"xl\""
+          }
+        ]
+      },
+      "description": ""
+    },
+    "align": {
+      "required": false,
+      "tsType": {
+        "name": "union",
+        "raw": "\"left\" | \"center\" | \"right\" | \"between\" | \"around\"",
+        "elements": [
+          {
+            "name": "literal",
+            "value": "\"left\""
+          },
+          {
+            "name": "literal",
+            "value": "\"center\""
+          },
+          {
+            "name": "literal",
+            "value": "\"right\""
+          },
+          {
+            "name": "literal",
+            "value": "\"between\""
+          },
+          {
+            "name": "literal",
+            "value": "\"around\""
+          }
+        ]
+      },
+      "description": ""
+    },
+    "tone": {
+      "required": false,
+      "tsType": {
+        "name": "unknown"
+      },
+      "description": "",
+      "defaultValue": {
+        "value": "\"slate\"",
+        "computed": false
+      }
+    },
+    "intent": {
+      "required": false,
+      "tsType": {
+        "name": "union",
+        "raw": "\"primary\" | \"secondary\" | \"ghost\"",
+        "elements": [
+          {
+            "name": "literal",
+            "value": "\"primary\""
+          },
+          {
+            "name": "literal",
+            "value": "\"secondary\""
+          },
+          {
+            "name": "literal",
+            "value": "\"ghost\""
+          }
+        ]
+      },
+      "description": "",
+      "defaultValue": {
+        "value": "\"primary\"",
+        "computed": false
+      }
+    },
+    "leftIcon": {
+      "required": false,
+      "tsType": {
+        "name": "ReactReactNode",
+        "raw": "React.ReactNode"
+      },
+      "description": ""
+    },
+    "rightIcon": {
+      "required": false,
+      "tsType": {
+        "name": "ReactReactNode",
+        "raw": "React.ReactNode"
+      },
+      "description": ""
+    },
+    "isLoading": {
+      "required": false,
+      "tsType": {
+        "name": "boolean"
+      },
+      "description": ""
+    },
+    "children": {
+      "required": false,
+      "tsType": {
+        "name": "ReactReactNode",
+        "raw": "React.ReactNode"
+      },
+      "description": ""
+    },
+    "depth": {
+      "required": false,
+      "tsType": {
+        "name": "union",
+        "raw": "\"0\" | \"1\" | \"2\" | \"3\"",
+        "elements": [
+          {
+            "name": "literal",
+            "value": "\"0\""
+          },
+          {
+            "name": "literal",
+            "value": "\"1\""
+          },
+          {
+            "name": "literal",
+            "value": "\"2\""
+          },
+          {
+            "name": "literal",
+            "value": "\"3\""
+          }
+        ]
+      },
+      "description": ""
+    },
+    "css": {
+      "required": false,
+      "tsType": {
+        "name": "CSS"
+      },
+      "description": ""
+    }
+  }
+}
