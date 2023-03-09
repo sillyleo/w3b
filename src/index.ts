@@ -44,3 +44,5 @@ export {
   globalStyles,
   Radix,
 } from "./stitches.config";
+
+export { default as Footer } from "./Footer";
