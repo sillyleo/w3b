@@ -5,8 +5,6 @@ import { styled } from "src/stitches.config";
 import { getButtonShadowStyle, getButtonToneStyle } from "src/util/tones";
 import Box from "../Box";
 import { AutoSpinner } from "../Spinner";
-import tablemark from "tablemark";
-import spec from "./spec.json";
 
 const BaseButton = styled("button", {
 	all: "unset",
