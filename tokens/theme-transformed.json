@@ -135,10 +135,6 @@
     "96": {
       "value": "24rem",
       "type": "dimension"
-    },
-    "px": {
-      "value": "1px",
-      "type": "dimension"
     }
   },
   "Primary": {
@@ -204,28 +200,6 @@
       "value": "#ffb459",
       "type": "color"
     }
-  },
-  "Big Shadow": {
-    "value": {
-      "color": "#00000026",
-      "type": "dropShadow",
-      "x": 0,
-      "y": 20,
-      "blur": 20,
-      "spread": 0
-    },
-    "type": "boxShadow"
-  },
-  "Small Shadow": {
-    "value": {
-      "color": "#00000026",
-      "type": "dropShadow",
-      "x": 0,
-      "y": 10,
-      "blur": 10,
-      "spread": 0
-    },
-    "type": "boxShadow"
   },
   "fontFamilies": {
     "sk-modernist": {
@@ -303,7 +277,7 @@
       "type": "fontSizes"
     }
   },
-  "DIsplay L": {
+  "Display L": {
     "value": {
       "fontFamily": "{fontFamilies.sk-modernist}",
       "fontWeight": "{fontWeights.heading}",
@@ -317,7 +291,7 @@
     },
     "type": "typography"
   },
-  "DIsplay M": {
+  "Display M": {
     "value": {
       "fontFamily": "{fontFamilies.sk-modernist}",
       "fontWeight": "{fontWeights.heading}",

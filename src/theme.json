@@ -29,8 +29,7 @@
     "64": "16rem",
     "72": "18rem",
     "80": "20rem",
-    "96": "24rem",
-    "px": "1px"
+    "96": "24rem"
   },
   "Primary": {
     "400": "#6defbf",
@@ -50,22 +49,6 @@
     "Silver": "#d3d5f2",
     "Yellow": "#e9d74d",
     "Orange": "#ffb459"
-  },
-  "Big Shadow": {
-    "color": "#00000026",
-    "type": "dropShadow",
-    "x": 0,
-    "y": 20,
-    "blur": 20,
-    "spread": 0
-  },
-  "Small Shadow": {
-    "color": "#00000026",
-    "type": "dropShadow",
-    "x": 0,
-    "y": 10,
-    "blur": 10,
-    "spread": 0
   },
   "fontFamilies": {
     "sk-modernist": "Sk-Modernist",
@@ -92,7 +75,7 @@
     "7": 48,
     "8": 64
   },
-  "DIsplay L": {
+  "Display L": {
     "fontFamily": "Sk-Modernist",
     "fontWeight": "Bold",
     "lineHeight": "120%",
@@ -103,7 +86,7 @@
     "textCase": "",
     "textDecoration": ""
   },
-  "DIsplay M": {
+  "Display M": {
     "fontFamily": "Sk-Modernist",
     "fontWeight": "Bold",
     "lineHeight": "120%",
