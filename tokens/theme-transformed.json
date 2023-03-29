@@ -230,6 +230,10 @@
         "value": "#86848d",
         "type": "color",
         "description": "Text"
+      },
+      "12": {
+        "value": "black",
+        "type": "color"
       }
     }
   },
