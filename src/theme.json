@@ -31,24 +31,34 @@
     "80": "20rem",
     "96": "24rem"
   },
-  "Primary": {
-    "400": "#6defbf",
-    "500": "#3ceaaa",
-    "600": "#33c790"
-  },
-  "Secondary": {
-    "400": "#42cdeb",
-    "500": "#03bce4",
-    "600": "#03a0c2"
-  },
-  "Support": {
-    "Red": "#f16769",
-    "Pink": "#eb8de1",
-    "Purple": "#bf96f4",
-    "Blue": "#4ea3fe",
-    "Silver": "#d3d5f2",
-    "Yellow": "#e9d74d",
-    "Orange": "#ffb459"
+  "color": {
+    "Primary": {
+      "400": "#6defbf",
+      "500": "#3ceaaa",
+      "600": "#33c790"
+    },
+    "Secondary": {
+      "400": "#42cdeb",
+      "500": "#03bce4",
+      "600": "#03a0c2"
+    },
+    "Support": {
+      "Red": "#f16769",
+      "Pink": "#eb8de1",
+      "Purple": "#bf96f4",
+      "Blue": "#4ea3fe",
+      "Silver": "#d3d5f2",
+      "Yellow": "#e9d74d",
+      "Orange": "#ffb459"
+    },
+    "Neutral": {
+      "0": "#ffffff",
+      "2": "#f9f8f9",
+      "4": "#eeedef",
+      "6": "#e4e2e4",
+      "8": "#c8c7cb",
+      "10": "#86848d"
+    }
   },
   "fontFamilies": {
     "sk-modernist": "Sk-Modernist",
@@ -164,6 +174,12 @@
       "textCase": "",
       "textDecoration": ""
     },
+    "Title S": {
+      "fontFamily": "Inter",
+      "fontWeight": "Medium",
+      "lineHeight": "140%",
+      "fontSize": 12
+    },
     "Body L": {
       "fontFamily": "Inter",
       "fontWeight": "Regular",
@@ -190,21 +206,13 @@
       "fontFamily": "Inter",
       "fontWeight": "Regular",
       "lineHeight": "140%",
-      "fontSize": "",
+      "fontSize": 12,
       "letterSpacing": "",
       "paragraphSpacing": "",
       "paragraphIndent": "",
       "textCase": "",
       "textDecoration": ""
     }
-  },
-  "Neutral": {
-    "0": "#ffffff",
-    "2": "#f9f8f9",
-    "4": "#eeedef",
-    "6": "#e4e2e4",
-    "8": "#c8c7cb",
-    "10": "#86848d"
   },
   "tokenSetOrder": {
     "0": "Light",
