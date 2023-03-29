@@ -64,7 +64,6 @@
 		"react-aria": "^3.23.1",
 		"react-icons": "^4.8.0",
 		"react-lorem-ipsum": "^1.4.10",
-		"reakit": "^1.3.11",
 		"use-sound": "^4.0.1"
 	},
 	"devDependencies": {
@@ -85,10 +84,10 @@
 		"next": "^13.2.3",
 		"nextra": "^2.2.18",
 		"nextra-theme-docs": "^2.2.18",
+		"react-docgen": "^5.4.3",
 		"react-dom": "^18.2.0",
 		"react-router-dom": "^6.8.2",
 		"rimraf": "^3.0.2",
-		"react-docgen": "^5.4.3",
 		"typescript": "4.9.5",
 		"vite": "^4.1.4",
 		"vite-plugin-css-injected-by-js": "^2.4.0"
