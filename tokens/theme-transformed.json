@@ -289,26 +289,30 @@
       "type": "fontSizes"
     },
     "3": {
-      "value": 20,
+      "value": 18,
       "type": "fontSizes"
     },
     "4": {
-      "value": 24,
+      "value": 20,
       "type": "fontSizes"
     },
     "5": {
-      "value": 32,
+      "value": 24,
       "type": "fontSizes"
     },
     "6": {
-      "value": 36,
+      "value": 32,
       "type": "fontSizes"
     },
     "7": {
-      "value": 48,
+      "value": 36,
       "type": "fontSizes"
     },
     "8": {
+      "value": 48,
+      "type": "fontSizes"
+    },
+    "9": {
       "value": 64,
       "type": "fontSizes"
     }
@@ -319,7 +323,7 @@
         "fontFamily": "{fontFamilies.sk-modernist}",
         "fontWeight": "{fontWeights.heading}",
         "lineHeight": "{lineHeights.0}",
-        "fontSize": "{fontSize.8}",
+        "fontSize": "{fontSize.9}",
         "letterSpacing": "",
         "paragraphSpacing": "",
         "paragraphIndent": "",
@@ -333,7 +337,7 @@
         "fontFamily": "{fontFamilies.sk-modernist}",
         "fontWeight": "{fontWeights.heading}",
         "lineHeight": "{lineHeights.0}",
-        "fontSize": "{fontSize.7}",
+        "fontSize": "{fontSize.8}",
         "letterSpacing": "",
         "paragraphSpacing": "",
         "paragraphIndent": "",
@@ -347,7 +351,7 @@
         "fontFamily": "{fontFamilies.sk-modernist}",
         "fontWeight": "{fontWeights.heading}",
         "lineHeight": "{lineHeights.0}",
-        "fontSize": "{fontSize.6}",
+        "fontSize": "{fontSize.7}",
         "letterSpacing": "",
         "paragraphSpacing": "",
         "paragraphIndent": "",
@@ -361,7 +365,7 @@
         "fontFamily": "{fontFamilies.sk-modernist}",
         "fontWeight": "{fontWeights.heading}",
         "lineHeight": "{lineHeights.2}",
-        "fontSize": "{fontSize.5}",
+        "fontSize": "{fontSize.6}",
         "letterSpacing": "",
         "paragraphSpacing": "",
         "paragraphIndent": "",
@@ -375,7 +379,7 @@
         "fontFamily": "{fontFamilies.sk-modernist}",
         "fontWeight": "{fontWeights.heading}",
         "lineHeight": "{lineHeights.2}",
-        "fontSize": "{fontSize.4}",
+        "fontSize": "{fontSize.5}",
         "letterSpacing": "",
         "paragraphSpacing": "",
         "paragraphIndent": "",
@@ -389,7 +393,7 @@
         "fontFamily": "{fontFamilies.sk-modernist}",
         "fontWeight": "{fontWeights.heading}",
         "lineHeight": "{lineHeights.2}",
-        "fontSize": "{fontSize.3}",
+        "fontSize": "{fontSize.4}",
         "letterSpacing": "",
         "paragraphSpacing": "",
         "paragraphIndent": "",
@@ -403,12 +407,7 @@
         "fontFamily": "{fontFamilies.inter}",
         "fontWeight": "{fontWeights.body-medium}",
         "lineHeight": "{lineHeights.2}",
-        "fontSize": "{fontSize.2}",
-        "letterSpacing": "",
-        "paragraphSpacing": "",
-        "paragraphIndent": "",
-        "textCase": "",
-        "textDecoration": ""
+        "fontSize": "{fontSize.3}"
       },
       "type": "typography"
     },
@@ -416,8 +415,8 @@
       "value": {
         "fontFamily": "{fontFamilies.inter}",
         "fontWeight": "{fontWeights.body-medium}",
-        "lineHeight": "{lineHeights.1}",
-        "fontSize": "{fontSize.1}",
+        "lineHeight": "{lineHeights.2}",
+        "fontSize": "{fontSize.2}",
         "letterSpacing": "",
         "paragraphSpacing": "",
         "paragraphIndent": "",
@@ -431,11 +430,25 @@
         "fontFamily": "{fontFamilies.inter}",
         "fontWeight": "{fontWeights.body-medium}",
         "lineHeight": "{lineHeights.1}",
+        "fontSize": "{fontSize.1}",
+        "letterSpacing": "",
+        "paragraphSpacing": "",
+        "paragraphIndent": "",
+        "textCase": "",
+        "textDecoration": ""
+      },
+      "type": "typography"
+    },
+    "Title XS": {
+      "value": {
+        "fontFamily": "{fontFamilies.inter}",
+        "fontWeight": "{fontWeights.body-medium}",
+        "lineHeight": "{lineHeights.1}",
         "fontSize": "{fontSize.0}"
       },
       "type": "typography"
     },
-    "Body L": {
+    "Body M": {
       "value": {
         "fontFamily": "{fontFamilies.inter}",
         "fontWeight": "{fontWeights.body}",
@@ -449,7 +462,7 @@
       },
       "type": "typography"
     },
-    "Body M": {
+    "Body S": {
       "value": {
         "fontFamily": "{fontFamilies.inter}",
         "fontWeight": "{fontWeights.body}",
@@ -463,7 +476,7 @@
       },
       "type": "typography"
     },
-    "Body S": {
+    "Body XS": {
       "value": {
         "fontFamily": "{fontFamilies.inter}",
         "fontWeight": "{fontWeights.body}",
@@ -474,6 +487,15 @@
         "paragraphIndent": "",
         "textCase": "",
         "textDecoration": ""
+      },
+      "type": "typography"
+    },
+    "Body L": {
+      "value": {
+        "fontFamily": "{fontFamilies.inter}",
+        "fontWeight": "{fontWeights.body}",
+        "lineHeight": "{lineHeights.2}",
+        "fontSize": "{fontSize.3}"
       },
       "type": "typography"
     }

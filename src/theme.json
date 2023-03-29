@@ -79,12 +79,13 @@
     "0": 12,
     "1": 14,
     "2": 16,
-    "3": 20,
-    "4": 24,
-    "5": 32,
-    "6": 36,
-    "7": 48,
-    "8": 64
+    "3": 18,
+    "4": 20,
+    "5": 24,
+    "6": 32,
+    "7": 36,
+    "8": 48,
+    "9": 64
   },
   "typography": {
     "Display L": {
@@ -157,18 +158,13 @@
       "fontFamily": "Inter",
       "fontWeight": "Medium",
       "lineHeight": "150%",
-      "fontSize": 16,
-      "letterSpacing": "",
-      "paragraphSpacing": "",
-      "paragraphIndent": "",
-      "textCase": "",
-      "textDecoration": ""
+      "fontSize": 18
     },
     "Title M": {
       "fontFamily": "Inter",
       "fontWeight": "Medium",
-      "lineHeight": "140%",
-      "fontSize": 14,
+      "lineHeight": "150%",
+      "fontSize": 16,
       "letterSpacing": "",
       "paragraphSpacing": "",
       "paragraphIndent": "",
@@ -179,9 +175,20 @@
       "fontFamily": "Inter",
       "fontWeight": "Medium",
       "lineHeight": "140%",
+      "fontSize": 14,
+      "letterSpacing": "",
+      "paragraphSpacing": "",
+      "paragraphIndent": "",
+      "textCase": "",
+      "textDecoration": ""
+    },
+    "Title XS": {
+      "fontFamily": "Inter",
+      "fontWeight": "Medium",
+      "lineHeight": "140%",
       "fontSize": 12
     },
-    "Body L": {
+    "Body M": {
       "fontFamily": "Inter",
       "fontWeight": "Regular",
       "lineHeight": "150%",
@@ -192,7 +199,7 @@
       "textCase": "",
       "textDecoration": ""
     },
-    "Body M": {
+    "Body S": {
       "fontFamily": "Inter",
       "fontWeight": "Regular",
       "lineHeight": "140%",
@@ -203,7 +210,7 @@
       "textCase": "",
       "textDecoration": ""
     },
-    "Body S": {
+    "Body XS": {
       "fontFamily": "Inter",
       "fontWeight": "Regular",
       "lineHeight": "140%",
@@ -213,6 +220,12 @@
       "paragraphIndent": "",
       "textCase": "",
       "textDecoration": ""
+    },
+    "Body L": {
+      "fontFamily": "Inter",
+      "fontWeight": "Regular",
+      "lineHeight": "150%",
+      "fontSize": 18
     }
   },
   "tokenSetOrder": {
