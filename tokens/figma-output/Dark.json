@@ -29,6 +29,10 @@
         "value": "#7e7d86",
         "type": "color",
         "description": "Text"
+      },
+      "12": {
+        "value": "white",
+        "type": "color"
       }
     }
   }
