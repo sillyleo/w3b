@@ -1,33 +1,35 @@
 {
-  "Neutral": {
-    "0": {
-      "value": "#000000",
-      "type": "color",
-      "description": "Card"
-    },
-    "2": {
-      "value": "#1c1c1f",
-      "type": "color",
-      "description": "Input"
-    },
-    "4": {
-      "value": "#28282c",
-      "type": "color",
-      "description": "Input/Border"
-    },
-    "6": {
-      "value": "#34343a",
-      "type": "color"
-    },
-    "8": {
-      "value": "#504f57",
-      "type": "color",
-      "description": "Outline"
-    },
-    "10": {
-      "value": "#7e7d86",
-      "type": "color",
-      "description": "Text"
+  "color": {
+    "Neutral": {
+      "0": {
+        "value": "#000000",
+        "type": "color",
+        "description": "Card"
+      },
+      "2": {
+        "value": "#1c1c1f",
+        "type": "color",
+        "description": "Input"
+      },
+      "4": {
+        "value": "#28282c",
+        "type": "color",
+        "description": "Input/Border"
+      },
+      "6": {
+        "value": "#34343a",
+        "type": "color"
+      },
+      "8": {
+        "value": "#504f57",
+        "type": "color",
+        "description": "Outline"
+      },
+      "10": {
+        "value": "#7e7d86",
+        "type": "color",
+        "description": "Text"
+      }
     }
   }
 }
