@@ -6,32 +6,38 @@
         "type": "color",
         "description": "Card"
       },
-      "2": {
+      "1": {
         "value": "#1c1c1f",
         "type": "color",
         "description": "Input"
       },
-      "4": {
+      "2": {
         "value": "#28282c",
         "type": "color",
         "description": "Input/Border"
       },
-      "6": {
+      "3": {
         "value": "#34343a",
         "type": "color"
       },
-      "8": {
+      "4": {
         "value": "#504f57",
         "type": "color",
         "description": "Outline"
       },
-      "10": {
+      "5": {
         "value": "#7e7d86",
         "type": "color",
         "description": "Text"
       },
-      "12": {
+      "6": {
         "value": "white",
+        "type": "color"
+      }
+    },
+    "Special": {
+      "black": {
+        "value": "Black",
         "type": "color"
       }
     }

@@ -173,20 +173,16 @@
       }
     },
     "Support": {
-      "Red": {
-        "value": "#f16769",
-        "type": "color"
-      },
-      "Pink": {
-        "value": "#eb8de1",
+      "Blue": {
+        "value": "#4ea3fe",
         "type": "color"
       },
       "Purple": {
         "value": "#bf96f4",
         "type": "color"
       },
-      "Blue": {
-        "value": "#4ea3fe",
+      "Pink": {
+        "value": "#eb8de1",
         "type": "color"
       },
       "Silver": {
@@ -200,6 +196,10 @@
       "Orange": {
         "value": "#ffb459",
         "type": "color"
+      },
+      "Red": {
+        "value": "#f16769",
+        "type": "color"
       }
     },
     "Neutral": {
@@ -208,31 +208,37 @@
         "type": "color",
         "description": "Card"
       },
-      "2": {
+      "1": {
         "value": "#f9f8f9",
         "type": "color",
         "description": "Input"
       },
-      "4": {
+      "2": {
         "value": "#eeedef",
         "type": "color",
         "description": "Border"
       },
-      "6": {
+      "3": {
         "value": "#e4e2e4",
         "type": "color"
       },
-      "8": {
+      "4": {
         "value": "#c8c7cb",
         "type": "color"
       },
-      "10": {
+      "5": {
         "value": "#86848d",
         "type": "color",
         "description": "Text"
       },
-      "12": {
+      "6": {
         "value": "black",
+        "type": "color"
+      }
+    },
+    "Sepcial": {
+      "black": {
+        "value": "Black",
         "type": "color"
       }
     }
@@ -498,6 +504,24 @@
         "fontSize": "{fontSize.3}"
       },
       "type": "typography"
+    }
+  },
+  "borderRadius": {
+    "S": {
+      "value": "{spacing.3}",
+      "type": "borderRadius"
+    },
+    "M": {
+      "value": "{spacing.4}",
+      "type": "borderRadius"
+    },
+    "L": {
+      "value": "{spacing.8}",
+      "type": "borderRadius"
+    },
+    "Full": {
+      "value": "{spacing.96}",
+      "type": "borderRadius"
     }
   }
 }
