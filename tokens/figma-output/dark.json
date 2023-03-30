@@ -1,6 +1,6 @@
 {
   "color": {
-    "Neutral": {
+    "neutral": {
       "0": {
         "value": "#000000",
         "type": "color",
@@ -35,7 +35,7 @@
         "type": "color"
       }
     },
-    "Special": {
+    "special": {
       "black": {
         "value": "Black",
         "type": "color"
