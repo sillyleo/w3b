@@ -43,22 +43,28 @@
       "600": "#03a0c2"
     },
     "Support": {
-      "Red": "#f16769",
-      "Pink": "#eb8de1",
-      "Purple": "#bf96f4",
       "Blue": "#4ea3fe",
+      "Purple": "#bf96f4",
+      "Pink": "#eb8de1",
       "Silver": "#d3d5f2",
       "Yellow": "#e9d74d",
-      "Orange": "#ffb459"
+      "Orange": "#ffb459",
+      "Red": "#f16769"
     },
     "Neutral": {
       "0": "#ffffff",
-      "2": "#f9f8f9",
-      "4": "#eeedef",
-      "6": "#e4e2e4",
-      "8": "#c8c7cb",
-      "10": "#86848d",
-      "12": "#000000"
+      "1": "#f9f8f9",
+      "2": "#eeedef",
+      "3": "#e4e2e4",
+      "4": "#c8c7cb",
+      "5": "#86848d",
+      "6": "#000000"
+    },
+    "Sepcial": {
+      "black": "#000000"
+    },
+    "Special": {
+      "black": "#000000"
     }
   },
   "fontFamilies": {
@@ -227,6 +233,12 @@
       "lineHeight": "150%",
       "fontSize": 18
     }
+  },
+  "borderRadius": {
+    "S": "0.75rem",
+    "M": "1rem",
+    "L": "2rem",
+    "Full": "24rem"
   },
   "tokenSetOrder": {
     "0": "Light",
