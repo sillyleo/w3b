@@ -67,16 +67,16 @@
       "black": "#000000"
     }
   },
-  "fontFamilies": {
+  "font-families": {
     "inter": "Inter",
     "sk-modernist": "Sk-Modernist"
   },
-  "lineHeights": {
+  "line-heights": {
     "0": "120%",
     "1": "140%",
     "2": "150%"
   },
-  "fontSize": {
+  "font-size": {
     "0": 12,
     "1": 14,
     "2": 16,
@@ -88,7 +88,7 @@
     "8": 48,
     "9": 64
   },
-  "borderRadius": {
+  "border-radius": {
     "s": "0.75rem",
     "m": "1rem",
     "l": "2rem",
@@ -104,7 +104,7 @@
     "display": {
       "s": {
         "fontFamily": "Sk-Modernist",
-        "fontWeight": "bold",
+        "fontWeight": "Bold",
         "lineHeight": "120%",
         "fontSize": 36,
         "letterSpacing": "0%",
@@ -115,7 +115,7 @@
       },
       "m": {
         "fontFamily": "Sk-Modernist",
-        "fontWeight": "bold",
+        "fontWeight": "Bold",
         "lineHeight": "120%",
         "fontSize": 48,
         "letterSpacing": "0%",
@@ -126,7 +126,7 @@
       },
       "l": {
         "fontFamily": "Sk-Modernist",
-        "fontWeight": "bold",
+        "fontWeight": "Bold",
         "lineHeight": "120%",
         "fontSize": 64,
         "letterSpacing": "0%",
@@ -139,7 +139,7 @@
     "headline": {
       "s": {
         "fontFamily": "Sk-Modernist",
-        "fontWeight": "bold",
+        "fontWeight": "Bold",
         "lineHeight": "140%",
         "fontSize": 20,
         "letterSpacing": "0%",
@@ -150,7 +150,7 @@
       },
       "m": {
         "fontFamily": "Sk-Modernist",
-        "fontWeight": "bold",
+        "fontWeight": "Bold",
         "lineHeight": "140%",
         "fontSize": 24,
         "letterSpacing": "0%",
@@ -161,7 +161,7 @@
       },
       "l": {
         "fontFamily": "Sk-Modernist",
-        "fontWeight": "bold",
+        "fontWeight": "Bold",
         "lineHeight": "140%",
         "fontSize": 32,
         "letterSpacing": "0%",
@@ -174,7 +174,7 @@
     "title": {
       "xs": {
         "fontFamily": "Inter",
-        "fontWeight": "medium",
+        "fontWeight": "Medium",
         "lineHeight": "150%",
         "fontSize": 12,
         "letterSpacing": "0%",
@@ -185,7 +185,7 @@
       },
       "s": {
         "fontFamily": "Inter",
-        "fontWeight": "medium",
+        "fontWeight": "Medium",
         "lineHeight": "150%",
         "fontSize": 14,
         "letterSpacing": "0%",
@@ -196,7 +196,7 @@
       },
       "m": {
         "fontFamily": "Inter",
-        "fontWeight": "medium",
+        "fontWeight": "Medium",
         "lineHeight": "140%",
         "fontSize": 16,
         "letterSpacing": "0%",
@@ -207,7 +207,7 @@
       },
       "l": {
         "fontFamily": "Inter",
-        "fontWeight": "medium",
+        "fontWeight": "Medium",
         "lineHeight": "140%",
         "fontSize": 18,
         "letterSpacing": "0%",
@@ -220,7 +220,7 @@
     "body": {
       "xs": {
         "fontFamily": "Inter",
-        "fontWeight": "regular",
+        "fontWeight": "Regular",
         "lineHeight": "150%",
         "fontSize": 12,
         "letterSpacing": "0%",
@@ -231,7 +231,7 @@
       },
       "s": {
         "fontFamily": "Inter",
-        "fontWeight": "regular",
+        "fontWeight": "Regular",
         "lineHeight": "150%",
         "fontSize": 14,
         "letterSpacing": "0%",
@@ -242,7 +242,7 @@
       },
       "m": {
         "fontFamily": "Inter",
-        "fontWeight": "regular",
+        "fontWeight": "Regular",
         "lineHeight": "140%",
         "fontSize": 16,
         "letterSpacing": "0%",
@@ -253,7 +253,7 @@
       },
       "l": {
         "fontFamily": "Inter",
-        "fontWeight": "regular",
+        "fontWeight": "Regular",
         "lineHeight": "140%",
         "fontSize": 18,
         "letterSpacing": "0%",
@@ -273,13 +273,13 @@
   "paragraphIndent": {
     "0": "0px"
   },
-  "fontWeights": {
-    "regular": "regular",
-    "medium": "medium",
-    "bold": "bold"
+  "font-weights": {
+    "regular": "Regular",
+    "medium": "Medium",
+    "bold": "Bold"
   },
   "tokenSetOrder": {
-    "0": "light",
-    "1": "dark"
+    "0": "Light",
+    "1": "Dark"
   }
 }
