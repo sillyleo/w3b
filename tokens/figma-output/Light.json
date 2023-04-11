@@ -232,6 +232,10 @@
         "description": "Text"
       },
       "6": {
+        "value": "#4A4656",
+        "type": "color"
+      },
+      "7": {
         "value": "black",
         "type": "color"
       }
@@ -239,6 +243,10 @@
     "sepcial": {
       "black": {
         "value": "Black",
+        "type": "color"
+      },
+      "link": {
+        "value": "#1ABC80",
         "type": "color"
       }
     }
