@@ -232,6 +232,10 @@
         "description": "Text"
       },
       "6": {
+        "value": "#4A4656",
+        "type": "color"
+      },
+      "7": {
         "value": "black",
         "type": "color"
       }
@@ -240,11 +244,19 @@
       "black": {
         "value": "Black",
         "type": "color"
+      },
+      "link": {
+        "value": "#1ABC80",
+        "type": "color"
       }
     },
     "special": {
       "black": {
         "value": "Black",
+        "type": "color"
+      },
+      "link": {
+        "value": "#3CEAAA",
         "type": "color"
       }
     }
