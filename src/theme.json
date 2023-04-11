@@ -70,16 +70,16 @@
       "link": "#3ceaaa"
     }
   },
-  "font-families": {
+  "fontFamilies": {
     "inter": "Inter",
     "sk-modernist": "Sk-Modernist"
   },
-  "line-heights": {
+  "lineHeights": {
     "0": "120%",
     "1": "140%",
     "2": "150%"
   },
-  "font-size": {
+  "fontSize": {
     "0": 12,
     "1": 14,
     "2": 16,
@@ -91,7 +91,7 @@
     "8": 48,
     "9": 64
   },
-  "border-radius": {
+  "borderRadius": {
     "s": "0.75rem",
     "m": "1rem",
     "l": "2rem",
@@ -276,7 +276,7 @@
   "paragraphIndent": {
     "0": "0px"
   },
-  "font-weights": {
+  "fontWeights": {
     "regular": "Regular",
     "medium": "Medium",
     "bold": "Bold"
