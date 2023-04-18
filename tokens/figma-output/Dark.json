@@ -47,6 +47,10 @@
       "link": {
         "value": "#3CEAAA",
         "type": "color"
+      },
+      "border": {
+        "value": "#504F57",
+        "type": "color"
       }
     }
   }

@@ -211,7 +211,7 @@
       "1": {
         "value": "#f9f8f9",
         "type": "color",
-        "description": "Input"
+        "description": "Hover"
       },
       "2": {
         "value": "#eeedef",
@@ -224,7 +224,8 @@
       },
       "4": {
         "value": "#c8c7cb",
-        "type": "color"
+        "type": "color",
+        "description": "Border, Disable"
       },
       "5": {
         "value": "#86848d",
@@ -247,6 +248,10 @@
       },
       "link": {
         "value": "#1ABC80",
+        "type": "color"
+      },
+      "border": {
+        "value": "black",
         "type": "color"
       }
     }
@@ -527,7 +532,7 @@
         "value": {
           "fontFamily": "{fontFamilies.inter}",
           "fontWeight": "{fontWeights.regular}",
-          "lineHeight": "{lineHeights.1}",
+          "lineHeight": "{lineHeights.2}",
           "fontSize": "{fontSize.2}",
           "letterSpacing": "{letterSpacing.0}",
           "paragraphSpacing": "{paragraphSpacing.0}",
