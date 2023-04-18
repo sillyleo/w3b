@@ -63,11 +63,13 @@
     },
     "sepcial": {
       "black": "#000000",
-      "link": "#1abc80"
+      "link": "#1abc80",
+      "border": "#000000"
     },
     "special": {
       "black": "#000000",
-      "link": "#3ceaaa"
+      "link": "#3ceaaa",
+      "border": "#504f57"
     }
   },
   "fontFamilies": {
@@ -246,7 +248,7 @@
       "m": {
         "fontFamily": "Inter",
         "fontWeight": "Regular",
-        "lineHeight": "140%",
+        "lineHeight": "150%",
         "fontSize": 16,
         "letterSpacing": "0%",
         "paragraphSpacing": 0,
