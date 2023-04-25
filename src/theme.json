@@ -55,8 +55,8 @@
       "0": "#ffffff",
       "1": "#f9f8f9",
       "2": "#eeedef",
-      "3": "#e4e2e4",
-      "4": "#c8c7cb",
+      "3": "#c8c7cb",
+      "4": "#a09fa6",
       "5": "#86848d",
       "6": "#4a4656",
       "7": "#000000"
@@ -191,7 +191,7 @@
       "s": {
         "fontFamily": "Inter",
         "fontWeight": "Medium",
-        "lineHeight": "150%",
+        "lineHeight": "140%",
         "fontSize": 14,
         "letterSpacing": "0%",
         "paragraphSpacing": 0,
@@ -202,7 +202,7 @@
       "m": {
         "fontFamily": "Inter",
         "fontWeight": "Medium",
-        "lineHeight": "140%",
+        "lineHeight": "150%",
         "fontSize": 16,
         "letterSpacing": "0%",
         "paragraphSpacing": 0,
@@ -237,7 +237,7 @@
       "s": {
         "fontFamily": "Inter",
         "fontWeight": "Regular",
-        "lineHeight": "150%",
+        "lineHeight": "140%",
         "fontSize": 14,
         "letterSpacing": "0%",
         "paragraphSpacing": 0,
