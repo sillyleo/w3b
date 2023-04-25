@@ -211,7 +211,7 @@
       "1": {
         "value": "#f9f8f9",
         "type": "color",
-        "description": "Hover"
+        "description": "Hover item"
       },
       "2": {
         "value": "#eeedef",
@@ -219,13 +219,14 @@
         "description": "Border"
       },
       "3": {
-        "value": "#e4e2e4",
-        "type": "color"
+        "value": "#C8C7CB",
+        "type": "color",
+        "description": "disable"
       },
       "4": {
-        "value": "#c8c7cb",
+        "value": "#A09FA6",
         "type": "color",
-        "description": "Border, Disable"
+        "description": "Border"
       },
       "5": {
         "value": "#86848d",
@@ -234,7 +235,8 @@
       },
       "6": {
         "value": "#4A4656",
-        "type": "color"
+        "type": "color",
+        "description": "Hover Button "
       },
       "7": {
         "value": "black",
@@ -460,7 +462,7 @@
         "value": {
           "fontFamily": "{fontFamilies.inter}",
           "fontWeight": "{fontWeights.medium}",
-          "lineHeight": "{lineHeights.2}",
+          "lineHeight": "{lineHeights.1}",
           "fontSize": "{fontSize.1}",
           "letterSpacing": "{letterSpacing.0}",
           "paragraphSpacing": "{paragraphSpacing.0}",
@@ -474,7 +476,7 @@
         "value": {
           "fontFamily": "{fontFamilies.inter}",
           "fontWeight": "{fontWeights.medium}",
-          "lineHeight": "{lineHeights.1}",
+          "lineHeight": "{lineHeights.2}",
           "fontSize": "{fontSize.2}",
           "letterSpacing": "{letterSpacing.0}",
           "paragraphSpacing": "{paragraphSpacing.0}",
@@ -518,7 +520,7 @@
         "value": {
           "fontFamily": "{fontFamilies.inter}",
           "fontWeight": "{fontWeights.regular}",
-          "lineHeight": "{lineHeights.2}",
+          "lineHeight": "{lineHeights.1}",
           "fontSize": "{fontSize.1}",
           "letterSpacing": "{letterSpacing.0}",
           "paragraphSpacing": "{paragraphSpacing.0}",
